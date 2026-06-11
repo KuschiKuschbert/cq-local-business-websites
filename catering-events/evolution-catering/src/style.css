@@ -355,7 +355,9 @@ button, input, select, textarea {
 /* --- Hero Section --- */
 .hero-section {
   position: relative;
-  background-color: var(--clr-slate-50);
+  background-image: linear-gradient(rgba(248, 250, 252, 0.88), rgba(248, 250, 252, 0.96)), url('/hero.png');
+  background-size: cover;
+  background-position: center;
   padding: calc(var(--header-height) + 4rem) 0 6rem 0;
   min-height: 85vh;
   display: flex;
