@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toons Plumbing | Drainage & Gas Solutions Rockhampton</title>
+  <meta name="description" content="Toons Plumbing is Rockhampton's choice for modern drainage and gas installations. Calculate plumbing estimates instantly with our online quote tool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-BOA1q_OR.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CkBSY3t2.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        <span>TOONS <span class="accent-text">PLUMBING</span></span>
+      </a>
+      <a href="#estimator" class="btn btn-primary">Free Quote Tool</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1>Commercial Grade Drainage & Gas Fitting</h1>
+          <p class="hero-lead">Professional hydraulic designs, large scale drainage layouts, and gas installations for commercial sites and luxury residential properties in Rockhampton.</p>
+          <a href="#estimator" class="btn btn-primary btn-large">Launch Quote Estimator</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantees Grid -->
+    <section class="guarantees" style="padding: 60px 0; background-color: rgba(255, 255, 255, 0.01); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+      <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 2rem; font-size: 2rem; font-weight: 800;">Toons Service Guarantees</h2>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
+          <div class="service-card" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">⏱️ On-Time Discount</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">If we arrive late for your booking without calling ahead, we will take <strong>$50 off</strong> your project call-out.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">💰 $99 Flat call-out</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">Our standard diagnostic inspection locally is a flat <strong>$99 fee</strong>, covering transit and expert site assessment.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">🧹 Mess-Free Worksite</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">We respect your commercial or residential property. We wear boot covers, use drop cloths, and clean up fully.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimator" class="estimator-section">
+      <div class="container">
+        <div class="estimator-card">
+          <div class="estimator-header">
+            <h2>Instant Quote Estimator</h2>
+            <p>Get a rough budgetary estimate for your project instantly. Adjust variables below:</p>
+          </div>
+          
+          <div class="estimator-controls">
+            <div class="control-group">
+              <label for="drain-length">Required Drainage Length: <span id="length-val" class="accent-text">10</span> meters</label>
+              <input type="range" id="drain-length" min="2" max="100" value="10" class="slider">
+            </div>
+            
+            <div class="control-group">
+              <label for="gas-points">Gas Connection Outlets: <span id="gas-val" class="accent-text">2</span> points</label>
+              <input type="range" id="gas-points" min="0" max="10" value="2" class="slider">
+            </div>
+ 
+            <div class="control-group">
+              <label for="service-tier">Response Speed & Quality Tier</label>
+              <select id="service-tier">
+                <option value="1">Standard Scheduled Callout</option>
+                <option value="1.5">Priority Rapid Booking</option>
+              </select>
+            </div>
+          </div>
+ 
+          <div class="estimator-display">
+            <h3>Budgetary Estimate:</h3>
+            <div class="price-box">
+              <span class="currency">$</span><span id="price-val">840</span>
+            </div>
+            <p class="disclaimer">Excludes heavy materials. Subject to physical inspection.</p>
+          </div>
+ 
+          <form id="estimator-form" class="estimator-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-name">Full Name</label>
+                <input type="text" id="e-name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="e-phone">Phone Number</label>
+                <input type="tel" id="e-phone" required autocomplete="tel">
+              </div>
+            </div>
+            
+            <div class="form-group checkbox-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem; margin-top: 1rem;">
+              <input type="checkbox" required id="ack-pricing" style="margin-top: 4px; cursor: pointer; accent-color: var(--color-primary);">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted); cursor: pointer;">I agree to the flat $99 local diagnostic fee and the clean workspace guarantee.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large btn-full">Submit Estimate For Booking Verification</button>
+            <div id="estimator-success" class="alert-success visually-hidden">
+              <p>Budgetary request submitted! Our engineers will call you to clarify layout options.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Toons Plumbing. Rockhampton QLD. Lic No: 785641-D. Drainage, Civil & Commercial Hydraulic Engineers.</p>
+    </div>
+  </footer>
+</body>
+</html>
