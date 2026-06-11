@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dunlop Catering | Rustic Spit Roast & Premium Buffets</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Warm, welcoming catering service specializing in mobile spit roast feasts, wedding buffets, and community celebrations. Build your custom menu and request a quote instantly." />
+  </head>
+  <body>
+    <!-- Header / Nav -->
+    <header class="main-header" id="header">
+      <div class="header-container">
+        <a href="#" class="brand" id="brand-link">
+          <span class="brand-rustic">Dunlop</span>
+          <span class="brand-sub">Catering</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="main-nav" id="nav-toggle-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav class="nav-menu" id="main-nav">
+          <ul>
+            <li><a href="#about" id="nav-about">Our Story</a></li>
+            <li><a href="#packages" id="nav-packages">Packages</a></li>
+            <li><a href="#wedding" id="nav-wedding">Weddings</a></li>
+            <li><a href="#calculator" id="nav-calc">Pricing Estimator</a></li>
+            <li><a href="#quote" class="nav-cta" id="nav-quote-cta">Request Quote</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-tag">Traditional &amp; Hearty</span>
+          <h1>Rustic Spit Roasts &amp; Gourmet Buffets</h1>
+          <p>Bringing families and communities together with warm hospitality, slow-roasted woodfire aromas, and freshly prepared local feasts.</p>
+          <div class="hero-buttons">
+            <a href="#calculator" class="btn btn-primary" id="hero-calc-btn">Plan Your Menu</a>
+            <a href="#packages" class="btn btn-outline" id="hero-pack-btn">View Packages</a>
+          </div>
+        </div>
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <a href="#about" id="scroll-arrow">&#x2193;</a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section" id="about">
+        <div class="section-container">
+          <div class="about-grid">
+            <div class="about-text">
+              <span class="section-tag">Since 1998</span>
+              <h2>A Family Tradition of Woodfire &amp; Warmth</h2>
+              <p>For over two decades, Dunlop Catering has been at the heart of community gatherings, backyard celebrations, and dream weddings. We believe in the power of shared meals and rustic cooking techniques.</p>
+              <p>Our signature mobile spit roasts are slow-cooked over selection hardwoods for up to 8 hours, delivering unmatched tenderness and rich, smoky flavor. Paired with our vibrant, hand-tossed salads and warm cream potatoes, every feast feels like a Sunday family dinner.</p>
+              <div class="about-features">
+                <div class="feat-item">
+                  <div class="feat-icon" aria-hidden="true">&#x1F525;</div>
+                  <div>
+                    <h3>Slow-Roasted</h3>
+                    <p>8-hour slow spit roast over seasoned hardwoods.</p>
+                  </div>
+                </div>
+                <div class="feat-item">
+                  <div class="feat-icon" aria-hidden="true">&#x1F96C;</div>
+                  <div>
+                    <h3>100% Fresh</h3>
+                    <p>Locally sourced produce made fresh on site.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about-visual">
+              <div class="rustic-frame">
+                <div class="rustic-image-placeholder">
+                  <span class="placeholder-icon">&#x1F356;</span>
+                  <h3>The Roast Experience</h3>
+                  <p>Succulent meats, crackling, and rich hot gravy cooked fresh in our custom mobile ovens.</p>
+                </div>
+                <div class="rustic-accent-wood" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages Section -->
+      <section class="packages-section" id="packages">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Our Feasts</span>
+            <h2>Mobile Spit Roast &amp; Buffet Packages</h2>
+            <p>Select from our pre-curated signature spreads, designed to satisfy hungry crowds of any size.</p>
+          </div>
+          <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+              <div class="pack-badge">Popular</div>
+              <div class="pack-header">
+                <h3>The Classic Spit Roast</h3>
+                <p class="pack-price">From <span>$28</span> / guest</p>
+              </div>
+              <div class="pack-body">
+                <p class="pack-desc">A timeless feast featuring slow-roasted meats carved fresh on-site with traditional hot sides.</p>
+                <ul class="pack-includes">
+                  <li><strong>Choice of 2 Mains:</strong> Roast Beef Brisket, Pork Belly with Crackling, or Herb Leg of Lamb</li>
+                  <li>Hot jacket potatoes with sour cream &amp; chives</li>
+                  <li>Traditional rich roasting gravy &amp; apple sauce</li>
+                  <li>Four gourmet house salads (Caesar, Pasta, Coleslaw, Garden)</li>
+                  <li>Warm artisan dinner rolls with butter</li>
+                </ul>
+                <a href="#calculator" class="btn btn-secondary btn-full select-package-btn" data-package="classic" id="select-classic-btn">Select This Package</a>
+              </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card featured">
+              <div class="pack-badge">Best Value</div>
+              <div class="pack-header">
+                <h3>The Grand Feast Buffet</h3>
+                <p class="pack-price">From <span>$38</span> / guest</p>
+              </div>
+              <div class="pack-body">
+                <p class="pack-desc">A premium double-carvery selection with elevated sides and handcrafted desserts.</p>
+                <ul class="pack-includes">
+                  <li><strong>Choice of 3 Mains:</strong> Beef Brisket, Pork Belly, Lamb Roast, or Grilled Garlic Chicken</li>
+                  <li>Warm creamy potato gratin (dauphinoise)</li>
+                  <li>Wood-fired roasted root vegetables with rosemary</li>
+                  <li>Five specialty salads with house dressings</li>
+                  <li>Selection of artisan breads, relishes &amp; chutneys</li>
+                  <li><strong>Dessert Buffet:</strong> Apple berry crumble &amp; chocolate fudge brownies</li>
+                </ul>
+                <a href="#calculator" class="btn btn-primary btn-full select-package-btn" data-package="buffet" id="select-buffet-btn">Select This Package</a>
+              </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+              <div class="pack-header">
+                <h3>Rustic Grazing &amp; Roast</h3>
+                <p class="pack-price">From <span>$48</span> / guest</p>
+              </div>
+              <div class="pack-body">
+                <p class="pack-desc">The ultimate full-day experience, beginning with grazing tables and ending with a spit roast buffet.</p>
+                <ul class="pack-includes">
+                  <li><strong>Charcuterie Table:</strong> Local cheeses, cured meats, dried fruits, nuts, olives &amp; crackers</li>
+                  <li><strong>Spit Roast Dinner:</strong> Lamb, Beef &amp; Pork Belly</li>
+                  <li>Herb salted baby chat potatoes</li>
+                  <li>Honey glazed carrots &amp; seasonal greens</li>
+                  <li>Salad buffet &amp; warm flatbreads</li>
+                  <li>Professional chef-carver &amp; serving staff included</li>
+                </ul>
+                <a href="#calculator" class="btn btn-secondary btn-full select-package-btn" data-package="grazing" id="select-grazing-btn">Select This Package</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wedding Section -->
+      <section class="wedding-section" id="wedding">
+        <div class="section-container">
+          <div class="wedding-grid">
+            <div class="wedding-visual">
+              <div class="wedding-canvas-placeholder">
+                <span class="canvas-icon">&#x1F490;</span>
+                <h3>Custom Wedding Catering</h3>
+                <p>Tailor a bespoke culinary experience for your special day. Select your gourmet menu below, and we'll calculate an instant wedding package estimate.</p>
+              </div>
+            </div>
+            <div class="wedding-text">
+              <span class="section-tag">Elegant &amp; Bespoke</span>
+              <h2>Custom Wedding Menu Planner</h2>
+              <p>Craft a unique menu that tells your story. Select from our signature wedding offerings below to personalize your buffet selection.</p>
+              
+              <div class="wedding-menu-builder" id="wedding-builder">
+                <!-- Mains Builder -->
+                <div class="menu-group">
+                  <h4>1. Select Mains <span class="group-limit">(Select up to 3)</span></h4>
+                  <div class="menu-options-grid">
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-mains" value="beef" checked data-name="Slow-Roasted Beef Brisket">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Beef Brisket <small>Slow wood-smoked</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-mains" value="pork" checked data-name="Herb-Crusted Pork Belly">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Pork Belly <small>With sea salt crackling</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-mains" value="lamb" checked data-name="Rosemary Spit-Roast Lamb">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Rosemary Lamb <small>Garlic infused</small></span>
+                    </label>
+                    <label class="menu-checkbox-card premium">
+                      <input type="checkbox" name="wedding-mains" value="salmon" data-name="Maple-Glazed Smoked Salmon (+ $5/head)" data-premium="5">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Maple Salmon <small>Premium (+$5/head)</small></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Sides Builder -->
+                <div class="menu-group">
+                  <h4>2. Select Sides <span class="group-limit">(Select up to 4)</span></h4>
+                  <div class="menu-options-grid">
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="potatoes" checked data-name="Garlic Herb Roast Potatoes">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Roast Potatoes <small>Garlic &amp; rosemary</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="gratin" checked data-name="Creamy Potato Gratin">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Potato Gratin <small>Creamy dauphinoise</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="veg" checked data-name="Wood-fired Root Vegetables">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Root Vegetables <small>Honey glazed</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="caesar" checked data-name="Classic Caesar Salad">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Caesar Salad <small>With crispy bacon</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="tomato" data-name="Heirloom Tomato & Basil Salad">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Tomato &amp; Basil <small>Aged balsamic</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-sides" value="couscous" data-name="Mediterranean Couscous Salad">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Couscous Salad <small>Feta &amp; mint</small></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Desserts Builder -->
+                <div class="menu-group">
+                  <h4>3. Select Desserts <span class="group-limit">(Select up to 2)</span></h4>
+                  <div class="menu-options-grid">
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-desserts" value="crumble" checked data-name="Rustic Apple Berry Crumble">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Apple Crumble <small>With double cream</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-desserts" value="brownie" checked data-name="Warm Chocolate Fudge Brownie">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Fudge Brownie <small>Rich chocolate</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-desserts" value="sticky" data-name="Sticky Date Pudding">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Sticky Date <small>Butterscotch sauce</small></span>
+                    </label>
+                    <label class="menu-checkbox-card">
+                      <input type="checkbox" name="wedding-desserts" value="tart" data-name="Artisan Lemon Tart">
+                      <span class="check-custom"></span>
+                      <span class="check-label">Lemon Tart <small>Sweet pastry case</small></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="wedding-actions">
+                <a href="#calculator" class="btn btn-primary btn-full" id="wedding-apply-btn">Load Custom Menu Into Calculator</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculator Section -->
+      <section class="calculator-section" id="calculator">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Interactive Pricing</span>
+            <h2>Instant Quote Estimator</h2>
+            <p>Customize your package, adjust guest numbers, and view a live pricing breakdown in seconds.</p>
+          </div>
+          
+          <div class="calc-card">
+            <div class="calc-body-grid">
+              <!-- Parameters Control Panel -->
+              <div class="calc-controls">
+                <!-- 1. Guest Slider -->
+                <div class="control-group">
+                  <div class="slider-header">
+                    <label for="guest-slider">Number of Guests</label>
+                    <div class="guest-counter-badge"><span id="guest-count-val">80</span> Guests</div>
+                  </div>
+                  <input type="range" id="guest-slider" min="20" max="500" value="80" step="5" class="custom-slider">
+                  <div class="slider-labels">
+                    <span>20 (Min)</span>
+                    <span>100</span>
+                    <span>200</span>
+                    <span>300</span>
+                    <span>400</span>
+                    <span>500+</span>
+                  </div>
+                </div>
+
+                <!-- 2. Package Selector -->
+                <div class="control-group">
+                  <label for="calc-package">Catering Package</label>
+                  <select id="calc-package" class="custom-select">
+                    <option value="classic">The Classic Spit Roast (From $28 - $45/head)</option>
+                    <option value="buffet" selected>The Grand Feast Buffet (From $38 - $55/head)</option>
+                    <option value="grazing">Rustic Grazing &amp; Roast (From $48 - $65/head)</option>
+                    <option value="wedding">Bespoke Wedding Menu (From $58 - $75/head)</option>
+                  </select>
+                </div>
+
+                <!-- Custom Wedding Menu Summary Info (Shown only when wedding package is active) -->
+                <div class="wedding-selection-summary hidden" id="wedding-summary-box">
+                  <h5>Wedding Menu Selection</h5>
+                  <ul class="summary-menu-list" id="wedding-menu-summary-list">
+                    <!-- Dynamic -->
+                  </ul>
+                  <p class="premium-notice" id="wedding-premium-notice"></p>
+                  <a href="#wedding" class="edit-wedding-link" id="edit-wedding-menu-link">Modify Custom Menu &rarr;</a>
+                </div>
+
+                <!-- 3. Add-ons Checklist -->
+                <div class="control-group">
+                  <label>Additional Services &amp; Add-ons</label>
+                  <div class="addons-grid">
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" name="addons" value="dessert" data-price-head="8">
+                      <span class="addon-check"></span>
+                      <span class="addon-label-group">
+                        <span class="title">Dessert Bar <small>+$8/head</small></span>
+                      </span>
+                    </label>
+                    
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" name="addons" value="carving" data-price-flat="250">
+                      <span class="addon-check"></span>
+                      <span class="addon-label-group">
+                        <span class="title">Carver &amp; Staff <small>+$250 flat</small></span>
+                      </span>
+                    </label>
+
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" name="addons" value="linen" data-price-head="5">
+                      <span class="addon-check"></span>
+                      <span class="addon-label-group">
+                        <span class="title">Linen &amp; Tableware <small>+$5/head</small></span>
+                      </span>
+                    </label>
+
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" name="addons" value="grazing" data-price-head="12">
+                      <span class="addon-check"></span>
+                      <span class="addon-label-group">
+                        <span class="title">Grazing Boards <small>+$12/head</small></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Price Breakdown Panel -->
+              <div class="calc-breakdown">
+                <div class="breakdown-header">
+                  <h4>Price Estimate</h4>
+                  <p class="scaled-label" id="scaled-price-head">$48.00 per guest</p>
+                </div>
+                
+                <div class="breakdown-list">
+                  <div class="breakdown-row">
+                    <span>Base Package Cost</span>
+                    <span id="breakdown-base">$3,840.00</span>
+                  </div>
+                  <div class="breakdown-row" id="breakdown-premium-row">
+                    <span>Menu Premium Extras</span>
+                    <span id="breakdown-premium">$0.00</span>
+                  </div>
+                  <div class="breakdown-row">
+                    <span>Add-ons Total</span>
+                    <span id="breakdown-addons">$0.00</span>
+                  </div>
+                  <div class="breakdown-row total">
+                    <span>Total Estimate</span>
+                    <span id="breakdown-total">$3,840.00</span>
+                  </div>
+                </div>
+                
+                <div class="breakdown-footer">
+                  <p class="pricing-disclaimer">*Estimates include basic GST. Surcharges may apply on public holidays or for remote venues.</p>
+                  <a href="#quote" class="btn btn-accent btn-full" id="calc-apply-to-form-btn">Use This Quote in Form</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote Request Form Section -->
+      <section class="quote-section" id="quote">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Lock in Your Date</span>
+            <h2>Request Your Custom Quote</h2>
+            <p>Fill out the details below, and our team will get back to you with a formal itemized quote within 24 hours.</p>
+          </div>
+
+          <!-- Trust Cards Resolving Spit Roast / Event Catering Review Pain Points -->
+          <div class="trust-grid">
+            <div class="trust-card">
+              <span class="trust-icon">⏱️</span>
+              <h3>24-Hour Quote Guarantee</h3>
+              <p>We value your time. We guarantee a fully itemized catering quote proposal in your inbox within 24 hours of inquiry, or we will apply a 5% discount to your booking.</p>
+            </div>
+            <div class="trust-card">
+              <span class="trust-icon">🥗</span>
+              <h3>Dietary Safety Certified</h3>
+              <p>We accommodate all food requirements. Vegan, dairy-free, and gluten-free meals are prepared and transport-contained separately to prevent cross-contamination.</p>
+            </div>
+            <div class="trust-card">
+              <span class="trust-icon">💵</span>
+              <h3>No Hidden Fee Lock</h3>
+              <p>Your calculated quote is locked in. Surcharges for travel within the Capricorn Coast, catering staff, and cleaning cleanup are fully built-in.</p>
+            </div>
+          </div>
+          
+          <div class="quote-form-container">
+            <form class="quote-form" id="catering-quote-form" novalidate>
+              <div class="form-grid">
+                <!-- Personal Details -->
+                <div class="form-group">
+                  <label for="form-name">Your Full Name <span class="required">*</span></label>
+                  <input type="text" id="form-name" required placeholder="John Doe" autocomplete="name">
+                  <span class="error-msg" id="name-error">Please enter your name</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="form-email" required placeholder="john@example.com" autocomplete="email">
+                  <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="form-phone" required placeholder="0412 345 678" autocomplete="tel">
+                  <span class="error-msg" id="phone-error">Please enter your phone number</span>
+                </div>
+
+                <!-- Event Details -->
+                <div class="form-group">
+                  <label for="form-date">Event Date <span class="required">*</span></label>
+                  <input type="date" id="form-date" required>
+                  <span class="error-msg" id="date-error">Please choose a future date</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-venue">Event Venue / Suburb <span class="required">*</span></label>
+                  <input type="text" id="form-venue" required placeholder="e.g. Yeppoon Beachfront, QLD">
+                  <span class="error-msg" id="venue-error">Please specify your event venue or suburb</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-guests">Guest Count <span class="required">*</span></label>
+                  <input type="number" id="form-guests" min="20" max="1000" required value="80">
+                  <span class="error-msg" id="guests-error">Minimum guest count is 20</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-package">Selected Package <span class="required">*</span></label>
+                  <select id="form-package" required>
+                    <option value="classic">The Classic Spit Roast</option>
+                    <option value="buffet" selected>The Grand Feast Buffet</option>
+                    <option value="grazing">Rustic Grazing &amp; Roast</option>
+                    <option value="wedding">Bespoke Wedding Menu</option>
+                  </select>
+                </div>
+
+                <div class="form-group full-width">
+                  <label>Selected Add-ons (Auto-applied from calculator)</label>
+                  <div class="form-addons-summary-tags" id="form-addons-tags-container">
+                    <span class="no-tags">None selected</span>
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="form-notes">Special Dietary Requirements or Event Notes</label>
+                  <textarea id="form-notes" rows="4" placeholder="Describe any dietary restrictions (gluten free, vegan, nut allergies), custom theme preferences, or special venue setups..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary btn-large" id="submit-quote-btn">Submit Quote Request</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <span class="brand-rustic">Dunlop</span>
+          <span class="brand-sub">Catering</span>
+          <p>Providing warm, rustic hospitality and wood-fired catering experiences across the community. Family owned and operated since 1998.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#packages">Feast Packages</a></li>
+            <li><a href="#wedding">Weddings</a></li>
+            <li><a href="#calculator">Price Calculator</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p><strong>Phone:</strong> <a href="tel:0400000000">0400 000 000</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@dunlopcatering.com.au">info@dunlopcatering.com.au</a></p>
+          <p><strong>Location:</strong> Rockhampton, Yeppoon &amp; Capricorn Coast</p>
+          <p><strong>Hours:</strong> Mon - Sun: 7:00 AM - 9:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dunlop Catering. All rights reserved. Designed with warm hospitality &amp; woodfired aesthetics.</p>
+      </div>
+    </footer>
+
+    <!-- Native Quote Submission Success Dialog -->
+    <dialog class="success-dialog" id="quote-success-dialog">
+      <div class="dialog-content">
+        <div class="success-icon" aria-hidden="true">&#x2714;</div>
+        <h3>Quote Request Submitted!</h3>
+        <p>Thank you for choosing Dunlop Catering. We have generated an estimate based on your selection:</p>
+        
+        <div class="dialog-quote-box">
+          <div class="quote-box-header">
+            <h4>Dunlop Catering Estimate Summary</h4>
+            <span class="quote-id-tag">Reference: #DC-<span id="dialog-quote-ref">83921</span></span>
+          </div>
+          <table class="quote-summary-table">
+            <tr>
+              <td><strong>Guest Count:</strong></td>
+              <td><span id="dialog-guests">80</span> Guests</td>
+            </tr>
+            <tr>
+              <td><strong>Catering Package:</strong></td>
+              <td><span id="dialog-package">The Grand Feast Buffet</span></td>
+            </tr>
+            <tr id="dialog-wedding-menu-row" class="hidden">
+              <td valign="top"><strong>Wedding Menu:</strong></td>
+              <td><div id="dialog-wedding-menu-details" class="dialog-subtext">None</div></td>
+            </tr>
+            <tr>
+              <td valign="top"><strong>Selected Add-ons:</strong></td>
+              <td><div id="dialog-addons-details" class="dialog-subtext">None</div></td>
+            </tr>
+            <tr class="table-total-row">
+              <td><strong>Estimated Total:</strong></td>
+              <td><span id="dialog-total">$3,840.00</span></td>
+            </tr>
+          </table>
+        </div>
+
+        <p class="dialog-next-steps">A catering coordinator will contact you at <strong id="dialog-user-email">email</strong> within 24 hours to confirm venue details, date availability, and customize your final menu proposal.</p>
+        
+        <div class="dialog-actions">
+          <button class="btn btn-primary" id="dialog-close-btn">Close Summary</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

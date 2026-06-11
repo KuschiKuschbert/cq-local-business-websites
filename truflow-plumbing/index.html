@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truflow Plumbing | Modern Plumbing & Gas Fitting Rockhampton</title>
+  <meta name="description" content="Truflow Plumbing offers professional, eco-friendly plumbing and gas fitting services in Rockhampton. Book clean, certified plumbing solutions online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        <span>TRUFLOW <span class="logo-accent">PLUMBING & GAS</span></span>
+      </a>
+      <a href="#booking" class="btn btn-primary">Book Online</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1>Sleek, Certified Plumbing & Gas Solutions</h1>
+          <p class="hero-lead">Delivering clean residential systems, certified gas fitting, compliance testing, and hot water innovations across Rockhampton.</p>
+          <a href="#booking" class="btn btn-primary btn-large">Request Schedule & Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <h2 class="section-title text-center">Services We Standardise</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <h3>Certified Gas Fitting</h3>
+            <p>From appliance connectivity to leak detection, our certified team handles LP and natural gas systems safely.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Commercial Maintenance</h3>
+            <p>High-efficiency backflow preventer installations, regular pump checking, and restaurant compliance validation.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            </div>
+            <h3>General Domestic Care</h3>
+            <p>Leaking mixer taps, toilet repairs, kitchen plumbing design alignments, and solar system setups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantees Grid -->
+    <section class="guarantees" style="padding: 60px 0; background-color: rgba(255, 255, 255, 0.01); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+      <div class="container">
+        <h2 class="section-title text-center" style="margin-bottom: 3rem;">Truflow Service Guarantees</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>⏱️ On-Time or We Pay</h3>
+            <p>If we run late for your scheduled service window without calling ahead, we will take <strong>$50 off</strong> your diagnostic invoice.</p>
+          </div>
+          <div class="service-card">
+            <h3>💰 Flat-Rate Diagnostic</h3>
+            <p>We charge a transparent flat-rate of <strong>$99 local call-out fee</strong> for Frenchville, Gracemere, and Rockhampton central to diagnose your plumbing/gas issues.</p>
+          </div>
+          <div class="service-card">
+            <h3>🧹 Mess-Free Worksite</h3>
+            <p>We respect your space. Our technicians wear boot guards, use drop cloths, and clean up the work area thoroughly before departing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <div class="booking-card">
+          <div class="booking-header">
+            <h2>Book Service Time</h2>
+            <p>Complete details below and one of our master gasfitters will organize your booking call.</p>
+          </div>
+          <form id="truflow-form" class="booking-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="t-name">Name</label>
+                <input type="text" id="t-name" name="name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="t-phone">Phone</label>
+                <input type="tel" id="t-phone" name="phone" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="t-service">Service Type</label>
+              <select id="t-service" name="service" required>
+                <option value="plumbing">Standard Plumbing Care</option>
+                <option value="gas">Gas System Install / Leak</option>
+                <option value="commercial">Commercial compliance</option>
+              </select>
+            </div>
+            
+            <div class="form-group checkbox-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem;">
+              <input type="checkbox" required id="ack-pricing" style="margin-top: 4px; cursor: pointer;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted); cursor: pointer;">I agree to the flat $99 local diagnostic fee and the clean workspace guarantee.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Send Appointment Request</button>
+            <div id="truflow-success" class="alert-success visually-hidden">
+              <p>Booking request registered! We will call to confirm date/time slots.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Truflow Plumbing & Gas. Rockhampton QLD. Lic No: 99341-G. Safe, Clean, Guaranteed.</p>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+:root {
+  --yellow: #FFD700;
+  --yellow-hover: #e6c200;
+  --charcoal: #2A2A2A;
+  --charcoal-light: #3A3A3A;
+  --bg-color: #1A1A1A;
+  --text-color: #E0E0E0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--charcoal);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--yellow);
+}
+
+/* Buttons */
+.cta-btn {
+  background-color: var(--yellow);
+  color: var(--charcoal);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background-color: var(--yellow-hover);
+  transform: translateY(-2px);
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--charcoal) 0%, var(--bg-color) 100%);
+  padding: 100px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: var(--yellow);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 2px solid var(--yellow);
+}
+
+/* Services */
+.services h2, .safety h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--yellow);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--charcoal);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  border-bottom: 4px solid var(--yellow);
+}
+
+.card h3 {
+  margin: 15px 0;
+  font-size: 1.5rem;
+}
+
+/* Banner */
+.banner {
+  background-color: var(--yellow);
+  color: var(--charcoal);
+  padding: 60px 0;
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.banner-inner img {
+  flex: 1;
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+}
+
+/* Safety Tips */
+.safety {
+  background-color: var(--charcoal-light);
+}
+
+.tips-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tips-list li {
+  background-color: var(--charcoal);
+  margin-bottom: 15px;
+  padding: 20px;
+  border-left: 5px solid var(--yellow);
+  border-radius: 4px;
+}
+
+.tips-list li strong {
+  color: var(--yellow);
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: var(--charcoal);
+  border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+  .hero-content, .banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-image img, .banner-inner img {
+    max-width: 100%;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+/* Trust Guarantees Section */
+.trust-guarantees {
+  padding: 80px 0;
+  background-color: var(--charcoal-light);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.trust-card {
+  background-color: var(--charcoal);
+  padding: 30px;
+  border-radius: 10px;
+  border-top: 4px solid var(--yellow);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.trust-card h3 {
+  margin: 15px 0 10px 0;
+  font-size: 1.3rem;
+  color: var(--yellow);
+}
+
+.trust-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.trust-icon {
+  font-size: 2.2rem;
+}
+
+/* Booking form styling */
+.booking {
+  background-color: var(--bg-color);
+}
+
+.container-narrow {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.booking h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--yellow);
+}
+
+.booking-form {
+  background-color: var(--charcoal);
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--charcoal-light);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--charcoal-light);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--yellow);
+}
+
+/* Checkbox alignment */
+.checkbox-group {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  user-select: none;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 22px;
+  width: 22px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--charcoal-light);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: var(--yellow);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.checkbox-container .checkmark::after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--charcoal);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .booking-form {
+    padding: 24px;
+  }
+}

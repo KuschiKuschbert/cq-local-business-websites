@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Bohemia | Rockhampton Hair Salon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        Studio Bohemia
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#location">Location</a>
+        <a href="https://bookings.gettimely.com/studiobohemia/book?uri=https%3A%2F%2Fbook.gettimely.com%2FBooking%2FLocation%2F294838%3Fmobile%3DTrue%26params%3D%25253fclient-login%25253dtrue" target="_blank" class="btn-primary">Book Appointment</a>
+      </div>
+      <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Your Curly Hair Specialists</h1>
+        <p>Experience the ultimate in hair care at Rockhampton's premier salon. From the Curly Girl Luxe Experience to tailored color packages, we bring your hair dreams to life.</p>
+        <a href="https://bookings.gettimely.com/studiobohemia/book?uri=https%3A%2F%2Fbook.gettimely.com%2FBooking%2FLocation%2F294838%3Fmobile%3DTrue%26params%3D%25253fclient-login%25253dtrue" target="_blank" class="btn-primary large">Book Your Visit</a>
+      </div>
+      <div class="hero-image-placeholder">
+        <!-- AI Image Generation Rate Limit Reached - Placeholder until reset -->
+        <span>Salon Interior (Image Pending)</span>
+      </div>
+    </header>
+
+    <section id="services" class="services">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Tailored treatments for your unique hair.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-img-placeholder">Curly Hair Service (Image Pending)</div>
+          <h3>The Curly Girl Luxe Experience</h3>
+          <p>A specialized hydration and styling experience designed to nourish and define your natural curl pattern.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-img-placeholder">Coloring Service (Image Pending)</div>
+          <h3>Coloring & Foils</h3>
+          <p>From full-head traditional foils to beautiful all-over color transformations tailored to you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-img-placeholder">Styling Service (Image Pending)</div>
+          <h3>Restyles & Trims</h3>
+          <p>Whether you need an express trim or a complete professional restyle for an upcoming event, we have you covered.</p>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="https://bookings.gettimely.com/studiobohemia/book?uri=https%3A%2F%2Fbook.gettimely.com%2FBooking%2FLocation%2F294838%3Fmobile%3DTrue%26params%3D%25253fclient-login%25253dtrue" target="_blank" class="btn-secondary">View Full Menu & Book</a>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-content">
+        <h2>Embrace Your Natural Beauty</h2>
+        <p>At Studio Bohemia, we believe every client deserves a luxurious, personalized salon experience. Our stylists are passionate experts, specifically trained in managing, styling, and cutting curly hair.</p>
+        <p>Located in the heart of Rockhampton City, our chic and welcoming studio is your retreat for self-care.</p>
+      </div>
+    </section>
+
+    <!-- Waitlist & Cancellation Alert Form -->
+    <section id="waitlist" class="waitlist-section" style="padding: 60px 0; background: #faf8f5; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #222;">Join Our Priority Waitlist</h2>
+        <p style="margin-bottom: 2rem; color: #555;">Can't find an immediate appointment on Timely? Enter your details below and we will contact you immediately if a cancellation opens up.</p>
+        
+        <form id="waitlist-form" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; background: #fff; padding: 2.5rem; border-radius: 8px; border: 1px solid #e5e5e5; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="w-name" style="font-size: 0.9rem; color: #555; font-weight: 500;">Full Name</label>
+            <input type="text" id="w-name" required placeholder="e.g. Sarah Jenkins" style="border: 1px solid #ccc; padding: 0.8rem 1rem; border-radius: 4px; font-family: inherit;">
+          </div>
+          
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="w-phone" style="font-size: 0.9rem; color: #555; font-weight: 500;">Phone Number</label>
+            <input type="tel" id="w-phone" required placeholder="0400 000 000" style="border: 1px solid #ccc; padding: 0.8rem 1rem; border-radius: 4px; font-family: inherit;">
+          </div>
+
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label for="w-service" style="font-size: 0.9rem; color: #555; font-weight: 500;">Desired Hair Treatment</label>
+            <select id="w-service" required style="border: 1px solid #ccc; padding: 0.8rem 1rem; border-radius: 4px; font-family: inherit; cursor: pointer;">
+              <option value="curly-girl">Curly Girl Luxe Experience</option>
+              <option value="color">Coloring & Foils</option>
+              <option value="restyle">Restyles & Trims</option>
+            </select>
+          </div>
+
+          <div class="form-group checkbox-group" style="display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem; margin-top: 0.5rem;">
+            <input type="checkbox" required id="ack-pricing-transparency" style="margin-top: 4px; cursor: pointer; accent-color: #c7a78e;">
+            <span style="font-size: 0.85rem; color: #555; line-height: 1.4;">I acknowledge that color and style packaging is subject to fixed upfront quotes and agree to receive text alerts for booking openings.</span>
+          </div>
+
+          <button type="submit" class="btn-primary" style="border: none; cursor: pointer; padding: 1rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; background: #c7a78e; color: #fff; width: 100%; text-align: center; font-size: 0.95rem; font-family: 'Inter', sans-serif;">Submit Waitlist Registration</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="location" class="location-section">
+      <div class="location-container">
+        <h2>Visit Us</h2>
+        <p><strong>Studio Bohemia</strong></p>
+        <p>Shop 10, 163 Bolsover Street<br>Rockhampton City, QLD 4700</p>
+        <a href="https://bookings.gettimely.com/studiobohemia/book?uri=https%3A%2F%2Fbook.gettimely.com%2FBooking%2FLocation%2F294838%3Fmobile%3DTrue%26params%3D%25253fclient-login%25253dtrue" target="_blank" class="btn-primary mt-2">Book Appointment Online</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Studio Bohemia Rockhampton. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

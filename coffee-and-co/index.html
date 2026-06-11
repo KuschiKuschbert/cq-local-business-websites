@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee & Co | Yeppoon</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="logo">Coffee & Co.</div>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Experience Coffee Excellence</h1>
+          <p>Warmth and coziness in the heart of Yeppoon. Discover your new favorite blend.</p>
+          <a href="#menu" class="cta-button">View Menu</a>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>Our Story</h2>
+            <p>At Coffee & Co, we believe every cup should be an experience. From carefully sourced beans to expert preparation, we bring creamy whites and warm browns into every aspect of our aesthetic.</p>
+          </div>
+          <div class="about-image">
+            <img src="./public/barista_working.png" alt="Barista pouring latte art" />
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu">
+        <h2>Menu Highlights</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="item-header">
+              <h3>Signature Espresso</h3>
+              <span>$4.50</span>
+            </div>
+            <p>Rich, dark, and perfectly balanced notes of cocoa.</p>
+          </div>
+          <div class="menu-item">
+            <div class="item-header">
+              <h3>Vanilla Bean Latte</h3>
+              <span>$6.00</span>
+            </div>
+            <p>Creamy microfoam with house-made vanilla bean syrup.</p>
+          </div>
+          <div class="menu-item">
+            <div class="item-header">
+              <h3>Pour Over</h3>
+              <span>$5.50</span>
+            </div>
+            <p>Single origin beans highlighting fruity undertones.</p>
+          </div>
+          <div class="menu-item">
+            <div class="item-header">
+              <h3>Artisan Pastries</h3>
+              <span>$4.00+</span>
+            </div>
+            <p>Freshly baked daily, perfect with any coffee.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coffee Pre-Order & Booking Form -->
+      <section id="reserve" class="reserve-section" style="padding: 60px 0; background: #261611; color: #fdfaf7; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #fff;">Skip the Morning Queue</h2>
+          <p style="margin-bottom: 2rem; color: #d0c0b8;">Pre-order your morning blend or secure a table for weekend brunch below.</p>
+          
+          <form id="preorder-form" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; background: #331e17; padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="p-name" style="font-size: 0.9rem; color: #d0c0b8;">Full Name</label>
+              <input type="text" id="p-name" required placeholder="John Miller" style="background: #261611; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1rem; border-radius: 4px; color: #fff;">
+            </div>
+            
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="p-phone" style="font-size: 0.9rem; color: #d0c0b8;">Phone Number</label>
+              <input type="tel" id="p-phone" required placeholder="0400 000 000" style="background: #261611; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1rem; border-radius: 4px; color: #fff;">
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="p-request" style="font-size: 0.9rem; color: #d0c0b8;">Type of Request</label>
+              <select id="p-request" required style="background: #261611; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1rem; border-radius: 4px; color: #fff; cursor: pointer;">
+                <option value="coffee-pickup">Espresso/Latte Pre-order Pickup</option>
+                <option value="table-booking">Table Booking (Weekend/Brunch)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label style="font-size: 0.9rem; color: #d0c0b8;">Dietary Notes (Allergens, Milk Choice)</label>
+              <textarea id="p-notes" placeholder="e.g. Oat Milk latte, Gluten-Free pastry requests..." rows="3" style="background: #261611; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1rem; border-radius: 4px; color: #fff; font-family: inherit;"></textarea>
+            </div>
+
+            <div class="form-group checkbox-group" style="display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem;">
+              <input type="checkbox" required id="ack-allergen" style="margin-top: 4px; cursor: pointer;">
+              <span style="font-size: 0.8rem; color: #d0c0b8;">I verify my order/booking preference and acknowledge dietary safety protocols.</span>
+            </div>
+
+            <button type="submit" class="cta-button" style="background: #d4a373; color: #261611; border: none; cursor: pointer; padding: 1rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Submit Pre-Order / Booking</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="visit" class="visit">
+        <h2>Visit Us</h2>
+        <div class="visit-content">
+          <div class="visit-info">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              123 Main Street, Yeppoon QLD 4703
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Mon - Sun: 7:00 AM - 4:00 PM
+            </p>
+            <a href="https://maps.google.com/?q=Yeppoon" target="_blank" class="cta-button">Get Directions</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Coffee & Co Yeppoon. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
