@@ -18,6 +18,7 @@ jspm_packages/
 # Output directories
 **/dist/
 dist/
+public-dist/
 
 # OS-specific files
 .DS_Store
