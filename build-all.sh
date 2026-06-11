@@ -6,45 +6,47 @@ OUT_DIR="public-dist"
 rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 
-# Loop through all subdirectories in the current directory
-for d in */; do
-  # Remove trailing slash
-  dir=${d%/}
-  
-  # Skip non-project directories
-  if [ "$dir" == "public-dist" ] || [ "$dir" == "Users" ] || [ "$dir" == "node_modules" ] || [ "$dir" == "dist" ]; then
+# Find all subdirectories containing package.json (excluding node_modules and public-dist)
+find . -name "package.json" | while read -r pkg_file; do
+  # Skip node_modules or public-dist
+  if [[ "$pkg_file" == *"/node_modules/"* ]] || [[ "$pkg_file" == *"/public-dist/"* ]]; then
     continue
   fi
   
-  # Check if it has a package.json (meaning it's a project)
-  if [ -f "$dir/package.json" ]; then
-    echo "------------------------------------------------"
-    echo "Building $dir..."
-    echo "------------------------------------------------"
-    
-    # Enter directory
-    cd "$dir"
-    
-    # Ensure dependencies are installed (in case some were skipped)
-    if [ ! -d "node_modules" ]; then
-      npm install
-    fi
-    
-    # Build with relative base path so it runs in a subfolder
-    npx vite build --base "./"
-    
-    # Go back to root
-    cd ..
-    
-    # Copy build files to output directory
-    mkdir -p "$OUT_DIR/$dir"
-    cp -r "$dir/dist/"* "$OUT_DIR/$dir/"
-    
-    echo "Built $dir successfully!"
+  # Get the project directory path
+  proj_path=$(dirname "$pkg_file")
+  # Strip leading ./
+  proj_path=${proj_path#./}
+  
+  # Get just the project folder name (e.g. bkk-plumbing)
+  proj_name=$(basename "$proj_path")
+  
+  echo "------------------------------------------------"
+  echo "Building $proj_name ($proj_path)..."
+  echo "------------------------------------------------"
+  
+  # Enter directory
+  cd "$proj_path"
+  
+  # Ensure dependencies are installed
+  if [ ! -d "node_modules" ]; then
+    npm install
   fi
+  
+  # Build with relative base path so it runs in a subfolder
+  npx vite build --base "./"
+  
+  # Go back to root
+  cd - > /dev/null
+  
+  # Copy build files to output directory under flat folder name
+  mkdir -p "$OUT_DIR/$proj_name"
+  cp -r "$proj_path/dist/"* "$OUT_DIR/$proj_name/"
+  
+  echo "Built $proj_name successfully!"
 done
 
-# Create a clean index.html in public-dist that lists all 26 websites
+# Create a clean index.html in public-dist that lists all websites
 cat <<EOT > "$OUT_DIR/index.html"
 <!DOCTYPE html>
 <html lang="en">
@@ -117,16 +119,16 @@ cat <<EOT > "$OUT_DIR/index.html"
     <div class="grid">
 EOT
 
-for d in */; do
-  dir=${d%/}
-  if [ "$dir" == "public-dist" ] || [ "$dir" == "Users" ] || [ "$dir" == "node_modules" ] || [ "$dir" == "dist" ]; then
+# Populate index link items recursively
+find . -name "package.json" | while read -r pkg_file; do
+  if [[ "$pkg_file" == *"/node_modules/"* ]] || [[ "$pkg_file" == *"/public-dist/"* ]]; then
     continue
   fi
-  if [ -f "$dir/package.json" ]; then
-    # Format name for display
-    display_name=$(echo "$dir" | sed 's/-/ /g')
-    echo "        <a href=\"$dir/\" class=\"card\"><h3>🌿 $display_name</h3><p>Live interactive preview</p></a>" >> "$OUT_DIR/index.html"
-  fi
+  proj_path=$(dirname "$pkg_file")
+  proj_path=${proj_path#./}
+  proj_name=$(basename "$proj_path")
+  display_name=$(echo "$proj_name" | sed 's/-/ /g')
+  echo "        <a href=\"$proj_name/\" class=\"card\"><h3>🌿 $display_name</h3><p>Live interactive preview</p></a>" >> "$OUT_DIR/index.html"
 done
 
 cat <<EOT >> "$OUT_DIR/index.html"
@@ -135,4 +137,4 @@ cat <<EOT >> "$OUT_DIR/index.html"
 </html>
 EOT
 
-echo "All sites built and output generated in $OUT_DIR!"
+echo "All sites built recursively and output generated in $OUT_DIR!"
