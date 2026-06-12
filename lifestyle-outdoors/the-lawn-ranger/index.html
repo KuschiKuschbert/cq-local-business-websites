@@ -112,59 +112,7 @@
           
           <div class="hero-visual">
             <div class="visual-card">
-              <!-- Beautiful stylized SVG of a perfect lawn pattern, hills, sun and lawn ranger shield -->
-              <svg viewBox="0 0 500 400" class="hero-svg-illustration" width="100%" height="100%">
-                <!-- Sky gradient -->
-                <defs>
-                  <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#0F3A24" />
-                    <stop offset="100%" stop-color="#062214" />
-                  </linearGradient>
-                  <linearGradient id="sun-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#F1C40F" />
-                    <stop offset="100%" stop-color="#E67E22" />
-                  </linearGradient>
-                  <linearGradient id="blade-grad" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stop-color="#0D4B2D" />
-                    <stop offset="100%" stop-color="#2ECC71" />
-                  </linearGradient>
-                </defs>
-                
-                <rect width="500" height="400" rx="24" fill="url(#sky-grad)"/>
-                
-                <!-- Sun glowing in background -->
-                <circle cx="400" cy="120" r="60" fill="url(#sun-grad)" opacity="0.35" filter="blur(10px)"/>
-                <circle cx="400" cy="120" r="45" fill="url(#sun-grad)"/>
-                
-                <!-- Stylized lawn stripes / hills -->
-                <path d="M 0,260 Q 120,220 250,280 T 500,240 L 500,400 L 0,400 Z" fill="#0E5030"/>
-                <path d="M 0,290 Q 150,250 300,310 T 500,270 L 500,400 L 0,400 Z" fill="#0A3C24"/>
-                
-                <!-- Lawn stripes -->
-                <path d="M -20,400 L 80,250 L 120,250 L 0,400 Z" fill="#13633C" opacity="0.4"/>
-                <path d="M 60,400 L 160,250 L 200,250 L 80,400 Z" fill="#13633C" opacity="0.4"/>
-                <path d="M 140,400 L 240,250 L 280,250 L 160,400 Z" fill="#13633C" opacity="0.4"/>
-                <path d="M 220,400 L 320,250 L 360,250 L 240,400 Z" fill="#13633C" opacity="0.4"/>
-                <path d="M 300,400 L 400,250 L 440,250 L 320,400 Z" fill="#13633C" opacity="0.4"/>
-                
-                <!-- Modern grass blades overlay (SVG Path) -->
-                <path d="M 30,350 Q 35,280 60,260 Q 40,290 35,350 Z" fill="url(#blade-grad)"/>
-                <path d="M 45,360 Q 55,270 90,250 Q 60,300 50,360 Z" fill="url(#blade-grad)" opacity="0.8"/>
-                <path d="M 10,380 Q 20,310 50,290 Q 25,330 15,380 Z" fill="url(#blade-grad)" opacity="0.7"/>
-
-                <!-- Gold lawn mower silhouette moving over a hill -->
-                <g transform="translate(260, 210) scale(0.7)">
-                  <path d="M10,30 L50,30 L55,20 L35,15 L15,15 Z" fill="url(#gold-grad)"/>
-                  <circle cx="20" cy="32" r="7" fill="#fff" stroke="url(#gold-grad)" stroke-width="2"/>
-                  <circle cx="45" cy="32" r="7" fill="#fff" stroke="url(#gold-grad)" stroke-width="2"/>
-                  <!-- handle -->
-                  <line x1="12" y1="20" x2="-10" y2="0" stroke="url(#gold-grad)" stroke-width="3" stroke-linecap="round"/>
-                </g>
-
-                <!-- Foreground Grass Details -->
-                <path d="M 420,380 Q 430,290 480,270 Q 440,320 425,380 Z" fill="url(#blade-grad)"/>
-                <path d="M 390,390 Q 405,310 440,290 Q 410,335 395,390 Z" fill="url(#blade-grad)" opacity="0.9"/>
-              </svg>
+              <img src="/hero.png" alt="Perfectly manicured green striped lawn with lawnmower at golden hour" style="width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 5/4;">
               
               <!-- Mini info badge -->
               <div class="visual-badge">

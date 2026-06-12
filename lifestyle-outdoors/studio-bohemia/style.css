@@ -134,16 +134,19 @@ h1, h2, h3, .logo {
   color: #555;
 }
 
-.hero-image-placeholder {
+.hero-image {
   width: 100%;
   aspect-ratio: 4/5;
-  background: #e3ddce;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #8c8270;
-  font-style: italic;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Services */

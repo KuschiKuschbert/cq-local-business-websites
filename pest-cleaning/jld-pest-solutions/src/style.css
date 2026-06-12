@@ -384,7 +384,8 @@ a {
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
-  padding: 24px;
+  padding: 0;
+  overflow: hidden;
   aspect-ratio: 1;
   display: flex;
   align-items: center;

@@ -328,7 +328,8 @@ a {
   position: relative;
   background-color: var(--white);
   border-radius: var(--border-radius-lg);
-  padding: 40px;
+  padding: 0;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(2, 136, 209, 0.1);
   width: 100%;

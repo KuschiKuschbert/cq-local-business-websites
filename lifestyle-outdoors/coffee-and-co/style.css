@@ -62,7 +62,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
   height: 80vh;
-  background: linear-gradient(rgba(74, 49, 37, 0.7), rgba(74, 49, 37, 0.7)), url('./public/coffee_hero.png') center/cover;
+  background: linear-gradient(rgba(74, 49, 37, 0.7), rgba(74, 49, 37, 0.7)), url('/hero.png') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -60,17 +60,13 @@
           </div>
 
           <div class="hero-graphic">
-            <div class="target-radar-container">
-              <div class="radar-line"></div>
-              <div class="radar-circle rc-1"></div>
-              <div class="radar-circle rc-2"></div>
-              <div class="radar-circle rc-3"></div>
-              <!-- Spider Icon in Center -->
-              <svg class="radar-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v4a4 4 0 0 0 8 0v-4h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/>
-                <path d="M3 6h3M3 12h3M3 18h3M21 6h-3M21 12h-3M21 18h-3"/>
-              </svg>
-              <div class="radar-alert-card">
+            <div class="target-radar-container" style="overflow: hidden; padding: 0;">
+              <img src="/hero.png" alt="Bad Bugs thermal camera inspection" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; position: absolute; top: 0; left: 0; z-index: 0;">
+              <div class="radar-line" style="z-index: 1;"></div>
+              <div class="radar-circle rc-1" style="z-index: 1;"></div>
+              <div class="radar-circle rc-2" style="z-index: 1;"></div>
+              <div class="radar-circle rc-3" style="z-index: 1;"></div>
+              <div class="radar-alert-card" style="z-index: 2;">
                 <div class="rac-header">
                   <span class="warning-badge">ALERT LEVEL: RED</span>
                   <span class="rac-time">Live Radar</span>
