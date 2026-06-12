@@ -1,416 +1,384 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Total Pest & Carpet | Lammermoor Steam Cleaning & Pest Control</title>
-    <meta name="description" content="Professional carpet cleaning and pest control services in Lammermoor and the Capricorn Coast. Calculate your steam cleaning quote instantly online!" />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header class="navbar" id="navbar">
-      <div class="container navbar-container">
-        <a href="#" class="logo-link">
-          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <span class="logo-text">TOTAL <span class="text-highlight">Pest & Carpet</span></span>
-        </a>
-
-        <nav class="nav-menu" id="nav-menu">
-          <a href="#about" class="nav-link">Our Services</a>
-          <a href="#quote-calculator" class="nav-link">Quote Calculator</a>
-          <a href="#packages" class="nav-link">Pest Combos</a>
-          <a href="#reviews" class="nav-link">Client Reviews</a>
-          <a href="#contact" class="btn btn-primary nav-btn">Claim Quote</a>
-        </nav>
-
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="bubbles-bg">
-          <div class="bubble b-1"></div>
-          <div class="bubble b-2"></div>
-          <div class="bubble b-3"></div>
-        </div>
-        <div class="container hero-container">
-          <div class="hero-content">
-            <div class="hero-tag">
-              <span class="tag-icon">✨</span>
-              <span>Lammermoor's Local Steam Specialists</span>
-            </div>
-            <h1 class="hero-title">Hygenic Steam Cleans & Barriers in Lammermoor</h1>
-            <p class="hero-subtitle">Breathe fresh air again. We extract dirt, allergens, and local pests from deep within your carpet fibers. High-grade hot water extraction + local pest barriers.</p>
-            <div class="hero-actions">
-              <a href="#quote-calculator" class="btn btn-primary btn-large">Try Quote Calculator</a>
-              <a href="#packages" class="btn btn-secondary btn-large">View Pest-Carpet Combos</a>
-            </div>
-          </div>
-
-          <div class="hero-illustration">
-            <div class="steam-machine-card">
-              <img src="/hero.png" alt="Professional steam carpet cleaning in a modern living room" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-              <div class="steam-floating-stat">
-                <span class="sfs-val">99.9%</span>
-                <span class="sfs-lbl">Allergens Extracted</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services List Section -->
-      <section class="section section-alt" id="about">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tagline">Why Lammermoor Trusts Us</span>
-            <h2 class="section-title">Deep Cleaning & Heavy Pest Barriers</h2>
-            <p class="section-subtitle">We don't just run a surface vacuum. Our rotary truck-mounted systems inject super-heated steam to sanitize carpet backing and kill pest nesting eggs.</p>
-          </div>
-
-          <div class="grid grid-3-col">
-            <div class="card service-feature-card">
-              <div class="sf-icon">🎚️</div>
-              <h3>Hot Water Extraction</h3>
-              <p>Industrial steam injection at 220°F breaks down high-traffic grime, sand, and coastal dirt deep inside carpet piles.</p>
-            </div>
-            <div class="card service-feature-card">
-              <div class="sf-icon">🛡️</div>
-              <h3>Pest Shield Infusion</h3>
-              <p>Optional non-toxic insect repellents sprayed post-steam, locking out fleas, ticks, and carpet beetles for 12 months.</p>
-            </div>
-            <div class="card service-feature-card">
-              <div class="sf-icon">🐾</div>
-              <h3>Stain & Pet Deodorisation</h3>
-              <p>Specialized eco-enzymes digest pet urine crystal deposits, removing odor compounds completely instead of masking them.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Interactive Quote Calculator Section -->
-      <section class="section" id="quote-calculator">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tagline">Estimate Pricing Instantly</span>
-            <h2 class="section-title">Lammermoor Carpet Quote Calculator</h2>
-            <p class="section-subtitle">Adjust room sliders and check additional treatment items. See pricing adjust instantly and request a slot below.</p>
-          </div>
-
-          <div class="calculator-grid">
-            <div class="calc-inputs-panel">
-              <!-- Sliders -->
-              <div class="calc-input-group">
-                <div class="input-header">
-                  <label for="num-bedrooms">Bedrooms to Steam Clean</label>
-                  <span class="val-bubble" id="val-bedrooms">3 Rooms</span>
-                </div>
-                <input type="range" id="num-bedrooms" min="0" max="6" value="3" class="slider-input">
-              </div>
-
-              <div class="calc-input-group">
-                <div class="input-header">
-                  <label for="num-living">Living / Lounge Rooms</label>
-                  <span class="val-bubble" id="val-living">1 Room</span>
-                </div>
-                <input type="range" id="num-living" min="0" max="4" value="1" class="slider-input">
-              </div>
-
-              <!-- Checkbox Toggles -->
-              <div class="calc-input-group">
-                <label class="group-inner-label">Additional Areas & Treatments</label>
-                <div class="calc-checkbox-stack">
-                  <div class="calc-check-card" data-addon="hallway" id="add-hallway">
-                    <span class="calc-check-indicator"></span>
-                    <div>
-                      <strong>Hallways ($20)</strong>
-                      <p>Full length hall steam cleaning</p>
-                    </div>
-                  </div>
-
-                  <div class="calc-check-card" data-addon="stairs" id="add-stairs">
-                    <span class="calc-check-indicator"></span>
-                    <div>
-                      <strong>Flight of Stairs ($45)</strong>
-                      <p>Up to 15 step treads steam extraction</p>
-                    </div>
-                  </div>
-
-                  <div class="calc-check-card" data-addon="sanitiser" id="add-sanitiser">
-                    <span class="calc-check-indicator"></span>
-                    <div>
-                      <strong>Deluxe Sanitisation & Deodoriser ($30)</strong>
-                      <p>Anti-bacterial steam flush, extracts mold spores</p>
-                    </div>
-                  </div>
-
-                  <div class="calc-check-card" data-addon="flea-pest" id="add-flea-pest">
-                    <span class="calc-check-indicator"></span>
-                    <div>
-                      <strong>End-of-Lease Wasp & Flea Spray ($90)</strong>
-                      <p>Mandatory spray matching real estate checklists</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Price Output Card -->
-            <div class="calc-output-panel">
-              <div class="quote-preview-card">
-                <div class="qp-badge">Lammermoor Best Quote</div>
-                <h3 class="qp-title">Your Carpet & Pest Quote</h3>
-                
-                <div class="qp-price-box">
-                  <span class="qp-currency">$</span>
-                  <span class="qp-value" id="calc-total">210</span>
-                </div>
-                
-                <p class="qp-desc">Estimated price based on room sizes and selected treatment upgrades. No hidden travel surcharges in Lammermoor area.</p>
-
-                <div class="qp-breakdown" id="quote-breakdown-list">
-                  <!-- JS generated -->
-                </div>
-
-                <a href="#contact" class="btn btn-primary btn-full-width" id="claim-quote-btn">Secure Quote & Book Slot</a>
-                <span class="qp-guarantee">💧 100% Streak-Free and Dry within 4 Hours Guarantee</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Combo Packages -->
-      <section class="section section-alt" id="packages">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tagline">Integrated Pest & Steam Clean Packages</span>
-            <h2 class="section-title">Double Service, Mega Savings</h2>
-            <p class="section-subtitle">Save up to 25% by combining your carpet cleaning with a general residential pest barrier treatment.</p>
-          </div>
-
-          <div class="grid grid-3-col">
-            <!-- Package 1 -->
-            <div class="card package-card">
-              <h4>Move-Out Clean & Spray</h4>
-              <p class="pkg-subtitle">Best for departing tenants</p>
-              <div class="pkg-price">$260</div>
-              <ul class="pkg-list">
-                <li>✨ 3 Bedrooms Steam Cleaned</li>
-                <li>✨ Hallway steam treatment</li>
-                <li>✨ Flea & Wasp perimeter spray</li>
-                <li>✨ Real Estate receipt signed</li>
-              </ul>
-              <a href="#contact" class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="Move-Out Package ($260)">Book Package</a>
-            </div>
-
-            <!-- Package 2 -->
-            <div class="card package-card highlighted">
-              <div class="pkg-banner">Most Popular</div>
-              <h4>Deluxe Home Clean & Shield</h4>
-              <p class="pkg-subtitle">Complete yearly reset</p>
-              <div class="pkg-price">$380</div>
-              <ul class="pkg-list">
-                <li>✨ 4 Bedrooms Steam Cleaned</li>
-                <li>✨ Lounge & Dining steam cleaned</li>
-                <li>✨ Deluxe Sanitizer infusion</li>
-                <li>✨ General External Pest Barrier</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary btn-full-width pkg-select" data-pkg-name="Deluxe Home Package ($380)">Book Package</a>
-            </div>
-
-            <!-- Package 3 -->
-            <div class="card package-card">
-              <h4>All-In Protection Barrier</h4>
-              <p class="pkg-subtitle">The ultimate defense plan</p>
-              <div class="pkg-price">$490</div>
-              <ul class="pkg-list">
-                <li>✨ 4 Bedrooms Steam Cleaned</li>
-                <li>✨ Lounge room & Hallway</li>
-                <li>✨ Full Interior + Exterior Pest barrier</li>
-                <li>✨ Subfloor rodent baiting stations</li>
-              </ul>
-              <a href="#contact" class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="All-In Protection Package ($490)">Book Package</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Client Reviews -->
-      <section class="section" id="reviews">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tagline">Satisfied Homeowners</span>
-            <h2 class="section-title">Lammermoor Clean testimonials</h2>
-            <p class="section-subtitle">What your Capricorn Coast neighbors say about our steam cleaners.</p>
-          </div>
-
-          <div class="grid grid-3-col">
-            <div class="card review-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <p>"Our carpet had heavy beach sand and toddler paint stains. Total Pest & Carpet made them look brand new in under an hour. Dry time was super quick!"</p>
-              <h5>Jane W. - Lammermoor</h5>
-            </div>
-            <div class="card review-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <p>"Excellent service. Used them for our tenancy end-of-lease. They completed the carpet steam and did the flea spray. Real estate agent signed off instantly. Simple and affordable."</p>
-              <h5>Thomas K. - Lammermoor</h5>
-            </div>
-            <div class="card review-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <p>"The quote calculator was spot-on. No additional charges. They were prompt, friendly, and even gave us free advice on maintaining the carpet piles."</p>
-              <h5>Clara P. - Lammermoor</h5>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Booking / Contact Form -->
-      <section class="section section-alt" id="contact">
-        <div class="container">
-          <div class="booking-grid">
-            <div class="booking-left">
-              <span class="section-tagline">Hassle-Free Booking</span>
-              <h2>Claim Your Steam Spot</h2>
-              <p>Ready to refresh your home carpets? Fill out your details. We will lock in your date preference and dispatch our local team.</p>
-              
-              <!-- Trust Badges -->
-              <div class="trust-badges-proposal" style="margin-top: 2rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-                <div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
-                  <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">👮</div>
-                  <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Police Checked</h4>
-                  <p style="font-size: 0.7rem; color: #718096;">All staff certified & cleared.</p>
-                </div>
-                <div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
-                  <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🛡️</div>
-                  <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">$20M Insured</h4>
-                  <p style="font-size: 0.7rem; color: #718096;">Comprehensive public liability.</p>
-                </div>
-                <div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
-                  <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💰</div>
-                  <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Fixed Price</h4>
-                  <p style="font-size: 0.7rem; color: #718096;">Online quotes honored on-site.</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <p>📍 <strong>Local Office:</strong> Lammermoor Beach, QLD 4703</p>
-                <p>📞 <strong>Phone:</strong> 0400 STEAM ME (0400 783 266)</p>
-              </div>
-            </div>
- 
-            <div class="card form-card">
-              <form id="quote-form">
-                <div class="form-group">
-                  <label for="q-name">Full Name *</label>
-                  <input type="text" id="q-name" required placeholder="e.g. John Miller" class="form-input">
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="q-email">Email Address *</label>
-                    <input type="email" id="q-email" required placeholder="name@example.com" class="form-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="q-phone">Phone Number *</label>
-                    <input type="tel" id="q-phone" required placeholder="0400 000 000" class="form-input">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="q-suburb">Capricorn Suburb *</label>
-                    <select id="q-suburb" class="form-input" required>
-                      <option value="Lammermoor">Lammermoor</option>
-                      <option value="Yeppoon">Yeppoon</option>
-                      <option value="Cooee Bay">Cooee Bay</option>
-                      <option value="Taroomball">Taroomball</option>
-                      <option value="Emu Park">Emu Park</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="q-package">Selected Program</label>
-                    <input type="text" id="q-package" value="Custom Calculator Quote" readonly class="form-input read-only-input">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="q-notes">Additional Cleaning & Booking Instructions</label>
-                  <textarea id="q-notes" placeholder="Specify key stains or date preferences..." rows="3" class="form-input"></textarea>
-                </div>
-                
-                <div class="form-group checkbox-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem; margin-top: 1rem;">
-                  <input type="checkbox" required id="ack-eco-pricing" style="margin-top: 4px; cursor: pointer; accent-color: #0288D1;">
-                  <span style="font-size: 0.85rem; color: #718096; cursor: pointer; text-align: left;">I verify the room layout details and acknowledge the upfront quote promise and non-toxic cleanup guarantee.</span>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-full-width" id="btn-submit-quote">Request Booking With This Quote</button>
-                <div class="alert-success hidden" id="quote-success-message">
+<head>
+<meta charset="utf-8"/>
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;💧&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Total Pest &amp; Carpet | Lammermoor Steam Cleaning &amp; Pest Control</title>
+<meta content="Professional carpet cleaning and pest control services in Lammermoor and the Capricorn Coast. Calculate your steam cleaning quote instantly online!" name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar" id="navbar">
+<div class="container navbar-container">
+<a class="logo-link" href="#">
+<svg class="logo-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+</svg>
+<span class="logo-text">TOTAL <span class="text-highlight">Pest &amp; Carpet</span></span>
+</a>
+<nav class="nav-menu" id="nav-menu">
+<a class="nav-link" href="#about">Our Services</a>
+<a class="nav-link" href="#quote-calculator">Quote Calculator</a>
+<a class="nav-link" href="#packages">Pest Combos</a>
+<a class="nav-link" href="#reviews">Client Reviews</a>
+<a class="btn btn-primary nav-btn" href="#contact">Claim Quote</a>
+</nav>
+<button aria-label="Toggle Menu" class="mobile-toggle" id="mobile-toggle">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero-section">
+<div class="bubbles-bg">
+<div class="bubble b-1"></div>
+<div class="bubble b-2"></div>
+<div class="bubble b-3"></div>
+</div>
+<div class="container hero-container">
+<div class="hero-content">
+<div class="hero-tag">
+<span class="tag-icon">✨</span>
+<span>Lammermoor's Local Steam Specialists</span>
+</div>
+<h1 class="hero-title">Hygenic Steam Cleans &amp; Barriers in Lammermoor</h1>
+<p class="hero-subtitle">Breathe fresh air again. We extract dirt, allergens, and local pests from deep within your carpet fibers. High-grade hot water extraction + local pest barriers.</p>
+<div class="hero-actions">
+<a class="btn btn-primary btn-large" href="#quote-calculator">Try Quote Calculator</a>
+<a class="btn btn-secondary btn-large" href="#packages">View Pest-Carpet Combos</a>
+</div>
+</div>
+<div class="hero-illustration">
+<div class="steam-machine-card">
+<img alt="Professional steam carpet cleaning in a modern living room" decoding="async" fetchpriority="high" src="/hero.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;"/>
+<div class="steam-floating-stat">
+<span class="sfs-val">99.9%</span>
+<span class="sfs-lbl">Allergens Extracted</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services List Section -->
+<section class="section section-alt" id="about">
+<div class="container">
+<div class="section-header">
+<span class="section-tagline">Why Lammermoor Trusts Us</span>
+<h2 class="section-title">Deep Cleaning &amp; Heavy Pest Barriers</h2>
+<p class="section-subtitle">We don't just run a surface vacuum. Our rotary truck-mounted systems inject super-heated steam to sanitize carpet backing and kill pest nesting eggs.</p>
+</div>
+<div class="grid grid-3-col">
+<div class="card service-feature-card">
+<div class="sf-icon">🎚️</div>
+<h3>Hot Water Extraction</h3>
+<p>Industrial steam injection at 220°F breaks down high-traffic grime, sand, and coastal dirt deep inside carpet piles.</p>
+</div>
+<div class="card service-feature-card">
+<div class="sf-icon">🛡️</div>
+<h3>Pest Shield Infusion</h3>
+<p>Optional non-toxic insect repellents sprayed post-steam, locking out fleas, ticks, and carpet beetles for 12 months.</p>
+</div>
+<div class="card service-feature-card">
+<div class="sf-icon">🐾</div>
+<h3>Stain &amp; Pet Deodorisation</h3>
+<p>Specialized eco-enzymes digest pet urine crystal deposits, removing odor compounds completely instead of masking them.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quote Calculator Section -->
+<section class="section" id="quote-calculator">
+<div class="container">
+<div class="section-header">
+<span class="section-tagline">Estimate Pricing Instantly</span>
+<h2 class="section-title">Lammermoor Carpet Quote Calculator</h2>
+<p class="section-subtitle">Adjust room sliders and check additional treatment items. See pricing adjust instantly and request a slot below.</p>
+</div>
+<div class="calculator-grid">
+<div class="calc-inputs-panel">
+<!-- Sliders -->
+<div class="calc-input-group">
+<div class="input-header">
+<label for="num-bedrooms">Bedrooms to Steam Clean</label>
+<span class="val-bubble" id="val-bedrooms">3 Rooms</span>
+</div>
+<input class="slider-input" id="num-bedrooms" max="6" min="0" type="range" value="3"/>
+</div>
+<div class="calc-input-group">
+<div class="input-header">
+<label for="num-living">Living / Lounge Rooms</label>
+<span class="val-bubble" id="val-living">1 Room</span>
+</div>
+<input class="slider-input" id="num-living" max="4" min="0" type="range" value="1"/>
+</div>
+<!-- Checkbox Toggles -->
+<div class="calc-input-group">
+<label class="group-inner-label">Additional Areas &amp; Treatments</label>
+<div class="calc-checkbox-stack">
+<div class="calc-check-card" data-addon="hallway" id="add-hallway">
+<span class="calc-check-indicator"></span>
+<div>
+<strong>Hallways ($20)</strong>
+<p>Full length hall steam cleaning</p>
+</div>
+</div>
+<div class="calc-check-card" data-addon="stairs" id="add-stairs">
+<span class="calc-check-indicator"></span>
+<div>
+<strong>Flight of Stairs ($45)</strong>
+<p>Up to 15 step treads steam extraction</p>
+</div>
+</div>
+<div class="calc-check-card" data-addon="sanitiser" id="add-sanitiser">
+<span class="calc-check-indicator"></span>
+<div>
+<strong>Deluxe Sanitisation &amp; Deodoriser ($30)</strong>
+<p>Anti-bacterial steam flush, extracts mold spores</p>
+</div>
+</div>
+<div class="calc-check-card" data-addon="flea-pest" id="add-flea-pest">
+<span class="calc-check-indicator"></span>
+<div>
+<strong>End-of-Lease Wasp &amp; Flea Spray ($90)</strong>
+<p>Mandatory spray matching real estate checklists</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Output Card -->
+<div class="calc-output-panel">
+<div class="quote-preview-card">
+<div class="qp-badge">Lammermoor Best Quote</div>
+<h3 class="qp-title">Your Carpet &amp; Pest Quote</h3>
+<div class="qp-price-box">
+<span class="qp-currency">$</span>
+<span class="qp-value" id="calc-total">210</span>
+</div>
+<p class="qp-desc">Estimated price based on room sizes and selected treatment upgrades. No hidden travel surcharges in Lammermoor area.</p>
+<div class="qp-breakdown" id="quote-breakdown-list">
+<!-- JS generated -->
+</div>
+<a class="btn btn-primary btn-full-width" href="#contact" id="claim-quote-btn">Secure Quote &amp; Book Slot</a>
+<span class="qp-guarantee">💧 100% Streak-Free and Dry within 4 Hours Guarantee</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Combo Packages -->
+<section class="section section-alt" id="packages">
+<div class="container">
+<div class="section-header">
+<span class="section-tagline">Integrated Pest &amp; Steam Clean Packages</span>
+<h2 class="section-title">Double Service, Mega Savings</h2>
+<p class="section-subtitle">Save up to 25% by combining your carpet cleaning with a general residential pest barrier treatment.</p>
+</div>
+<div class="grid grid-3-col">
+<!-- Package 1 -->
+<div class="card package-card">
+<h4>Move-Out Clean &amp; Spray</h4>
+<p class="pkg-subtitle">Best for departing tenants</p>
+<div class="pkg-price">$260</div>
+<ul class="pkg-list">
+<li>✨ 3 Bedrooms Steam Cleaned</li>
+<li>✨ Hallway steam treatment</li>
+<li>✨ Flea &amp; Wasp perimeter spray</li>
+<li>✨ Real Estate receipt signed</li>
+</ul>
+<a class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="Move-Out Package ($260)" href="#contact">Book Package</a>
+</div>
+<!-- Package 2 -->
+<div class="card package-card highlighted">
+<div class="pkg-banner">Most Popular</div>
+<h4>Deluxe Home Clean &amp; Shield</h4>
+<p class="pkg-subtitle">Complete yearly reset</p>
+<div class="pkg-price">$380</div>
+<ul class="pkg-list">
+<li>✨ 4 Bedrooms Steam Cleaned</li>
+<li>✨ Lounge &amp; Dining steam cleaned</li>
+<li>✨ Deluxe Sanitizer infusion</li>
+<li>✨ General External Pest Barrier</li>
+</ul>
+<a class="btn btn-primary btn-full-width pkg-select" data-pkg-name="Deluxe Home Package ($380)" href="#contact">Book Package</a>
+</div>
+<!-- Package 3 -->
+<div class="card package-card">
+<h4>All-In Protection Barrier</h4>
+<p class="pkg-subtitle">The ultimate defense plan</p>
+<div class="pkg-price">$490</div>
+<ul class="pkg-list">
+<li>✨ 4 Bedrooms Steam Cleaned</li>
+<li>✨ Lounge room &amp; Hallway</li>
+<li>✨ Full Interior + Exterior Pest barrier</li>
+<li>✨ Subfloor rodent baiting stations</li>
+</ul>
+<a class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="All-In Protection Package ($490)" href="#contact">Book Package</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Client Reviews -->
+<section class="section" id="reviews">
+<div class="container">
+<div class="section-header">
+<span class="section-tagline">Satisfied Homeowners</span>
+<h2 class="section-title">Lammermoor Clean testimonials</h2>
+<p class="section-subtitle">What your Capricorn Coast neighbors say about our steam cleaners.</p>
+</div>
+<div class="grid grid-3-col">
+<div class="card review-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Our carpet had heavy beach sand and toddler paint stains. Total Pest &amp; Carpet made them look brand new in under an hour. Dry time was super quick!"</p>
+<h5>Jane W. - Lammermoor</h5>
+</div>
+<div class="card review-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Excellent service. Used them for our tenancy end-of-lease. They completed the carpet steam and did the flea spray. Real estate agent signed off instantly. Simple and affordable."</p>
+<h5>Thomas K. - Lammermoor</h5>
+</div>
+<div class="card review-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"The quote calculator was spot-on. No additional charges. They were prompt, friendly, and even gave us free advice on maintaining the carpet piles."</p>
+<h5>Clara P. - Lammermoor</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking / Contact Form -->
+<section class="section section-alt" id="contact">
+<div class="container">
+<div class="booking-grid">
+<div class="booking-left">
+<span class="section-tagline">Hassle-Free Booking</span>
+<h2>Claim Your Steam Spot</h2>
+<p>Ready to refresh your home carpets? Fill out your details. We will lock in your date preference and dispatch our local team.</p>
+<!-- Trust Badges -->
+<div class="trust-badges-proposal" style="margin-top: 2rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div style="font-size: 1.5rem; margin-bottom: 0.25rem;">👮</div>
+<h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Police Checked</h4>
+<p style="font-size: 0.7rem; color: #718096;">All staff certified &amp; cleared.</p>
+</div>
+<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🛡️</div>
+<h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">$20M Insured</h4>
+<p style="font-size: 0.7rem; color: #718096;">Comprehensive public liability.</p>
+</div>
+<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💰</div>
+<h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Fixed Price</h4>
+<p style="font-size: 0.7rem; color: #718096;">Online quotes honored on-site.</p>
+</div>
+</div>
+<div class="contact-card">
+<p>📍 <strong>Local Office:</strong> Lammermoor Beach, QLD 4703</p>
+<p>📞 <strong>Phone:</strong> 0400 STEAM ME (0400 783 266)</p>
+</div>
+</div>
+<div class="card form-card">
+<form id="quote-form">
+<div class="form-group">
+<label for="q-name">Full Name *</label>
+<input class="form-input" id="q-name" placeholder="e.g. John Miller" required="" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="q-email">Email Address *</label>
+<input autocomplete="name" class="form-input" id="q-email" placeholder="name@example.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="q-phone">Phone Number *</label>
+<input class="form-input" id="q-phone" placeholder="0400 000 000" required="" type="tel"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="q-suburb">Capricorn Suburb *</label>
+<select class="form-input" id="q-suburb" required="">
+<option value="Lammermoor">Lammermoor</option>
+<option value="Yeppoon">Yeppoon</option>
+<option value="Cooee Bay">Cooee Bay</option>
+<option value="Taroomball">Taroomball</option>
+<option value="Emu Park">Emu Park</option>
+</select>
+</div>
+<div class="form-group">
+<label for="q-package">Selected Program</label>
+<input class="form-input read-only-input" id="q-package" readonly="" type="text" value="Custom Calculator Quote"/>
+</div>
+</div>
+<div class="form-group">
+<label for="q-notes">Additional Cleaning &amp; Booking Instructions</label>
+<textarea class="form-input" id="q-notes" placeholder="Specify key stains or date preferences..." rows="3"></textarea>
+</div>
+<div class="form-group checkbox-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: row; align-items: flex-start; gap: 0.5rem; margin-top: 1rem;">
+<input id="ack-eco-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: #0288D1;" type="checkbox"/>
+<label for="ack-eco-pricing" style="font-size: 0.85rem; color: #718096; cursor: pointer; text-align: left;">I verify the room layout details and acknowledge the upfront quote promise and non-toxic cleanup guarantee.</label>
+</div>
+<button class="btn btn-primary btn-full-width" id="btn-submit-quote" type="submit">Request Booking With This Quote</button>
+<div class="alert-success hidden" id="quote-success-message">
                   💧 Thank you! Your booking estimate is confirmed. We will call you within 1 hour to verify the schedule.
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo-link">
-            <span>TOTAL <span class="text-highlight">Pest & Carpet</span></span>
-          </div>
-          <p>Yeppoon & Lammermoor's premium steam cleaners providing child-safe, non-toxic sanitisation and pest protection barriers.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Steam Services</h4>
-          <ul>
-            <li><a href="#quote-calculator">Bedroom Steam Clean</a></li>
-            <li><a href="#quote-calculator">Living Room Deodoriser</a></li>
-            <li><a href="#quote-calculator">Stairs Extraction</a></li>
-            <li><a href="#quote-calculator">Anti-Allergen Flush</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Pest Defenses</h4>
-          <ul>
-            <li><a href="#packages">Flea end-of-lease spray</a></li>
-            <li><a href="#packages">Spider cavity barrier</a></li>
-            <li><a href="#packages">Cockroach kitchen control</a></li>
-            <li><a href="#packages">Ant colony treatment</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Accreditations</h4>
-          <ul>
-            <li><span>Institute of Inspection Certified (IICRC)</span></li>
-            <li><span>Public Liability $20M Insurance</span></li>
-            <li><span>Pest Licence # QLD-772834</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p>&copy; 2026 Total Pest & Carpet. Serving Lammermoor Central QLD.</p>
-        </div>
-      </div>
-    
-    <!-- Social Media Links (auto-generated) -->
-    <div class="social-links-bar" style="text-align:center;padding:0.75rem 1rem 0.5rem;border-top:1px solid rgba(255,255,255,0.12);margin-top:0.75rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.75rem;">
-      <span style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;opacity:0.65;font-style:italic;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> No social media profiles found for this business.</span>
-    </div>
-  </footer>
-
-    <script type="module" src="/src/main.js"></script>
-  </body>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<div class="logo-link">
+<span>TOTAL <span class="text-highlight">Pest &amp; Carpet</span></span>
+</div>
+<p>Yeppoon &amp; Lammermoor's premium steam cleaners providing child-safe, non-toxic sanitisation and pest protection barriers.</p>
+</div>
+<div class="footer-links">
+<h4>Steam Services</h4>
+<ul>
+<li><a href="#quote-calculator">Bedroom Steam Clean</a></li>
+<li><a href="#quote-calculator">Living Room Deodoriser</a></li>
+<li><a href="#quote-calculator">Stairs Extraction</a></li>
+<li><a href="#quote-calculator">Anti-Allergen Flush</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h4>Pest Defenses</h4>
+<ul>
+<li><a href="#packages">Flea end-of-lease spray</a></li>
+<li><a href="#packages">Spider cavity barrier</a></li>
+<li><a href="#packages">Cockroach kitchen control</a></li>
+<li><a href="#packages">Ant colony treatment</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h4>Accreditations</h4>
+<ul>
+<li><span>Institute of Inspection Certified (IICRC)</span></li>
+<li><span>Public Liability $20M Insurance</span></li>
+<li><span>Pest Licence # QLD-772834</span></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container">
+<p>© 2026 Total Pest &amp; Carpet. Serving Lammermoor Central QLD.</p>
+</div>
+</div>
+<!-- Social Media Links (auto-generated) -->
+<div class="social-links-bar" style="text-align:center;padding:0.75rem 1rem 0.5rem;border-top:1px solid rgba(255,255,255,0.12);margin-top:0.75rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.75rem;">
+<span style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;opacity:0.65;font-style:italic;"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg> No social media profiles found for this business.</span>
+</div>
+</footer>
+<script src="/src/main.js" type="module"></script>
+</body>
 </html>
