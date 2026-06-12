@@ -99,7 +99,8 @@ body {
 /* Hero Section */
 .hero {
   padding: 100px 0 80px 0;
-  background: linear-gradient(135deg, var(--color-navy) 0%, #1c355e 100%);
+  background: linear-gradient(135deg, rgba(14, 27, 48, 0.75) 0%, rgba(28, 53, 94, 0.9) 100%), url('/hero.png') no-repeat center center;
+  background-size: cover;
   color: #ffffff;
   text-align: center;
   position: relative;
