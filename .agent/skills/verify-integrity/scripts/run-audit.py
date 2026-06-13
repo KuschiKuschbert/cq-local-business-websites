@@ -60,6 +60,7 @@ class WebAuditParser(HTMLParser):
         self.ids = []
         self.form_elements_without_id = []
         self.all_text = []
+        self.has_main_js = False
 
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
@@ -76,6 +77,10 @@ class WebAuditParser(HTMLParser):
         # Track IDs
         if "id" in attrs_dict:
             self.ids.append((tag, attrs_dict["id"]))
+
+        # Track script loading main.js
+        if tag == "script" and "src" in attrs_dict and "main.js" in attrs_dict["src"]:
+            self.has_main_js = True
 
         # Track Form elements missing IDs or names
         if tag in ["form", "input", "select", "textarea"]:
@@ -161,6 +166,10 @@ def audit_site(dir_path, parent_name, folder_name):
     elif len(title) < 8:
         warnings.append(f"Title is very short: '{title}'")
 
+    # 1.1 Script tag verification
+    if not parser.has_main_js:
+        errors.append("Missing <script> tag importing main.js (Vite entry point).")
+
     # 2. H1 Count verification
     if parser.h1_count == 0:
         errors.append("No <h1> element found on page (SEO violation).")
@@ -237,7 +246,7 @@ def audit_site(dir_path, parent_name, folder_name):
     }
 
 def main():
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
     print(f"\n🔍 Running HIVE Web Integrity Audit across mockups in workspace...")
     print(f"   Workspace root: {base_dir}\n")
 

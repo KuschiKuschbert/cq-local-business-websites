@@ -7,6 +7,8 @@ This file sets command run rules for coding agents to maintain the repository in
 - `./build-all.sh` - Safe shell compiler.
 - `git status` / `git diff` - Code change review commands.
 - `npm install` / `npm run dev` - Locally testing Vite folders.
+- `python3 .agent/skills/verify-integrity/scripts/run-audit.py` / `bash .agent/skills/verify-integrity/scripts/assert-state.sh` - Codebase compliance audit.
+- `python3 .agent/skills/audit-prospects/scripts/run-triage.py` / `bash .agent/skills/audit-prospects/scripts/assert-state.sh` - Prospect triage and candidate listing.
 
 ## Blocked Commands
 - Never run force push (`git push -f`).

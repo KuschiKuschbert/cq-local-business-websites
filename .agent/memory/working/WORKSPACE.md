@@ -3,37 +3,37 @@
 Tracks our active website mockups across 5 core business niches:
 
 ## 1. Catering & Events (`catering-events/`)
-- [ ] `creative-cater/` - Creative Cater Yeppoon
-- [ ] `dunlop-catering/` - Dunlop Catering
-- [ ] `evolution-catering/` - Evolution Catering
-- [ ] `tasteful-creations/` - Tasteful Creations
+- [x] `creative-cater/` - Creative Cater Yeppoon (Modern website built!)
+- [x] `dunlop-catering/` - Dunlop Catering (Modern website built!)
+- [x] `evolution-catering/` - Evolution Catering (Modern website built!)
+- [x] `tasteful-creations/` - Tasteful Creations (Modern website built!)
 
 ## 2. Lifestyle & Outdoors (`lifestyle-outdoors/`)
-- [ ] `coffee-and-co/` - Coffee & Co Café
-- [ ] `studio-bohemia/` - Studio Bohemia Salon
-- [ ] `the-lawn-ranger/` - The Lawn Ranger
-- [ ] `fantastic-landscaping/` - Fantastic Landscaping
-- [ ] `mal-earthworks/` - Mal Earthworks
+- [x] `coffee-and-co/` - Coffee & Co Café (Modern website built!)
+- [x] `studio-bohemia/` - Studio Bohemia Salon (Modern website built!)
+- [x] `the-lawn-ranger/` - The Lawn Ranger (Modern website built!)
+- [x] `fantastic-landscaping/` - Fantastic Landscaping (Modern website built!)
+- [x] `mal-earthworks/` - Mal Earthworks (Modern website built!)
 
 ## 3. Trades & Mechanical (`trades-mechanical/`)
-- [ ] `budget-electrical-cq/` - Budget Electrical CQ
-- [ ] `fg-mechanical/` - FG Mechanical
-- [ ] `leons-dingo-hire/` - Leon's Dingo Hire
-- [ ] `richardson-motors/` - Richardson Motors
+- [x] `budget-electrical-cq/` - Budget Electrical CQ (Modern website built!)
+- [x] `fg-mechanical/` - FG Mechanical (Modern website built!)
+- [x] `leons-dingo-hire/` - Leon's Dingo Hire (Modern website built!)
+- [x] `richardson-motors/` - Richardson Motors (Modern website built!)
 
 ## 4. Plumbing & Gas (`plumbing-gas/`)
-- [ ] `bkk-plumbing/` - BKK Plumbing
-- [ ] `craig-hill-plumbing/` - Craig Hill Plumbing
-- [ ] `grant-goltz-plumbing/` - Grant Goltz Plumbing
-- [ ] `keppel-bay-plumbing/` - Keppel Bay Plumbing (Modern website built!)
-- [ ] `mar-lin-plumbing/` - Mar-Lin Plumbing
-- [ ] `toons-plumbing/` - Toons Plumbing
-- [ ] `truflow-plumbing/` - Truflow Plumbing
+- [x] `bkk-plumbing/` - BKK Plumbing (Modern website built!)
+- [x] `craig-hill-plumbing/` - Craig Hill Plumbing (Modern website built!)
+- [x] `grant-goltz-plumbing/` - Grant Goltz Plumbing (Modern website built!)
+- [x] `keppel-bay-plumbing/` - Keppel Bay Plumbing (Modern website built!)
+- [x] `mar-lin-plumbing/` - Mar-Lin Plumbing (Modern website built!)
+- [x] `toons-plumbing/` - Toons Plumbing (Modern website built!)
+- [x] `truflow-plumbing/` - Truflow Plumbing (Modern website built!)
 
 ## 5. Pest & Cleaning (`pest-cleaning/`)
-- [ ] `bad-bugs-pest-control/` - Bad Bugs Pest Control
-- [ ] `bonds-termite-management/` - Bonds Termite Management
-- [ ] `jld-pest-solutions/` - JLD Pest Solutions
-- [ ] `sanclassic-cleaning/` - SanClassic Cleaning
-- [ ] `total-pest-carpet/` - Total Pest & Carpet
-- [ ] `yeppoon-carpet-pest/` - Yeppoon Carpet & Pest
+- [x] `bad-bugs-pest-control/` - Bad Bugs Pest Control (Modern website built!)
+- [x] `bonds-termite-management/` - Bonds Termite Management (Modern website built!)
+- [x] `jld-pest-solutions/` - JLD Pest Solutions (Modern website built!)
+- [x] `sanclassic-cleaning/` - SanClassic Cleaning (Modern website built!)
+- [x] `total-pest-carpet/` - Total Pest & Carpet (Modern website built!)
+- [x] `yeppoon-carpet-pest/` - Yeppoon Carpet & Pest (Modern website built!)
