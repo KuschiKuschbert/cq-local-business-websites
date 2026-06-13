@@ -1,120 +1,304 @@
-# Central Queensland Local Business Outreach & Pitch Guide
+# Central Queensland Local Business Outreach Playbook
 
-This guide details custom pricing, niche value propositions, trust-based pitch hooks, and templates for **all 26 local businesses** in your outreach pipeline.
+This guide is for warm, local, walk-in-first outreach for the 26 completed Central Queensland website mockups in this repo. The offer is simple: a custom modern website maintained for the business on a **$0 upfront, flat monthly fee** model.
 
-All pitches leverage the high-converting **"$0 Upfront, Flat Monthly Fee"** model. They are customized around the exact customer trust and guarantee features we added to each codebase to solve real review pain points.
+Use the mockups honestly. Say they are custom prototypes you built to show what is possible, not approved sites, replacement sites, or guaranteed revenue machines.
+
+Primary channel: **walk-ins and owner conversations**. Email is a secondary follow-up channel and must stay compliance-safe under Australian spam rules: use a reasonable documented contact basis, identify yourself clearly, include contact details, include an unsubscribe option, and never use harvested lists. Reference: https://www.acma.gov.au/avoid-sending-spam
 
 ---
 
-## 1. Quick Pricing & Affordability Matrix
+## 1. Pricing & One-Job ROI Matrix
 
-| Business | Monthly Tier | Niche Category | Focus / Trust Hook Built In | The "One Job" ROI Hook |
+| Business | Monthly Tier | Niche Category | Built-In Trust / Conversion Hook | Simple ROI Line |
 | :--- | :--- | :--- | :--- | :--- |
-| **Coffee & Co** | **$199 / mo** | Café & Food | Queue-skip pre-orders, dietary filters | **5 extra coffees per day** covers the month. |
-| **Studio Bohemia** | **$199 / mo** | Hair & Beauty | Priority cancellation waitlist booking | **2 curly haircuts** (at $100-$150 each) cover the month. |
-| **The Lawn Ranger** | **$199 / mo** | Lawn Care | Closed-gate guarantee, rain-delay notices | **3-4 yard cuts** or garden maintenance sessions. |
-| **Tasteful Creations** | **$199 / mo** | Dessert Hire | Custom cake flavor designer, hire packages | **1 dessert wall hire** or custom cake order. |
-| **Budget Electrical CQ** | **$249 / mo** | Electricians | $99 flat-rate callout, clean worksite badge | **1 switchboard upgrade** or minor residential job. |
-| **FG Mechanical** | **$249 / mo** | Mechanics | Diagnostic transparency, $99 check specials | **1 logbook service** or brake pad installation. |
-| **Richardson Motors** | **$249 / mo** | Auto Sales & Serv | Car clean delivery checklist, transparent checkouts | **1 engine repair** or pre-purchase diagnostic. |
-| **SanClassic Cleaning** | **$249 / mo** | Cleaners | Police check badge, $10M liability badge | **1 fortnightly house clean** or deep move-out scrub. |
-| **Dunlop Catering** | **$249 / mo** | Spit Roast / Event | Crowd guest count slider, 4hr response badge | **1 small party spit roast booking** (30+ guests). |
-| **Evolution Catering** | **$249 / mo** | Corporate Caterer | Dietary filters, corporate invoice request card | **1 office lunch delivery contract** pays for the year. |
-| **BKK Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + $99 diagnostics | **1 emergency drainage unblocking** covers the month. |
-| **Grant Goltz Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + $99 call-out | **1 tap replacement** or residential service call. |
-| **Mar-Lin Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + traditional focus | **1 pipe leak repair** or gas safety check. |
-| **Craig Hill Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + drainage camera | **1 sewer line camera diagnostic** booking. |
-| **Truflow Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + gas heating focus | **1 gas hot water replacement** covers the whole year. |
-| **Toons Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + estimator wizard | **1 domestic sewer repair** or backflow test. |
-| **Keppel Bay Plumbing** | **$249 / mo** | Plumbers | "On-Time or We Pay You $50" + emergency wizard | **1 burst pipe repair** or tapware replacement. |
-| **JLD Pest Solutions** | **$249 / mo** | Pest Control | Police check, $20M liability badge, price lock | **1 standard residential spider/cockroach spray**. |
-| **Bad Bugs Pest Control** | **$249 / mo** | Pest Control | Threat identifier, police check, price lock badge | **1 commercial pest treatment contract** covers the month. |
-| **Total Pest & Carpet** | **$249 / mo** | Pest Control | Steam cleaner calculator, police checks, price lock | **1 combined carpet steam clean & flea spray** booking. |
-| **Yeppoon Carpet & Pest** | **$249 / mo** | Pest Control | Booking calendar, police checks, price lock badge | **1 lease-end pest spray & carpet clean** covers the month. |
-| **Leon's Dingo Hire** | **$249 / mo** | Plant Hire | Dynamic operator wet/dry rate card, weight limits | **1 weekend Dingo loader wet-hire job** (4 hours). |
-| **Bonds Termite Mgmt** | **$299 / mo** | Specialty Pest | Termite risk wizard, police check, price lock | **1 pre-construction termite barrier installation**. |
-| **Fantastic Landscaping** | **$299 / mo** | Landscaping | Pristine site guarantee, priority design waitlist | **1 conceptual design plan** or initial stone terrace consult. |
-| **Mal Earthworks** | **$299 / mo** | Excavation | $0 travel zone policy, BYDA utility checks, access | **1 driveway preparation** or shed pad excavation. |
+| **Coffee & Co** | **$199 / mo** | Cafe & Food | Queue-skip pre-orders, dietary filters | 5 extra coffees per day covers the month. |
+| **Studio Bohemia** | **$199 / mo** | Hair & Beauty | Priority cancellation waitlist booking | 2 curly haircuts cover the month. |
+| **The Lawn Ranger** | **$199 / mo** | Lawn Care | Closed-gate guarantee, rain-delay notices | 3-4 yard cuts or garden sessions cover the month. |
+| **Tasteful Creations** | **$199 / mo** | Dessert Hire | Custom cake flavor designer, hire packages | 1 dessert wall hire or custom cake order covers it. |
+| **Budget Electrical CQ** | **$249 / mo** | Electricians | $99 flat-rate callout, clean worksite badge | 1 switchboard upgrade or minor residential job covers it. |
+| **FG Mechanical** | **$249 / mo** | Mechanics | Diagnostic transparency, $99 check specials | 1 logbook service or brake pad job covers it. |
+| **Richardson Motors** | **$249 / mo** | Auto Sales & Service | Car clean delivery checklist, transparent checkout | 1 repair or pre-purchase diagnostic covers it. |
+| **SanClassic Cleaning** | **$249 / mo** | Cleaners | Police check badge, $10M liability badge | 1 fortnightly clean or move-out clean covers it. |
+| **Creative Cater** | **$249 / mo** | Catering & Events | Event enquiry flow, premium package framing | 1 catered event booking covers it. |
+| **Dunlop Catering** | **$249 / mo** | Spit Roast / Events | Guest count slider, fast response badge | 1 small party spit roast booking covers it. |
+| **Evolution Catering** | **$249 / mo** | Corporate Catering | Dietary filters, corporate invoice request card | 1 office lunch contract can cover the year. |
+| **BKK Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, $99 diagnostics | 1 emergency drainage job covers the month. |
+| **Grant Goltz Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, $99 callout | 1 tap replacement or service call covers it. |
+| **Mar-Lin Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, traditional service focus | 1 pipe leak repair or gas safety check covers it. |
+| **Craig Hill Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, drainage camera angle | 1 sewer camera diagnostic booking covers it. |
+| **Truflow Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, gas hot water focus | 1 gas hot water replacement can cover the year. |
+| **Toons Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, estimator wizard | 1 sewer repair or backflow test covers it. |
+| **Keppel Bay Plumbing** | **$249 / mo** | Plumbers | On-time guarantee, emergency quote flow | 1 burst pipe repair or tapware job covers it. |
+| **JLD Pest Solutions** | **$249 / mo** | Pest Control | Police check, $20M liability, price lock | 1 standard spider/cockroach spray covers it. |
+| **Bad Bugs Pest Control** | **$249 / mo** | Pest Control | Threat identifier, police check, price lock | 1 commercial pest treatment covers it. |
+| **Total Pest & Carpet** | **$249 / mo** | Pest & Carpet | Steam cleaner calculator, police checks, price lock | 1 combined carpet clean and flea spray covers it. |
+| **Yeppoon Carpet & Pest** | **$249 / mo** | Pest & Carpet | Booking calendar, police checks, price lock | 1 lease-end pest and carpet job covers it. |
+| **Leon's Dingo Hire** | **$249 / mo** | Plant Hire | Wet/dry rate card, access and weight limits | 1 weekend Dingo loader wet-hire job covers it. |
+| **Bonds Termite Mgmt** | **$299 / mo** | Specialty Pest | Termite risk wizard, police check, price lock | 1 termite barrier job covers it. |
+| **Fantastic Landscaping** | **$299 / mo** | Landscaping | Pristine site guarantee, design waitlist | 1 design plan or terrace consult covers it. |
+| **Mal Earthworks** | **$299 / mo** | Excavation | $0 travel zone policy, BYDA checks, access clarity | 1 driveway prep or shed pad excavation covers it. |
+
+Pricing rule of thumb:
+- **$199/mo:** simple cafe, beauty, lawn care, and dessert sites.
+- **$249/mo:** most trades, catering, cleaning, pest, plumbing, mechanics, and service operators.
+- **$299/mo:** higher-value landscaping, termite, and excavation operators.
 
 ---
 
-## 2. Niche Strategy & "Trust Hooks"
+## 2. Walk-In Sequence
 
-When pitching these mockups, do not talk about generic design layouts. **Pitch the specific conversion mechanisms** we added to solve customer pain points:
+Use this order so the conversation feels natural and respectful.
 
-### 🪠 Plumbers (BKK, Grant Goltz, Mar-Lin, Craig Hill, Truflow, Toons, Keppel Bay)
-*   **The Review Pain Point:** Customer complaints about plumbers showing up late or charging hidden dispatch fees.
-*   **Our Solution:** The **"On-Time or We Pay You $50"** panel and **$99 flat-rate diagnostic specials** integrated right next to the booking forms.
-*   **The Pitch Hook:** *"I looked at local plumber reviews and noticed the #1 reason plumbers lose jobs is lateness anxiety and pricing surprises. I built an 'On-Time Guarantee' panel and a $99 Flat-Rate Diagnostic call-out form directly into your site to capture high-intent leads instantly."*
+1. **Prepare the mockup before walking in.** Open `[Mockup Link]` on your phone or iPad, load the most impressive section first, and check the page works on mobile.
+2. **Go during quiet hours.** Aim for mid-afternoon for cafes/salons, between job rushes for trades counters, or late morning for offices.
+3. **Ask for the owner or manager.** If they are unavailable, leave a short note and ask for the best time to come back.
+4. **Use the 20-second permission opener.** Keep it light. The goal is permission, not a full pitch.
+5. **Show one feature only.** Pick the trust hook that maps to their business and stop there.
+6. **Offer maintenance simply.** Position it as "I keep it hosted, secure, updated, and changed whenever you need it" for a flat monthly fee.
 
-### 🐜 Pest Control & Carpet Cleaners (JLD, Bad Bugs, Total Pest, Yeppoon Carpet, Bonds, SanClassic)
-*   **The Review Pain Point:** Security and trust concerns about contractors inside the home, and bait-and-switch pricing.
-*   **Our Solution:** Dynamic trust badges featuring **"Police-Cleared Technicians"**, **"$20M Public Liability Insurance"**, and **"Price-Lock Guarantees"** with matching form verification checkboxes.
-*   **The Pitch Hook:** *"Homeowners are cautious about who they let into their houses. I've placed official Police Check and $20M Liability badges directly inside the quote flow, alongside a Price-Lock badge, to reassure clients that the quote they submit is the price they get."*
+### 20-Second Permission Opener
 
-### 🚜 Landscaping & Excavation (Lawn Ranger, Fantastic, Mal, Leon's Dingo)
-*   **The Review Pain Point:** Leftover garden waste, rain delays, overhead clearance damage, and travel surcharge surprises.
-*   **Our Solution:** Garden-bed cleanup guarantees, rain-delay priority scheduling, narrow-access confirmations, and BYDA utility line checks.
-*   **The Pitch Hook:** *"Excavation clients worry about cut pipes or property damage. I built a transparent 'BYDA Utility Checking Guarantee' and access checks right into Mal Earthworks' form to address this. For Fantastic Landscaping, we integrated a 'Pristine Site Guarantee' ensuring zero mulching mess is left on driveways."*
+> Hey, are you [Owner Name]? I am [Your Name], a local web developer in Central QLD. I built a quick custom website mockup for [Business Name] because I thought your business could look really strong online. No pressure at all, but if you have 60 seconds I can show you the one feature I built for you.
+
+If they say yes, hand them the device and let the site do some of the talking.
+
+### 60-Second Demo Script
+
+> This is not a template. I made it around [Business Name] and the kind of customers you already want more of.
+>
+> The main thing I built in is this: [trust hook]. It helps with [customer hesitation] right at the point where someone is deciding whether to call or submit a quote request.
+>
+> My model is simple: $0 upfront, then **[$199/$249/$299] per month** to keep the site hosted, secure, maintained, and updated. If you change a price, service, photo, or offer, you can message me and I update it.
+>
+> I am not asking you to decide now. I just wanted to show you what I built and see if it is worth a proper chat.
+
+### If The Owner Is Busy
+
+> Totally understand. I built a quick mockup for [Business Name] and wanted to show you when it suits. The link is `[Mockup Link]`. I am [Your Name] on [Phone]. If it looks interesting, I can come back for five minutes when things are quieter.
+
+### If They Ask "How Much?"
+
+> It is $0 upfront and then **[$199/$249/$299] per month**. That includes the website, hosting, maintenance, security, small updates, and keeping the details current. The idea is that one extra job, booking, or service call should cover it.
 
 ---
 
-## 3. High-Converting Pitch Templates
+## 3. Niche Walk-In Angles
 
-### Template A: The In-Person "iPad Walk-In" Script
-Best for Cafés, Salons, Mechanics, and Retail shops during their off-peak hours (e.g. 2:30 PM for Coffee & Co; 3:30 PM for FG Mechanical).
+Pick one angle per business. Do not show every feature. The best pitch is specific and short.
 
-> **You:** *"Hey [Owner Name/Manager], I'm [Your Name], a local web developer based here in Rockhampton. I love what you guys do. I was browsing your online listings recently and noticed you [don't have a modern website / rely mostly on a basic booking link].*
->
-> *I actually got inspired and went ahead and built a custom, high-speed mockup site for [Business Name] to show you what's possible. Check this out..."*
->
-> *(Hand them your iPad or phone with the site open. Let them interact with the sliders/wizard.)*
->
-> **You:** *"Most designers charge $3,000 upfront and then leave you high and dry. I do it differently: **$0 upfront and a flat $249 a month**. That includes hosting, domain, SEO, security, and unlimited updates. If you change a price or service, you just text me and it's done.*
->
-> *I also noticed in local reviews that customers care a lot about [e.g. on-time arrival / cleanliness / dietary safety]. So, I built a custom **['On-Time Guarantee' panel / 'Dietary Allergy Selector' / 'Pristine Site Guarantee']** right into the booking section. It tackles customer hesitation on the spot so they click submit."*
+### Plumbers & Electricians
+
+Use for BKK, Grant Goltz, Mar-Lin, Craig Hill, Truflow, Toons, Keppel Bay, and Budget Electrical CQ.
+
+Customer hesitation: lateness, messy work, and surprise callout fees.
+
+Show:
+- On-time or "$50 off" style guarantee.
+- $99 flat diagnostic/callout language.
+- Cleanup or spotless worksite promise near the quote form.
+
+Say:
+
+> The feature I wanted to show you is the trust panel next to the quote form. It answers the three things customers worry about before booking a tradie: "Will they turn up?", "What will the callout cost?", and "Will they leave a mess?" That can make the form feel safer to submit.
+
+### Pest Control, Carpet & Cleaning
+
+Use for JLD, Bad Bugs, Total Pest & Carpet, Yeppoon Carpet & Pest, Bonds Termite, and SanClassic.
+
+Customer hesitation: letting someone into the home, hidden fees, and whether the quote will change.
+
+Show:
+- Police-cleared technician message.
+- Public liability badge.
+- Price-lock guarantee or booking/quote confirmation.
+
+Say:
+
+> The main thing here is trust before the quote. I put the police check, insurance, and price-lock reassurance right where a homeowner is deciding whether to submit their details. It makes the business feel safer before they even speak to you.
+
+### Catering, Cafe, Salon & Dessert Hire
+
+Use for Dunlop Catering, Evolution Catering, Creative Cater, Tasteful Creations, Coffee & Co, and Studio Bohemia.
+
+Customer hesitation: menu fit, dietary needs, availability, guest count, and response time.
+
+Show:
+- Guest count slider or live estimator.
+- Dietary filters.
+- Cancellation/waitlist booking.
+- Fast response badge.
+
+Say:
+
+> I built this around the way people actually book. They want to know if you can handle their date, their numbers, and their dietary needs before they send an enquiry. This lets them interact first, then submit a more confident quote request.
+
+### Landscaping, Excavation & Plant Hire
+
+Use for The Lawn Ranger, Fantastic Landscaping, Mal Earthworks, and Leon's Dingo Hire.
+
+Customer hesitation: mess, weather delays, access limits, damage, travel fees, and unclear rates.
+
+Show:
+- Pristine site or cleanup guarantee.
+- Rain-delay priority message.
+- BYDA utility check or narrow-access confirmation.
+- Wet/dry hire rate card.
+
+Say:
+
+> The useful bit is that the site answers risk questions before the customer calls. Access, cleanup, travel zone, wet/dry hire, or BYDA checks can all be explained clearly, which makes bigger outdoor jobs feel less uncertain.
 
 ---
 
-### Template B: The Cold Email (Caterers, Plumbers & Earthmovers)
-Keep subject lines clean and conversational.
+## 4. Follow-Up Scripts
 
-**Subject:** I built a custom website mockup for [Business Name]
+Only follow up when you have a real basis: they saw the mockup, gave you a card, asked for the link, or you have another documented reason to contact them.
+
+### Same-Day Thank-You SMS
+
+> Hi [Owner Name], thanks for taking a minute today. Here is the mockup I showed you for [Business Name]: [Mockup Link]
+>
+> No pressure. If you want anything changed in it, send it through and I can adjust the demo.
+>
+> - [Your Name], [Phone]
+
+### Same-Day Thank-You Email
+
+**Subject:** Website mockup for [Business Name]
 
 > Hi [Owner Name],
 >
-> My name is [Your Name], a web developer based here in Central QLD. 
+> Thanks for taking a minute today. Here is the custom mockup I showed you for [Business Name]:
 >
-> I was researching local [plumbing/catering/excavation] operators and came across **[Business Name]**. You have a fantastic reputation, but I noticed [your website is outdated / you don't have a dedicated site for capturing leads]. 
+> [Mockup Link]
 >
-> To show you how we can drive more direct bookings, I built a custom homepage mockup for your business. You can view the live interactive prototype here: **[Link to Mockup]**
+> The main idea was to show how your site could turn more visitors into direct enquiries using [trust hook], without a big upfront build cost.
 >
-> **What I built for you to solve customer friction:**
-> *   **Custom [e.g. "On-Time or We Pay You $50" Guarantee / BYDA Utility Verification / Dietary Filter]:** Built right next to the booking form to address local review concerns and drive higher inquiries.
-> *   **Responsive Layout:** Loads in under a second on mobile.
->
-> **Why this model works:**
-> *   **$0 Upfront Cost:** No heavy capital outlay.
-> *   **Flat Monthly Fee ($249/mo):** Covers design, high-speed hosting, search engine optimization (SEO), and unlimited changes. If you need a price, service, or policy changed, just email me.
->
-> Just **one additional [e.g. emergency call-out / spit roast booking / shed pad excavation]** covers the cost of the website for the entire year.
->
-> Let me know if you would like me to adjust the services or details on this mockup!
+> My maintenance model is $0 upfront and **[$199/$249/$299] per month**, including hosting, security, updates, and changes.
 >
 > Kind regards,
 >
-> **[Your Name]**  
-> [Your Phone Number]
+> [Your Name]
+>
+> [Phone]
+>
+> If you do not want any follow-up, reply "unsubscribe" and I will not contact you again.
+
+### 3-Day Soft Follow-Up
+
+> Hi [Owner Name], just checking whether you had a chance to look at the [Business Name] mockup. The section I would look at first is [trust hook section], because that is where it can help turn visitors into quote enquiries.
+>
+> Happy to make a small tweak if you want to see it closer to your current services.
+>
+> - [Your Name]
+
+### 10-Day Final Follow-Up
+
+> Hi [Owner Name], last one from me. I will leave the [Business Name] mockup here in case it is useful later: [Mockup Link]
+>
+> If you ever want it adjusted or maintained properly, I am happy to help. Otherwise, no worries at all.
+>
+> - [Your Name], [Phone]
+
+Stop after the final follow-up unless they reply or clearly invite more contact.
 
 ---
 
-## 4. Handling Objections with Confidence
+## 5. Compliance-Safe Email Rules
 
-### "I already get enough business via Facebook and Word-of-Mouth."
-*   **Answer:** *"Word-of-mouth is the best business, but when someone gets recommended to you, the first thing they do is search your name on Google. If they only find a Facebook page, they might get distracted by ads, notifications, or see a competitor's page. A clean, dedicated website with a professional ['On-Time' badge / 'Pristine Site Guarantee'] cements your reputation as the premier choice in Rockhampton."*
+Email should support the walk-in process, not replace it.
 
-### "What happens if I want to cancel my subscription?"
-*   **Answer:** *"I don't lock you into a long-term contract. If your business changes direction, you can cancel. I keep it risk-free because I want to earn your business month-over-month by keeping your site running perfectly, handling updates, and keeping your SEO active."*
+Before sending a commercial email, check:
+- You have a reasonable documented contact basis, such as an in-person conversation, a supplied business card, a direct enquiry, or another consent/relationship basis.
+- The address was not scraped or harvested from a list.
+- The email identifies you clearly as `[Your Name]` and includes `[Phone]`.
+- The message includes a simple opt-out line such as: `Reply "unsubscribe" and I will not contact you again.`
+- Any unsubscribe request is honoured promptly and no later than 5 working days.
 
-### "Why shouldn't I just build it myself on Wix or Squarespace?"
-*   **Answer:** *"You absolutely can, but your time is worth at least $100/hr. If you spend 20 hours designing, writing copy, setting up forms, and trying to align images, you've spent $2,000 of your own time. Plus, DIY templates lack custom features like our [interactive estimators / target review trust boxes]. For a flat monthly fee, you get a professionally designed, fast site, and a local developer who handles all updates so you can focus on your jobs."*
+Avoid:
+- Buying lists.
+- Scraping email addresses from directories.
+- Sending a first email that asks for consent to receive more marketing.
+- Hiding who you are or making the email look like a customer enquiry.
+
+---
+
+## 6. What Not To Say
+
+Do not insult the current website.
+
+Instead of:
+> Your website looks old and is losing you money.
+
+Say:
+> I thought there was an opportunity to make the online experience match the quality of the business.
+
+Do not guarantee revenue.
+
+Instead of:
+> This will get you 10 new jobs a month.
+
+Say:
+> The goal is to make it easier for interested customers to enquire directly.
+
+Do not imply endorsement.
+
+Instead of:
+> This is your new website.
+
+Say:
+> This is a custom mockup I built to show what is possible.
+
+Do not invent credentials or review data.
+
+Instead of:
+> Everyone complains about your response times.
+
+Say:
+> In this industry, customers often worry about response times, pricing, and whether the job will be handled cleanly.
+
+Do not overwhelm them with every feature.
+
+Instead of:
+> Let me show you the hero, services, form, footer, SEO, hosting, speed, and every section.
+
+Say:
+> The one feature worth looking at is this quote/trust section.
+
+---
+
+## 7. Objection Handling
+
+### "We already get enough work from Facebook and word of mouth."
+
+> That is a good problem to have. A website does not replace word of mouth; it supports it. When someone hears your name, they often Google you before calling. This gives them one clean place to see your services, trust signals, and enquiry form without being distracted by social feeds.
+
+### "We do not want a big upfront website bill."
+
+> That is exactly why I built the offer this way. There is no upfront build fee. It is a flat monthly maintenance fee, and I keep the site running, secure, and updated for you.
+
+### "What happens if we cancel?"
+
+> No long lock-in. If it is not useful, you can cancel. I want to earn the fee by keeping the site current and making updates easy.
+
+### "Could we just do it ourselves on Wix or Squarespace?"
+
+> You can. The trade-off is time and maintenance. I am offering the finished site plus someone local to update services, prices, images, and trust details when the business changes.
+
+### "We need to think about it."
+
+> Absolutely. Keep the mockup link and have a look when it is quiet. If anything feels wrong or you want the services changed, send me a message and I can adjust the demo.
+
+---
+
+## 8. Quick Pre-Walk-In Checklist
+
+- `[Mockup Link]` is loaded and working on mobile.
+- The best feature is already open or easy to scroll to.
+- You know the monthly tier before walking in.
+- You know the one-job ROI line.
+- You have `[Your Name]`, `[Phone]`, and a short leave-behind note ready.
+- You are ready to leave politely after 60 seconds.
+
+The mood to aim for: local, useful, low-pressure, and proud of the work without making the business owner feel judged.
