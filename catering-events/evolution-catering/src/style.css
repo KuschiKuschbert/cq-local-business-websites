@@ -606,6 +606,17 @@ section {
   justify-content: center;
 }
 
+.service-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image-placeholder img {
+  transform: scale(1.05);
+}
+
 /* Aesthetic Patterns instead of Images */
 .corporate-pattern {
   background: 
