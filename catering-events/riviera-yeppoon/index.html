@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Riviera Yeppoon | Beachfront Weddings, Sunday Tapas & Premium Catering</title>
+  <meta name="description" content="Experience coastal elegance at Riviera Yeppoon. The Capricorn Coast's premier beachfront wedding venue, Sunday Tapas by the sea, and offsite catering services in Yeppoon & Rockhampton.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Preload Hero Image -->
+  <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="#" class="logo" id="logo-link">
+        <span class="logo-top">RIVIERA</span>
+        <span class="logo-bottom">YEPPOON</span>
+      </a>
+      
+      <button class="mobile-nav-toggle" id="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="primary-navigation">
+        <ul>
+          <li><a href="#tapas" class="nav-link" id="nav-link-tapas">Sunday Tapas</a></li>
+          <li><a href="#weddings" class="nav-link" id="nav-link-weddings">Weddings</a></li>
+          <li><a href="#catering" class="nav-link" id="nav-link-catering">Catering</a></li>
+          <li><a href="#gallery" class="nav-link" id="nav-link-gallery">Gallery</a></li>
+          <li><a href="#about" class="nav-link" id="nav-link-about">Our Story</a></li>
+          <li><a href="#contact" class="nav-link btn-olive" id="nav-link-contact">Inquire Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">Cooee Bay Beachfront, Yeppoon</span>
+        <h1 class="hero-title">Where Old-Money Elegance <br>Meets Salty Sea Air</h1>
+        <p class="hero-description">
+          An iconic coastal wedding and events venue made for champagne towers, long lunches, and unforgettable "I do's."
+        </p>
+        <div class="hero-actions">
+          <a href="#tapas" class="btn btn-primary" id="hero-cta-tapas">Sunday Tapas Bookings</a>
+          <a href="#contact" class="btn btn-secondary-outline" id="hero-cta-events">Plan An Event</a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span class="scroll-dot"></span>
+      </div>
+    </section>
+
+    <!-- Sunday Tapas by the Sea (Booking Engine + Menu) -->
+    <section class="tapas-section" id="tapas">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Sunday Tapas by the Sea</span>
+          <h2 class="section-title">Glamour Shouldn't Be Reserved for Weddings Only</h2>
+          <p class="section-subtitle">
+            Open to the public every Sunday from 12:00 PM to 6:00 PM. Indulge in Mediterranean-inspired tapas, curated wines, and panoramic ocean views of Keppel Bay.
+          </p>
+        </div>
+
+        <div class="tapas-grid">
+          <!-- Interactive Online Booking Engine -->
+          <div class="booking-card" id="booking-container">
+            <h3>Book Your Table</h3>
+            <p class="booking-note">Skip the phone lines and secure your table online instantly.</p>
+            
+            <form id="tapas-booking-form" class="booking-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-guests">Guests</label>
+                  <select id="booking-guests" required>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7">7 Guests</option>
+                    <option value="8">8+ Guests (Enquiry)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-date">Select Sunday</label>
+                  <select id="booking-date" required>
+                    <!-- Dynamically populated Sundays -->
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-time">Time</label>
+                  <select id="booking-time" required>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="12:30">12:30 PM</option>
+                    <option value="1:00">1:00 PM</option>
+                    <option value="1:30">1:30 PM</option>
+                    <option value="2:00">2:00 PM</option>
+                    <option value="2:30">2:30 PM</option>
+                    <option value="3:00">3:00 PM</option>
+                    <option value="3:30">3:30 PM</option>
+                    <option value="4:00">4:00 PM</option>
+                    <option value="4:30">4:30 PM</option>
+                    <option value="5:00">5:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-block" id="booking-submit-btn">Check Availability</button>
+            </form>
+            
+            <!-- Booking Confirmation Modal/Overlay (Handled via JS) -->
+            <div class="booking-confirmation hidden" id="booking-confirm-panel">
+              <div class="confirm-icon">✓</div>
+              <h4>Reservation Requested</h4>
+              <p id="confirm-details"></p>
+              <p class="confirm-subtext">A confirmation SMS and email have been sent to your details. We look forward to welcoming you!</p>
+              <button type="button" class="btn btn-secondary-outline btn-block" id="booking-reset-btn">Make Another Booking</button>
+            </div>
+          </div>
+
+          <!-- Interactive Menus -->
+          <div class="menu-card" id="menu-container">
+            <div class="menu-tabs" role="tablist">
+              <button class="menu-tab active" id="tab-tapas" role="tab" aria-selected="true" aria-controls="menu-tapas-panel">Tapas Menu</button>
+              <button class="menu-tab" id="tab-drinks" role="tab" aria-selected="false" aria-controls="menu-drinks-panel">Cocktails & Drinks</button>
+            </div>
+
+            <!-- Tapas Menu Panel -->
+            <div class="menu-panel active" id="menu-tapas-panel" role="tabpanel" aria-labelledby="tab-tapas">
+              <div class="menu-category">
+                <h4>To Share</h4>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Warm Mediterranean Olives</span>
+                    <span class="menu-item-price">$12</span>
+                  </div>
+                  <p class="menu-item-desc">Marinated in citrus, rosemary, garlic and extra virgin olive oil. (GF, DF, VG)</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Artisanal Grazing Plate</span>
+                    <span class="menu-item-price">$38</span>
+                  </div>
+                  <p class="menu-item-desc">Selection of premium cured meats, Australian cheeses, house crackers, fruit, and quince paste.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Crispy Calamari Fritti</span>
+                    <span class="menu-item-price">$24</span>
+                  </div>
+                  <p class="menu-item-desc">Dusted in house spice, served with garlic aioli and fresh Capricorn Coast lime. (GF, DF)</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Seared Wagyu Tataki Crostini</span>
+                    <span class="menu-item-price">$26</span>
+                  </div>
+                  <p class="menu-item-desc">Truffle ponzu, micro radish, and crispy shallots on toasted brioche. (GFO)</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Local Garlic Prawns (4)</span>
+                    <span class="menu-item-price">$28</span>
+                  </div>
+                  <p class="menu-item-desc">Sautéed in white wine, butter, parsley, chilli, and crusty bread. (GFO)</p>
+                </div>
+              </div>
+              <a href="https://www.dropbox.com/scl/fi/aphe65xa4wkvo55zs0boh/Riviera-Tapas-Menu-5.pdf?rlkey=czda5nllwrjfgv40hncg0fvt5&dl=0" target="_blank" class="btn-link" id="download-full-menu">Download Full Menu PDF</a>
+            </div>
+
+            <!-- Drinks Menu Panel -->
+            <div class="menu-panel" id="menu-drinks-panel" role="tabpanel" aria-labelledby="tab-drinks" style="display: none;">
+              <div class="menu-category">
+                <h4>Signature Cocktails</h4>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">The Riviera Spritz</span>
+                    <span class="menu-item-price">$18</span>
+                  </div>
+                  <p class="menu-item-desc">Limoncello, prosecco, fresh soda, mint, and lemon wheel. Light, sparkling and refreshing.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Cooee Bay Sunset</span>
+                    <span class="menu-item-price">$22</span>
+                  </div>
+                  <p class="menu-item-desc">Vodka, local passionfruit, blood orange juice, lime, and vanilla syrup.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Coconut Sage Margarita</span>
+                    <span class="menu-item-price">$20</span>
+                  </div>
+                  <p class="menu-item-desc">Tequila Blanco, triple sec, lime juice, coconut cream, and fresh sage leaf.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Espresso Martini (Salated Caramel)</span>
+                    <span class="menu-item-price">$20</span>
+                  </div>
+                  <p class="menu-item-desc">Espresso, coffee liqueur, salted caramel syrup, and vodka. Velvety smooth finish.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weddings at Riviera Yeppoon -->
+    <section class="weddings-section" id="weddings">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Beachfront Weddings</span>
+          <h2 class="section-title">An Elegant Coastal Backdrop for "I Do"</h2>
+          <p class="section-subtitle">
+            Create memories that last a lifetime. Our packages cater to elopements, intimate micro-weddings, and grand beachfront receptions.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Package 1: Kiss & Commit -->
+          <div class="package-card" id="pkg-kiss-commit">
+            <div class="package-header">
+              <h3>Kiss & Commit</h3>
+              <span class="package-type">Intimate Elopements</span>
+            </div>
+            <div class="package-body">
+              <p class="package-desc">Experience the magic of a quiet, romantic elopement directly overlooking Cooee Bay Beach.</p>
+              <ul class="package-features">
+                <li>1.5 Hours of exclusive venue hire</li>
+                <li>Serene oceanfront ceremony backdrop</li>
+                <li>Signed marriage certificates on-site</li>
+                <li>Optional custom drinks add-on package</li>
+                <li>Max 10 guests</li>
+              </ul>
+              <div class="package-price">Starting from $1,250</div>
+              <button class="btn btn-secondary-outline btn-block select-pkg-btn" data-package="Kiss & Commit">Select Package</button>
+            </div>
+          </div>
+
+          <!-- Package 2: Vows & Vino (Micro-Wedding) -->
+          <div class="package-card featured" id="pkg-vows-vino">
+            <div class="package-badge">Most Popular</div>
+            <div class="package-header">
+              <h3>Vows & Vino</h3>
+              <span class="package-type">Micro-Weddings</span>
+            </div>
+            <div class="package-body">
+              <p class="package-desc">A gorgeous half-day celebration blending a stunning beachfront ceremony with fine drinks and food.</p>
+              <ul class="package-features">
+                <li>2.5 Hours of exclusive venue hire</li>
+                <li>3-Tier Champagne Tower (1 premium bottle incl.)</li>
+                <li>Artisanal grazing boards for 20 guests</li>
+                <li>Bespoke styling and setup included</li>
+                <li>Max 20 guests</li>
+              </ul>
+              <div class="package-price">Starting from $2,499</div>
+              <button class="btn btn-primary btn-block select-pkg-btn" data-package="Vows & Vino">Select Package</button>
+            </div>
+          </div>
+
+          <!-- Package 3: The Big Day -->
+          <div class="package-card" id="pkg-big-day">
+            <div class="package-header">
+              <h3>The Big Day</h3>
+              <span class="package-type">Complete Weddings</span>
+            </div>
+            <div class="package-body">
+              <p class="package-desc">Exclusive full-day access for your wedding. Enjoy a seamless transition from setup to reception dancefloor.</p>
+              <ul class="package-features">
+                <li>Full-day exclusive venue access</li>
+                <li>Setup, Ceremony, and Reception spaces</li>
+                <li>Optional rehearsal date & time included</li>
+                <li>Complete styling, bar staff, and event coordination</li>
+                <li>Max 120 guests</li>
+              </ul>
+              <div class="package-price">Enquire for custom pricing</div>
+              <button class="btn btn-secondary-outline btn-block select-pkg-btn" data-package="The Big Day">Select Package</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="wedding-pdf-action text-center">
+          <a href="/s/The-Riviera-Table-Menu-December-2025-4.pdf" target="_blank" class="btn btn-olive" id="download-weddings-guide">Download Complete Wedding Styling Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offsite Catering (A Days Graze Legacy) -->
+    <section class="catering-section" id="catering">
+      <div class="container">
+        <div class="catering-wrapper">
+          <div class="catering-info-panel">
+            <span class="section-tag">Offsite Catering Services</span>
+            <h2 class="section-title">Bringing the Riviera Experience to You</h2>
+            <p>
+              For over a decade, our team operated as **A Days Graze Catering**, building a stellar reputation across Central Queensland for spectacular grazing tables and hot buffets. 
+            </p>
+            <p>
+              We continue to deliver restaurant-quality catering for weddings, corporate functions, parties, and celebrations of life across Yeppoon, Rockhampton, Emu Park, and the Capricorn Coast.
+            </p>
+            
+            <div class="catering-badges">
+              <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <span>$20M Public Liability</span>
+              </div>
+              <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <span>Police Cleared Staff</span>
+              </div>
+              <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <span>Food Safe Certified</span>
+              </div>
+            </div>
+
+            <div class="brochures-grid">
+              <a href="/s/Corporate-Catering-Brochure-7.pdf" target="_blank" class="brochure-link" id="pdf-corp">
+                <span class="pdf-icon">📄</span>
+                <span class="pdf-name">Corporate Luncheons</span>
+              </a>
+              <a href="/s/Offsite-Platter-Brochure-3.pdf" target="_blank" class="brochure-link" id="pdf-platter">
+                <span class="pdf-icon">📄</span>
+                <span class="pdf-name">Offsite Platter Platters</span>
+              </a>
+              <a href="/s/Funeral-Catering-Brochure-4.pdf" target="_blank" class="brochure-link" id="pdf-funeral">
+                <span class="pdf-icon">📄</span>
+                <span class="pdf-name">Celebrations of Life</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="catering-interactive-panel">
+            <h3>Interactive Catering Menu Explorer</h3>
+            <p class="panel-desc">Click below to view our curated platters and buffets directly on-screen.</p>
+            
+            <div class="catering-tabs" role="tablist">
+              <button class="catering-tab active" id="cat-tab-platters" role="tab" aria-selected="true" aria-controls="cat-panel-platters">Grazing Platters</button>
+              <button class="catering-tab" id="cat-tab-buffet" role="tab" aria-selected="false" aria-controls="cat-panel-buffet">Hot & Cold Buffet</button>
+            </div>
+
+            <!-- Platters panel -->
+            <div class="catering-panel active" id="cat-panel-platters" role="tabpanel" aria-labelledby="cat-tab-platters">
+              <div class="catering-menu-item">
+                <h5>Classic Charcuterie Platter <span class="price">$140</span></h5>
+                <p>Prosciutto di Parma, mild salami, sopressa, double cream brie, aged cheddar, olives, berries, and artisanal wafers.</p>
+              </div>
+              <div class="catering-menu-item">
+                <h5>Coastal Seafood Harvest Platter <span class="price">$195</span></h5>
+                <p>Chilled local tiger prawns, natural oysters, smoked salmon roses, lemons, capers, and dill-infused aioli sauce.</p>
+              </div>
+              <div class="catering-menu-item">
+                <h5>Seasonal Fruit & Sweet Pastry Platter <span class="price">$120</span></h5>
+                <p>Watermelon stars, fresh berries, local mango slices, French macarons, petite tarts, and Belgian chocolate drizzle.</p>
+              </div>
+            </div>
+
+            <!-- Buffet panel -->
+            <div class="catering-panel" id="cat-panel-buffet" role="tabpanel" aria-labelledby="cat-tab-buffet" style="display: none;">
+              <div class="catering-menu-item">
+                <h5>The Mediterranean Feast <span class="price">$55pp</span></h5>
+                <p>Lemon oregano grilled chicken, slow-cooked lamb shoulder with tzatziki, roasted sea-salt potatoes, Greek salad, and pita bread.</p>
+              </div>
+              <div class="catering-menu-item">
+                <h5>Capricorn Roast Buffet <span class="price">$48pp</span></h5>
+                <p>Roast sirloin with red wine gravy, crackling pork loin with apple sauce, honey-glazed carrots, creamy potato gratin, and garden greens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Visual Look Book</span>
+          <h2 class="section-title">Moments by the Beach</h2>
+          <p class="section-subtitle">
+            Get inspired by our collection of weddings, corporate events, and beautiful coastal sunsets at Cooee Bay.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item-wrapper" id="gal-img-1">
+            <div class="gallery-visual place-holder">
+              <!-- Inline SVG placeholder that looks elegant -->
+              <svg viewBox="0 0 400 300" class="placeholder-svg">
+                <rect width="100%" height="100%" fill="#ede3d6"/>
+                <circle cx="200" cy="120" r="45" fill="#5d6556" opacity="0.15"/>
+                <path d="M50 220 L150 140 L220 190 L300 110 L350 160 L350 250 L50 250 Z" fill="#5d6556" opacity="0.2"/>
+                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Champagne Tower at Sunset</text>
+              </svg>
+            </div>
+          </div>
+          <div class="gallery-item-wrapper" id="gal-img-2">
+            <div class="gallery-visual place-holder">
+              <svg viewBox="0 0 400 300" class="placeholder-svg">
+                <rect width="100%" height="100%" fill="#ede3d6"/>
+                <path d="M50 250 L100 120 L180 180 L250 80 L350 210 L350 250 Z" fill="#5d6556" opacity="0.2"/>
+                <circle cx="300" cy="80" r="30" fill="#ffffff" opacity="0.3"/>
+                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Ceremony Setup on Cooee Bay</text>
+              </svg>
+            </div>
+          </div>
+          <div class="gallery-item-wrapper" id="gal-img-3">
+            <div class="gallery-visual place-holder">
+              <svg viewBox="0 0 400 300" class="placeholder-svg">
+                <rect width="100%" height="100%" fill="#ede3d6"/>
+                <rect x="100" y="80" width="200" height="120" rx="8" fill="#5d6556" opacity="0.15"/>
+                <line x1="200" y1="20" x2="200" y2="80" stroke="#5d6556" stroke-width="1.5" stroke-dasharray="4"/>
+                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Long Table Coastal Lunch</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story / About Sally Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-visual">
+            <div class="about-image-placeholder">
+              <svg viewBox="0 0 500 600" class="placeholder-svg">
+                <rect width="100%" height="100%" fill="#ede3d6"/>
+                <circle cx="250" cy="220" r="110" fill="#5d6556" opacity="0.2"/>
+                <path d="M100 480 C100 350, 400 350, 400 480" fill="#5d6556" opacity="0.15"/>
+                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="18" fill="#5d6556">Sally - Owner &amp; Coordinator</text>
+              </svg>
+            </div>
+          </div>
+          <div class="about-text">
+            <span class="section-tag">Behind the Scenes</span>
+            <h2 class="section-title">Meet Sally – Founder &amp; Event Visionary</h2>
+            <p>
+              Riviera Yeppoon is the culmination of a decade-long passion for events and culinary hospitality. After successfully managing *A Days Graze Catering* and providing memorable dining setups for weddings, festivals, and racing days, Sally envisioned a permanent sanctuary on the beachfront.
+            </p>
+            <p>
+              Sally is a graduate of the prestigious **Ivy Bleu Academy**, where she refined her expertise in wedding design, coordination, and styling. She believes every wedding should be a seamless, stress-free reflection of romance.
+            </p>
+            <p>
+              "I love love, and there's nothing more beautiful than seeing guests share laughter over beautiful food, with the sound of the ocean waves right next to them."
+            </p>
+            <div class="about-sig">
+              <span class="sig-name">Sally</span>
+              <span class="sig-title">Owner &amp; Coordinator, Riviera Yeppoon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Kind Words</span>
+          <h2 class="section-title">Loved by Central Queensland Couples</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Review 1 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "We booked Riviera for our wedding last month and it was beyond magical! Sally took care of every detail, the Vows & Vino package was perfect. The champagne tower was a huge hit, and the tapas were delicious!"
+            </p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">Emma &amp; David R.</span>
+              <span class="reviewer-event">Wedding (Vows & Vino) — Oct 2025</span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Sally and the team catered our corporate luncheon. The platter delivery was perfectly timed, and the food was incredibly fresh. Guests couldn't stop praising the seafood selection. Highly recommend!"
+            </p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">Sarah M.</span>
+              <span class="reviewer-event">Corporate Event — Nov 2025</span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">
+              "Sunday Tapas is our weekly ritual. The ocean breeze, the Limoncello spritz, and the calamari are to die for. Riviera has brought true Mediterranean elegance to the Capricorn Coast."
+            </p>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">James K.</span>
+              <span class="reviewer-event">Sunday Dining — Jan 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Enquiry Form -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-details">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title">Let's Plan Your Beachfront Dream</h2>
+            <p>
+              Have a wedding, private celebration, or offsite catering enquiry? Fill out our form, and Sally will be in touch within 24 hours to begin designing your event.
+            </p>
+            
+            <div class="details-list">
+              <div class="detail-item">
+                <span class="icon">📍</span>
+                <span class="text">105 Matthew Flinders Drive, Cooee Bay, QLD 4703</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">✉</span>
+                <span class="text">hello@rivierayeppoon.com.au</span>
+              </div>
+              <div class="detail-item">
+                <span class="icon">☏</span>
+                <span class="text">0447 760 695 (Sundays Only)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <form id="event-enquiry-form">
+              <div class="form-row split">
+                <div class="form-group">
+                  <label for="contact-firstname">First Name</label>
+                  <input type="text" id="contact-firstname" required placeholder="Emma">
+                </div>
+                <div class="form-group">
+                  <label for="contact-lastname">Last Name</label>
+                  <input type="text" id="contact-lastname" required placeholder="Smith">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" required placeholder="emma@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service">Enquiry Type</label>
+                <select id="contact-service" required>
+                  <option value="">Select an option</option>
+                  <option value="wedding">Wedding Venue Hire</option>
+                  <option value="catering">Offsite Catering Services</option>
+                  <option value="private-event">Private Celebration / Party</option>
+                  <option value="corporate">Corporate Function</option>
+                  <option value="other">Other Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-package">Preferred Package (Optional)</label>
+                <select id="contact-package">
+                  <option value="none">No specific package</option>
+                  <option value="kiss-commit">Kiss &amp; Commit (Elopement)</option>
+                  <option value="vows-vino">Vows &amp; Vino (Micro-Wedding)</option>
+                  <option value="big-day">The Big Day Package (Full Wedding)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Tell Us About Your Vision</label>
+                <textarea id="contact-message" rows="4" placeholder="Estimated guest count, preferred date, and any special requests..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">Send Enquiry</button>
+            </form>
+            
+            <div class="form-feedback hidden" id="contact-feedback">
+              <div class="confirm-icon">✓</div>
+              <h4>Thank you!</h4>
+              <p>Your enquiry has been received. Sally will contact you shortly to plan your beachfront event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-top">RIVIERA</span>
+          <span class="logo-bottom">YEPPOON</span>
+        </a>
+        <p class="brand-desc">Mediterranean beachfront dining, weddings, and premium catering on the Capricorn Coast.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#tapas">Sunday Tapas</a></li>
+          <li><a href="#weddings">Weddings</a></li>
+          <li><a href="#catering">Offsite Catering</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-pricing">
+        <h5>Our Pricing Model</h5>
+        <p class="pricing-badge">$0 Upfront, Flat Monthly Fee</p>
+        <p class="pricing-text">Website design, development, and maintenance: <strong>$299/mo</strong> flat-rate.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Riviera Yeppoon. All rights reserved. Formerly A Days Graze Catering. Designed for premium events.</p>
+    </div>
+  </footer>
+
+  <!-- Link Main JS with Vite support -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

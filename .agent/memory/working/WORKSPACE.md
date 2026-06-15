@@ -7,6 +7,7 @@ Tracks our active website mockups across 5 core business niches:
 - [x] `dunlop-catering/` - Dunlop Catering (Modern website built!)
 - [x] `evolution-catering/` - Evolution Catering (Modern website built!)
 - [x] `tasteful-creations/` - Tasteful Creations (Modern website built!)
+- [x] `riviera-yeppoon/` - Riviera Yeppoon (Modern website built!)
 
 ## 2. Lifestyle & Outdoors (`lifestyle-outdoors/`)
 - [x] `coffee-and-co/` - Coffee & Co Café (Modern website built!)
