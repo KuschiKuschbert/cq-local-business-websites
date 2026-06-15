@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Update background glow color slightly to reflect choices
       const glows = {
-        plumbing: 'radial-gradient(circle, rgba(240, 107, 80, 0.09) 0%, transparent 60%)',
+        plumbing: 'radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, transparent 60%)',
         cafe: 'radial-gradient(circle, rgba(200, 177, 149, 0.12) 0%, transparent 60%)',
         landscaping: 'radial-gradient(circle, rgba(19, 78, 94, 0.12) 0%, transparent 60%)',
         pest: 'radial-gradient(circle, rgba(117, 127, 154, 0.12) 0%, transparent 60%)'

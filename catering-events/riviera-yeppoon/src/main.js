@@ -13,26 +13,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Mobile Navigation Toggle
+  // 2. Mobile Navigation Toggle & Drawer Enhancement
   const menuToggle = document.getElementById('menu-toggle');
   const primaryNav = document.getElementById('primary-navigation');
   
-  if (menuToggle && primaryNav) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = primaryNav.classList.toggle('open');
-      menuToggle.classList.toggle('menu-toggle-active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
+  // Inject backdrop overlay for drawer
+  const navBackdrop = document.createElement('div');
+  navBackdrop.className = 'nav-drawer-backdrop';
+  document.body.appendChild(navBackdrop);
+  
+  // Stagger delays for list items for entry animation
+  if (primaryNav) {
+    const navItems = primaryNav.querySelectorAll('ul li');
+    navItems.forEach((item, index) => {
+      item.style.setProperty('--item-index', index);
     });
+  }
+
+  function toggleMenu(forceClose = false) {
+    if (!menuToggle || !primaryNav) return;
+    
+    const isOpen = forceClose ? false : !primaryNav.classList.contains('open');
+    
+    if (isOpen) {
+      primaryNav.classList.add('open');
+      menuToggle.classList.add('menu-toggle-active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      navBackdrop.classList.add('visible');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling background
+    } else {
+      primaryNav.classList.remove('open');
+      menuToggle.classList.remove('menu-toggle-active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navBackdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (menuToggle && primaryNav) {
+    menuToggle.addEventListener('click', () => toggleMenu());
+    navBackdrop.addEventListener('click', () => toggleMenu(true));
 
     // Close menu when clicking nav links
     const navLinks = primaryNav.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        primaryNav.classList.remove('open');
-        menuToggle.classList.remove('menu-toggle-active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => toggleMenu(true));
     });
+  }
+
+  // 2b. Floating Bottom Navigation Scroll Behavior
+  const bottomBar = document.getElementById('mobile-bottom-bar');
+  if (bottomBar) {
+    let lastScrollY = window.scrollY;
+    
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768) {
+        // Show if scrolled down, hide if at top
+        if (window.scrollY < 100) {
+          bottomBar.classList.remove('visible');
+        } else {
+          bottomBar.classList.add('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    }, { passive: true });
   }
 
   // 3. Sunday Tapas booking variables (OpenTable Integration)
@@ -288,10 +332,26 @@ document.addEventListener('DOMContentLoaded', () => {
     { value: 'platter-calamari', text: 'Calamari & Chips Box — $175 flat', price: 175, type: 'flat' }
   ];
 
+  const cateringDiningOptions = [
+    { value: 'gyros', text: 'Gyros Bar Buffet — $32 pp', price: 32, type: 'per-head' },
+    { value: 'grazing-1m', text: '1-Meter Grazing Table (up to 30 guests) — $650 flat', price: 650, type: 'flat' },
+    { value: 'grazing-2m', text: '2-Meter Grazing Table (up to 60 guests) — $1250 flat', price: 1250, type: 'flat' },
+    { value: 'grazing-3m', text: '3-Meter Grazing Table (up to 90 guests) — $1999 flat', price: 1999, type: 'flat' },
+    { value: 'seafood-platter', text: 'Cold Seafood Platter (serves 10) — $160 flat', price: 160, type: 'flat' },
+    { value: 'sliders-platter', text: 'Slider Board (Beef & Pulled Pork, serves 15) — $175 flat', price: 175, type: 'flat' },
+    { value: 'amalfi-3', text: 'Amalfi 3-Course Plated (Onsite Chef) — $109 pp', price: 109, type: 'per-head' },
+    { value: 'portofino', text: 'Portofino Cocktail Hour + Canapes — $90 pp', price: 90, type: 'per-head' }
+  ];
+
   function populateDiningDropdown(occasion) {
     if (!diningSelect) return;
     diningSelect.innerHTML = '';
-    const options = occasion === 'wedding' ? weddingDiningOptions : partyDiningOptions;
+    let options = partyDiningOptions;
+    if (occasion === 'wedding') {
+      options = weddingDiningOptions;
+    } else if (occasion === 'catering') {
+      options = cateringDiningOptions;
+    }
     options.forEach(opt => {
       const optionEl = document.createElement('option');
       optionEl.value = opt.value;
@@ -341,34 +401,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const occWedding = document.getElementById('occ-wedding');
   const occParty = document.getElementById('occ-party');
+  const occCatering = document.getElementById('occ-catering');
   
   const labelWedding = document.querySelector('label[for="occ-wedding"]');
   const labelParty = document.querySelector('label[for="occ-party"]');
+  const labelCatering = document.querySelector('label[for="occ-catering"]');
   
   const wedPackagesContainer = document.getElementById('wiz-wed-packages');
   const partyPackagesContainer = document.getElementById('wiz-party-packages');
+  const cateringPackagesContainer = document.getElementById('wiz-catering-packages');
   const linenBox = document.getElementById('wiz-linen-box');
   
   function handleOccasionChange(occasion) {
-    if (occasion === 'wedding') {
-      if (labelWedding) labelWedding.classList.add('active');
-      if (labelParty) labelParty.classList.remove('active');
-      
-      if (wedPackagesContainer) wedPackagesContainer.classList.remove('hidden');
-      if (partyPackagesContainer) partyPackagesContainer.classList.add('hidden');
-      if (linenBox) linenBox.classList.remove('hidden');
-      
-      populateDiningDropdown('wedding');
-    } else {
-      if (labelParty) labelParty.classList.add('active');
-      if (labelWedding) labelWedding.classList.remove('active');
-      
-      if (wedPackagesContainer) wedPackagesContainer.classList.add('hidden');
-      if (partyPackagesContainer) partyPackagesContainer.classList.remove('hidden');
-      if (linenBox) linenBox.classList.add('hidden');
-      
-      populateDiningDropdown('party');
-    }
+    if (labelWedding) labelWedding.classList.toggle('active', occasion === 'wedding');
+    if (labelParty) labelParty.classList.toggle('active', occasion === 'party');
+    if (labelCatering) labelCatering.classList.toggle('active', occasion === 'catering');
+    
+    if (wedPackagesContainer) wedPackagesContainer.classList.toggle('hidden', occasion !== 'wedding');
+    if (partyPackagesContainer) partyPackagesContainer.classList.toggle('hidden', occasion !== 'party');
+    if (cateringPackagesContainer) cateringPackagesContainer.classList.toggle('hidden', occasion !== 'catering');
+    
+    if (linenBox) linenBox.classList.toggle('hidden', occasion !== 'wedding');
+    
+    populateDiningDropdown(occasion);
     
     // Reset highlights on occasion change
     initializeCardHighlights();
@@ -377,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (occWedding) occWedding.addEventListener('change', () => handleOccasionChange('wedding'));
   if (occParty) occParty.addEventListener('change', () => handleOccasionChange('party'));
+  if (occCatering) occCatering.addEventListener('change', () => handleOccasionChange('catering'));
 
   const wedPkgRadios = document.querySelectorAll('input[name="wedding-pkg"]');
   wedPkgRadios.forEach(radio => {
@@ -404,6 +460,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const cateringPkgRadios = document.querySelectorAll('input[name="catering-pkg"]');
+  if (cateringPkgRadios) {
+    cateringPkgRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        cateringPkgRadios.forEach(r => {
+          const card = document.querySelector(`label[for="${r.id}"]`);
+          if (card) {
+            card.classList.toggle('active', r.checked);
+          }
+        });
+        calculateReceipt();
+      });
+    });
+  }
+
   function initializeCardHighlights() {
     wedPkgRadios.forEach(r => {
       const card = document.querySelector(`label[for="${r.id}"]`);
@@ -413,6 +484,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.querySelector(`label[for="${r.id}"]`);
       if (card) card.classList.toggle('active', r.checked);
     });
+    if (cateringPkgRadios) {
+      cateringPkgRadios.forEach(r => {
+        const card = document.querySelector(`label[for="${r.id}"]`);
+        if (card) card.classList.toggle('active', r.checked);
+      });
+    }
   }
 
   const drinksSelect = document.getElementById('wiz-drinks-select');
@@ -476,6 +553,20 @@ document.addEventListener('DOMContentLoaded', () => {
           bigDayPriceLabel.textContent = guests <= 40 ? '$6,000 + GST' : '$8,000 + GST';
         }
       }
+    } else if (occasionType === 'catering') {
+      const catPkgChecked = document.querySelector('input[name="catering-pkg"]:checked');
+      const catPkg = catPkgChecked ? catPkgChecked.value : 'delivery';
+      
+      if (catPkg === 'delivery') {
+        venueHire = 0;
+        venuePkgName = 'Bespoke Platter Delivery';
+      } else if (catPkg === 'soiree') {
+        venueHire = 450;
+        venuePkgName = 'The Styled Soirée Coordination';
+      } else if (catPkg === 'private-chef') {
+        venueHire = 1200;
+        venuePkgName = 'Private Chef & Service Staff';
+      }
     } else {
       venueHire = 0;
       venuePkgName = 'Free Room Hire Celebration';
@@ -523,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let foodCost = 0;
     let diningName = 'None';
     const selectedDiningVal = diningSelect ? diningSelect.value : '';
-    const optionsList = occasionType === 'wedding' ? weddingDiningOptions : partyDiningOptions;
+    const optionsList = occasionType === 'wedding' ? weddingDiningOptions : (occasionType === 'catering' ? cateringDiningOptions : partyDiningOptions);
     const selectedDining = optionsList.find(o => o.value === selectedDiningVal);
     
     if (selectedDining) {
@@ -628,9 +719,10 @@ document.addEventListener('DOMContentLoaded', () => {
         receiptItemsContainer.appendChild(row);
       };
       
-      // 1. Venue Hire
-      if (occasionType === 'wedding' || venueHire > 0) {
-        appendRow(`Venue Hire (${venuePkgName})`, venueHire);
+      // 1. Venue Hire / Service Fee
+      if (occasionType === 'wedding' || occasionType === 'catering' || venueHire > 0) {
+        const labelText = occasionType === 'catering' ? `Catering Plan (${venuePkgName})` : `Venue Hire (${venuePkgName})`;
+        appendRow(labelText, venueHire);
       } else {
         appendRow('Venue Hire (Free Room Hire Promotion)', 0);
       }
@@ -678,12 +770,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
-    // Minimum spend check for Parties
+    // Minimum spend check for Parties and Catering
     const minWarningEl = document.getElementById('receipt-min-warning');
+    const fbSpend = foodCost + seafoodFountainCost + beverageCost + spiritsCost + cocktailsCost;
+    
     if (occasionType === 'party') {
-      const fbSpend = foodCost + seafoodFountainCost + beverageCost + spiritsCost + cocktailsCost;
       const requiresMinWarning = fbSpend < 3000;
       if (minWarningEl) {
+        minWarningEl.innerHTML = `<svg viewBox="0 0 24 24" class="deluxe-icon-small" style="vertical-align: middle; margin-right: 0.4rem; stroke: currentColor;" aria-hidden="true"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg> F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.`;
+        minWarningEl.classList.toggle('hidden', !requiresMinWarning);
+      }
+    } else if (occasionType === 'catering') {
+      const requiresMinWarning = fbSpend < 500;
+      if (minWarningEl) {
+        minWarningEl.innerHTML = `<svg viewBox="0 0 24 24" class="deluxe-icon-small" style="vertical-align: middle; margin-right: 0.4rem; stroke: currentColor;" aria-hidden="true"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg> F&amp;B spend is below the $500 delivery and service minimum required for offsite catering.`;
         minWarningEl.classList.toggle('hidden', !requiresMinWarning);
       }
     } else {
@@ -760,8 +860,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let msg = `=========================================\n`;
     msg += `RIVIERA EVENT PLANNER SUMMARY\n`;
     msg += `=========================================\n`;
-    msg += `Occasion: ${summary.occasionType === 'wedding' ? 'Beachfront Wedding' : 'Private Celebration / Party'}\n`;
-    msg += `Venue Package: ${summary.venuePkgName} (${formatPrice(summary.venueHire)} excl. GST)\n`;
+    msg += `Occasion: ${summary.occasionType === 'wedding' ? 'Beachfront Wedding' : (summary.occasionType === 'catering' ? 'Riviera à Domicile (Bespoke Offsite)' : 'Private Celebration / Party')}\n`;
+    msg += `Service Plan: ${summary.venuePkgName} (${formatPrice(summary.venueHire)} excl. GST)\n`;
     if (summary.weekdayDiscount > 0) {
       msg += `Weekday Discount Applied: -${formatPrice(summary.weekdayDiscount)}\n`;
     }
@@ -802,6 +902,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (summary.occasionType === 'wedding') {
         const wedPkgChecked = document.querySelector('input[name="wedding-pkg"]:checked');
         pkgVal = wedPkgChecked ? wedPkgChecked.value : 'kiss-commit';
+      } else if (summary.occasionType === 'catering') {
+        const catPkgChecked = document.querySelector('input[name="catering-pkg"]:checked');
+        pkgVal = catPkgChecked ? catPkgChecked.value : 'delivery';
       } else {
         pkgVal = 'party-hire';
       }
@@ -816,6 +919,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactServiceSelect) {
       if (summary.occasionType === 'wedding') {
         contactServiceSelect.value = 'wedding';
+      } else if (summary.occasionType === 'catering') {
+        contactServiceSelect.value = 'catering';
       } else {
         contactServiceSelect.value = 'private-event';
       }
@@ -827,6 +932,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const wedPkgChecked = document.querySelector('input[name="wedding-pkg"]:checked');
         const wedPkg = wedPkgChecked ? wedPkgChecked.value : 'kiss-commit';
         contactPackageSelect.value = wedPkg;
+      } else if (summary.occasionType === 'catering') {
+        const catPkgChecked = document.querySelector('input[name="catering-pkg"]:checked');
+        const catPkg = catPkgChecked ? catPkgChecked.value : 'delivery';
+        contactPackageSelect.value = catPkg;
       } else {
         contactPackageSelect.value = 'party-hire';
       }
@@ -850,7 +959,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 9. Initial setup call
   if (document.getElementById('wizard')) {
-    handleOccasionChange('wedding');
+    // Check if there is an occasion parameter in url
+    const initialOccasion = urlParams.get('occasion') || 'wedding';
+    handleOccasionChange(initialOccasion);
+    // Sync radio buttons
+    const occasionRadio = document.querySelector(`input[name="occasion-type"][value="${initialOccasion}"]`);
+    if (occasionRadio) occasionRadio.checked = true;
     updateStepUI();
   }
 
@@ -868,6 +982,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactServiceSelect) {
       if (occasion === 'wedding') {
         contactServiceSelect.value = 'wedding';
+      } else if (occasion === 'catering') {
+        contactServiceSelect.value = 'catering';
       } else if (occasion === 'party' || occasion === 'private-event') {
         contactServiceSelect.value = 'private-event';
       }

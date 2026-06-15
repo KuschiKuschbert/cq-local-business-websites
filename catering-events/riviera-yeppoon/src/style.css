@@ -1305,13 +1305,19 @@ section {
     top: 0;
     right: -100%;
     width: 80%;
-    max-width: 300px;
+    max-width: 320px;
     height: 100vh;
-    background-color: var(--white);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
-    padding: 100px 30px;
-    transition: var(--transition-smooth);
+    background-color: rgba(250, 249, 246, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    padding: 120px 40px 60px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .nav-menu.open {
@@ -1321,21 +1327,49 @@ section {
   .nav-menu ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 2.25rem;
+    width: 100%;
   }
   
   .nav-menu ul li {
     width: 100%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    transition-delay: calc(var(--item-index, 0) * 0.08s);
+  }
+  
+  .nav-menu.open ul li {
+    opacity: 1;
+    transform: translateX(0);
   }
   
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     display: block;
     width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
   
   .nav-link.btn-olive {
     text-align: center;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+  }
+  
+  /* Drawer decoration footer */
+  .nav-menu::after {
+    content: "Cooee Bay Beachfront, Yeppoon";
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(93, 101, 86, 0.1);
+    padding-top: 2rem;
+    margin-top: auto;
   }
   
   /* Menu Toggles active states */
@@ -1347,6 +1381,111 @@ section {
   }
   .menu-toggle-active .hamburger::after {
     transform: rotate(-45deg) translate(4px, -4px);
+  }
+}
+
+/* Nav Drawer Backdrop Overlay */
+.nav-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(18, 18, 16, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+}
+.nav-drawer-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Floating Bottom Navigation Bar */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 120px);
+  width: 90%;
+  max-width: 420px;
+  background: rgba(250, 249, 246, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  box-shadow: 0 12px 35px rgba(18, 18, 16, 0.15);
+  z-index: 998;
+  display: none;
+  justify-content: space-around;
+  padding: 8px 12px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+.mobile-bottom-bar.visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.bottom-bar-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-olive);
+  font-size: 0.72rem;
+  font-weight: 500;
+  gap: 3px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.bottom-bar-action:active {
+  transform: scale(0.95);
+  background-color: rgba(93, 101, 86, 0.08);
+}
+
+.bottom-bar-action svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-bar {
+    display: flex;
+  }
+  
+  /* Horizontal swipe carousels on mobile */
+  .mobile-swipe-carousel {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1.5rem !important;
+    padding: 1rem 1.5rem 2rem !important;
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: none !important;
+  }
+  
+  .mobile-swipe-carousel::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .mobile-swipe-carousel > * {
+    scroll-snap-align: center !important;
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    margin: 0 !important;
   }
 }
 
@@ -1694,7 +1833,7 @@ section {
 /* Step 1: Occasion Options */
 .occasion-options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 }

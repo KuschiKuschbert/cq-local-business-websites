@@ -89,6 +89,16 @@
                   <span class="occ-title">Private Celebration / Party</span>
                   <span class="occ-desc">Milestone birthdays, engagements, private functions with free room hire.</span>
                 </label>
+                <label class="occasion-card" for="occ-catering">
+                  <input type="radio" name="occasion-type" id="occ-catering" value="catering">
+                  <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
+                    <path d="M4 14a8 8 0 0116 0H4z" />
+                    <path d="M12 6a2 2 0 110-4 2 2 0 010 4z" />
+                    <path d="M2 17h20M4 17v1a1 1 0 001 1h14a1 1 0 001-1v-1" />
+                  </svg>
+                  <span class="occ-title">Riviera à Domicile</span>
+                  <span class="occ-desc">Bring the refined Riviera culinary experience to your residence, private villa, or yacht. Tailored dining.</span>
+                </label>
               </div>
               <div class="wizard-actions">
                 <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-1">Next Step: Choose Package →</button>
@@ -139,6 +149,36 @@
                     <span class="price">$0 Venue Hire</span>
                   </div>
                   <p class="wiz-pkg-desc">6-Hour venue hire, bar &amp; wait staff, music, fairy lights. (Requires min $3,000 Food &amp; Beverage spend).</p>
+                </label>
+              </div>
+
+              <!-- Offsite Catering Packages -->
+              <div class="wizard-packages-options hidden" id="wiz-catering-packages">
+                <label class="wiz-pkg-card active" for="wiz-pkg-delivery">
+                  <input type="radio" name="catering-pkg" id="wiz-pkg-delivery" value="delivery" checked>
+                  <div class="wiz-pkg-header">
+                    <strong>Bespoke Platter Delivery</strong>
+                    <span class="price">$0 Base Fee</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Chef-prepared grazing boxes and hot platter boards delivered fresh to your door. (Min $500 F&amp;B spend).</p>
+                </label>
+                
+                <label class="wiz-pkg-card" for="wiz-pkg-soiree">
+                  <input type="radio" name="catering-pkg" id="wiz-pkg-soiree" value="soiree">
+                  <div class="wiz-pkg-header">
+                    <strong>The Styled Soirée</strong>
+                    <span class="price">$450 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Onsite setup, professional grazing table styling, floral coordination, and clean-up.</p>
+                </label>
+
+                <label class="wiz-pkg-card" for="wiz-pkg-chef">
+                  <input type="radio" name="catering-pkg" id="wiz-pkg-chef" value="private-chef">
+                  <div class="wiz-pkg-header">
+                    <strong>Private Chef &amp; Service Staff</strong>
+                    <span class="price">$1,200 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Onsite kitchen staff, private chef preparing hot tapas plates, and hostesses serving beverages for up to 5 hours.</p>
                 </label>
               </div>
 
