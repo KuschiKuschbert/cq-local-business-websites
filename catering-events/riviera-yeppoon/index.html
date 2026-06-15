@@ -641,6 +641,225 @@
           </div>
         </div>
       </div>
+    <!-- Event Builder Wizard Section -->
+    <section class="wizard-section" id="wizard">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Interactive Planner</span>
+          <h2 class="section-title">Build Your Beachfront Event</h2>
+          <p class="section-subtitle">
+            Select your event type, guest count, dining style, and beverage package to estimate your total event investment in real time.
+          </p>
+        </div>
+
+        <div class="wizard-grid">
+          <!-- Left side: Form steps -->
+          <div class="wizard-card" id="wizard-form-container">
+            <!-- Wizard Tabs / Progress -->
+            <div class="wizard-progress">
+              <div class="progress-step active" id="prog-step-1">1. Occasion</div>
+              <div class="progress-step" id="prog-step-2">2. Package</div>
+              <div class="progress-step" id="prog-step-3">3. Dining &amp; Drinks</div>
+              <div class="progress-step" id="prog-step-4">4. Details</div>
+            </div>
+
+            <!-- Wizard Step 1: Occasion Type -->
+            <div class="wizard-step-panel active" id="wiz-panel-1">
+              <h3>What occasion are you celebrating?</h3>
+              <p>Select your event type to load the correct packages, menus, and pricing options.</p>
+              <div class="occasion-options">
+                <label class="occasion-card active" for="occ-wedding">
+                  <input type="radio" name="occasion-type" id="occ-wedding" value="wedding" checked>
+                  <span class="occ-icon">💍</span>
+                  <span class="occ-title">Beachfront Wedding</span>
+                  <span class="occ-desc">Timeless ceremonies, receptions, elopements, and coordinate services.</span>
+                </label>
+                <label class="occasion-card" for="occ-party">
+                  <input type="radio" name="occasion-type" id="occ-party" value="party">
+                  <span class="occ-icon">🎉</span>
+                  <span class="occ-title">Private Celebration / Party</span>
+                  <span class="occ-desc">Milestone birthdays, engagements, private functions with free room hire.</span>
+                </label>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-1">Next Step: Choose Package →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 2: Package Selection -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-2">
+              <h3 id="pkg-title-label">Choose Venue Package</h3>
+              <p id="pkg-desc-label">Select the venue and coordination package that fits your event layout.</p>
+              
+              <!-- Wedding Venue Packages -->
+              <div class="wizard-packages-options" id="wiz-wed-packages">
+                <label class="wiz-pkg-card active" for="wiz-pkg-kiss">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-kiss" value="kiss-commit" checked>
+                  <div class="wiz-pkg-header">
+                    <strong>Kiss &amp; Commit</strong>
+                    <span class="price">$2,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Ceremony only (up to 40 guests), 1.5 hours exclusive hire, weekday only.</p>
+                </label>
+                
+                <label class="wiz-pkg-card" for="wiz-pkg-vows">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-vows" value="vows-vino">
+                  <div class="wiz-pkg-header">
+                    <strong>Vows &amp; Vino</strong>
+                    <span class="price">$4,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Ceremony, drinks &amp; grazing (up to 40 guests), 2.5 hours hire, champagne tower.</p>
+                </label>
+                
+                <label class="wiz-pkg-card" for="wiz-pkg-bigday">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-bigday" value="big-day">
+                  <div class="wiz-pkg-header">
+                    <strong>The Big Day Package</strong>
+                    <span class="price" id="wiz-bigday-price-label">$6,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Full Setup, Ceremony &amp; Reception (8 hrs). $6,000 for max 40 guests, $8,000 for 40+ guests.</p>
+                </label>
+              </div>
+
+              <!-- Private Party Packages -->
+              <div class="wizard-packages-options hidden" id="wiz-party-packages">
+                <label class="wiz-pkg-card active" for="wiz-pkg-freehire">
+                  <input type="radio" name="party-pkg" id="wiz-pkg-freehire" value="free-room-hire" checked>
+                  <div class="wiz-pkg-header">
+                    <strong>FREE Room Hire Celebration</strong>
+                    <span class="price">$0 Venue Hire</span>
+                  </div>
+                  <p class="wiz-pkg-desc">6-Hour venue hire, bar &amp; wait staff, music, fairy lights. (Requires min $3,000 Food &amp; Beverage spend).</p>
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-2">← Back</button>
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-2">Next Step: Food &amp; Drinks →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 3: Food & Beverage Selectors -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-3">
+              <h3>Curate Your Food &amp; Beverage</h3>
+              <p>Select your menu style and drink options per guest.</p>
+              
+              <!-- Dining Selectors -->
+              <div class="wizard-form-group">
+                <label for="wiz-dining-select">Dining Menu Style</label>
+                <select id="wiz-dining-select">
+                  <!-- Will be dynamically updated based on occasion -->
+                </select>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-seafood-fountain-box">
+                <label class="checkbox-label" for="wiz-seafood-fountain">
+                  <input type="checkbox" id="wiz-seafood-fountain" value="25">
+                  <span class="custom-checkbox"></span>
+                  Add 3-Tier Seafood Fountain (+$25 pp + $100 set up fee)
+                </label>
+              </div>
+
+              <!-- Beverage Selectors -->
+              <div class="wizard-form-group" style="margin-top: 2rem;">
+                <label for="wiz-drinks-select">Beverage Package</label>
+                <select id="wiz-drinks-select">
+                  <option value="none">No drink package (Prepay Bar Tab / Cash Bar)</option>
+                  <option value="house">Riviera House Beverage Package (4 Hrs) — $75 pp</option>
+                  <option value="deluxe">Riviera Deluxe Beverage Package (4 Hrs) — $110 pp</option>
+                </select>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-spirits-box">
+                <label class="checkbox-label" for="wiz-add-spirits">
+                  <input type="checkbox" id="wiz-add-spirits" value="16">
+                  <span class="custom-checkbox"></span>
+                  Add Basic Spirits Option (+$16 pp per hour)
+                </label>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-cocktails-box">
+                <label class="checkbox-label" for="wiz-add-cocktails">
+                  <input type="checkbox" id="wiz-add-cocktails" value="22">
+                  <span class="custom-checkbox"></span>
+                  Add Signature Cocktails Option (+$22 pp per hour)
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-3">← Back</button>
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-3">Next Step: Guest Count &amp; Date →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 4: Details & Date Surcharges -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-4">
+              <h3>Event Parameters &amp; Logistics</h3>
+              <p>Configure guests and dates. Surcharges and taxes will calculate in real time.</p>
+              
+              <!-- Guest Slider -->
+              <div class="wizard-form-group">
+                <label for="wiz-guests-slider">Number of Guests: <strong id="wiz-guests-display">40</strong></label>
+                <input type="range" id="wiz-guests-slider" min="10" max="200" value="40" step="5" class="slider">
+              </div>
+
+              <!-- Date Picker -->
+              <div class="wizard-form-group">
+                <label for="wiz-event-date">Date of Event</label>
+                <input type="date" id="wiz-event-date" required>
+                <small class="form-help-text">Please note: A 10% surcharge applies on Sundays.</small>
+              </div>
+
+              <!-- Linen Upgrade for Weddings -->
+              <div class="wizard-form-group checkbox-group" id="wiz-linen-box">
+                <label class="checkbox-label" for="wiz-linen-upgrade">
+                  <input type="checkbox" id="wiz-linen-upgrade">
+                  <span class="custom-checkbox"></span>
+                  Upgrade to Natural French Linen tablecloths (+$40 per table of 10)
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-4">← Back</button>
+                <button type="button" class="btn btn-primary btn-submit-wizard" id="btn-wiz-submit">Submit Details to Sally →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side: Real-time Receipt -->
+          <div class="receipt-card" id="wiz-receipt-container">
+            <h4>Live Estimate Summary</h4>
+            <div class="receipt-divider"></div>
+            
+            <div class="receipt-items" id="wiz-receipt-items">
+              <!-- Dynamically populated receipt list -->
+            </div>
+
+            <div class="receipt-divider"></div>
+            
+            <div class="receipt-summary">
+              <div class="receipt-row">
+                <span>Subtotal (Excl. GST)</span>
+                <span id="receipt-subtotal">$0.00</span>
+              </div>
+              <div class="receipt-row">
+                <span>GST (10%)</span>
+                <span id="receipt-gst">$0.00</span>
+              </div>
+              <div class="receipt-row total">
+                <span>Estimated Total (Incl. GST)</span>
+                <span id="receipt-total">$0.00</span>
+              </div>
+            </div>
+
+            <div class="receipt-minimum-warning hidden" id="receipt-min-warning">
+              ⚠ F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" id="btn-receipt-enquire">Enquire With Sally</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery Section -->
@@ -656,35 +875,13 @@
 
         <div class="gallery-grid">
           <div class="gallery-item-wrapper" id="gal-img-1">
-            <div class="gallery-visual place-holder">
-              <!-- Inline SVG placeholder that looks elegant -->
-              <svg viewBox="0 0 400 300" class="placeholder-svg">
-                <rect width="100%" height="100%" fill="#ede3d6"/>
-                <circle cx="200" cy="120" r="45" fill="#5d6556" opacity="0.15"/>
-                <path d="M50 220 L150 140 L220 190 L300 110 L350 160 L350 250 L50 250 Z" fill="#5d6556" opacity="0.2"/>
-                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Champagne Tower at Sunset</text>
-              </svg>
-            </div>
+            <img src="/gallery1.jpg" alt="Champagne Tower at Sunset" class="gallery-img">
           </div>
           <div class="gallery-item-wrapper" id="gal-img-2">
-            <div class="gallery-visual place-holder">
-              <svg viewBox="0 0 400 300" class="placeholder-svg">
-                <rect width="100%" height="100%" fill="#ede3d6"/>
-                <path d="M50 250 L100 120 L180 180 L250 80 L350 210 L350 250 Z" fill="#5d6556" opacity="0.2"/>
-                <circle cx="300" cy="80" r="30" fill="#ffffff" opacity="0.3"/>
-                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Ceremony Setup on Cooee Bay</text>
-              </svg>
-            </div>
+            <img src="/gallery2.jpg" alt="Ceremony Setup on Cooee Bay" class="gallery-img">
           </div>
           <div class="gallery-item-wrapper" id="gal-img-3">
-            <div class="gallery-visual place-holder">
-              <svg viewBox="0 0 400 300" class="placeholder-svg">
-                <rect width="100%" height="100%" fill="#ede3d6"/>
-                <rect x="100" y="80" width="200" height="120" rx="8" fill="#5d6556" opacity="0.15"/>
-                <line x1="200" y1="20" x2="200" y2="80" stroke="#5d6556" stroke-width="1.5" stroke-dasharray="4"/>
-                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="16" fill="#5d6556">Long Table Coastal Lunch</text>
-              </svg>
-            </div>
+            <img src="/gallery3.jpg" alt="Long Table Coastal Lunch" class="gallery-img">
           </div>
         </div>
       </div>
@@ -695,14 +892,7 @@
       <div class="container">
         <div class="about-wrapper">
           <div class="about-visual">
-            <div class="about-image-placeholder">
-              <svg viewBox="0 0 500 600" class="placeholder-svg">
-                <rect width="100%" height="100%" fill="#ede3d6"/>
-                <circle cx="250" cy="220" r="110" fill="#5d6556" opacity="0.2"/>
-                <path d="M100 480 C100 350, 400 350, 400 480" fill="#5d6556" opacity="0.15"/>
-                <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Ovo" font-size="18" fill="#5d6556">Sally - Owner &amp; Coordinator</text>
-              </svg>
-            </div>
+            <img src="/about.jpg" alt="Sally - Owner &amp; Coordinator" class="about-img">
           </div>
           <div class="about-text">
             <span class="section-tag">Behind the Scenes</span>
