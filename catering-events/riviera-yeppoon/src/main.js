@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Sunday Tapas Booking Engine
+  // 3. Sunday Tapas booking variables (OpenTable Integration)
   const bookingDateSelect = document.getElementById('booking-date');
   const bookingForm = document.getElementById('tapas-booking-form');
   const bookingConfirmPanel = document.getElementById('booking-confirm-panel');
   const confirmDetails = document.getElementById('confirm-details');
+  const bookingManualLink = document.getElementById('booking-manual-link');
   const bookingResetBtn = document.getElementById('booking-reset-btn');
 
   // Generate the next 6 Sundays dynamically starting from today
@@ -50,14 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date('2026-06-15');
     let sundaysCount = 0;
     
-    // Scan forward day by day to find Sundays
     let current = new Date(today);
     while (sundaysCount < 6) {
       current.setDate(current.getDate() + 1);
       if (current.getDay() === 0) { // Sunday is 0
         sundaysCount++;
         
-        // Format date beautifully
         const day = current.getDate();
         const monthNames = [
           "January", "February", "March", "April", "May", "June",
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const month = monthNames[current.getMonth()];
         const year = current.getFullYear();
         
-        // Ordinal suffix
         let suffix = "th";
         if (day === 1 || day === 21 || day === 31) suffix = "st";
         else if (day === 2 || day === 22) suffix = "nd";
@@ -85,18 +83,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   populateSundays();
 
-  // Handle booking form submission
+  // Handle booking form submission (links up to live OpenTable)
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
       const guests = document.getElementById('booking-guests').value;
+      const dateVal = bookingDateSelect.value; // e.g. "2026-06-21"
       const dateOption = bookingDateSelect.options[bookingDateSelect.selectedIndex].text;
-      const time = document.getElementById('booking-time').value;
+      const timeRequested = document.getElementById('booking-time').value; // e.g. "1:30 PM"
       
-      // Update confirmation details
+      // If guests is 8+ (enquiry)
+      if (guests === '8') {
+        const contactSection = document.getElementById('contact');
+        const contactServiceSelect = document.getElementById('contact-service');
+        const contactMessage = document.getElementById('contact-message');
+        
+        if (contactServiceSelect) contactServiceSelect.value = 'private-event';
+        if (contactMessage) {
+          contactMessage.value = `Hi Sally, I'd like to enquire about booking a Sunday Tapas table for a large group of 8 or more guests on ${dateOption} around ${timeRequested}.`;
+        }
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        return;
+      }
+      
+      // Parse time to 24h format
+      let time24 = "12:00";
+      const match = timeRequested.match(/(\d+):(\d+)\s*(AM|PM)/i);
+      if (match) {
+        let hr = parseInt(match[1]);
+        const min = match[2];
+        const ampm = match[3].toUpperCase();
+        if (ampm === 'PM' && hr !== 12) hr += 12;
+        if (ampm === 'AM' && hr === 12) hr = 0;
+        time24 = `${String(hr).padStart(2, '0')}:${min}`;
+      }
+      
+      // Construct OpenTable URL
+      // Format: https://www.opentable.com.au/r/riviera-yeppoon-cooee-bay?covers=2&dateTime=2026-06-21T13:30
+      const otUrl = `https://www.opentable.com.au/r/riviera-yeppoon-cooee-bay?covers=${guests}&dateTime=${dateVal}T${time24}`;
+      
+      // Attempt to open in a new window/tab
+      window.open(otUrl, '_blank');
+      
+      // Show confirmation panel on our site
       if (confirmDetails) {
-        confirmDetails.innerHTML = `Table reserved for <strong>${guests} guests</strong> on <strong>${dateOption}</strong> at <strong>${time} PM</strong>.`;
+        confirmDetails.innerHTML = `Opening reservation page on OpenTable for <strong>${guests} guests</strong> on <strong>${dateOption}</strong> at <strong>${timeRequested}</strong>...`;
+      }
+      if (bookingManualLink) {
+        bookingManualLink.href = otUrl;
       }
       
       // Toggle panels
@@ -114,35 +151,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Sunday Tapas Menu Tabs
+  // 4. Sunday Tapas Menu Tabs (Tapas, Cocktails, Wine/Beer)
   const tabTapas = document.getElementById('tab-tapas');
-  const tabDrinks = document.getElementById('tab-drinks');
+  const tabCocktails = document.getElementById('tab-cocktails');
+  const tabWineBeer = document.getElementById('tab-wine-beer');
+  
   const panelTapas = document.getElementById('menu-tapas-panel');
-  const panelDrinks = document.getElementById('menu-drinks-panel');
+  const panelCocktails = document.getElementById('menu-cocktails-panel');
+  const panelWineBeer = document.getElementById('menu-wine-beer-panel');
 
-  if (tabTapas && tabDrinks && panelTapas && panelDrinks) {
-    tabTapas.addEventListener('click', () => {
-      tabTapas.classList.add('active');
-      tabTapas.setAttribute('aria-selected', 'true');
-      tabDrinks.classList.remove('active');
-      tabDrinks.setAttribute('aria-selected', 'false');
-      
-      panelTapas.style.display = 'block';
-      panelDrinks.style.display = 'none';
+  const tapasTabs = [tabTapas, tabCocktails, tabWineBeer];
+  const tapasPanels = [panelTapas, panelCocktails, panelWineBeer];
+
+  function switchTapasTab(activeIndex) {
+    tapasTabs.forEach((tab, index) => {
+      if (tab) {
+        const isActive = index === activeIndex;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      }
     });
-
-    tabDrinks.addEventListener('click', () => {
-      tabDrinks.classList.add('active');
-      tabDrinks.setAttribute('aria-selected', 'true');
-      tabTapas.classList.remove('active');
-      tabTapas.setAttribute('aria-selected', 'false');
-      
-      panelDrinks.style.display = 'block';
-      panelTapas.style.display = 'none';
+    tapasPanels.forEach((panel, index) => {
+      if (panel) {
+        panel.style.display = index === activeIndex ? 'block' : 'none';
+      }
     });
   }
 
-  // 5. Catering Menu Tabs
+  if (tabTapas) tabTapas.addEventListener('click', () => switchTapasTab(0));
+  if (tabCocktails) tabCocktails.addEventListener('click', () => switchTapasTab(1));
+  if (tabWineBeer) tabWineBeer.addEventListener('click', () => switchTapasTab(2));
+
+  // 5. Catering Menu Tabs (Finger Food, Meats/Sides)
   const catTabPlatters = document.getElementById('cat-tab-platters');
   const catTabBuffet = document.getElementById('cat-tab-buffet');
   const catPanelPlatters = document.getElementById('cat-panel-platters');
@@ -172,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Wedding Package Selection Actions
   const selectPkgBtns = document.querySelectorAll('.select-pkg-btn');
-  const enquiryForm = document.getElementById('event-enquiry-form');
   const contactServiceSelect = document.getElementById('contact-service');
   const contactPackageSelect = document.getElementById('contact-package');
 
@@ -180,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const pkgName = btn.getAttribute('data-package');
       
-      // Auto-set selects
       if (contactServiceSelect) contactServiceSelect.value = 'wedding';
       if (contactPackageSelect) {
         if (pkgName === 'Kiss & Commit') contactPackageSelect.value = 'kiss-commit';
@@ -188,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (pkgName === 'The Big Day') contactPackageSelect.value = 'big-day';
       }
       
-      // Scroll smoothly to contact
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -204,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     enquirySubmitForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Simple fade-out form and fade-in feedback
       enquirySubmitForm.classList.add('hidden');
       contactFeedback.classList.remove('hidden');
     });

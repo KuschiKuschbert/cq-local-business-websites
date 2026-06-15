@@ -1349,3 +1349,239 @@ section {
     transform: rotate(-45deg) translate(4px, -4px);
   }
 }
+
+/* ========================================================
+   Added Styles for Extensive Menus, Packages & Grazing Tables
+   ======================================================== */
+
+/* Menu Item Grid Layout */
+.menu-item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+}
+
+.tapas-phone-alt {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.tapas-phone-alt a {
+  color: var(--primary-olive);
+}
+
+/* Wedding Catering Packages Grid */
+.catering-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pkg-detail-box {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(93, 101, 86, 0.08);
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.pkg-detail-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-olive);
+  box-shadow: var(--shadow-medium);
+}
+
+.pkg-detail-box h5 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--primary-olive);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(93, 101, 86, 0.08);
+  padding-bottom: 0.5rem;
+}
+
+.pkg-detail-box h5 .price {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.pkg-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* Grazing Table Pricing Box Layout */
+.grazing-pricing-box {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(93, 101, 86, 0.08);
+  margin-top: 3rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.grazing-pricing-box h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.grazing-pricing-box p {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.grazing-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(93, 101, 86, 0.08);
+  padding-top: 1.5rem;
+}
+
+.grazing-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.grazing-col:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.grazing-col strong {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--primary-olive);
+  font-weight: 400;
+}
+
+.grazing-col span {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.delivery-notes {
+  font-size: 0.8rem !important;
+  color: var(--text-muted);
+  margin-bottom: 0 !important;
+  line-height: 1.4;
+  border-top: 1px dashed rgba(93, 101, 86, 0.15);
+  padding-top: 1rem;
+}
+
+/* Party Section Layout */
+.parties-section {
+  background-color: var(--white-trans);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(93, 101, 86, 0.05);
+  border-bottom: 1px solid rgba(93, 101, 86, 0.05);
+}
+
+.parties-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.party-inclusions-box {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(93, 101, 86, 0.08);
+  box-shadow: var(--shadow-subtle);
+  margin: 2.5rem 0 2rem;
+}
+
+.party-inclusions-box h5 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--primary-olive);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.party-conditions {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  border-left: 2px solid var(--primary-olive);
+  padding-left: 1rem;
+}
+
+.party-catering h3 {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.party-catering .desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.party-pkg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.party-pkg-item {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(93, 101, 86, 0.08);
+  box-shadow: var(--shadow-subtle);
+}
+
+.party-pkg-item h5 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--primary-olive);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.party-pkg-item h5 .price {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.party-pkg-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 1024px) {
+  .menu-item-grid,
+  .catering-packages-grid,
+  .parties-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
