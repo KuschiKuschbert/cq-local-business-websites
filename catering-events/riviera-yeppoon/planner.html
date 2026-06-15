@@ -70,13 +70,22 @@
               <div class="occasion-options">
                 <label class="occasion-card active" for="occ-wedding">
                   <input type="radio" name="occasion-type" id="occ-wedding" value="wedding" checked>
-                  <span class="occ-icon">💍</span>
+                  <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
+                    <path d="M12 3L9 6h6l-3-3z" />
+                    <path d="M9 6l3 3.5 3-3.5" />
+                    <circle cx="12" cy="15" r="5.5" />
+                  </svg>
                   <span class="occ-title">Beachfront Wedding</span>
                   <span class="occ-desc">Timeless ceremonies, receptions, elopements, and coordination services.</span>
                 </label>
                 <label class="occasion-card" for="occ-party">
                   <input type="radio" name="occasion-type" id="occ-party" value="party">
-                  <span class="occ-icon">🎉</span>
+                  <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
+                    <path d="M4 8c0 3 2 4 5 4s5-1 5-4H4z" />
+                    <path d="M9 12v7M6 19h6" />
+                    <path d="M10 8c0 3 2 4 5 4s5-1 5-4h-10z" />
+                    <path d="M15 12v7M12 19h6" />
+                  </svg>
                   <span class="occ-title">Private Celebration / Party</span>
                   <span class="occ-desc">Milestone birthdays, engagements, private functions with free room hire.</span>
                 </label>
@@ -253,7 +262,7 @@
             </div>
 
             <div class="receipt-minimum-warning hidden" id="receipt-min-warning">
-              ⚠ F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.
+              <svg viewBox="0 0 24 24" class="deluxe-icon-small" style="vertical-align: middle; margin-right: 0.4rem; stroke: currentColor;" aria-hidden="true"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg> F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.
             </div>
 
             <button type="button" class="btn btn-primary btn-block" id="btn-receipt-enquire" style="margin-top: 2rem; padding: 1.1rem; width: 100%;">Enquire With Sally</button>

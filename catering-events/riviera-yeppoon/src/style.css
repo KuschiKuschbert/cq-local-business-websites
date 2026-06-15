@@ -2097,12 +2097,20 @@ section {
 .logo-img {
   height: 52px;
   width: auto;
+  mix-blend-mode: multiply;
   transition: var(--transition-smooth);
 }
 
 .logo-img:hover {
   transform: scale(1.02);
 }
+
+.main-footer .logo-img {
+  height: 40px;
+  filter: invert(1) brightness(1.8);
+  mix-blend-mode: screen;
+}
+
 
 /* Active navigation page highlights */
 .nav-link.active-page:not(.btn-olive)::after {
@@ -2154,4 +2162,39 @@ section {
     height: 300px;
   }
 }
+
+/* Deluxe Luxury Icons (Old Money / Mediterranean Style) */
+.deluxe-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  stroke: var(--primary-olive);
+  stroke-width: 1.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: var(--transition-smooth);
+}
+
+.package-card:hover .deluxe-icon,
+.occasion-card:hover .deluxe-icon {
+  transform: translateY(-4px) scale(1.04);
+  stroke: var(--primary-olive-light);
+}
+
+/* Small icons (like contact coordinates and discount/surcharges) */
+.deluxe-icon-small {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
