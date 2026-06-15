@@ -1,6 +1,6 @@
-# Central Queensland Local Business Outreach Playbook
+# Cap Coast Creative — Central Queensland Local Business Outreach Playbook
 
-This guide is for warm, local, walk-in-first outreach for the 26 completed Central Queensland website mockups in this repo. The offer is simple: a custom modern website maintained for the business on a **$0 upfront, flat monthly fee** model.
+This guide is for warm, local, walk-in-first outreach for the 26 completed Central Queensland website mockups in this repo. Representing **Cap Coast Creative**, the offer is simple: a custom modern website maintained for the business on a **$0 upfront, flat monthly fee** model.
 
 Use the mockups honestly. Say they are custom prototypes you built to show what is possible, not approved sites, replacement sites, or guaranteed revenue machines.
 
@@ -59,7 +59,7 @@ Use this order so the conversation feels natural and respectful.
 
 ### 20-Second Permission Opener
 
-> Hey, are you [Owner Name]? I am [Your Name], a local web developer in Central QLD. I built a quick custom website mockup for [Business Name] because I thought your business could look really strong online. No pressure at all, but if you have 60 seconds I can show you the one feature I built for you.
+> Hey, are you [Owner Name]? I am [Your Name] from **Cap Coast Creative**, a local web studio here on the Coast. I built a quick custom website mockup for [Business Name] because I thought your business could look really strong online. No pressure at all, but if you have 60 seconds I can show you the one feature I built for you.
 
 If they say yes, hand them the device and let the site do some of the talking.
 
@@ -75,7 +75,7 @@ If they say yes, hand them the device and let the site do some of the talking.
 
 ### If The Owner Is Busy
 
-> Totally understand. I built a quick mockup for [Business Name] and wanted to show you when it suits. The link is `[Mockup Link]`. I am [Your Name] on [Phone]. If it looks interesting, I can come back for five minutes when things are quieter.
+> Totally understand. I built a quick mockup for [Business Name] and wanted to show you when it suits. The link is `[Mockup Link]`. I am [Your Name] from **Cap Coast Creative** on [Phone]. If it looks interesting, I can come back for five minutes when things are quieter.
 
 ### If They Ask "How Much?"
 
@@ -159,13 +159,13 @@ Only follow up when you have a real basis: they saw the mockup, gave you a card,
 
 > Hi [Owner Name], thanks for taking a minute today. Here is the mockup I showed you for [Business Name]: [Mockup Link]
 >
-> No pressure. If you want anything changed in it, send it through and I can adjust the demo.
+> No pressure. If you want anything changed in it, send it through and we can adjust the demo.
 >
-> - [Your Name], [Phone]
+> - [Your Name], **Cap Coast Creative** ([Phone])
 
 ### Same-Day Thank-You Email
 
-**Subject:** Website mockup for [Business Name]
+**Subject:** Website mockup for [Business Name] — Cap Coast Creative
 
 > Hi [Owner Name],
 >
@@ -175,15 +175,15 @@ Only follow up when you have a real basis: they saw the mockup, gave you a card,
 >
 > The main idea was to show how your site could turn more visitors into direct enquiries using [trust hook], without a big upfront build cost.
 >
-> My maintenance model is $0 upfront and **[$199/$249/$299] per month**, including hosting, security, updates, and changes.
+> At **Cap Coast Creative**, our maintenance model is $0 upfront and **[$199/$249/$299] per month**, including hosting, security, updates, and changes.
 >
 > Kind regards,
 >
-> [Your Name]
->
+> [Your Name]  
+> **Cap Coast Creative**  
 > [Phone]
 >
-> If you do not want any follow-up, reply "unsubscribe" and I will not contact you again.
+> If you do not want any follow-up, reply "unsubscribe" and we will not contact you again.
 
 ### 3-Day Soft Follow-Up
 
@@ -191,15 +191,15 @@ Only follow up when you have a real basis: they saw the mockup, gave you a card,
 >
 > Happy to make a small tweak if you want to see it closer to your current services.
 >
-> - [Your Name]
+> - [Your Name], **Cap Coast Creative**
 
 ### 10-Day Final Follow-Up
 
 > Hi [Owner Name], last one from me. I will leave the [Business Name] mockup here in case it is useful later: [Mockup Link]
 >
-> If you ever want it adjusted or maintained properly, I am happy to help. Otherwise, no worries at all.
+> If you ever want it adjusted or maintained properly, we are happy to help. Otherwise, no worries at all.
 >
-> - [Your Name], [Phone]
+> - [Your Name], **Cap Coast Creative** ([Phone])
 
 Stop after the final follow-up unless they reply or clearly invite more contact.
 
