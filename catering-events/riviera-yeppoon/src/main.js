@@ -96,6 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // If guests is 8+ (enquiry)
       if (guests === '8') {
         const contactSection = document.getElementById('contact');
+        if (!contactSection) {
+          const params = new URLSearchParams();
+          params.set('source', 'tapas');
+          params.set('occasion', 'private-event');
+          params.set('package', 'none');
+          params.set('message', `Hi Sally, I'd like to enquire about booking a Sunday Tapas table for a large group of 8 or more guests on ${dateOption} around ${timeRequested}.`);
+          window.location.href = `contact.html?${params.toString()}`;
+          return;
+        }
+        
         const contactServiceSelect = document.getElementById('contact-service');
         const contactMessage = document.getElementById('contact-message');
         
@@ -743,7 +753,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const summary = calculateReceipt();
     if (!summary) return;
     
-    // Pre-fill Enquiry Type
+    // Check if we are on the planner page and need to redirect to contact page
+    const contactSection = document.getElementById('contact');
+    
+    // Compile summary message
+    let msg = `=========================================\n`;
+    msg += `RIVIERA EVENT PLANNER SUMMARY\n`;
+    msg += `=========================================\n`;
+    msg += `Occasion: ${summary.occasionType === 'wedding' ? 'Beachfront Wedding' : 'Private Celebration / Party'}\n`;
+    msg += `Venue Package: ${summary.venuePkgName} (${formatPrice(summary.venueHire)} excl. GST)\n`;
+    if (summary.weekdayDiscount > 0) {
+      msg += `Weekday Discount Applied: -${formatPrice(summary.weekdayDiscount)}\n`;
+    }
+    msg += `Date of Event: ${summary.dateText ? summary.dateText : 'Not specified yet'}\n`;
+    msg += `Number of Guests: ${summary.guests} guests\n`;
+    msg += `Dining Menu Style: ${summary.diningName} (${formatPrice(summary.foodCost)} excl. GST)\n`;
+    if (summary.hasSeafoodFountain) {
+      msg += `Catering Upgrade: 3-Tier Seafood Fountain (${formatPrice(summary.seafoodFountainCost)} excl. GST)\n`;
+    }
+    msg += `Beverages: ${summary.drinksName} (${formatPrice(summary.beverageCost)} excl. GST)\n`;
+    if (summary.hasSpirits) {
+      msg += `Drinks Upgrade: Basic Spirits (${formatPrice(summary.spiritsCost)} excl. GST)\n`;
+    }
+    if (summary.hasCocktails) {
+      msg += `Drinks Upgrade: Signature Cocktails (${formatPrice(summary.cocktailsCost)} excl. GST)\n`;
+    }
+    if (summary.hasLinen) {
+      msg += `Venue Upgrade: Natural French Linen Tablecloths for ${summary.tablesCount} tables (${formatPrice(summary.linenCost)} excl. GST)\n`;
+    }
+    msg += `-----------------------------------------\n`;
+    msg += `Subtotal (excl. GST): ${formatPrice(summary.subtotal)}\n`;
+    if (summary.isSunday) {
+      msg += `Sunday Surcharge (10%): ${formatPrice(summary.sundaySurcharge)}\n`;
+    }
+    msg += `GST (10%): ${formatPrice(summary.gstVal)}\n`;
+    msg += `-----------------------------------------\n`;
+    msg += `Estimated Total: ${formatPrice(summary.totalVal)} (GST Incl.)\n`;
+    msg += `=========================================\n\n`;
+    msg += `Hi Sally, I've built this event plan using your Riviera Event Wizard. I'd love to discuss availability and details!`;
+
+    if (!contactSection) {
+      // Redirect to contact.html
+      const params = new URLSearchParams();
+      params.set('source', 'planner');
+      params.set('occasion', summary.occasionType);
+      
+      let pkgVal = 'none';
+      if (summary.occasionType === 'wedding') {
+        const wedPkgChecked = document.querySelector('input[name="wedding-pkg"]:checked');
+        pkgVal = wedPkgChecked ? wedPkgChecked.value : 'kiss-commit';
+      } else {
+        pkgVal = 'party-hire';
+      }
+      params.set('package', pkgVal);
+      params.set('message', msg);
+      
+      window.location.href = `contact.html?${params.toString()}`;
+      return;
+    }
+    
+    // Pre-fill Enquiry Type (if form is on the same page)
     if (contactServiceSelect) {
       if (summary.occasionType === 'wedding') {
         contactServiceSelect.value = 'wedding';
@@ -766,49 +835,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pre-fill Message
     const contactMessage = document.getElementById('contact-message');
     if (contactMessage) {
-      let msg = `=========================================\n`;
-      msg += `RIVIERA EVENT PLANNER SUMMARY\n`;
-      msg += `=========================================\n`;
-      msg += `Occasion: ${summary.occasionType === 'wedding' ? 'Beachfront Wedding' : 'Private Celebration / Party'}\n`;
-      msg += `Venue Package: ${summary.venuePkgName} (${formatPrice(summary.venueHire)} excl. GST)\n`;
-      if (summary.weekdayDiscount > 0) {
-        msg += `Weekday Discount Applied: -${formatPrice(summary.weekdayDiscount)}\n`;
-      }
-      msg += `Date of Event: ${summary.dateText ? summary.dateText : 'Not specified yet'}\n`;
-      msg += `Number of Guests: ${summary.guests} guests\n`;
-      msg += `Dining Menu Style: ${summary.diningName} (${formatPrice(summary.foodCost)} excl. GST)\n`;
-      if (summary.hasSeafoodFountain) {
-        msg += `Catering Upgrade: 3-Tier Seafood Fountain (${formatPrice(summary.seafoodFountainCost)} excl. GST)\n`;
-      }
-      msg += `Beverages: ${summary.drinksName} (${formatPrice(summary.beverageCost)} excl. GST)\n`;
-      if (summary.hasSpirits) {
-        msg += `Drinks Upgrade: Basic Spirits (${formatPrice(summary.spiritsCost)} excl. GST)\n`;
-      }
-      if (summary.hasCocktails) {
-        msg += `Drinks Upgrade: Signature Cocktails (${formatPrice(summary.cocktailsCost)} excl. GST)\n`;
-      }
-      if (summary.hasLinen) {
-        msg += `Venue Upgrade: Natural French Linen Tablecloths for ${summary.tablesCount} tables (${formatPrice(summary.linenCost)} excl. GST)\n`;
-      }
-      msg += `-----------------------------------------\n`;
-      msg += `Subtotal (excl. GST): ${formatPrice(summary.subtotal)}\n`;
-      if (summary.isSunday) {
-        msg += `Sunday Surcharge (10%): ${formatPrice(summary.sundaySurcharge)}\n`;
-      }
-      msg += `GST (10%): ${formatPrice(summary.gstVal)}\n`;
-      msg += `-----------------------------------------\n`;
-      msg += `Estimated Total: ${formatPrice(summary.totalVal)} (GST Incl.)\n`;
-      msg += `=========================================\n\n`;
-      msg += `Hi Sally, I've built this event plan using your Riviera Event Wizard. I'd love to discuss availability and details!`;
-      
       contactMessage.value = msg;
     }
     
     // Scroll to contact form
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    contactSection.scrollIntoView({ behavior: 'smooth' });
   }
   
   const btnWizSubmit = document.getElementById('btn-wiz-submit');
@@ -817,7 +848,51 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnWizSubmit) btnWizSubmit.addEventListener('click', handleHandoff);
   if (btnReceiptEnquire) btnReceiptEnquire.addEventListener('click', handleHandoff);
 
-  // Initial setup call
-  handleOccasionChange('wedding');
-  updateStepUI();
+  // 9. Initial setup call
+  if (document.getElementById('wizard')) {
+    handleOccasionChange('wedding');
+    updateStepUI();
+  }
+
+  // 10. Handle Contact page query parameters pre-population
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('source')) {
+    const contactServiceSelect = document.getElementById('contact-service');
+    const contactPackageSelect = document.getElementById('contact-package');
+    const contactMessage = document.getElementById('contact-message');
+    
+    const occasion = urlParams.get('occasion');
+    const pkg = urlParams.get('package');
+    const message = urlParams.get('message');
+    
+    if (contactServiceSelect) {
+      if (occasion === 'wedding') {
+        contactServiceSelect.value = 'wedding';
+      } else if (occasion === 'party' || occasion === 'private-event') {
+        contactServiceSelect.value = 'private-event';
+      }
+    }
+    
+    if (contactPackageSelect && pkg) {
+      contactPackageSelect.value = pkg;
+    }
+    
+    if (contactMessage && message) {
+      contactMessage.value = message;
+    }
+  }
+
+  // 11. Multi-Page Active Link Highlighting
+  const path = window.location.pathname;
+  const page = path.split("/").pop();
+  
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (page === href || (page === '' && href === 'index.html')) {
+      link.classList.add('active-page');
+    } else {
+      link.classList.remove('active-page');
+    }
+  });
 });

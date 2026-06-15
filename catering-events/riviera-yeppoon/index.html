@@ -15,16 +15,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Preload Hero Image -->
-  <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/about.jpg" fetchpriority="high">
 </head>
 <body>
 
   <!-- Glassmorphic Header -->
   <header class="main-header" id="main-header">
     <div class="header-container">
-      <a href="#" class="logo" id="logo-link">
-        <span class="logo-top">RIVIERA</span>
-        <span class="logo-bottom">YEPPOON</span>
+      <a href="index.html" class="logo-brand" id="logo-link">
+        <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img">
       </a>
       
       <button class="mobile-nav-toggle" id="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle Navigation">
@@ -33,13 +32,12 @@
       
       <nav class="nav-menu" id="primary-navigation">
         <ul>
-          <li><a href="#tapas" class="nav-link" id="nav-link-tapas">Sunday Tapas</a></li>
-          <li><a href="#weddings" class="nav-link" id="nav-link-weddings">Weddings</a></li>
-          <li><a href="#parties" class="nav-link" id="nav-link-parties">Parties</a></li>
-          <li><a href="#catering" class="nav-link" id="nav-link-catering">Catering</a></li>
-          <li><a href="#gallery" class="nav-link" id="nav-link-gallery">Gallery</a></li>
-          <li><a href="#about" class="nav-link" id="nav-link-about">Our Story</a></li>
-          <li><a href="#contact" class="nav-link btn-olive" id="nav-link-contact">Inquire Now</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tapas.html" class="nav-link">Sunday Tapas</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="planner.html" class="nav-link">Event Builder</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="contact.html" class="nav-link btn-olive">Inquire Now</a></li>
         </ul>
       </nav>
     </div>
@@ -47,878 +45,77 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-badge">Cooee Bay Beachfront, Yeppoon</span>
-        <h1 class="hero-title">Where Old-Money Elegance <br>Meets Salty Sea Air</h1>
-        <p class="hero-description">
-          An exquisite coastal wedding, party, and events venue capturing the essence of the Mediterranean Riviera.
+    <section class="hero-section" id="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/about.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; min-height: 90vh; color: var(--white); text-align: center; position: relative;">
+      <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 1;"></div>
+      <div class="hero-content" style="position: relative; z-index: 2; max-width: 800px; padding: 2rem;">
+        <span class="hero-badge" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; display: inline-block; margin-bottom: 2rem;">Cooee Bay Beachfront, Yeppoon</span>
+        <h1 class="hero-title" style="font-family: var(--font-serif); font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.25);">Where Old-Money Elegance <br>Meets Salty Sea Air</h1>
+        <p class="hero-description" style="font-size: 1.15rem; font-weight: 300; margin-bottom: 3rem; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.2);">
+          Unveil the ultimate coastal experience. Riviera Yeppoon offers Mediterranean-styled wedding receptions, oceanfront private functions, and premium offsite catering boxes.
         </p>
-        <div class="hero-actions">
-          <a href="#tapas" class="btn btn-primary" id="hero-cta-tapas">Sunday Tapas Bookings</a>
-          <a href="#contact" class="btn btn-secondary-outline" id="hero-cta-events">Plan An Event</a>
+        <div class="hero-actions" style="display: flex; gap: 1.5rem; justify-content: center;">
+          <a href="planner.html" class="btn btn-primary" style="padding: 1rem 2rem; text-decoration: none;">Build Your Event</a>
+          <a href="tapas.html" class="btn btn-secondary-outline" style="padding: 1rem 2rem; text-decoration: none; border-color: var(--white); color: var(--white);">Sunday Tapas Bookings</a>
         </div>
-      </div>
-      <div class="hero-scroll-indicator">
-        <span class="scroll-dot"></span>
       </div>
     </section>
 
-    <!-- Sunday Tapas by the Sea (Booking Engine + Menu) -->
-    <section class="tapas-section" id="tapas">
+    <!-- Welcome Portal Section -->
+    <section class="portal-section" style="padding: 8rem 0; background-color: var(--bg-cream);">
       <div class="container">
-        <div class="section-intro text-center">
-          <span class="section-tag">Sunday Tapas by the Sea</span>
-          <h2 class="section-title">Glamour Shouldn't Be Reserved for Weddings Only</h2>
+        <div class="section-intro text-center" style="margin-bottom: 5rem;">
+          <span class="section-tag">Beachfront Haven</span>
+          <h2 class="section-title">Experience Riviera Yeppoon</h2>
           <p class="section-subtitle">
-            Open to the public every Sunday from 12:00 PM to 6:00 PM. Indulge in Mediterranean-inspired tapas, curated wines, and panoramic ocean views of Keppel Bay.
+            A premium Mediterranean event space on Cooee Bay beachfront. Explore our offerings below.
           </p>
         </div>
 
-        <div class="tapas-grid">
-          <!-- Interactive Online Booking Engine -->
-          <div class="booking-card" id="booking-container">
-            <h3>Book Your Table</h3>
-            <p class="booking-note">Reserve your table instantly through OpenTable.</p>
-            
-            <!-- Step 1: Search Form -->
-            <form id="tapas-booking-form" class="booking-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="booking-guests">Guests</label>
-                  <select id="booking-guests" required>
-                    <option value="2">2 Guests</option>
-                    <option value="3">3 Guests</option>
-                    <option value="4">4 Guests</option>
-                    <option value="5">5 Guests</option>
-                    <option value="6">6 Guests</option>
-                    <option value="7">7 Guests</option>
-                    <option value="8">8+ Guests (Enquiry)</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="booking-date">Select Sunday</label>
-                  <select id="booking-date" required>
-                    <!-- Dynamically populated Sundays -->
-                  </select>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="booking-time">Time</label>
-                  <select id="booking-time" required>
-                    <option value="12:00 PM">12:00 PM</option>
-                    <option value="12:30 PM">12:30 PM</option>
-                    <option value="1:00 PM">1:00 PM</option>
-                    <option value="1:30 PM">1:30 PM</option>
-                    <option value="2:00 PM">2:00 PM</option>
-                    <option value="2:30 PM">2:30 PM</option>
-                    <option value="3:00 PM">3:00 PM</option>
-                    <option value="3:30 PM">3:30 PM</option>
-                    <option value="4:00 PM">4:00 PM</option>
-                    <option value="4:30 PM">4:30 PM</option>
-                    <option value="5:00 PM">5:00 PM</option>
-                  </select>
-                </div>
-              </div>
-              
-              <button type="submit" class="btn btn-primary btn-block" id="booking-submit-btn">Book on OpenTable</button>
-              <div class="tapas-phone-alt">Or call us: <a href="tel:0447760695"><strong>0447 760 695</strong></a> (Restaurant bookings only)</div>
-            </form>
-
-            <!-- Step 2: Redirecting Panel -->
-            <div class="booking-confirmation hidden" id="booking-confirm-panel">
-              <div class="confirm-icon">✓</div>
-              <h4>Opening OpenTable</h4>
-              <p id="confirm-details">Redirecting you to complete your reservation at Riviera Yeppoon...</p>
-              <p class="confirm-subtext">If the booking page did not open in a new window, please click the button below:</p>
-              <a href="https://www.opentable.com.au/r/riviera-yeppoon-cooee-bay" target="_blank" class="btn btn-primary btn-block" id="booking-manual-link">Open Booking Page</a>
-              <button type="button" class="btn btn-secondary-outline btn-block" style="margin-top: 1rem;" id="booking-reset-btn">Change Details</button>
+        <div class="packages-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
+          <!-- Card 1: Sunday Tapas -->
+          <div class="package-card" style="background-color: var(--white); padding: 3.5rem 2.5rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+            <div>
+              <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🍷</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Sunday Tapas</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
+                Indulge in curated small plates, zesty local cocktails, and panoramic ocean views of Keppel Bay. Open every Sunday from 12pm.
+              </p>
             </div>
+            <a href="tapas.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Book Your Table →</a>
           </div>
 
-          <!-- Interactive Menus -->
-          <div class="menu-card" id="menu-container">
-            <div class="menu-tabs" role="tablist">
-              <button class="menu-tab active" id="tab-tapas" role="tab" aria-selected="true" aria-controls="menu-tapas-panel">Tapas</button>
-              <button class="menu-tab" id="tab-cocktails" role="tab" aria-selected="false" aria-controls="menu-cocktails-panel">Cocktails</button>
-              <button class="menu-tab" id="tab-wine-beer" role="tab" aria-selected="false" aria-controls="menu-wine-beer-panel">Wine &amp; Beer</button>
+          <!-- Card 2: Weddings & Functions -->
+          <div class="package-card featured" style="background-color: var(--white); padding: 4rem 2.5rem; border-radius: var(--border-radius); border: 1px solid var(--primary-olive); box-shadow: var(--shadow-medium); display: flex; flex-direction: column; justify-content: space-between; text-align: center; transform: scale(1.03); position: relative;">
+            <span class="package-badge" style="position: absolute; top: 1.5rem; right: 1.5rem; background-color: var(--primary-olive); color: var(--white); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.4rem 0.8rem; border-radius: 20px;">Boutique Venue</span>
+            <div>
+              <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">💍</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Weddings &amp; Parties</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
+                The Capricorn Coast's premier boutique venue. All-inclusive luxury beachfront weddings and celebrations with $0 room hire options.
+              </p>
             </div>
-
-            <!-- Tapas Menu Panel -->
-            <div class="menu-panel active" id="menu-tapas-panel" role="tabpanel" aria-labelledby="tab-tapas">
-              <div class="menu-category">
-                <h4>Signature Plates</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Kilpatrick Oysters (1/2 Dozen)</span>
-                      <span class="menu-item-price">$32</span>
-                    </div>
-                    <p class="menu-item-desc">With crispy speck and worcestershire sauce. (GF, DF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Calamari Fritti</span>
-                      <span class="menu-item-price">$22</span>
-                    </div>
-                    <p class="menu-item-desc">With Riviera house aioli and crispy capers. (GF, DF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Chargrilled Lamb Cutlets (3)</span>
-                      <span class="menu-item-price">$26</span>
-                    </div>
-                    <p class="menu-item-desc">With Riviera house emulsion. (GF, DF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Chorizo &amp; Mozzarella Arancini (3)</span>
-                      <span class="menu-item-price">$22</span>
-                    </div>
-                    <p class="menu-item-desc">With Romesco, lemon &amp; thyme aioli. (GF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Crispy Fried Chorizo Potatoes</span>
-                      <span class="menu-item-price">$22</span>
-                    </div>
-                    <p class="menu-item-desc">With lemon thyme aioli. (GF, DF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Limoncello Chicken Skewers (3)</span>
-                      <span class="menu-item-price">$22</span>
-                    </div>
-                    <p class="menu-item-desc">With herbed labneh. (GF)</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Crispy Reef Fish Sliders (3)</span>
-                      <span class="menu-item-price">$30</span>
-                    </div>
-                    <p class="menu-item-desc">With lemon caper aioli and fresh roquette.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Hot Honey Saganaki (3)</span>
-                      <span class="menu-item-price">$22</span>
-                    </div>
-                    <p class="menu-item-desc">Grilled halloumi with hot honey &amp; roasted red grapes.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Veal &amp; Prosciutto Crumbed Olives</span>
-                      <span class="menu-item-price">$24</span>
-                    </div>
-                    <p class="menu-item-desc">With zesty lemon &amp; thyme aioli.</p>
-                  </div>
-                </div>
-
-                <h4 style="margin-top: 2rem;">Antipasto &amp; Sides</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Charcuterie Board for 4</span>
-                      <span class="menu-item-price">$79</span>
-                    </div>
-                    <p class="menu-item-desc">Double cream brie, creamy blue, aged cheddar, fig &amp; almond crackers, crisp lavosh, prosciutto, salami, seasonal produce.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Charcuterie Board for 2</span>
-                      <span class="menu-item-price">$41</span>
-                    </div>
-                    <p class="menu-item-desc">A curated smaller selection of premium cheeses, cured meats, quince paste and artisan crackers.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Red Grape Focaccia</span>
-                      <span class="menu-item-price">$18</span>
-                    </div>
-                    <p class="menu-item-desc">Baked in house, served warm with whipped butter &amp; sea salt.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cocktails Menu Panel -->
-            <div class="menu-panel" id="menu-cocktails-panel" role="tabpanel" aria-labelledby="tab-cocktails" style="display: none;">
-              <div class="menu-category">
-                <h4>Signature Cocktails — $22</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Espresso Martini</span></div>
-                    <p class="menu-item-desc">Diablo vodka, espresso, dark chocolate and a hint of Madagascan vanilla.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Tropical Mojito</span></div>
-                    <p class="menu-item-desc">Black Cockatoo coconut rum, Diablo Co pineapple liqueur, fresh mint, passionfruit pulp, lime, pineapple, ginger beer.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Strawberry Capiroska</span></div>
-                    <p class="menu-item-desc">Diablo Co passionfruit liqueur, Eros double distilled vodka, pink lemonade, zesty lime, mint, strawberries.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Riviera Mule</span></div>
-                    <p class="menu-item-desc">Diablo ginger beer, fresh mint, lime juice, lime wheel.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Lychee Breeze</span></div>
-                    <p class="menu-item-desc">Diablo Co lychee liqueur, Black Cockatoo coconut rum, cloudy apple juice, lime juice, fresh lychee.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">French Riviera Martini</span></div>
-                    <p class="menu-item-desc">Eros vodka infused with vanilla, Diablo Co passionfruit liqueur, zesty lime.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Pina Colada</span></div>
-                    <p class="menu-item-desc">Black Cockatoo white &amp; coconut rum, Diablo pineapple liqueur, Coyo coconut cream, pineapple juice, lime.</p>
-                  </div>
-                </div>
-
-                <h4 style="margin-top: 2rem;">Mocktails (Alcohol Free) — $14</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Apple Ginger Mojito</span></div>
-                    <p class="menu-item-desc">Cloudy apple juice, ginger ale, fresh lime wedges, fresh mint leaves, soda water.</p>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header"><span class="menu-item-name">Passionfruit Lychee Fizz</span></div>
-                    <p class="menu-item-desc">Passionfruit pulp, muddled lychees, lime juice, lemonade, soda water.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Wine & Beer Panel -->
-            <div class="menu-panel" id="menu-wine-beer-panel" role="tabpanel" aria-labelledby="tab-wine-beer" style="display: none;">
-              <div class="menu-category">
-                <h4>Wines by the Glass &amp; Bottle</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">King Valley Prosecco</span>
-                      <span class="menu-item-price">$14 / $39</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Janz Sparkling Brut</span>
-                      <span class="menu-item-price">$18 / $93</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Oyster Bay Sauvignon Blanc</span>
-                      <span class="menu-item-price">$14 / $39</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Squealing Pig Chardonnay</span>
-                      <span class="menu-item-price">$14 / $39</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Squealing Pig Rosé</span>
-                      <span class="menu-item-price">$14 / $39</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Pepperjack Shiraz</span>
-                      <span class="menu-item-price">$14 / $43</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Riviera House Pour (Red/White/Bubbles)</span>
-                      <span class="menu-item-price">$12 Glass Only</span>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 style="margin-top: 2rem;">Ice Cold Beers &amp; Ginger Beer</h4>
-                <div class="menu-item-grid">
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Corona Extra</span>
-                      <span class="menu-item-price">$11</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Great Northern Original / Super Crisp</span>
-                      <span class="menu-item-price">$10</span>
-                    </div>
-                  </div>
-                  <div class="menu-item">
-                    <div class="menu-item-header">
-                      <span class="menu-item-name">Diablo Ginger Beer</span>
-                      <span class="menu-item-price">$14</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Weddings at Riviera Yeppoon -->
-    <section class="weddings-section" id="weddings">
-      <div class="container">
-        <div class="section-intro text-center">
-          <span class="section-tag">Beachfront Weddings</span>
-          <h2 class="section-title">An Elegant Coastal Backdrop for "I Do"</h2>
-          <p class="section-subtitle">
-            Capture the essence of old-money sophistication and Mediterranean romance. Our Ballroom fits up to 100 seated or 250 cocktail style.
-          </p>
-        </div>
-
-        <div class="packages-grid">
-          <!-- Package 1: Kiss & Commit -->
-          <div class="package-card" id="pkg-kiss-commit">
-            <div class="package-header">
-              <h3>Kiss &amp; Commit</h3>
-              <span class="package-type">Ceremony Only</span>
-            </div>
-            <div class="package-body">
-              <p class="package-desc">Experience the magic of an intimate elopement nested on the picturesque Cooee Bay Beach.</p>
-              <ul class="package-features">
-                <li>1.5 Hours of exclusive venue hire (latest start 3 PM)</li>
-                <li>On the day wedding co-ordination</li>
-                <li>Up to 40 French Oak Style Chairs</li>
-                <li>White round signage table &amp; 2 white chairs</li>
-                <li>Speaker for background music &amp; vendor access</li>
-              </ul>
-              <div class="package-price">
-                $2,000 + GST <br>
-                <small style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-muted);">Monday - Friday (Saturday +$1,000 + GST)</small>
-              </div>
-              <button class="btn btn-secondary-outline btn-block select-pkg-btn" data-package="Kiss & Commit">Select Package</button>
-            </div>
+            <a href="packages.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">View Packages →</a>
           </div>
 
-          <!-- Package 2: Vows & Vino -->
-          <div class="package-card featured" id="pkg-vows-vino">
-            <div class="package-badge">Micro-Wedding</div>
-            <div class="package-header">
-              <h3>Vows &amp; Vino</h3>
-              <span class="package-type">Ceremony, Drinks &amp; Nibbles</span>
+          <!-- Card 3: Interactive Event Builder -->
+          <div class="package-card" style="background-color: var(--white); padding: 3.5rem 2.5rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+            <div>
+              <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">✨</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Event Cost Builder</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
+                Calculate your estimated beachfront event budget in real time. Choose occasions, menus, drinks, and guest counts instantly.
+              </p>
             </div>
-            <div class="package-body">
-              <p class="package-desc">A beautiful celebration blending an oceanfront ceremony with champagne toast and grazing tables.</p>
-              <ul class="package-features">
-                <li>2.5 Hours of exclusive venue hire (latest start 3 PM)</li>
-                <li>3-Tier Champagne Tower with 1 premium bottle</li>
-                <li>Small Grazing Table (Feeds 20 guests)</li>
-                <li>Up to 40 French Oak Style Chairs &amp; dry bar/stools</li>
-                <li>Full styling, signing, and gift tables included</li>
-              </ul>
-              <div class="package-price">
-                $4,000 + GST <br>
-                <small style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-muted);">Monday - Friday (Saturday +$1,000 + GST)</small>
-              </div>
-              <button class="btn btn-primary btn-block select-pkg-btn" data-package="Vows & Vino">Select Package</button>
-            </div>
-          </div>
-
-          <!-- Package 3: The Big Day -->
-          <div class="package-card" id="pkg-big-day">
-            <div class="package-header">
-              <h3>The Big Day Package</h3>
-              <span class="package-type">Complete Ceremony &amp; Reception</span>
-            </div>
-            <div class="package-body">
-              <p class="package-desc">Exclusive full access to the venue from Setup, Ceremony to Reception. Total luxury and coordination.</p>
-              <ul class="package-features">
-                <li>8 Hours Venue Hire (11:00 AM - 11:00 PM)</li>
-                <li>Exclusive Wedding Planning System &amp; coordinators</li>
-                <li>Full table settings (white/natural linen, silverware)</li>
-                <li>100 French Oak chairs, 10 x 10-seater round tables</li>
-                <li>Bar &amp; kitchen facilities (wait &amp; bartender staff incl.)</li>
-                <li>Complimentary Hens/Bridal Shower setup (Sundays)</li>
-              </ul>
-              <div class="package-price">
-                $6,000 + GST <small style="font-size: 0.8rem;">(Max 40 people)</small><br>
-                $8,000 + GST <small style="font-size: 0.8rem;">(40+ people)</small><br>
-                <small style="font-size: 0.8rem; font-family: var(--font-sans); color: var(--text-muted);">Mon-Thu Weekday Discount: Save $1,000!</small>
-              </div>
-              <button class="btn btn-secondary-outline btn-block select-pkg-btn" data-package="The Big Day">Select Package</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Secondary Section: Wedding Food & Beverage Packages -->
-        <div class="wedding-catering-info">
-          <h3 class="text-center" style="margin-bottom: 3rem;">Premium Wedding Dining Packages</h3>
-          <div class="catering-packages-grid">
-            <div class="pkg-detail-box">
-              <h5>Portofino Package <span class="price">From $90pp + GST</span></h5>
-              <p class="pkg-desc">Cocktail-style reception with a signature grazing table or 3-tier seafood fountain, 4 canapés, and 2 substantial items (Minimum 40 people).</p>
-            </div>
-            <div class="pkg-detail-box">
-              <h5>Taormina Package <span class="price">From $88pp + GST</span></h5>
-              <p class="pkg-desc">Canapé reception (3 choices) followed by an alternate drop plated main course and warm house focaccia bread (Minimum 40 people).</p>
-            </div>
-            <div class="pkg-detail-box">
-              <h5>Amalfi Package <span class="price">2-Crse: $89pp | 3-Crse: $109pp + GST</span></h5>
-              <p class="pkg-desc">A refined alternate drop dining experience with premium mains like Lamb Cutlet, Prosciutto Chicken, or Beef Fillet (Minimum 40 people).</p>
-            </div>
-            <div class="pkg-detail-box">
-              <h5>La Tavola Package <span class="price">Main Only: $80pp | 2-Crse: $90pp + GST</span></h5>
-              <p class="pkg-desc">Family-style communal feast served straight to the table. Includes 2 mains, 2 entrees, and 4 cooked sides (Minimum 40 people).</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Parties at Riviera (Free Room Hire Option) -->
-    <section class="parties-section" id="parties">
-      <div class="container">
-        <div class="parties-wrapper">
-          <div class="parties-info">
-            <span class="section-tag">Celebrations &amp; Private Parties</span>
-            <h2 class="section-title">Enjoy FREE Room Hire at Riviera</h2>
-            <p>
-              Celebrate your milestone birthday, engagement, or private party against a backdrop of coastal elegance and Mediterranean-inspired charm.
-            </p>
-            <p>
-              Enjoy access to our stunning indoor Ballroom and Riviera Lookout, complete with breathtaking views of Cooee Bay Beach.
-            </p>
-            
-            <div class="party-inclusions-box">
-              <h5>Party Package Inclusions:</h5>
-              <ul class="package-features">
-                <li>6-Hour venue hire</li>
-                <li>Full tables &amp; chairs set up</li>
-                <li>Professional bar &amp; wait staff</li>
-                <li>Access to venue music system &amp; Fig Tree fairy lights</li>
-                <li>Reverse cycle air-conditioning comfort</li>
-              </ul>
-            </div>
-
-            <div class="party-conditions">
-              <p><strong>*Special Conditions apply:</strong> Parties can be booked up to 6 months in advance only. Requires a minimum spend of $3,000 + GST on Food &amp; Beverage Packages (excludes cash bar options). A $1,500 non-refundable deposit is required to secure your date.</p>
-            </div>
-          </div>
-
-          <div class="party-catering">
-            <h3>Party Food Packages</h3>
-            <p class="desc">Bespoke catering solutions tailored for casual, semi-formal, or themed celebrations.</p>
-            
-            <div class="party-pkg-list">
-              <div class="party-pkg-item">
-                <h5>Crowd Pleaser Platters <span class="price">Budget Friendly</span></h5>
-                <p>Perfect for hosting on a budget. Served in grazing boxes on self-service tables. Includes Charcuterie ($100), Hot Sausage Rolls ($75), Beef Party Pies ($75), Cheeseburger Sliders ($175), and Calamari &amp; Chips ($175).</p>
-              </div>
-              <div class="party-pkg-item">
-                <h5>Make Your Own Gyros Bar <span class="price">$32pp + GST</span></h5>
-                <p>A fun, interactive buffet bar. Fluffy souvlaki breads, choose 2 proteins (Beef, Chicken, Lamb, Halloumi), fresh fillings, and herbed fries (Minimum 40 people).</p>
-              </div>
-              <div class="party-pkg-item">
-                <h5>3-Tiered Plantation Seafood Fountain <span class="price">From $25pp + GST</span></h5>
-                <p>An elegant centrepiece featuring local tiger prawns, shucked natural oysters, or a mixed selection on ice (+ $100 set up fee, Minimum 40 people).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Offsite Catering (A Days Graze Legacy) -->
-    <section class="catering-section" id="catering">
-      <div class="container">
-        <div class="catering-wrapper">
-          <div class="catering-info-panel">
-            <span class="section-tag">Offsite Catering Services</span>
-            <h2 class="section-title">Catering Delivered to Your Door</h2>
-            <p>
-              For over a decade, our team operated as **A Days Graze Catering**, delivering spectacular grazing tables and buffet spreads across Central Queensland. We continue to offer our premium mobile catering services for weddings, private parties, corporate events, and celebrations of life.
-            </p>
-            
-            <div class="catering-badges">
-              <div class="badge-item">
-                <span class="badge-icon">✓</span>
-                <span>$20M Public Liability</span>
-              </div>
-              <div class="badge-item">
-                <span class="badge-icon">✓</span>
-                <span>Police Cleared Staff</span>
-              </div>
-              <div class="badge-item">
-                <span class="badge-icon">✓</span>
-                <span>GST Exclusive Pricing</span>
-              </div>
-            </div>
-
-            <!-- Grazing Table Pricing -->
-            <div class="grazing-pricing-box">
-              <h4>Metre-Based Grazing Tables</h4>
-              <p>Designed for effortless entertaining. Prepared on-site with plates, napkins and cutlery included.</p>
-              <div class="grazing-row">
-                <div class="grazing-col">
-                  <strong>1 Metre (Feeds 40)</strong>
-                  <span>$650 + GST / $820 + GST with styling</span>
-                </div>
-                <div class="grazing-col">
-                  <strong>2 Metres (Feeds 80-100)</strong>
-                  <span>$1,250 + GST / $1,485 + GST with styling</span>
-                </div>
-                <div class="grazing-col">
-                  <strong>3 Metres (Feeds 120-150)</strong>
-                  <span>$1,999 + GST / $2,178 + GST with styling</span>
-                </div>
-              </div>
-              <p class="delivery-notes"><strong>Delivery Fees:</strong> Yeppoon (within 5km): $20 + GST | Rockhampton, Emu Park &amp; surrounds: $50 + GST. 10% Sunday surcharge applies.</p>
-            </div>
-          </div>
-
-          <div class="catering-interactive-panel">
-            <h3>Interactive Catering Menu Explorer</h3>
-            <p class="panel-desc">Explore our platter selections and cooked sides. Ideal for pick-up or direct delivery.</p>
-            
-            <div class="catering-tabs" role="tablist">
-              <button class="catering-tab active" id="cat-tab-platters" role="tab" aria-selected="true" aria-controls="cat-panel-platters">Finger Food &amp; Sweets</button>
-              <button class="catering-tab" id="cat-tab-buffet" role="tab" aria-selected="false" aria-controls="cat-panel-buffet">Meats &amp; Sides</button>
-            </div>
-
-            <!-- Platters panel -->
-            <div class="catering-panel active" id="cat-panel-platters" role="tabpanel" aria-labelledby="cat-tab-platters">
-              <div class="catering-menu-item">
-                <h5>Ham &amp; Cheese Croissants (12) <span class="price">$85 + GST</span></h5>
-                <p>12 Smoked ham, aged cheddar &amp; tomato croissants with silky Dijon emulsion.</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Classic Sandwich Platter <span class="price">$65 + GST</span></h5>
-                <p>24 Points (6 whole sandwiches) cut into quarters. Chef's selection of premium fillings.</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Grazing Box (Serves 12) <span class="price">$95 + GST</span></h5>
-                <p>Curated selection of gourmet cheeses, deli meats, seasonal fruit, nuts, crackers, dips, and olives.</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>House Baked Sausage Rolls (20-25) <span class="price">$65 + GST</span></h5>
-                <p>Freshly baked rolls served warm with dipping sauce.</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Sweet Slice &amp; Cake Platter (Serves 12) <span class="price">$75 + GST</span></h5>
-                <p>An elegant rotating selection of house-baked sweet slices, cookies, and cakes.</p>
-              </div>
-            </div>
-
-            <!-- Buffet / Cooked Sides panel -->
-            <div class="catering-panel" id="cat-panel-buffet" role="tabpanel" aria-labelledby="cat-tab-buffet" style="display: none;">
-              <div class="catering-menu-item">
-                <h5>Limoncello Roasted Chicken pieces (12) <span class="price">$65 + GST</span></h5>
-                <p>Chicken pieces marinated in zesty Greek herbs and garlic. (GF, DF)</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Lemon &amp; Thyme Chicken Skewers (12) <span class="price">$65 + GST</span></h5>
-                <p>Served with house herbed labneh and pita breads. (GF)</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Chargrilled Lamb Cutlets (12) <span class="price">$75 + GST</span></h5>
-                <p>Premium cutlets served with zesty chimichurri emulsion.</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Moroccan Cous Cous Salad <span class="price">$45 + GST</span></h5>
-                <p>With roasted pumpkin, eggplant, capsicum, spinach, mint, and lemon (Serves 12-15).</p>
-              </div>
-              <div class="catering-menu-item">
-                <h5>Creamy Potato Bake <span class="price">$65 + GST</span></h5>
-                <p>Layers of sliced potatoes baked in seasoned garlic cream (Serves 12-15).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- Event Builder Wizard Section -->
-    <section class="wizard-section" id="wizard">
-      <div class="container">
-        <div class="section-intro text-center">
-          <span class="section-tag">Interactive Planner</span>
-          <h2 class="section-title">Build Your Beachfront Event</h2>
-          <p class="section-subtitle">
-            Select your event type, guest count, dining style, and beverage package to estimate your total event investment in real time.
-          </p>
-        </div>
-
-        <div class="wizard-grid">
-          <!-- Left side: Form steps -->
-          <div class="wizard-card" id="wizard-form-container">
-            <!-- Wizard Tabs / Progress -->
-            <div class="wizard-progress">
-              <div class="progress-step active" id="prog-step-1">1. Occasion</div>
-              <div class="progress-step" id="prog-step-2">2. Package</div>
-              <div class="progress-step" id="prog-step-3">3. Dining &amp; Drinks</div>
-              <div class="progress-step" id="prog-step-4">4. Details</div>
-            </div>
-
-            <!-- Wizard Step 1: Occasion Type -->
-            <div class="wizard-step-panel active" id="wiz-panel-1">
-              <h3>What occasion are you celebrating?</h3>
-              <p>Select your event type to load the correct packages, menus, and pricing options.</p>
-              <div class="occasion-options">
-                <label class="occasion-card active" for="occ-wedding">
-                  <input type="radio" name="occasion-type" id="occ-wedding" value="wedding" checked>
-                  <span class="occ-icon">💍</span>
-                  <span class="occ-title">Beachfront Wedding</span>
-                  <span class="occ-desc">Timeless ceremonies, receptions, elopements, and coordinate services.</span>
-                </label>
-                <label class="occasion-card" for="occ-party">
-                  <input type="radio" name="occasion-type" id="occ-party" value="party">
-                  <span class="occ-icon">🎉</span>
-                  <span class="occ-title">Private Celebration / Party</span>
-                  <span class="occ-desc">Milestone birthdays, engagements, private functions with free room hire.</span>
-                </label>
-              </div>
-              <div class="wizard-actions">
-                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-1">Next Step: Choose Package →</button>
-              </div>
-            </div>
-
-            <!-- Wizard Step 2: Package Selection -->
-            <div class="wizard-step-panel hidden" id="wiz-panel-2">
-              <h3 id="pkg-title-label">Choose Venue Package</h3>
-              <p id="pkg-desc-label">Select the venue and coordination package that fits your event layout.</p>
-              
-              <!-- Wedding Venue Packages -->
-              <div class="wizard-packages-options" id="wiz-wed-packages">
-                <label class="wiz-pkg-card active" for="wiz-pkg-kiss">
-                  <input type="radio" name="wedding-pkg" id="wiz-pkg-kiss" value="kiss-commit" checked>
-                  <div class="wiz-pkg-header">
-                    <strong>Kiss &amp; Commit</strong>
-                    <span class="price">$2,000 + GST</span>
-                  </div>
-                  <p class="wiz-pkg-desc">Ceremony only (up to 40 guests), 1.5 hours exclusive hire, weekday only.</p>
-                </label>
-                
-                <label class="wiz-pkg-card" for="wiz-pkg-vows">
-                  <input type="radio" name="wedding-pkg" id="wiz-pkg-vows" value="vows-vino">
-                  <div class="wiz-pkg-header">
-                    <strong>Vows &amp; Vino</strong>
-                    <span class="price">$4,000 + GST</span>
-                  </div>
-                  <p class="wiz-pkg-desc">Ceremony, drinks &amp; grazing (up to 40 guests), 2.5 hours hire, champagne tower.</p>
-                </label>
-                
-                <label class="wiz-pkg-card" for="wiz-pkg-bigday">
-                  <input type="radio" name="wedding-pkg" id="wiz-pkg-bigday" value="big-day">
-                  <div class="wiz-pkg-header">
-                    <strong>The Big Day Package</strong>
-                    <span class="price" id="wiz-bigday-price-label">$6,000 + GST</span>
-                  </div>
-                  <p class="wiz-pkg-desc">Full Setup, Ceremony &amp; Reception (8 hrs). $6,000 for max 40 guests, $8,000 for 40+ guests.</p>
-                </label>
-              </div>
-
-              <!-- Private Party Packages -->
-              <div class="wizard-packages-options hidden" id="wiz-party-packages">
-                <label class="wiz-pkg-card active" for="wiz-pkg-freehire">
-                  <input type="radio" name="party-pkg" id="wiz-pkg-freehire" value="free-room-hire" checked>
-                  <div class="wiz-pkg-header">
-                    <strong>FREE Room Hire Celebration</strong>
-                    <span class="price">$0 Venue Hire</span>
-                  </div>
-                  <p class="wiz-pkg-desc">6-Hour venue hire, bar &amp; wait staff, music, fairy lights. (Requires min $3,000 Food &amp; Beverage spend).</p>
-                </label>
-              </div>
-
-              <div class="wizard-actions">
-                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-2">← Back</button>
-                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-2">Next Step: Food &amp; Drinks →</button>
-              </div>
-            </div>
-
-            <!-- Wizard Step 3: Food & Beverage Selectors -->
-            <div class="wizard-step-panel hidden" id="wiz-panel-3">
-              <h3>Curate Your Food &amp; Beverage</h3>
-              <p>Select your menu style and drink options per guest.</p>
-              
-              <!-- Dining Selectors -->
-              <div class="wizard-form-group">
-                <label for="wiz-dining-select">Dining Menu Style</label>
-                <select id="wiz-dining-select">
-                  <!-- Will be dynamically updated based on occasion -->
-                </select>
-              </div>
-
-              <div class="wizard-form-group checkbox-group" id="wiz-seafood-fountain-box">
-                <label class="checkbox-label" for="wiz-seafood-fountain">
-                  <input type="checkbox" id="wiz-seafood-fountain" value="25">
-                  <span class="custom-checkbox"></span>
-                  Add 3-Tier Seafood Fountain (+$25 pp + $100 set up fee)
-                </label>
-              </div>
-
-              <!-- Beverage Selectors -->
-              <div class="wizard-form-group" style="margin-top: 2rem;">
-                <label for="wiz-drinks-select">Beverage Package</label>
-                <select id="wiz-drinks-select">
-                  <option value="none">No drink package (Prepay Bar Tab / Cash Bar)</option>
-                  <option value="house">Riviera House Beverage Package (4 Hrs) — $75 pp</option>
-                  <option value="deluxe">Riviera Deluxe Beverage Package (4 Hrs) — $110 pp</option>
-                </select>
-              </div>
-
-              <div class="wizard-form-group checkbox-group" id="wiz-spirits-box">
-                <label class="checkbox-label" for="wiz-add-spirits">
-                  <input type="checkbox" id="wiz-add-spirits" value="16">
-                  <span class="custom-checkbox"></span>
-                  Add Basic Spirits Option (+$16 pp per hour)
-                </label>
-              </div>
-
-              <div class="wizard-form-group checkbox-group" id="wiz-cocktails-box">
-                <label class="checkbox-label" for="wiz-add-cocktails">
-                  <input type="checkbox" id="wiz-add-cocktails" value="22">
-                  <span class="custom-checkbox"></span>
-                  Add Signature Cocktails Option (+$22 pp per hour)
-                </label>
-              </div>
-
-              <div class="wizard-actions">
-                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-3">← Back</button>
-                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-3">Next Step: Guest Count &amp; Date →</button>
-              </div>
-            </div>
-
-            <!-- Wizard Step 4: Details & Date Surcharges -->
-            <div class="wizard-step-panel hidden" id="wiz-panel-4">
-              <h3>Event Parameters &amp; Logistics</h3>
-              <p>Configure guests and dates. Surcharges and taxes will calculate in real time.</p>
-              
-              <!-- Guest Slider -->
-              <div class="wizard-form-group">
-                <label for="wiz-guests-slider">Number of Guests: <strong id="wiz-guests-display">40</strong></label>
-                <input type="range" id="wiz-guests-slider" min="10" max="200" value="40" step="5" class="slider">
-              </div>
-
-              <!-- Date Picker -->
-              <div class="wizard-form-group">
-                <label for="wiz-event-date">Date of Event</label>
-                <input type="date" id="wiz-event-date" required>
-                <small class="form-help-text">Please note: A 10% surcharge applies on Sundays.</small>
-              </div>
-
-              <!-- Linen Upgrade for Weddings -->
-              <div class="wizard-form-group checkbox-group" id="wiz-linen-box">
-                <label class="checkbox-label" for="wiz-linen-upgrade">
-                  <input type="checkbox" id="wiz-linen-upgrade">
-                  <span class="custom-checkbox"></span>
-                  Upgrade to Natural French Linen tablecloths (+$40 per table of 10)
-                </label>
-              </div>
-
-              <div class="wizard-actions">
-                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-4">← Back</button>
-                <button type="button" class="btn btn-primary btn-submit-wizard" id="btn-wiz-submit">Submit Details to Sally →</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right side: Real-time Receipt -->
-          <div class="receipt-card" id="wiz-receipt-container">
-            <h4>Live Estimate Summary</h4>
-            <div class="receipt-divider"></div>
-            
-            <div class="receipt-items" id="wiz-receipt-items">
-              <!-- Dynamically populated receipt list -->
-            </div>
-
-            <div class="receipt-divider"></div>
-            
-            <div class="receipt-summary">
-              <div class="receipt-row">
-                <span>Subtotal (Excl. GST)</span>
-                <span id="receipt-subtotal">$0.00</span>
-              </div>
-              <div class="receipt-row">
-                <span>GST (10%)</span>
-                <span id="receipt-gst">$0.00</span>
-              </div>
-              <div class="receipt-row total">
-                <span>Estimated Total (Incl. GST)</span>
-                <span id="receipt-total">$0.00</span>
-              </div>
-            </div>
-
-            <div class="receipt-minimum-warning hidden" id="receipt-min-warning">
-              ⚠ F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.
-            </div>
-
-            <button type="button" class="btn btn-primary btn-block" id="btn-receipt-enquire">Enquire With Sally</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-intro text-center">
-          <span class="section-tag">Visual Look Book</span>
-          <h2 class="section-title">Moments by the Beach</h2>
-          <p class="section-subtitle">
-            Get inspired by our collection of weddings, corporate events, and beautiful coastal sunsets at Cooee Bay.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-item-wrapper" id="gal-img-1">
-            <img src="/gallery1.jpg" alt="Champagne Tower at Sunset" class="gallery-img">
-          </div>
-          <div class="gallery-item-wrapper" id="gal-img-2">
-            <img src="/gallery2.jpg" alt="Ceremony Setup on Cooee Bay" class="gallery-img">
-          </div>
-          <div class="gallery-item-wrapper" id="gal-img-3">
-            <img src="/gallery3.jpg" alt="Long Table Coastal Lunch" class="gallery-img">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Story / About Sally Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-wrapper">
-          <div class="about-visual">
-            <img src="/about.jpg" alt="Sally - Owner &amp; Coordinator" class="about-img">
-          </div>
-          <div class="about-text">
-            <span class="section-tag">Behind the Scenes</span>
-            <h2 class="section-title">Meet Sally – Founder &amp; Event Visionary</h2>
-            <p>
-              Riviera Yeppoon is the culmination of a decade-long passion for events and culinary hospitality. After successfully managing *A Days Graze Catering* and providing memorable dining setups for weddings, festivals, and racing days, Sally envisioned a permanent sanctuary on the beachfront.
-            </p>
-            <p>
-              Sally is a graduate of the prestigious **Ivy Bleu Academy**, where she refined her expertise in wedding design, coordination, and styling. She believes every wedding should be a seamless, stress-free reflection of romance.
-            </p>
-            <p>
-              "I love love, and there's nothing more beautiful than seeing guests share laughter over beautiful food, with the sound of the ocean waves right next to them."
-            </p>
-            <div class="about-sig">
-              <span class="sig-name">Sally</span>
-              <span class="sig-title">Owner &amp; Coordinator, Riviera Yeppoon</span>
-            </div>
+            <a href="planner.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Build Your Event →</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Social Proof / Testimonials -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials-section" id="testimonials" style="padding: 8rem 0; background-color: var(--white);">
       <div class="container">
-        <div class="section-intro text-center">
+        <div class="section-intro text-center" style="margin-bottom: 5rem;">
           <span class="section-tag">Kind Words</span>
           <h2 class="section-title">Loved by Central Queensland Couples</h2>
         </div>
@@ -962,101 +159,14 @@
         </div>
       </div>
     </section>
-
-    <!-- Contact & Enquiry Form -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-details">
-            <span class="section-tag">Get in Touch</span>
-            <h2 class="section-title">Let's Plan Your Beachfront Dream</h2>
-            <p>
-              Have a wedding, private celebration, or offsite catering enquiry? Fill out our form, and Sally will be in touch within 24 hours to begin designing your event.
-            </p>
-            
-            <div class="details-list">
-              <div class="detail-item">
-                <span class="icon">📍</span>
-                <span class="text">105 Matthew Flinders Drive, Cooee Bay, QLD 4703</span>
-              </div>
-              <div class="detail-item">
-                <span class="icon">✉</span>
-                <span class="text">hello@rivierayeppoon.com.au / thetable@rivierayeppoon.com</span>
-              </div>
-              <div class="detail-item">
-                <span class="icon">☏</span>
-                <span class="text">Sally: 0431 646 180 (Events) / 0447 760 695 (Tapas Only)</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-card">
-            <form id="event-enquiry-form">
-              <div class="form-row split">
-                <div class="form-group">
-                  <label for="contact-firstname">First Name</label>
-                  <input type="text" id="contact-firstname" required placeholder="Emma">
-                </div>
-                <div class="form-group">
-                  <label for="contact-lastname">Last Name</label>
-                  <input type="text" id="contact-lastname" required placeholder="Smith">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-email">Email Address</label>
-                <input type="email" id="contact-email" required placeholder="emma@example.com">
-              </div>
-
-              <div class="form-group">
-                <label for="contact-service">Enquiry Type</label>
-                <select id="contact-service" required>
-                  <option value="">Select an option</option>
-                  <option value="wedding">Wedding Venue Hire</option>
-                  <option value="catering">Offsite Catering Services</option>
-                  <option value="private-event">Private Celebration / Party</option>
-                  <option value="corporate">Corporate Function</option>
-                  <option value="other">Other Inquiry</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-package">Preferred Package (Optional)</label>
-                <select id="contact-package">
-                  <option value="none">No specific package</option>
-                  <option value="kiss-commit">Kiss &amp; Commit (Elopement)</option>
-                  <option value="vows-vino">Vows &amp; Vino (Micro-Wedding)</option>
-                  <option value="big-day">The Big Day Package (Full Wedding)</option>
-                  <option value="party-hire">Private Party Room Hire</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-message">Tell Us About Your Vision</label>
-                <textarea id="contact-message" rows="4" placeholder="Estimated guest count, preferred date, and any special requests..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">Send Enquiry</button>
-            </form>
-            
-            <div class="form-feedback hidden" id="contact-feedback">
-              <div class="confirm-icon">✓</div>
-              <h4>Thank you!</h4>
-              <p>Your enquiry has been received. Sally will contact you shortly to plan your event.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer" style="background-color: var(--text-dark); color: var(--white); padding: 5rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">
-          <span class="logo-top">RIVIERA</span>
-          <span class="logo-bottom">YEPPOON</span>
+        <a href="index.html" class="logo-brand">
+          <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img" style="height: 40px;">
         </a>
         <p class="brand-desc">Mediterranean beachfront dining, weddings, and premium catering on the Capricorn Coast.</p>
       </div>
@@ -1064,11 +174,11 @@
       <div class="footer-links">
         <h5>Quick Links</h5>
         <ul>
-          <li><a href="#tapas">Sunday Tapas</a></li>
-          <li><a href="#weddings">Weddings</a></li>
-          <li><a href="#parties">Private Parties</a></li>
-          <li><a href="#catering">Offsite Catering</a></li>
-          <li><a href="#about">Our Story</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tapas.html">Sunday Tapas</a></li>
+          <li><a href="packages.html">Packages &amp; Services</a></li>
+          <li><a href="planner.html">Event Builder</a></li>
+          <li><a href="about.html">Our Story</a></li>
         </ul>
       </div>
 
@@ -1079,7 +189,7 @@
       </div>
     </div>
 
-    <div class="footer-bottom text-center">
+    <div class="footer-bottom text-center" style="margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">
       <p>&copy; 2026 Riviera Yeppoon. All rights reserved. Formerly A Days Graze Catering. Designed for premium events.</p>
     </div>
   </footer>

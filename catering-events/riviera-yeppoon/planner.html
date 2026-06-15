@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Event Builder & Cost Estimator | Riviera Yeppoon</title>
+  <meta name="description" content="Use the Riviera Event Builder to calculate a live estimated budget for your beachfront wedding or private party. No email sign-ups required.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-brand" id="logo-link">
+        <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-nav-toggle" id="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="primary-navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tapas.html" class="nav-link">Sunday Tapas</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="planner.html" class="nav-link">Event Builder</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="contact.html" class="nav-link btn-olive">Inquire Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <!-- Event Builder Wizard Section -->
+    <section class="wizard-section" id="wizard" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Interactive Planner</span>
+          <h2 class="section-title">Build Your Beachfront Event</h2>
+          <p class="section-subtitle">
+            Select your event type, guest count, dining style, and beverage package to estimate your total event investment in real time.
+          </p>
+        </div>
+
+        <div class="wizard-grid">
+          <!-- Left side: Form steps -->
+          <div class="wizard-card" id="wizard-form-container">
+            <!-- Wizard Tabs / Progress -->
+            <div class="wizard-progress">
+              <div class="progress-step active" id="prog-step-1">1. Occasion</div>
+              <div class="progress-step" id="prog-step-2">2. Package</div>
+              <div class="progress-step" id="prog-step-3">3. Dining &amp; Drinks</div>
+              <div class="progress-step" id="prog-step-4">4. Details</div>
+            </div>
+
+            <!-- Wizard Step 1: Occasion Type -->
+            <div class="wizard-step-panel active" id="wiz-panel-1">
+              <h3>What occasion are you celebrating?</h3>
+              <p>Select your event type to load the correct packages, menus, and pricing options.</p>
+              <div class="occasion-options">
+                <label class="occasion-card active" for="occ-wedding">
+                  <input type="radio" name="occasion-type" id="occ-wedding" value="wedding" checked>
+                  <span class="occ-icon">💍</span>
+                  <span class="occ-title">Beachfront Wedding</span>
+                  <span class="occ-desc">Timeless ceremonies, receptions, elopements, and coordination services.</span>
+                </label>
+                <label class="occasion-card" for="occ-party">
+                  <input type="radio" name="occasion-type" id="occ-party" value="party">
+                  <span class="occ-icon">🎉</span>
+                  <span class="occ-title">Private Celebration / Party</span>
+                  <span class="occ-desc">Milestone birthdays, engagements, private functions with free room hire.</span>
+                </label>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-1">Next Step: Choose Package →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 2: Package Selection -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-2">
+              <h3 id="pkg-title-label">Choose Venue Package</h3>
+              <p id="pkg-desc-label">Select the venue and coordination package that fits your event layout.</p>
+              
+              <!-- Wedding Venue Packages -->
+              <div class="wizard-packages-options" id="wiz-wed-packages">
+                <label class="wiz-pkg-card active" for="wiz-pkg-kiss">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-kiss" value="kiss-commit" checked>
+                  <div class="wiz-pkg-header">
+                    <strong>Kiss &amp; Commit</strong>
+                    <span class="price">$2,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Ceremony only (up to 40 guests), 1.5 hours exclusive hire, weekday only.</p>
+                </label>
+                
+                <label class="wiz-pkg-card" for="wiz-pkg-vows">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-vows" value="vows-vino">
+                  <div class="wiz-pkg-header">
+                    <strong>Vows &amp; Vino</strong>
+                    <span class="price">$4,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Ceremony, drinks &amp; grazing (up to 40 guests), 2.5 hours hire, champagne tower.</p>
+                </label>
+                
+                <label class="wiz-pkg-card" for="wiz-pkg-bigday">
+                  <input type="radio" name="wedding-pkg" id="wiz-pkg-bigday" value="big-day">
+                  <div class="wiz-pkg-header">
+                    <strong>The Big Day Package</strong>
+                    <span class="price" id="wiz-bigday-price-label">$6,000 + GST</span>
+                  </div>
+                  <p class="wiz-pkg-desc">Full Setup, Ceremony &amp; Reception (8 hrs). $6,000 for max 40 guests, $8,000 for 40+ guests.</p>
+                </label>
+              </div>
+
+              <!-- Private Party Packages -->
+              <div class="wizard-packages-options hidden" id="wiz-party-packages">
+                <label class="wiz-pkg-card active" for="wiz-pkg-freehire">
+                  <input type="radio" name="party-pkg" id="wiz-pkg-freehire" value="free-room-hire" checked>
+                  <div class="wiz-pkg-header">
+                    <strong>FREE Room Hire Celebration</strong>
+                    <span class="price">$0 Venue Hire</span>
+                  </div>
+                  <p class="wiz-pkg-desc">6-Hour venue hire, bar &amp; wait staff, music, fairy lights. (Requires min $3,000 Food &amp; Beverage spend).</p>
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-2">← Back</button>
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-2">Next Step: Food &amp; Drinks →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 3: Food & Beverage Selectors -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-3">
+              <h3>Curate Your Food &amp; Beverage</h3>
+              <p>Select your menu style and drink options per guest.</p>
+              
+              <!-- Dining Selectors -->
+              <div class="wizard-form-group">
+                <label for="wiz-dining-select">Dining Menu Style</label>
+                <select id="wiz-dining-select">
+                  <!-- Will be dynamically updated based on occasion -->
+                </select>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-seafood-fountain-box">
+                <label class="checkbox-label" for="wiz-seafood-fountain">
+                  <input type="checkbox" id="wiz-seafood-fountain" value="25">
+                  <span class="custom-checkbox"></span>
+                  Add 3-Tier Seafood Fountain (+$25 pp + $100 set up fee)
+                </label>
+              </div>
+
+              <!-- Beverage Selectors -->
+              <div class="wizard-form-group" style="margin-top: 2rem;">
+                <label for="wiz-drinks-select">Beverage Package</label>
+                <select id="wiz-drinks-select">
+                  <option value="none">No drink package (Prepay Bar Tab / Cash Bar)</option>
+                  <option value="house">Riviera House Beverage Package (4 Hrs) — $75 pp</option>
+                  <option value="deluxe">Riviera Deluxe Beverage Package (4 Hrs) — $110 pp</option>
+                </select>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-spirits-box">
+                <label class="checkbox-label" for="wiz-add-spirits">
+                  <input type="checkbox" id="wiz-add-spirits" value="16">
+                  <span class="custom-checkbox"></span>
+                  Add Basic Spirits Option (+$16 pp per hour)
+                </label>
+              </div>
+
+              <div class="wizard-form-group checkbox-group" id="wiz-cocktails-box">
+                <label class="checkbox-label" for="wiz-add-cocktails">
+                  <input type="checkbox" id="wiz-add-cocktails" value="22">
+                  <span class="custom-checkbox"></span>
+                  Add Signature Cocktails Option (+$22 pp per hour)
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-3">← Back</button>
+                <button type="button" class="btn btn-primary btn-next" id="btn-wiz-next-3">Next Step: Guest Count &amp; Date →</button>
+              </div>
+            </div>
+
+            <!-- Wizard Step 4: Details & Date Surcharges -->
+            <div class="wizard-step-panel hidden" id="wiz-panel-4">
+              <h3>Event Parameters &amp; Logistics</h3>
+              <p>Configure guests and dates. Surcharges and taxes will calculate in real time.</p>
+              
+              <!-- Guest Slider -->
+              <div class="wizard-form-group">
+                <label for="wiz-guests-slider">Number of Guests: <strong id="wiz-guests-display">40</strong></label>
+                <input type="range" id="wiz-guests-slider" min="10" max="200" value="40" step="5" class="slider">
+              </div>
+
+              <!-- Date Picker -->
+              <div class="wizard-form-group">
+                <label for="wiz-event-date">Date of Event</label>
+                <input type="date" id="wiz-event-date" required>
+                <small class="form-help-text">Please note: A 10% surcharge applies on Sundays.</small>
+              </div>
+
+              <!-- Linen Upgrade for Weddings -->
+              <div class="wizard-form-group checkbox-group" id="wiz-linen-box">
+                <label class="checkbox-label" for="wiz-linen-upgrade">
+                  <input type="checkbox" id="wiz-linen-upgrade">
+                  <span class="custom-checkbox"></span>
+                  Upgrade to Natural French Linen tablecloths (+$40 per table of 10)
+                </label>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-secondary-outline btn-prev" id="btn-wiz-prev-4">← Back</button>
+                <button type="button" class="btn btn-primary btn-submit-wizard" id="btn-wiz-submit">Submit Details to Sally →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side: Real-time Receipt -->
+          <div class="receipt-card" id="wiz-receipt-container">
+            <h4>Live Estimate Summary</h4>
+            <div class="receipt-divider"></div>
+            
+            <div class="receipt-items" id="wiz-receipt-items">
+              <!-- Dynamically populated receipt list -->
+            </div>
+
+            <div class="receipt-divider"></div>
+            
+            <div class="receipt-summary">
+              <div class="receipt-row">
+                <span>Subtotal (Excl. GST)</span>
+                <span id="receipt-subtotal">$0.00</span>
+              </div>
+              <div class="receipt-row">
+                <span>GST (10%)</span>
+                <span id="receipt-gst">$0.00</span>
+              </div>
+              <div class="receipt-row total">
+                <span>Estimated Total (Incl. GST)</span>
+                <span id="receipt-total">$0.00</span>
+              </div>
+            </div>
+
+            <div class="receipt-minimum-warning hidden" id="receipt-min-warning">
+              ⚠ F&amp;B spend is below the $3,000 + GST party minimum required for free room hire.
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" id="btn-receipt-enquire" style="margin-top: 2rem; padding: 1.1rem; width: 100%;">Enquire With Sally</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer" style="background-color: var(--text-dark); color: var(--white); padding: 5rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-brand">
+          <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img" style="height: 40px;">
+        </a>
+        <p class="brand-desc">Mediterranean beachfront dining, weddings, and premium catering on the Capricorn Coast.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tapas.html">Sunday Tapas</a></li>
+          <li><a href="packages.html">Packages &amp; Services</a></li>
+          <li><a href="planner.html">Event Builder</a></li>
+          <li><a href="about.html">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-pricing">
+        <h5>Our Pricing Model</h5>
+        <p class="pricing-badge">$0 Upfront, Flat Monthly Fee</p>
+        <p class="pricing-text">Website design, development, and maintenance: <strong>$299/mo</strong> flat-rate.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center" style="margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">
+      <p>&copy; 2026 Riviera Yeppoon. All rights reserved. Formerly A Days Graze Catering. Designed for premium events.</p>
+    </div>
+  </footer>
+
+  <!-- Link Main JS with Vite support -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

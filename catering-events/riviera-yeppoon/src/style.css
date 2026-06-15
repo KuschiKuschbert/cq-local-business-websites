@@ -2082,3 +2082,76 @@ section {
     padding: 2rem;
   }
 }
+
+/* ========================================================
+   10. Multi-Page Layout Enhancements
+   ======================================================== */
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+  transition: var(--transition-smooth);
+}
+
+.logo-img:hover {
+  transform: scale(1.02);
+}
+
+/* Active navigation page highlights */
+.nav-link.active-page:not(.btn-olive)::after {
+  width: 100%;
+}
+
+.nav-link.active-page {
+  font-weight: 500;
+  color: var(--primary-olive);
+}
+
+/* Dish Showcase inside menus */
+.menu-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.menu-showcase-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+}
+
+.menu-side-image {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-side-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-subtle);
+}
+
+@media (max-width: 768px) {
+  .menu-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .menu-showcase-img {
+    height: 300px;
+  }
+}
+

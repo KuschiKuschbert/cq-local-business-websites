@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Sunday Tapas Reservations | Riviera Yeppoon</title>
+  <meta name="description" content="Book a beachfront table for Sunday Tapas at Riviera Yeppoon. Enjoy Mediterranean-inspired small plates, local cocktails, and ocean views.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-brand" id="logo-link">
+        <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img">
+      </a>
+      
+      <button class="mobile-nav-toggle" id="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="primary-navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="tapas.html" class="nav-link">Sunday Tapas</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="planner.html" class="nav-link">Event Builder</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="contact.html" class="nav-link btn-olive">Inquire Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <!-- Sunday Tapas by the Sea (Booking Engine + Menu) -->
+    <section class="tapas-section" id="tapas" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="section-tag">Sunday Tapas by the Sea</span>
+          <h2 class="section-title">Glamour Shouldn't Be Reserved for Weddings Only</h2>
+          <p class="section-subtitle">
+            Open to the public every Sunday from 12:00 PM to 6:00 PM. Indulge in Mediterranean-inspired tapas, curated wines, and panoramic ocean views of Keppel Bay.
+          </p>
+        </div>
+
+        <!-- Booking and Promo Row -->
+        <div class="menu-showcase-grid" style="margin-bottom: 5rem; grid-template-columns: 1.2fr 1fr;">
+          <!-- Interactive Online Booking Engine -->
+          <div class="booking-card" id="booking-container" style="background-color: var(--white); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow-subtle); border: 1px solid rgba(93, 101, 86, 0.05);">
+            <h3>Book Your Table</h3>
+            <p class="booking-note">Reserve your table instantly through OpenTable.</p>
+            
+            <!-- Step 1: Search Form -->
+            <form id="tapas-booking-form" class="booking-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-guests">Guests</label>
+                  <select id="booking-guests" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(93, 101, 86, 0.2); border-radius: var(--border-radius); outline: none;">
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7">7 Guests</option>
+                    <option value="8">8+ Guests (Enquiry)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row" style="margin-top: 1rem;">
+                <div class="form-group">
+                  <label for="booking-date">Select Sunday</label>
+                  <select id="booking-date" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(93, 101, 86, 0.2); border-radius: var(--border-radius); outline: none;">
+                    <!-- Dynamically populated Sundays -->
+                  </select>
+                </div>
+              </div>
+              <div class="form-row" style="margin-top: 1rem;">
+                <div class="form-group">
+                  <label for="booking-time">Time</label>
+                  <select id="booking-time" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(93, 101, 86, 0.2); border-radius: var(--border-radius); outline: none;">
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="1:30 PM">1:30 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="2:30 PM">2:30 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="3:30 PM">3:30 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="4:30 PM">4:30 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-block" id="booking-submit-btn" style="margin-top: 1.5rem; padding: 1rem;">Book on OpenTable</button>
+              <div class="tapas-phone-alt" style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">Or call us: <a href="tel:0447760695" style="color: var(--primary-olive);"><strong>0447 760 695</strong></a> (Restaurant bookings only)</div>
+            </form>
+
+            <!-- Step 2: Redirecting Panel -->
+            <div class="booking-confirmation hidden" id="booking-confirm-panel" style="text-align: center;">
+              <div class="confirm-icon">✓</div>
+              <h4>Opening OpenTable</h4>
+              <p id="confirm-details" style="font-size: 0.95rem; margin-bottom: 1rem;">Redirecting you to complete your reservation at Riviera Yeppoon...</p>
+              <p class="confirm-subtext" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">If the booking page did not open in a new window, please click the button below:</p>
+              <a href="https://www.opentable.com.au/r/riviera-yeppoon-cooee-bay" target="_blank" class="btn btn-primary btn-block" id="booking-manual-link" style="padding: 1rem; display: block; text-decoration: none;">Open Booking Page</a>
+              <button type="button" class="btn btn-secondary-outline btn-block" style="margin-top: 1rem; padding: 1rem;" id="booking-reset-btn">Change Details</button>
+            </div>
+          </div>
+
+          <!-- Promo Graphic Column -->
+          <div style="display: flex; align-items: stretch;">
+            <img src="/tapas-promo.png" alt="Book Now for Sunday Tapas" style="width: 100%; border-radius: var(--border-radius); object-fit: cover; box-shadow: var(--shadow-medium); border: 1px solid rgba(93, 101, 86, 0.05);">
+          </div>
+        </div>
+
+        <!-- Interactive Menus -->
+        <div class="menu-card" id="menu-container">
+          <div class="menu-tabs" role="tablist">
+            <button class="menu-tab active" id="tab-tapas" role="tab" aria-selected="true" aria-controls="menu-tapas-panel">Tapas</button>
+            <button class="menu-tab" id="tab-cocktails" role="tab" aria-selected="false" aria-controls="menu-cocktails-panel">Cocktails</button>
+            <button class="menu-tab" id="tab-wine-beer" role="tab" aria-selected="false" aria-controls="menu-wine-beer-panel">Wine &amp; Beer</button>
+          </div>
+
+          <!-- Tapas Menu Panel -->
+          <div class="menu-panel active" id="menu-tapas-panel" role="tabpanel" aria-labelledby="tab-tapas">
+            <div class="menu-showcase-grid">
+              <div>
+                <img src="/dish1.png" alt="Signature Seafood Tapas Dishes" class="menu-showcase-img">
+              </div>
+              <div class="menu-category">
+                <h4>Signature Plates</h4>
+                <div class="menu-item-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Kilpatrick Oysters (1/2 Dozen)</span>
+                      <span class="menu-item-price">$32</span>
+                    </div>
+                    <p class="menu-item-desc">With crispy speck and worcestershire sauce. (GF, DF)</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Calamari Fritti</span>
+                      <span class="menu-item-price">$22</span>
+                    </div>
+                    <p class="menu-item-desc">With Riviera house aioli and crispy capers. (GF, DF)</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Chargrilled Lamb Cutlets (3)</span>
+                      <span class="menu-item-price">$26</span>
+                    </div>
+                    <p class="menu-item-desc">With Riviera house emulsion. (GF, DF)</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Chorizo &amp; Mozzarella Arancini (3)</span>
+                      <span class="menu-item-price">$22</span>
+                    </div>
+                    <p class="menu-item-desc">With Romesco, lemon &amp; thyme aioli. (GF)</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Crispy Fried Chorizo Potatoes</span>
+                      <span class="menu-item-price">$22</span>
+                    </div>
+                    <p class="menu-item-desc">With lemon thyme aioli. (GF, DF)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-category" style="margin-top: 3rem;">
+              <h4 style="margin-bottom: 2rem;">Antipasto &amp; Sides</h4>
+              <div class="menu-item-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Charcuterie Board for 4</span>
+                    <span class="menu-item-price">$79</span>
+                  </div>
+                  <p class="menu-item-desc">Double cream brie, creamy blue, aged cheddar, fig &amp; almond crackers, crisp lavosh, prosciutto, salami, seasonal produce.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Charcuterie Board for 2</span>
+                    <span class="menu-item-price">$41</span>
+                  </div>
+                  <p class="menu-item-desc">A curated smaller selection of premium cheeses, cured meats, quince paste and artisan crackers.</p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <span class="menu-item-name">Red Grape Focaccia</span>
+                    <span class="menu-item-price">$18</span>
+                  </div>
+                  <p class="menu-item-desc">Baked in house, served warm with whipped butter &amp; sea salt.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cocktails Menu Panel -->
+          <div class="menu-panel" id="menu-cocktails-panel" role="tabpanel" aria-labelledby="tab-cocktails" style="display: none;">
+            <div class="menu-showcase-grid">
+              <div>
+                <img src="/dish2.png" alt="Curated House Cocktails" class="menu-showcase-img">
+              </div>
+              <div class="menu-category">
+                <h4>Signature Cocktails — $22</h4>
+                <div class="menu-item-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                  <div class="menu-item">
+                    <div class="menu-item-header"><span class="menu-item-name">Espresso Martini</span></div>
+                    <p class="menu-item-desc">Diablo vodka, espresso, dark chocolate and a hint of Madagascan vanilla.</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header"><span class="menu-item-name">Tropical Mojito</span></div>
+                    <p class="menu-item-desc">Black Cockatoo coconut rum, Diablo Co pineapple liqueur, fresh mint, passionfruit pulp, lime, pineapple, ginger beer.</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header"><span class="menu-item-name">Strawberry Capiroska</span></div>
+                    <p class="menu-item-desc">Diablo Co passionfruit liqueur, Eros double distilled vodka, pink lemonade, zesty lime, mint, strawberries.</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header"><span class="menu-item-name">Lychee Breeze</span></div>
+                    <p class="menu-item-desc">Diablo Co lychee liqueur, Black Cockatoo coconut rum, cloudy apple juice, lime juice, fresh lychee.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wine & Beer Panel -->
+          <div class="menu-panel" id="menu-wine-beer-panel" role="tabpanel" aria-labelledby="tab-wine-beer" style="display: none;">
+            <div class="menu-showcase-grid">
+              <div>
+                <img src="/dish3.png" alt="Beachfront Wine & Beer Pairings" class="menu-showcase-img">
+              </div>
+              <div class="menu-category">
+                <h4>Wines by the Glass &amp; Bottle</h4>
+                <div class="menu-item-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">King Valley Prosecco</span>
+                      <span class="menu-item-price">$14 / $39</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Janz Sparkling Brut</span>
+                      <span class="menu-item-price">$18 / $93</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Oyster Bay Sauvignon Blanc</span>
+                      <span class="menu-item-price">$14 / $39</span>
+                    </div>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Squealing Pig Rosé</span>
+                      <span class="menu-item-price">$14 / $39</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer" style="background-color: var(--text-dark); color: var(--white); padding: 5rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-brand">
+          <img src="/logo.jpg" alt="Riviera Yeppoon Logo" class="logo-img" style="height: 40px;">
+        </a>
+        <p class="brand-desc">Mediterranean beachfront dining, weddings, and premium catering on the Capricorn Coast.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tapas.html">Sunday Tapas</a></li>
+          <li><a href="packages.html">Packages &amp; Services</a></li>
+          <li><a href="planner.html">Event Builder</a></li>
+          <li><a href="about.html">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-pricing">
+        <h5>Our Pricing Model</h5>
+        <p class="pricing-badge">$0 Upfront, Flat Monthly Fee</p>
+        <p class="pricing-text">Website design, development, and maintenance: <strong>$299/mo</strong> flat-rate.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center" style="margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">
+      <p>&copy; 2026 Riviera Yeppoon. All rights reserved. Formerly A Days Graze Catering. Designed for premium events.</p>
+    </div>
+  </footer>
+
+  <!-- Link Main JS with Vite support -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
