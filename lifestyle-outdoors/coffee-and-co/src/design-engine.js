@@ -4,7 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNoiseOverlay();
-  initCursorFollower();
+
+  // Skip cursor follower on premium/luxury sites that opt out
+  if (document.body.dataset.deCursor !== 'off') {
+    initCursorFollower();
+  }
+
   initKineticTypography();
   initScrollReveal();
 });
