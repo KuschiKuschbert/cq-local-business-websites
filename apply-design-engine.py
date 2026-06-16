@@ -25,6 +25,8 @@ def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
     de_css_src = os.path.join(root_dir, "design-engine", "design-engine.css")
     de_js_src = os.path.join(root_dir, "design-engine", "design-engine.js")
+    comp_css_src = os.path.join(root_dir, "design-engine", "components.css")
+    comp_js_src = os.path.join(root_dir, "design-engine", "components.js")
 
     if not os.path.exists(de_css_src) or not os.path.exists(de_js_src):
         print("Error: Design engine core files missing from root. Run script from workspace root.")
@@ -36,18 +38,30 @@ def main():
         # Vite structure
         de_css_dest = os.path.join(src_dir, "design-engine.css")
         de_js_dest = os.path.join(src_dir, "design-engine.js")
+        comp_css_dest = os.path.join(src_dir, "components.css")
+        comp_js_dest = os.path.join(src_dir, "components.js")
         relative_css = "./src/design-engine.css"
         relative_js = "./src/design-engine.js"
+        relative_comp_css = "./src/components.css"
+        relative_comp_js = "./src/components.js"
     else:
         # Static website structure
         de_css_dest = os.path.join(project_dir, "design-engine.css")
         de_js_dest = os.path.join(project_dir, "design-engine.js")
+        comp_css_dest = os.path.join(project_dir, "components.css")
+        comp_js_dest = os.path.join(project_dir, "components.js")
         relative_css = "./design-engine.css"
         relative_js = "./design-engine.js"
+        relative_comp_css = "./components.css"
+        relative_comp_js = "./components.js"
 
     # Copy files
     shutil.copy2(de_css_src, de_css_dest)
     shutil.copy2(de_js_src, de_js_dest)
+    if os.path.exists(comp_css_src):
+        shutil.copy2(comp_css_src, comp_css_dest)
+    if os.path.exists(comp_js_src):
+        shutil.copy2(comp_js_src, comp_js_dest)
     print(f"Copied assets to target directory.")
 
     # 1. Update index.html
@@ -61,12 +75,33 @@ def main():
             head_close = "</head>"
             css_tag = f'  <link rel="stylesheet" href="{relative_css}">\n'
             html_content = html_content.replace(head_close, css_tag + head_close)
+        
+        # Inject components.css in <head>
+        if "components.css" not in html_content and os.path.exists(comp_css_src):
+            head_close = "</head>"
+            css_tag = f'  <link rel="stylesheet" href="{relative_comp_css}">\n'
+            html_content = html_content.replace(head_close, css_tag + head_close)
 
         # Inject script reference in <body> or <head>
         if "design-engine.js" not in html_content:
             body_close = "</body>"
             js_tag = f'  <script type="module" src="{relative_js}"></script>\n'
             html_content = html_content.replace(body_close, js_tag + body_close)
+
+        # Inject components.js in <body> or <head>
+        if "components.js" not in html_content and os.path.exists(comp_js_src):
+            body_close = "</body>"
+            js_tag = f'  <script type="module" src="{relative_comp_js}"></script>\n'
+            html_content = html_content.replace(body_close, js_tag + body_close)
+
+        # Map archetype to custom cursor type
+        cursor_type = "default"
+        if args.archetype == "brutalist":
+            cursor_type = "trade"
+        elif args.archetype == "editorial":
+            cursor_type = "editorial"
+        elif args.archetype == "nordic":
+            cursor_type = "nordic"
 
         # Inject theme attributes in the <body> tag
         body_pattern = r'<body([^>]*)>'
@@ -76,8 +111,9 @@ def main():
             # Remove existing design engine attributes if present
             attrs = re.sub(r'\s*data-de-archetype="[^"]*"', '', attrs)
             attrs = re.sub(r'\s*data-de-palette="[^"]*"', '', attrs)
+            attrs = re.sub(r'\s*data-de-cursor-type="[^"]*"', '', attrs)
             # Add new attributes
-            new_body = f'<body{attrs} data-de-archetype="{args.archetype}" data-de-palette="{args.palette}">'
+            new_body = f'<body{attrs} data-de-archetype="{args.archetype}" data-de-palette="{args.palette}" data-de-cursor-type="{cursor_type}">'
             html_content = re.sub(body_pattern, new_body, html_content)
 
         # Enhance key tags (buttons, cards, headings) with engine selectors

@@ -29,43 +29,89 @@ function initNoiseOverlay() {
  * Implements a sleek cursor follower with premium desktop micro-animation feedback
  */
 function initCursorFollower() {
+  const cursorType = document.body.dataset.deCursorType || 'default';
   const follower = document.createElement('div');
-  follower.className = 'de-cursor-follower';
+  follower.className = `de-cursor-follower de-cursor-${cursorType}`;
   document.body.appendChild(follower);
 
   let mouseX = 0, mouseY = 0;
   let followerX = 0, followerY = 0;
+  let velX = 0, velY = 0;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
 
-  // Smooth ease-out animation loop for the custom cursor
+  // Easing/latency customized per niche
+  let easing = 0.15;
+  if (cursorType === 'editorial') {
+    easing = 0.08; // elegant lag
+  } else if (cursorType === 'trade') {
+    easing = 0.25; // crisp snap
+  }
+
+  // Smooth animation loop
   function animate() {
     const dx = mouseX - followerX;
     const dy = mouseY - followerY;
-    followerX += dx * 0.15;
-    followerY += dy * 0.15;
+    
+    velX = dx * easing;
+    velY = dy * easing;
+    
+    followerX += velX;
+    followerY += velY;
 
     follower.style.left = `${followerX}px`;
     follower.style.top = `${followerY}px`;
+    
+    // Playful squash/stretch only for nordic archetype
+    if (cursorType === 'nordic') {
+      const speed = Math.sqrt(velX * velX + velY * velY);
+      const scaleX = 1 + Math.min(speed * 0.04, 0.5);
+      const scaleY = 1 - Math.min(speed * 0.03, 0.3);
+      const angle = Math.atan2(velY, velX) * (180 / Math.PI);
+      follower.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
+    }
+    
     requestAnimationFrame(animate);
   }
   animate();
 
-  // Hover feedback for buttons, links and active items
+  // Hover feedback tailored for each niche type
   const clickables = document.querySelectorAll('a, button, .de-btn, .de-grid-item, input, textarea');
   clickables.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      follower.style.transform = 'translate(-50%, -50%) scale(2)';
-      follower.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-      follower.style.mixBlendMode = 'difference';
+      if (cursorType === 'trade') {
+        follower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        follower.style.border = '2px solid var(--color-primary)';
+        follower.style.backgroundColor = 'transparent';
+        follower.style.borderRadius = '0px';
+      } else if (cursorType === 'editorial') {
+        follower.style.transform = 'translate(-50%, -50%) scale(2.5)';
+        follower.style.opacity = '0.35';
+        follower.style.backgroundColor = 'var(--color-primary)';
+      } else {
+        follower.style.transform = 'translate(-50%, -50%) scale(2)';
+        follower.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        follower.style.mixBlendMode = 'difference';
+      }
     });
     item.addEventListener('mouseleave', () => {
-      follower.style.transform = 'translate(-50%, -50%) scale(1)';
-      follower.style.backgroundColor = 'var(--color-primary)';
-      follower.style.mixBlendMode = 'difference';
+      if (cursorType === 'trade') {
+        follower.style.transform = 'translate(-50%, -50%) scale(1)';
+        follower.style.border = 'none';
+        follower.style.backgroundColor = 'var(--color-primary)';
+        follower.style.borderRadius = '0px';
+      } else if (cursorType === 'editorial') {
+        follower.style.transform = 'translate(-50%, -50%) scale(1)';
+        follower.style.opacity = '1';
+        follower.style.backgroundColor = 'transparent';
+      } else {
+        follower.style.transform = 'translate(-50%, -50%) scale(1)';
+        follower.style.backgroundColor = 'var(--color-primary)';
+        follower.style.mixBlendMode = 'difference';
+      }
     });
   });
 }

@@ -10,8 +10,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./src/design-engine.css">
+  <link rel="stylesheet" href="./src/components.css">
 </head>
-<body data-de-archetype="brutalist" data-de-palette="obsidian-dark">
+<body data-de-archetype="brutalist" data-de-palette="obsidian-dark" data-de-cursor-type="trade">
 <header class="header">
 <div class="container header-container">
 <a class="logo" href="#">
@@ -20,42 +21,42 @@
 </svg>
 <span>TOONS <span class="accent-text">PLUMBING</span></span>
 </a>
-<a class="btn btn-primary de-btn" href="#estimator">Free Quote Tool</a>
+<a class="btn btn-primary de-btn de-btn" href="#estimator">Free Quote Tool</a>
 </div>
 </header>
 <main>
-<section class="hero" class="de-reveal">
+<section class="hero" class="de-reveal" class="de-reveal">
 <div class="container hero-container">
 <div class="hero-content">
-<h1 class="de-kinetic-text">Commercial Grade Drainage &amp; Gas Fitting</h1>
+<h1 class="de-kinetic-text" class="de-kinetic-text">Commercial Grade Drainage &amp; Gas Fitting</h1>
 <p class="hero-lead">Professional hydraulic designs, large scale drainage layouts, and gas installations for commercial sites and luxury residential properties in Rockhampton.</p>
-<a class="btn btn-primary btn-large de-btn" href="#estimator">Launch Quote Estimator</a>
+<a class="btn btn-primary btn-large de-btn de-btn" href="#estimator">Launch Quote Estimator</a>
 </div>
 </div>
 </section>
 <!-- Guarantees Grid -->
-<section class="guarantees" style="padding: 60px 0; background-color: rgba(255, 255, 255, 0.01); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);" class="de-reveal">
+<section class="guarantees" style="padding: 60px 0; background-color: rgba(255, 255, 255, 0.01); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);" class="de-reveal" class="de-reveal">
 <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
 <h2 class="section-title" style="margin-bottom: 2rem; font-size: 2rem; font-weight: 800;">Toons Service Guarantees</h2>
 <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
-<div class="service-card de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+<div class="service-card de-reveal de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
 <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">⏱️ On-Time Discount</h3>
 <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">If we arrive late for your booking without calling ahead, we will take <strong>$50 off</strong> your project call-out.</p>
 </div>
-<div class="service-card de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+<div class="service-card de-reveal de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
 <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">💰 $99 Flat call-out</h3>
 <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">Our standard diagnostic inspection locally is a flat <strong>$99 fee</strong>, covering transit and expert site assessment.</p>
 </div>
-<div class="service-card de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
+<div class="service-card de-reveal de-reveal" style="background-color: var(--color-card-bg); padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.03);">
 <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">🧹 Mess-Free Worksite</h3>
 <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">We respect your commercial or residential property. We wear boot covers, use drop cloths, and clean up fully.</p>
 </div>
 </div>
 </div>
 </section>
-<section class="estimator-section" id="estimator" class="de-reveal">
+<section class="estimator-section" id="estimator" class="de-reveal" class="de-reveal">
 <div class="container">
-<div class="estimator-card de-reveal">
+<div class="estimator-card de-reveal de-reveal">
 <div class="estimator-header">
 <h2>Instant Quote Estimator</h2>
 <p>Get a rough budgetary estimate for your project instantly. Adjust variables below:</p>
@@ -99,7 +100,7 @@
 <input id="ack-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: var(--color-primary);" type="checkbox"/>
 <label for="ack-pricing" style="font-size: 0.85rem; color: var(--color-text-muted); cursor: pointer;">I agree to the flat $99 local diagnostic fee and the clean workspace guarantee.</label>
 </div>
-<button class="btn btn-primary btn-large btn-full de-btn" type="submit">Submit Estimate For Booking Verification</button>
+<button class="btn btn-primary btn-large btn-full de-btn de-btn" type="submit">Submit Estimate For Booking Verification</button>
 <div class="alert-success visually-hidden" id="estimator-success">
 <p>Budgetary request submitted! Our engineers will call you to clarify layout options.</p>
 </div>
@@ -138,5 +139,6 @@
     </a>
   </nav>
 \n  <script type="module" src="./src/design-engine.js"></script>
+  <script type="module" src="./src/components.js"></script>
 </body>
 </html>

@@ -8,8 +8,9 @@
 <link href="./style.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./src/design-engine.css">
+  <link rel="stylesheet" href="./src/components.css">
 </head>
-<body data-de-archetype="editorial" data-de-palette="sage-garden">
+<body data-de-archetype="editorial" data-de-palette="sage-garden" data-de-cursor-type="editorial">
 <header>
 <div class="logo">Coffee &amp; Co.</div>
 <nav>
@@ -21,14 +22,14 @@
 </nav>
 </header>
 <main>
-<section class="hero" class="de-reveal">
+<section class="hero" class="de-reveal" class="de-reveal">
 <div class="hero-content">
-<h1 class="de-kinetic-text">Experience Coffee Excellence</h1>
+<h1 class="de-kinetic-text" class="de-kinetic-text">Experience Coffee Excellence</h1>
 <p>Warmth and coziness in the heart of Yeppoon. Discover your new favorite blend.</p>
 <a class="cta-button" href="#menu">View Menu</a>
 </div>
 </section>
-<section class="about" id="about" class="de-reveal">
+<section class="about" id="about" class="de-reveal" class="de-reveal">
 <div class="about-grid">
 <div class="about-text">
 <h2>Our Story</h2>
@@ -39,7 +40,7 @@
 </div>
 </div>
 </section>
-<section class="menu" id="menu" class="de-reveal">
+<section class="menu" id="menu" class="de-reveal" class="de-reveal">
 <h2>Menu Highlights</h2>
 <div class="menu-grid">
 <div class="menu-item">
@@ -73,7 +74,7 @@
 </div>
 </section>
 <!-- Coffee Pre-Order & Booking Form -->
-<section class="reserve-section" id="reserve" style="padding: 60px 0; background: #261611; color: #fdfaf7; border-top: 1px solid rgba(255,255,255,0.05);" class="de-reveal">
+<section class="reserve-section" id="reserve" style="padding: 60px 0; background: #261611; color: #fdfaf7; border-top: 1px solid rgba(255,255,255,0.05);" class="de-reveal" class="de-reveal">
 <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
 <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #fff;">Skip the Morning Queue</h2>
 <p style="margin-bottom: 2rem; color: #d0c0b8;">Pre-order your morning blend or secure a table for weekend brunch below.</p>
@@ -105,7 +106,7 @@
 </form>
 </div>
 </section>
-<section class="visit" id="visit" class="de-reveal">
+<section class="visit" id="visit" class="de-reveal" class="de-reveal">
 <h2>Visit Us</h2>
 <div class="visit-content">
 <div class="visit-info">
@@ -150,5 +151,6 @@
     </a>
   </nav>
 \n  <script type="module" src="./src/design-engine.js"></script>
+  <script type="module" src="./src/components.js"></script>
 </body>
 </html>

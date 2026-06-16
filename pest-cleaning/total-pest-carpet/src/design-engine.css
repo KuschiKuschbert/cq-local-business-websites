@@ -299,8 +299,31 @@
     z-index: 10000;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-radius 0.2s, opacity 0.2s, border 0.2s;
     display: none;
+  }
+  
+  /* Niche Specific Overrides */
+  .de-cursor-follower.de-cursor-trade {
+    border-radius: 0;
+    width: 14px;
+    height: 14px;
+    mix-blend-mode: normal;
+    background-color: var(--color-primary);
+  }
+  
+  .de-cursor-follower.de-cursor-editorial {
+    width: 24px;
+    height: 24px;
+    mix-blend-mode: difference;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+  }
+  
+  .de-cursor-follower.de-cursor-nordic {
+    width: 18px;
+    height: 18px;
+    mix-blend-mode: difference;
   }
   
   @media (pointer: fine) {

@@ -20,8 +20,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./src/design-engine.css">
+  <link rel="stylesheet" href="./src/components.css">
 </head>
-<body data-de-archetype="editorial" data-de-palette="sage-garden" data-de-cursor="off">
+<body data-de-cursor="off" data-de-archetype="editorial" data-de-palette="sage-garden" data-de-cursor-type="editorial">
 <!-- Floating Glassmorphic Header -->
 <header class="main-header" id="header">
 <div class="header-container">
@@ -53,10 +54,10 @@
 <li><a class="nav-link" href="#services">Services</a></li>
 <li><a class="nav-link" href="#quote-calculator">Quote Calculator</a></li>
 <li><a class="nav-link" href="#portfolio">Our Work</a></li>
-<li><a class="btn btn-gold nav-btn de-btn" href="#booking">Book Ranger</a></li>
+<li><a class="btn btn-gold nav-btn de-btn de-btn" href="#booking">Book Ranger</a></li>
 </ul>
 </nav>
-<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn de-btn" id="mobile-menu-toggle">
+<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn de-btn de-btn" id="mobile-menu-toggle">
 <span class="bar"></span>
 <span class="bar"></span>
 <span class="bar"></span>
@@ -70,13 +71,13 @@
 <li><a class="mobile-nav-link" href="#services">Services</a></li>
 <li><a class="mobile-nav-link" href="#quote-calculator">Quote Calculator</a></li>
 <li><a class="mobile-nav-link" href="#portfolio">Our Work</a></li>
-<li><a class="btn btn-gold mobile-nav-btn de-btn" href="#booking">Book Ranger</a></li>
+<li><a class="btn btn-gold mobile-nav-btn de-btn de-btn" href="#booking">Book Ranger</a></li>
 </ul>
 </nav>
 </div>
 <main>
 <!-- Hero Section -->
-<section class="hero-section" class="de-reveal">
+<section class="hero-section" class="de-reveal" class="de-reveal">
 <div class="hero-bg-overlay"></div>
 <div class="hero-container">
 <div class="hero-content">
@@ -84,8 +85,8 @@
 <h1 class="hero-title">Tame Your Wild Turf. <br/><span class="highlight">Unleash the Ranger.</span></h1>
 <p class="hero-subtitle">Premium mowing, turf nutrition, and garden artistry tailored to Central Queensland's climate. Fast, reliable, and spectacular results.</p>
 <div class="hero-cta-group">
-<a class="btn btn-gold btn-lg de-btn" href="#quote-calculator">Calculate Yard Price</a>
-<a class="btn btn-outline btn-lg de-btn" href="#services">Explore Services</a>
+<a class="btn btn-gold btn-lg de-btn de-btn" href="#quote-calculator">Calculate Yard Price</a>
+<a class="btn btn-outline btn-lg de-btn de-btn" href="#services">Explore Services</a>
 </div>
 <div class="hero-stats">
 <div class="stat-item">
@@ -103,7 +104,7 @@
 </div>
 </div>
 <div class="hero-visual">
-<div class="visual-card de-reveal">
+<div class="visual-card de-reveal de-reveal">
 <img alt="Perfectly manicured green striped lawn with lawnmower at golden hour" decoding="async" fetchpriority="high" src="/hero.png" style="width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 5/4;"/>
 <!-- Mini info badge -->
 <div class="visual-badge">
@@ -118,7 +119,7 @@
 </div>
 </section>
 <!-- Services Section (Residential Lawn Care Packages) -->
-<section class="services-section" id="services" class="de-reveal">
+<section class="services-section" id="services" class="de-reveal" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tag">Ranger Packages</span>
@@ -127,7 +128,7 @@
 </div>
 <div class="packages-grid">
 <!-- Ranger Basic -->
-<div class="package-card de-reveal" id="pkg-basic">
+<div class="package-card de-reveal de-reveal" id="pkg-basic">
 <div class="package-header">
 <span class="package-tag">Essential Maintanence</span>
 <h3 class="package-name">Ranger Basic</h3>
@@ -165,11 +166,11 @@
                 </li>
 </ul>
 <div class="package-footer">
-<button class="btn btn-outline btn-block select-pkg-btn de-btn" data-package="Ranger Basic">Select &amp; Customize</button>
+<button class="btn btn-outline btn-block select-pkg-btn de-btn de-btn" data-package="Ranger Basic">Select &amp; Customize</button>
 </div>
 </div>
 <!-- Ranger Pro (Recommended) -->
-<div class="package-card popular de-reveal" id="pkg-pro">
+<div class="package-card popular de-reveal de-reveal" id="pkg-pro">
 <div class="popular-ribbon">Most Popular</div>
 <div class="package-header">
 <span class="package-tag">Complete Turf Care</span>
@@ -208,11 +209,11 @@
                 </li>
 </ul>
 <div class="package-footer">
-<button class="btn btn-gold btn-block select-pkg-btn de-btn" data-package="Ranger Pro">Select &amp; Customize</button>
+<button class="btn btn-gold btn-block select-pkg-btn de-btn de-btn" data-package="Ranger Pro">Select &amp; Customize</button>
 </div>
 </div>
 <!-- Ranger Elite -->
-<div class="package-card de-reveal" id="pkg-elite">
+<div class="package-card de-reveal de-reveal" id="pkg-elite">
 <div class="package-header">
 <span class="package-tag">Show-Home Perfection</span>
 <h3 class="package-name">Ranger Elite</h3>
@@ -250,14 +251,14 @@
                 </li>
 </ul>
 <div class="package-footer">
-<button class="btn btn-outline btn-block select-pkg-btn de-btn" data-package="Ranger Elite">Select &amp; Customize</button>
+<button class="btn btn-outline btn-block select-pkg-btn de-btn de-btn" data-package="Ranger Elite">Select &amp; Customize</button>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Instant Quote / Price Calculator -->
-<section class="calculator-section" id="quote-calculator" class="de-reveal">
+<section class="calculator-section" id="quote-calculator" class="de-reveal" class="de-reveal">
 <div class="container">
 <div class="calculator-grid">
 <div class="calc-info">
@@ -278,7 +279,7 @@
 <strong id="summary-frequency">Fortnightly</strong>
 </div>
 </div>
-<div class="pricing-card de-reveal">
+<div class="pricing-card de-reveal de-reveal">
 <div class="price-header">Estimated Price</div>
 <div class="price-display">
 <span class="dollar">$</span>
@@ -288,8 +289,8 @@
 <p class="price-note">*Final pricing is subject to onsite inspect (e.g. slopes, access restrictions).</p>
 </div>
 </div>
-<div class="calc-card de-reveal">
-<h3 class="card-title de-reveal">Tailor Your Estimate</h3>
+<div class="calc-card de-reveal de-reveal">
+<h3 class="card-title de-reveal de-reveal">Tailor Your Estimate</h3>
 <!-- Plan Selector -->
 <div class="form-group">
 <label class="form-label">Step 1: Choose Your Package</label>
@@ -315,28 +316,28 @@
 <!-- Frequency selector -->
 <div class="form-group">
 <label class="form-label">Step 3: Service Frequency</label>
-<div class="freq-cards de-reveal">
-<div class="freq-card active de-reveal" data-freq="weekly">
+<div class="freq-cards de-reveal de-reveal">
+<div class="freq-card active de-reveal de-reveal" data-freq="weekly">
 <span class="freq-title">Weekly</span>
 <span class="freq-discount">10% Off</span>
 </div>
-<div class="freq-card de-reveal" data-freq="fortnightly">
+<div class="freq-card de-reveal de-reveal" data-freq="fortnightly">
 <span class="freq-title">Fortnightly</span>
 <span class="freq-discount">Standard</span>
 </div>
-<div class="freq-card de-reveal" data-freq="monthly">
+<div class="freq-card de-reveal de-reveal" data-freq="monthly">
 <span class="freq-title">Monthly</span>
 <span class="freq-discount">+15% premium</span>
 </div>
 </div>
 </div>
-<button class="btn btn-gold btn-block btn-lg de-btn" id="btn-quote-proceed" type="button">Proceed to Booking</button>
+<button class="btn btn-gold btn-block btn-lg de-btn de-btn" id="btn-quote-proceed" type="button">Proceed to Booking</button>
 </div>
 </div>
 </div>
 </section>
 <!-- Portfolio Section -->
-<section class="portfolio-section" id="portfolio" class="de-reveal">
+<section class="portfolio-section" id="portfolio" class="de-reveal" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tag">Our Work</span>
@@ -344,7 +345,7 @@
 <p class="section-subtitle">Witness the spectacular transformations we deliver across Central Queensland neighborhoods.</p>
 </div>
 <div class="portfolio-grid">
-<div class="portfolio-card de-reveal">
+<div class="portfolio-card de-reveal de-reveal">
 <div class="portfolio-img-wrapper">
 <!-- SVG depicting before & after split -->
 <svg height="100%" viewbox="0 0 350 250" width="100%">
@@ -367,7 +368,7 @@
 <p>Overgrown weeds completely replaced with premium Empire Zoysia turf, weed-treated and edge-sculpted.</p>
 </div>
 </div>
-<div class="portfolio-card de-reveal">
+<div class="portfolio-card de-reveal de-reveal">
 <div class="portfolio-img-wrapper">
 <!-- SVG depicting pristine hedge & grass -->
 <svg height="100%" viewbox="0 0 350 250" width="100%">
@@ -391,7 +392,7 @@
 <p>Fortnightly cylinder mowing with custom structured hedge maintenance on a premium residential property.</p>
 </div>
 </div>
-<div class="portfolio-card de-reveal">
+<div class="portfolio-card de-reveal de-reveal">
 <div class="portfolio-img-wrapper">
 <!-- SVG depicting garden edging -->
 <svg height="100%" viewbox="0 0 350 250" width="100%">
@@ -419,25 +420,25 @@
 </div>
 </section>
 <!-- Booking Section -->
-<section class="booking-section" id="booking" class="de-reveal">
+<section class="booking-section" id="booking" class="de-reveal" class="de-reveal">
 <div class="container">
-<div class="booking-card de-reveal">
+<div class="booking-card de-reveal de-reveal">
 <div class="booking-intro">
 <h2 class="booking-title">Secure Your Lawn Ranger</h2>
 <p class="booking-desc">Send your details and custom service requirements. We will contact you within 24 hours to finalize your subscription and booking date.</p>
 <!-- Trust Badges -->
 <div class="trust-badges-proposal" style="margin-top: 1.5rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.25rem;">🐕</div>
 <strong style="font-size: 0.8rem; display: block; color: #F1C40F; margin-top: 0.25rem;">Closed Gates</strong>
 <p style="font-size: 0.65rem; color: #94a3b8; margin-top: 0.25rem;">Double checked for pet safety.</p>
 </div>
-<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.25rem;">☁️</div>
 <strong style="font-size: 0.8rem; display: block; color: #F1C40F; margin-top: 0.25rem;">Rain Protection</strong>
 <p style="font-size: 0.65rem; color: #94a3b8; margin-top: 0.25rem;">Instant SMS delay alerts.</p>
 </div>
-<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.25rem;">🧹</div>
 <strong style="font-size: 0.8rem; display: block; color: #F1C40F; margin-top: 0.25rem;">Mess-Free</strong>
 <p style="font-size: 0.65rem; color: #94a3b8; margin-top: 0.25rem;">Paths blown clean on exit.</p>
@@ -506,7 +507,7 @@
 <input id="ack-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: #F1C40F;" type="checkbox"/>
 <label for="ack-pricing" style="font-size: 0.85rem; color: #94a3b8; cursor: pointer; text-align: left;">I verify property specifications and acknowledge the closed-gate commitment and transparent quote promise.</label>
 </div>
-<button class="btn btn-gold btn-block btn-lg de-btn" type="submit">Submit Booking Request</button>
+<button class="btn btn-gold btn-block btn-lg de-btn de-btn" type="submit">Submit Booking Request</button>
 </form>
 <div aria-hidden="true" class="form-success-overlay" id="form-success">
 <div class="success-content">
@@ -515,7 +516,7 @@
                 </div>
 <h3>Request Received, Partner!</h3>
 <p>The Lawn Ranger team has received your inquiry. We'll be in touch shortly to finalize details and confirm your pricing.</p>
-<button class="btn btn-gold de-btn" id="btn-success-close" type="button">Done</button>
+<button class="btn btn-gold de-btn de-btn" id="btn-success-close" type="button">Done</button>
 </div>
 </div>
 </div>
@@ -582,5 +583,6 @@
     </a>
   </nav>
 \n  <script type="module" src="./src/design-engine.js"></script>
+  <script type="module" src="./src/components.js"></script>
 </body>
 </html>
