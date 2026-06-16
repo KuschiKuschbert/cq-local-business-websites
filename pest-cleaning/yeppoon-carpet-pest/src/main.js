@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Yeppoon Carpet & Pest Main JS
 

@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css'
 import javascriptLogo from './assets/javascript.svg'
 import viteLogo from './assets/vite.svg'

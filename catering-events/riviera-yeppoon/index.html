@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ovo&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Preload Hero Image -->
-  <link rel="preload" as="image" href="/about.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -45,7 +45,7 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section" id="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/about.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; min-height: 90vh; color: var(--white); text-align: center; position: relative;">
+    <section class="hero-section" id="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; min-height: 90vh; color: var(--white); text-align: center; position: relative;">
       <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 1;"></div>
       <div class="hero-content" style="position: relative; z-index: 2; max-width: 800px; padding: 2rem;">
         <span class="hero-badge" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; display: inline-block; margin-bottom: 2rem;">Cooee Bay Beachfront, Yeppoon</span>
@@ -73,13 +73,16 @@
 
         <div class="packages-grid mobile-swipe-carousel" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
           <!-- Card 1: Sunday Tapas -->
-          <div class="package-card" style="background-color: var(--white); padding: 3.5rem 2.5rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+          <div class="package-card" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
             <div>
+              <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
+                <img src="/tapas-hero.jpg" alt="Sunday Tapas by the sea" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+              </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M4 7c0 4 3.5 5.5 8 5.5s8-1.5 8-5.5H4z" />
                 <path d="M12 12.5v7.5M8 20h8" />
               </svg>
-              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Sunday Tapas</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400; margin-top: 0.5rem;">Sunday Tapas</h3>
               <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
                 Indulge in curated small plates, zesty local cocktails, and panoramic ocean views of Keppel Bay. Open every Sunday from 12pm.
               </p>
@@ -88,15 +91,18 @@
           </div>
 
           <!-- Card 2: Weddings & Functions -->
-          <div class="package-card featured" style="background-color: var(--white); padding: 4rem 2.5rem; border-radius: var(--border-radius); border: 1px solid var(--primary-olive); box-shadow: var(--shadow-medium); display: flex; flex-direction: column; justify-content: space-between; text-align: center; transform: scale(1.03); position: relative;">
-            <span class="package-badge" style="position: absolute; top: 1.5rem; right: 1.5rem; background-color: var(--primary-olive); color: var(--white); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.4rem 0.8rem; border-radius: 20px;">Boutique Venue</span>
+          <div class="package-card featured" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid var(--primary-olive); box-shadow: var(--shadow-medium); display: flex; flex-direction: column; justify-content: space-between; text-align: center; position: relative;">
+            <span class="package-badge" style="position: absolute; top: 1.5rem; right: 1.5rem; background-color: var(--primary-olive); color: var(--white); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.4rem 0.8rem; border-radius: 20px; z-index: 10;">Boutique Venue</span>
             <div>
+              <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
+                <img src="/gallery2.jpg" alt="Wedding ceremony setup overlooking Cooee Bay beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+              </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M12 3L9 6h6l-3-3z" />
                 <path d="M9 6l3 3.5 3-3.5" />
                 <circle cx="12" cy="15" r="5.5" />
               </svg>
-              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Weddings &amp; Parties</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400; margin-top: 0.5rem;">Weddings &amp; Parties</h3>
               <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
                 The Capricorn Coast's premier boutique venue. All-inclusive luxury beachfront weddings and celebrations with $0 room hire options.
               </p>
@@ -105,13 +111,16 @@
           </div>
 
           <!-- Card 3: Interactive Event Builder -->
-          <div class="package-card" style="background-color: var(--white); padding: 3.5rem 2.5rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+          <div class="package-card" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
             <div>
+              <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
+                <img src="/about.jpg" alt="Event setup on the oceanfront deck" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+              </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M10 3c0 3.5 1.5 5 5 5-3.5 0-5 1.5-5 5 0-3.5-1.5-5-5-5 3.5 0 5-1.5 5-5z" />
                 <path d="M18 13c0 2 0.8 2.8 2.8 2.8-2 0-2.8 0.8-2.8 2.8 0-2-0.8-2.8-2.8-2.8 2 0 2.8-0.8 2.8-2.8z" opacity="0.8" />
               </svg>
-              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400;">Event Cost Builder</h3>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-olive); font-weight: 400; margin-top: 0.5rem;">Event Cost Builder</h3>
               <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
                 Calculate your estimated beachfront event budget in real time. Choose occasions, menus, drinks, and guest counts instantly.
               </p>

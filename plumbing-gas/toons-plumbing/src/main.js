@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Toons Pricing Estimator Logic
 const drainSlider = document.getElementById('drain-length');

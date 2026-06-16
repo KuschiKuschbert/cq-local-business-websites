@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // STATE MANAGEMENT
   // ==========================================
   let currentNiche = 'plumbing';
-  let deviceView = 'tablet';
+  let deviceView = 'desktop';
+  let cafeCartCount = 0;
+  let activePestTab = 'risk';
   
   const pricingTiers = {
     plumbing: 249,
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const simWebContent = document.getElementById('sim-web-content');
   const simFrame = document.getElementById('sim-frame');
+  const deviceDesktopBtn = document.getElementById('device-desktop');
   const deviceTabletBtn = document.getElementById('device-tablet');
   const deviceMobileBtn = document.getElementById('device-mobile');
 
@@ -61,223 +64,402 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentNiche === 'plumbing') {
       htmlContent = `
-        <header class="sim-header">
-          <div class="sim-logo">💧 Keppel Bay Plumbing</div>
-          <span class="sim-phone">📞 0400 999 999</span>
-        </header>
-        
-        <div class="sim-hero">
-          <span class="sim-hero-badge">On-Time & Professional</span>
-          <h2>Central Queensland's High-Quality Plumbers</h2>
-          <p>Prompt plumbing, gas fitting, and emergency drainage camera repairs across Yeppoon and Rockhampton.</p>
-          <a href="#" class="sim-hero-cta">Request Fast Diagnostics</a>
-        </div>
-        
-        <div class="sim-badge-row">
-          ${showOnTime ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">⏱️</span>
-              <div class="sim-badge-content">
-                <h4>On-Time Payout Guarantee</h4>
-                <p>If we arrive late for our scheduled window, we pay you $50 on the spot.</p>
-              </div>
-            </div>
-          ` : ''}
+        <div class="simulated-website sim-niche-plumbing">
+          <header class="sim-header">
+            <div class="sim-logo"><i data-lucide="droplet" style="width: 14px; height: 14px; stroke-width: 2.5px; color: #38bdf8; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Keppel Bay Plumbing</div>
+            <span class="sim-phone"><i data-lucide="phone" style="width: 12px; height: 12px; stroke-width: 2.5px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> 0400 999 999</span>
+          </header>
           
-          ${showCleanup ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">✨</span>
-              <div class="sim-badge-content">
-                <h4>Pristine Worksite Promise</h4>
-                <p>We wear boot covers and clean every pipe shaving. No dirty footprints left behind.</p>
+          <div class="sim-plumbing-grid">
+            <div class="sim-plumbing-left">
+              <div class="sim-tech-banner">
+                <span class="sim-status-indicator">
+                  <span class="sim-status-beacon"></span>
+                  Emergency Dispatch: ACTIVE
+                </span>
+                <span style="font-size: 0.72rem; opacity: 0.8; font-family: monospace;">Yeppoon & Rocky</span>
               </div>
-            </div>
-          ` : ''}
-        </div>
-        
-        <div class="sim-form-container">
-          <div class="sim-form-title">Request a $99 Callout Quote</div>
-          <form class="sim-form-box" onsubmit="return false;">
-            <input type="text" placeholder="Your Name" class="sim-input" required>
-            <input type="text" placeholder="Service Needed" class="sim-input" required>
-            
-            ${showWaitlist ? `
-              <div class="sim-estimator-widget">
-                <h4>⚡ Live Dispatch Status</h4>
-                <div class="sim-slider-row">
-                  <span>Current Queue Wait:</span>
-                  <span class="sim-est-val">Fast (90 mins)</span>
+              
+              <div class="sim-plumbing-hero">
+                <span class="sim-hero-badge">24/7 Rapid Response</span>
+                <h2>Central QLD's Emergency Plumber</h2>
+                <p>Direct dispatch to residential hot water failures, burst pipes, and gas fitting emergencies.</p>
+                <a href="tel:0400999999" class="sim-plumbing-hero-cta"><i data-lucide="phone-call" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> Call Dispatch Now</a>
+              </div>
+              
+              <div class="sim-ticker-box">
+                <div class="sim-ticker-title"><i data-lucide="activity" style="width: 14px; height: 14px; color: #38bdf8;"></i> Active Estimated Response Times</div>
+                <div class="sim-ticker-list">
+                  <div class="sim-ticker-item">
+                    <span class="loc">Yeppoon (Coastal)</span>
+                    <span class="time">25-40 mins</span>
+                  </div>
+                  <div class="sim-ticker-item">
+                    <span class="loc">Rockhampton (City)</span>
+                    <span class="time">30-50 mins</span>
+                  </div>
+                  <div class="sim-ticker-item">
+                    <span class="loc">Gracemere / Outskirts</span>
+                    <span class="time">45-65 mins</span>
+                  </div>
                 </div>
               </div>
-            ` : ''}
+            </div>
             
-            <button class="sim-btn">Submit Service Request</button>
-          </form>
+            <div class="sim-plumbing-right">
+              <div class="sim-badge-row">
+                ${showOnTime ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="clock" style="width: 24px; height: 24px; stroke-width: 2px; color: #38bdf8;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>On-Time Payout Guarantee</h4>
+                      <p>We arrive on time, or we pay you $50. No excuses.</p>
+                    </div>
+                  </div>
+                ` : ''}
+                
+                ${showCleanup ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="sparkles" style="width: 24px; height: 24px; stroke-width: 2px; color: #38bdf8;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>Pristine Site Promise</h4>
+                      <p>We clean up every metal shaving and boot footprint before we leave.</p>
+                    </div>
+                  </div>
+                ` : ''}
+              </div>
+              
+              <div class="sim-form-container">
+                <div class="sim-form-title">Priority Online Dispatch Form</div>
+                <form class="sim-form-box" onsubmit="return false;">
+                  <input type="text" placeholder="Your Name" class="sim-input" required>
+                  <input type="text" placeholder="Problem Details" class="sim-input" required>
+                  
+                  ${showWaitlist ? `
+                    <div class="sim-estimator-widget">
+                      <h4><i data-lucide="zap" style="width: 14px; height: 14px; color: #38bdf8; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Dispatch Status</h4>
+                      <div class="sim-slider-row">
+                        <span>Queue Load:</span>
+                        <span class="sim-est-val">Light (Immediate)</span>
+                      </div>
+                    </div>
+                  ` : ''}
+                  
+                  <button class="sim-btn">Request Dispatcher Call</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     } else if (currentNiche === 'cafe') {
       htmlContent = `
-        <header class="sim-header">
-          <div class="sim-logo">☕ Coffee & Co. Cafe</div>
-          <span class="sim-phone">📍 Anzac Pde, Yeppoon</span>
-        </header>
-        
-        <div class="sim-hero" style="background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), radial-gradient(circle, var(--color-gold) 0%, transparent 80%);">
-          <span class="sim-hero-badge" style="background-color: #d39e82; color: #fff;">Yeppoon Beach Front</span>
-          <h2>Craft Coffee & Fresh Coastal Bites</h2>
-          <p>Locally roasted specialty beans, fresh pastries, and custom gluten-free menus.</p>
-          <a href="#" class="sim-hero-cta" style="background-color: #b87a5d;">See Daily Specials</a>
-        </div>
-        
-        <div class="sim-badge-row" style="background-color: #faf6f0;">
-          ${showCleanup ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">🥛</span>
-              <div class="sim-badge-content">
-                <h4>Allergy-Safe Double Check</h4>
-                <p>We use dedicated separate blenders and group spaces for dairy-free and gluten-free preparation.</p>
+        <div class="simulated-website sim-niche-cafe">
+          <header class="sim-header">
+            <div class="sim-logo">Coffee & Co.</div>
+            <span class="sim-cart-badge"><i data-lucide="shopping-cart" style="width: 12px; height: 12px; stroke-width: 2.5px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Cart (<span class="sim-cart-val">${cafeCartCount}</span>)</span>
+          </header>
+          
+          <div class="sim-cafe-layout">
+            <div class="sim-cafe-hero">
+              <span class="sim-cafe-hero-badge">Est. 2018 — Yeppoon Foreshore</span>
+              <h2>Specialty Coffee & Beachside Eats</h2>
+              <p>A curated menu of house-roasted single origin beans, seasonal coastal bites, and fresh house-baked gluten-free pastries.</p>
+            </div>
+            
+            <div>
+              <div class="sim-cafe-menu-title">Beachfront Pre-Order Menu</div>
+              <div class="sim-cafe-menu-list">
+                <div class="sim-cafe-menu-row">
+                  <div class="sim-cafe-menu-details">
+                    <span class="sim-cafe-menu-name">Flat White</span>
+                    <span class="sim-cafe-menu-desc">House signature dark roast espresso blend, microfoam.</span>
+                  </div>
+                  <span class="sim-cafe-menu-leader"></span>
+                  <div class="sim-cafe-menu-action">
+                    <span class="sim-cafe-menu-price">$4.50</span>
+                    <button class="sim-cafe-add-btn">Add</button>
+                  </div>
+                </div>
+                <div class="sim-cafe-menu-row">
+                  <div class="sim-cafe-menu-details">
+                    <span class="sim-cafe-menu-name">Iced Latte</span>
+                    <span class="sim-cafe-menu-desc">Double espresso shot poured over ice and chilled milk.</span>
+                  </div>
+                  <span class="sim-cafe-menu-leader"></span>
+                  <div class="sim-cafe-menu-action">
+                    <span class="sim-cafe-menu-price">$6.00</span>
+                    <button class="sim-cafe-add-btn">Add</button>
+                  </div>
+                </div>
+                <div class="sim-cafe-menu-row">
+                  <div class="sim-cafe-menu-details">
+                    <span class="sim-cafe-menu-name">Avocado Toast</span>
+                    <span class="sim-cafe-menu-desc">Smashed local avo, marinated feta, cherry tomatoes on sourdough.</span>
+                  </div>
+                  <span class="sim-cafe-menu-leader"></span>
+                  <div class="sim-cafe-menu-action">
+                    <span class="sim-cafe-menu-price">$16.50</span>
+                    <button class="sim-cafe-add-btn">Add</button>
+                  </div>
+                </div>
               </div>
             </div>
-          ` : ''}
-        </div>
-        
-        <div class="sim-form-container">
-          <div class="sim-form-title" style="color: #b87a5d;">Order Coffee Ahead</div>
-          <form class="sim-form-box" onsubmit="return false;">
-            <input type="text" placeholder="Pick up Name" class="sim-input" required>
-            <select class="sim-input">
-              <option>Flat White (Regular)</option>
-              <option>Latte (Oat Milk)</option>
-              <option>Cold Brew with Sweet Foam</option>
-            </select>
-            
-            ${showWaitlist ? `
-              <div class="sim-estimator-widget" style="background-color: #fcf8f2;">
-                <h4>⏳ Queue skip pre-order</h4>
-                <div class="sim-slider-row">
-                  <span>Estimated Pickup In:</span>
-                  <span class="sim-est-val" style="color: #b87a5d;">10 minutes</span>
+
+            ${showCleanup ? `
+              <div class="sim-badge-row">
+                <div class="sim-badge-card">
+                  <span class="sim-badge-icon"><i data-lucide="heart" style="width: 24px; height: 24px; stroke-width: 2px; color: #5d4037;"></i></span>
+                  <div class="sim-badge-content">
+                    <h4>Allergy-Safe Separate Blenders</h4>
+                    <p>Strict kitchen guidelines to eliminate soy, almond, and gluten cross-contact.</p>
+                  </div>
                 </div>
               </div>
             ` : ''}
             
-            <button class="sim-btn" style="background-color: #b87a5d;">Order & Pay At Counter</button>
-          </form>
+            <div class="sim-form-container">
+              <div class="sim-form-title">Table Reservation Request</div>
+              <form class="sim-form-box" onsubmit="return false;">
+                <input type="text" placeholder="Name" class="sim-input" required>
+                
+                ${showWaitlist ? `
+                  <div class="sim-estimator-widget">
+                    <h4><i data-lucide="hourglass" style="width: 14px; height: 14px; color: #5d4037; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Live Peak Wait Time</h4>
+                    <div class="sim-slider-row">
+                      <span>Approx. Wait:</span>
+                      <span class="sim-est-val">5-10 minutes</span>
+                    </div>
+                  </div>
+                ` : ''}
+                
+                <button class="sim-btn">Reserve Beachfront Table</button>
+              </form>
+            </div>
+            
+            ${cafeCartCount > 0 ? `
+              <div class="sim-cafe-floating-checkout">
+                <p><i data-lucide="coffee" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Pre-Order: ${cafeCartCount} item${cafeCartCount > 1 ? 's' : ''}</p>
+                <button class="sim-cafe-checkout-btn">Checkout Now</button>
+              </div>
+            ` : ''}
+          </div>
         </div>
       `;
     } else if (currentNiche === 'landscaping') {
       htmlContent = `
-        <header class="sim-header">
-          <div class="sim-logo">🌿 Fantastic Landscaping</div>
-          <span class="sim-phone">📞 Call 0400 333 444</span>
-        </header>
-        
-        <div class="sim-hero">
-          <span class="sim-hero-badge" style="background-color: #134e5e; color: #fff;">Capricorn Landscapes</span>
-          <h2>Outstanding Gardens & Turf Setups</h2>
-          <p>Complete backyard transformations, premium lawn installations, and site excavation work.</p>
-          <a href="#" class="sim-hero-cta" style="background-color: #134e5e;">View Design Portfolio</a>
-        </div>
-        
-        <div class="sim-badge-row">
-          ${showCleanup ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">🧹</span>
-              <div class="sim-badge-content">
-                <h4>Spotless Site Clean Guarantee</h4>
-                <p>We blow down paths and remove all lawn cuttings. Your yard looks clean immediately.</p>
-              </div>
-            </div>
-          ` : ''}
+        <div class="simulated-website sim-niche-landscaping">
+          <header class="sim-header">
+            <div class="sim-logo"><i data-lucide="sprout" style="width: 16px; height: 16px; color: #1e3a24; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Fantastic Landscaping</div>
+            <span class="sim-phone"><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> 0400 333 444</span>
+          </header>
           
-          ${showOnTime ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">🏗️</span>
-              <div class="sim-badge-content">
-                <h4>Dial-Before-You-Dig Badge</h4>
-                <p>We check utility locations before excavation starts, protecting your power and fiber cables.</p>
+          <div class="sim-landscaping-layout">
+            <div class="sim-landscaping-left">
+              <div class="sim-landscaping-hero">
+                <span class="sim-landscaping-hero-badge">Yeppoon & Capricorn Coast</span>
+                <h2>High-End Backyard Design & Earthworks</h2>
+                <p>Premium turf laying, structural retaining walls, and custom resort-style landscaping designs tailored for local conditions.</p>
+                <a href="#" class="sim-landscaping-hero-cta">Request Design Consult</a>
+              </div>
+              
+              <div class="sim-before-after-widget">
+                <div class="sim-ba-image sim-ba-before">
+                  <span class="sim-ba-img-label" style="background-color: rgba(0,0,0,0.65);">Dry Clay Ground (Before)</span>
+                </div>
+                <div class="sim-ba-image sim-ba-after">
+                  <span class="sim-ba-img-label" style="background-color: #1e3a24;">Premium Couch Turf (After)</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="sim-ba-range-slider">
+                <div class="sim-ba-divider"></div>
+                <div class="sim-ba-handle"><i data-lucide="arrow-left-right" style="width: 14px; height: 14px;"></i></div>
               </div>
             </div>
-          ` : ''}
-        </div>
-        
-        <div class="sim-form-container">
-          <div class="sim-form-title">Consultation Booking Request</div>
-          <form class="sim-form-box" onsubmit="return false;">
-            <input type="text" placeholder="Your Property Suburb" class="sim-input" required>
             
-            ${showWaitlist ? `
-              <div class="sim-estimator-widget" style="background-color: #e6f0ed;">
-                <h4>📅 Design Project Waitlist</h4>
-                <div class="sim-slider-row">
-                  <span>Next Available Slot:</span>
-                  <span class="sim-est-val" style="color: #134e5e;">Within 3 weeks</span>
-                </div>
+            <div class="sim-landscaping-right">
+              <div class="sim-badge-row">
+                ${showCleanup ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="sparkles" style="width: 24px; height: 24px; color: #1e3a24;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>Spotless Green Cleanup</h4>
+                      <p>We blow down paths and remove all green waste. Your garden is ready to enjoy immediately.</p>
+                    </div>
+                  </div>
+                ` : ''}
+                
+                ${showOnTime ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="compass" style="width: 24px; height: 24px; color: #1e3a24;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>Dial-Before-You-Dig Verified</h4>
+                      <p>We double check underground services before we break ground, ensuring property safety.</p>
+                    </div>
+                  </div>
+                ` : ''}
               </div>
-            ` : ''}
-            
-            <button class="sim-btn" style="background-color: #134e5e;">Submit Enquiry</button>
-          </form>
+              
+              <div class="sim-form-container">
+                <div class="sim-form-title">Consultation Booking</div>
+                <form class="sim-form-box" onsubmit="return false;">
+                  <input type="text" placeholder="Suburb location" class="sim-input" required>
+                  
+                  ${showWaitlist ? `
+                    <div class="sim-estimator-widget">
+                      <h4><i data-lucide="calendar" style="width: 14px; height: 14px; color: #1e3a24; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Project Waitlist</h4>
+                      <div class="sim-slider-row">
+                        <span>Start Window:</span>
+                        <span class="sim-est-val">Within 2-3 Weeks</span>
+                      </div>
+                    </div>
+                  ` : ''}
+                  
+                  <button class="sim-btn">Submit Yard Enquiry</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     } else if (currentNiche === 'pest') {
       htmlContent = `
-        <header class="sim-header">
-          <div class="sim-logo">🐜 JLD Pest Solutions</div>
-          <span class="sim-phone">🛡️ Fully Insured</span>
-        </header>
-        
-        <div class="sim-hero">
-          <span class="sim-hero-badge" style="background-color: #757f9a; color: #fff;">Safeguard Your Home</span>
-          <h2>Safe, Effective Pest & Termite Control</h2>
-          <p>Friendly cockroach sprays, flea sprays, and full chemical termite barriers across Central QLD.</p>
-          <a href="#" class="sim-hero-cta" style="background-color: #4b5563;">Get a Spider Spray Quote</a>
-        </div>
-        
-        <div class="sim-badge-row">
-          ${showPolice ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">👮</span>
-              <div class="sim-badge-content">
-                <h4>Police Cleared Technicians</h4>
-                <p>Fully background checked and certified for your security and safety.</p>
-              </div>
-            </div>
-          ` : ''}
+        <div class="simulated-website sim-niche-pest">
+          <header class="sim-header">
+            <div class="sim-logo"><i data-lucide="shield" style="width: 15px; height: 15px; color: #212529; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> JLD Pest Solutions</div>
+            <span class="sim-phone"><i data-lucide="shield-check" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> License #12288</span>
+          </header>
           
-          ${showCleanup ? `
-            <div class="sim-badge-card">
-              <span class="sim-badge-icon">📋</span>
-              <div class="sim-badge-content">
-                <h4>Price-Lock Guarantee</h4>
-                <p>The price quoted is the price paid. We have zero surprise travel or surcharge fees.</p>
-              </div>
-            </div>
-          ` : ''}
-        </div>
-        
-        <div class="sim-form-container">
-          <div class="sim-form-title">Request Rapid Treatment quote</div>
-          <form class="sim-form-box" onsubmit="return false;">
-            <input type="text" placeholder="Number of Bedrooms" class="sim-input" required>
+          <div class="sim-pest-portal">
+            <aside class="sim-pest-sidebar">
+              <div class="sim-pest-side-link ${activePestTab === 'risk' ? 'active' : ''}" data-tab="risk"><i data-lucide="clipboard-check" style="width: 14px; height: 14px;"></i> Risk Analyzer</div>
+              <div class="sim-pest-side-link ${activePestTab === 'warranty' ? 'active' : ''}" data-tab="warranty"><i data-lucide="award" style="width: 14px; height: 14px;"></i> Warranties</div>
+            </aside>
             
-            ${showWaitlist ? `
-              <div class="sim-estimator-widget">
-                <h4>🛡️ Treatment Warranty</h4>
-                <div class="sim-slider-row">
-                  <span>Free Retreat Period:</span>
-                  <span class="sim-est-val">12 Months</span>
+            <main class="sim-pest-portal-body">
+              ${activePestTab === 'risk' ? `
+                <div class="sim-pest-hero">
+                  <h2>SaaS Diagnostic Pest & Termite Board</h2>
+                  <p>Select pest threat parameters below to generate an estimate calculation and treatment strategy.</p>
                 </div>
+                
+                <div class="sim-threat-grid">
+                  <button class="sim-threat-btn active" data-type="spiders">
+                    <i data-lucide="bug" style="width: 16px; height: 16px;"></i>
+                    <div class="sim-threat-name">Spiders</div>
+                  </button>
+                  <button class="sim-threat-btn" data-type="termites">
+                    <i data-lucide="activity" style="width: 16px; height: 16px;"></i>
+                    <div class="sim-threat-name">Termites</div>
+                  </button>
+                  <button class="sim-threat-btn" data-type="rodents">
+                    <i data-lucide="shield-alert" style="width: 16px; height: 16px;"></i>
+                    <div class="sim-threat-name">Rodents</div>
+                  </button>
+                </div>
+                
+                <div class="sim-diagnostic-card">
+                  <div class="sim-diag-title">Active Selection: Spiders & Ants Treatment</div>
+                  <div class="sim-diag-desc">Child-safe residual exterior and interior spray barrier. Targeted dusting in voids.</div>
+                  <div class="sim-diag-price-row">
+                    <span class="sim-diag-price-label">Estimated Service:</span>
+                    <span class="sim-diag-price">$180</span>
+                  </div>
+                </div>
+                
+                <div class="sim-pest-risk-calculator">
+                  <h4>Interactive Suburb Risk Checklist</h4>
+                  <div class="sim-risk-checklist">
+                    <label class="sim-risk-label">
+                      <input type="checkbox" class="sim-risk-check" value="25" checked>
+                      Wood rot/timber decay present (+25% risk)
+                    </label>
+                    <label class="sim-risk-label">
+                      <input type="checkbox" class="sim-risk-check" value="20">
+                      Close proximity to bushland (+20% risk)
+                    </label>
+                    <label class="sim-risk-label">
+                      <input type="checkbox" class="sim-risk-check" value="15">
+                      Humid damp subflooring (+15% risk)
+                    </label>
+                  </div>
+                  <div class="sim-risk-output">
+                    <span style="font-size: 0.72rem; font-weight: 600; color: #495057;">Current Calculated Risk:</span>
+                    <span class="sim-risk-score-badge low" id="sim-risk-score">Low Risk (25%)</span>
+                  </div>
+                </div>
+              ` : `
+                <div class="sim-pest-hero">
+                  <h2>Fully Accredited Local Warranties</h2>
+                  <p>Our work is backed by our rock-solid Capricorn Coast performance certificates.</p>
+                </div>
+                <div class="sim-badge-row">
+                  <div class="sim-badge-card" style="margin-bottom: 0.5rem;">
+                    <span class="sim-badge-icon"><i data-lucide="shield-check" style="width: 24px; height: 24px; color: #212529;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>12-Month Re-Spray Protection</h4>
+                      <p>If ants or common spiders return within a year, we will spray again completely free.</p>
+                    </div>
+                  </div>
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="award" style="width: 24px; height: 24px; color: #212529;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>$100,000 Termite Damage Indemnity</h4>
+                      <p>All full termite treatment barriers qualify for chemical warranty security coverage.</p>
+                    </div>
+                  </div>
+                </div>
+              `}
+
+              <div class="sim-badge-row">
+                ${showPolice ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="user-check" style="width: 24px; height: 24px; color: #212529;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>Police Cleared Technicians</h4>
+                      <p>For your comfort and absolute safety in and around your home.</p>
+                    </div>
+                  </div>
+                ` : ''}
+                
+                ${showCleanup ? `
+                  <div class="sim-badge-card">
+                    <span class="sim-badge-icon"><i data-lucide="lock" style="width: 24px; height: 24px; color: #212529;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4>Locked-In Flat Quotes</h4>
+                      <p>We guarantee no extra travel costs or hourly surcharges after booking.</p>
+                    </div>
+                  </div>
+                ` : ''}
               </div>
-            ` : ''}
-            
-            <button class="sim-btn" style="background-color: #4b5563;">Get Immediate Price</button>
-          </form>
+              
+              <div class="sim-form-container">
+                <div class="sim-form-title">Priority Diagnostic Booking</div>
+                <form class="sim-form-box" onsubmit="return false;">
+                  <input type="text" placeholder="Owner / Address" class="sim-input" required>
+                  
+                  ${showWaitlist ? `
+                    <div class="sim-estimator-widget">
+                      <h4><i data-lucide="shield" style="width: 14px; height: 14px; color: #212529; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Treatment Warranty</h4>
+                      <div class="sim-slider-row">
+                        <span>Warranty Period:</span>
+                        <span class="sim-est-val">12-Month Guarantee</span>
+                      </div>
+                    </div>
+                  ` : ''}
+                  
+                  <button class="sim-btn">Request Technician Visit</button>
+                </form>
+              </div>
+            </main>
+          </div>
         </div>
       `;
     }
 
     simWebContent.innerHTML = htmlContent;
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   }
 
   // ==========================================
@@ -381,6 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nicheCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       currentNiche = card.dataset.niche;
+      cafeCartCount = 0; // Reset cart when niche changes
       updateInteractiveControls();
       
       // Update background glow color slightly to reflect choices
@@ -404,22 +587,41 @@ document.addEventListener('DOMContentLoaded', () => {
   checkWaitlist.addEventListener('change', renderSimulatedWebsite);
 
   // Device Frame Viewport toggles
-  deviceTabletBtn.addEventListener('click', () => {
-    deviceMobileBtn.classList.remove('active');
-    deviceTabletBtn.classList.add('active');
-    simFrame.classList.remove('mobile-view');
-    simFrame.classList.add('tablet-view');
-    renderSimulatedWebsite();
-  });
+  if (deviceDesktopBtn) {
+    deviceDesktopBtn.addEventListener('click', () => {
+      deviceTabletBtn.classList.remove('active');
+      deviceMobileBtn.classList.remove('active');
+      deviceDesktopBtn.classList.add('active');
+      simFrame.classList.remove('tablet-view', 'mobile-view');
+      simFrame.classList.add('desktop-view');
+      deviceView = 'desktop';
+      renderSimulatedWebsite();
+    });
+  }
 
-  deviceMobileBtn.addEventListener('click', () => {
-    deviceTabletBtn.classList.remove('active');
-    deviceMobileBtn.classList.add('active');
-    simFrame.classList.remove('tablet-view');
-    simFrame.classList.add('mobile-view');
-    renderSimulatedWebsite();
-  });
+  if (deviceTabletBtn) {
+    deviceTabletBtn.addEventListener('click', () => {
+      deviceDesktopBtn.classList.remove('active');
+      deviceMobileBtn.classList.remove('active');
+      deviceTabletBtn.classList.add('active');
+      simFrame.classList.remove('desktop-view', 'mobile-view');
+      simFrame.classList.add('tablet-view');
+      deviceView = 'tablet';
+      renderSimulatedWebsite();
+    });
+  }
 
+  if (deviceMobileBtn) {
+    deviceMobileBtn.addEventListener('click', () => {
+      deviceDesktopBtn.classList.remove('active');
+      deviceTabletBtn.classList.remove('active');
+      deviceMobileBtn.classList.add('active');
+      simFrame.classList.remove('desktop-view', 'tablet-view');
+      simFrame.classList.add('mobile-view');
+      deviceView = 'mobile';
+      renderSimulatedWebsite();
+    });
+  }
 
   // ==========================================
   // LEAD CAPTURE DRAWER CONTROLS
@@ -468,6 +670,108 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerSuccess.classList.remove('hidden');
   });
 
+  // ==========================================
+  // SIMULATOR INTERACTIVE WIDGET DELEGATION
+  // ==========================================
+  if (simWebContent) {
+    // 1. Inputs (Before-After Slider dragging)
+    simWebContent.addEventListener('input', (e) => {
+      const range = e.target.closest('.sim-ba-range-slider');
+      if (range) {
+        const val = range.value;
+        const widget = range.closest('.sim-before-after-widget');
+        const afterImg = widget.querySelector('.sim-ba-after');
+        const divider = widget.querySelector('.sim-ba-divider');
+        const handle = widget.querySelector('.sim-ba-handle');
+        if (afterImg) afterImg.style.width = `${val}%`;
+        if (divider) divider.style.left = `${val}%`;
+        if (handle) handle.style.left = `${val}%`;
+      }
+    });
+
+    // 2. Change events (Risk calculator checkboxes)
+    simWebContent.addEventListener('change', (e) => {
+      const check = e.target.closest('.sim-risk-check');
+      if (check) {
+        const widget = check.closest('.sim-pest-risk-calculator');
+        const checks = widget.querySelectorAll('.sim-risk-check');
+        let score = 25; // Base risk score
+        checks.forEach(c => {
+          if (c.checked) {
+            score += parseInt(c.value);
+          }
+        });
+        const badge = widget.querySelector('#sim-risk-score');
+        if (badge) {
+          badge.textContent = score <= 30 ? `Low Risk (${score}%)` : score <= 55 ? `Medium Risk (${score}%)` : `High Risk (${score}%)`;
+          badge.className = 'sim-risk-score-badge ' + (score <= 30 ? 'low' : score <= 55 ? 'med' : 'high');
+        }
+      }
+    });
+
+    // 3. Click events (Cafe add, Cafe Checkout, Pest tabs, Pest active threat switch)
+    simWebContent.addEventListener('click', (e) => {
+      // Cafe Add to Order
+      const cafeAddBtn = e.target.closest('.sim-cafe-add-btn');
+      if (cafeAddBtn) {
+        cafeCartCount++;
+        renderSimulatedWebsite();
+        return;
+      }
+
+      // Cafe Checkout Transmit
+      const cafeCheckoutBtn = e.target.closest('.sim-cafe-checkout-btn');
+      if (cafeCheckoutBtn) {
+        const parent = cafeCheckoutBtn.closest('.sim-cafe-floating-checkout');
+        parent.innerHTML = "<p><i data-lucide='check-circle' style='width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; color: #22c55e;'></i> Order Sent to Barista!</p>";
+        cafeCartCount = 0;
+        
+        const cartVal = simWebContent.querySelector('.sim-cart-val');
+        if (cartVal) cartVal.textContent = '0';
+        
+        setTimeout(() => {
+          renderSimulatedWebsite();
+        }, 1800);
+        return;
+      }
+
+      // Pest Portal Tabs Switcher
+      const pestTabLink = e.target.closest('.sim-pest-side-link');
+      if (pestTabLink) {
+        activePestTab = pestTabLink.dataset.tab;
+        renderSimulatedWebsite();
+        return;
+      }
+
+      // Pest Threat buttons
+      const threatBtn = e.target.closest('.sim-threat-btn');
+      if (threatBtn) {
+        const threats = simWebContent.querySelectorAll('.sim-threat-btn');
+        threats.forEach(btn => btn.classList.remove('active'));
+        threatBtn.classList.add('active');
+        
+        const type = threatBtn.dataset.type;
+        const diagTitle = simWebContent.querySelector('.sim-diag-title');
+        const diagDesc = simWebContent.querySelector('.sim-diag-desc');
+        const diagPrice = simWebContent.querySelector('.sim-diag-price');
+        
+        if (type === 'spiders') {
+          diagTitle.textContent = 'Active Selection: Spiders & Ants Treatment';
+          diagDesc.textContent = 'Child-safe residual exterior and interior spray barrier. Targeted dusting in voids.';
+          diagPrice.textContent = '$180';
+        } else if (type === 'termites') {
+          diagTitle.textContent = 'Active Selection: Termite Colony Elimination';
+          diagDesc.textContent = 'Accredited sub-floor foaming barriers and perimeter soil matrix grid stations.';
+          diagPrice.textContent = '$950';
+        } else if (type === 'rodents') {
+          diagTitle.textContent = 'Active Selection: Rodent Control & baiting';
+          diagDesc.textContent = 'Safety locked structural feeding grid stations in cavity roof spaces and walls.';
+          diagPrice.textContent = '$220';
+        }
+        return;
+      }
+    });
+  }
 
   // ==========================================
   // FAQ MODAL CONTROLS
@@ -497,4 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set default tabs active
   updateInteractiveControls();
 
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 });

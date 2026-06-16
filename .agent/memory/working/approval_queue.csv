@@ -1,0 +1,2 @@
+date,approval_type,business,priority,source_path,requested_decision,safe_command,blocked_until_approved,notes
+2026-06-16,promotion,Yeppoon Community Market,high,.agent/memory/working/intake_opportunity_briefs/yeppoon-community-market.md,Approve or reject moving this staged candidate into prospects.csv.,"python3 .agent/skills/growth-engine/scripts/promote-intake.py --business ""Yeppoon Community Market"" --approved-by ""Daniel""","prospect promotion, mockup brief generation, outreach drafting",Promotion is not outreach approval.

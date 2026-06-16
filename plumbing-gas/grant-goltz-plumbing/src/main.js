@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Grant Goltz Plumbing Tab & Booking Logic
 document.querySelectorAll('.tab-btn').forEach(btn => {

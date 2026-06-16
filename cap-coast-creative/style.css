@@ -90,8 +90,17 @@ body.dashboard-body {
 }
 
 .logo-icon {
-  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-coral);
   filter: drop-shadow(0 2px 10px rgba(99, 102, 241, 0.3));
+}
+
+.logo-icon i {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.5px;
 }
 
 .logo-text-group {
@@ -120,6 +129,9 @@ body.dashboard-body {
 }
 
 .badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--font-headings);
   font-size: 0.75rem;
   font-weight: 700;
@@ -128,6 +140,12 @@ body.dashboard-body {
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
   border: 1px solid rgba(200, 177, 149, 0.2);
+}
+
+.badge-tag i {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5px;
 }
 
 .panel-scroll-content {
@@ -225,10 +243,24 @@ body.dashboard-body {
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
 }
 
-.niche-emoji {
-  font-size: 1.75rem;
+.niche-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
   margin-bottom: 0.5rem;
-  display: block;
+}
+
+.niche-icon-container i {
+  width: 26px;
+  height: 26px;
+  color: var(--text-muted);
+  stroke-width: 2px;
+  transition: var(--transition-smooth);
+}
+
+.niche-card.active .niche-icon-container i {
+  color: var(--color-coral);
 }
 
 .niche-name {
@@ -546,6 +578,15 @@ input:checked + .slider:before {
   font-weight: 700;
   color: var(--text-muted);
   letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.simulator-indicator i {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5px;
 }
 
 .simulator-actions {
@@ -576,6 +617,17 @@ input:checked + .slider:before {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.device-toggle i {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.device-toggle.active i {
+  color: var(--text-white);
+}
+
 /* TABLET PREVIEW DEVICE STYLING */
 .tablet-container {
   display: flex;
@@ -584,7 +636,7 @@ input:checked + .slider:before {
   z-index: 5;
   width: 100%;
   height: 100%;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .tablet-frame {
@@ -596,13 +648,24 @@ input:checked + .slider:before {
   flex-direction: column;
   position: relative;
   transition: var(--transition-smooth);
-  transform: perspective(1000px) rotateY(-3deg) rotateX(1deg);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+}
+
+/* Desktop Viewport Size */
+.tablet-frame.desktop-view {
+  width: 880px;
+  height: 560px;
+  border-radius: 20px;
+  border-width: 12px 12px 24px 12px; /* Laptop-style thicker bottom bezel */
+  transform: perspective(1000px) rotateY(-1.5deg) rotateX(0.5deg);
 }
 
 /* Tablet Default Viewport Size */
 .tablet-frame.tablet-view {
   width: 580px;
   height: 740px;
+  border-radius: 40px;
+  border-width: 12px;
 }
 
 /* Mobile Viewport Size */
@@ -610,18 +673,27 @@ input:checked + .slider:before {
   width: 320px;
   height: 600px;
   border-radius: 36px;
+  border-width: 12px;
 }
 
 .tablet-camera {
   position: absolute;
-  top: 15px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #1e293b;
   border-radius: 50%;
   z-index: 20;
+}
+
+.tablet-frame.tablet-view .tablet-camera {
+  top: 4px;
+}
+
+.tablet-frame.mobile-view .tablet-camera {
+  top: 4px;
 }
 
 .tablet-screen {
@@ -644,12 +716,11 @@ input:checked + .slider:before {
 .simulated-website {
   width: 100%;
   height: 100%;
-  color: #1e293b;
-  background-color: #fff;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   font-family: var(--font-body);
+  transition: var(--transition-smooth);
 }
 
 /* Custom Scrollbar for Sandbox Simulator Screen */
@@ -672,12 +743,12 @@ input:checked + .slider:before {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: var(--transition-smooth);
 }
 
 .sim-logo {
   font-weight: 800;
   font-size: 0.95rem;
-  color: var(--bg-deep);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -689,22 +760,23 @@ input:checked + .slider:before {
   background-color: #edf2f7;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Simulated Hero */
 .sim-hero {
   padding: 2.25rem 1.25rem;
   text-align: center;
-  background: radial-gradient(circle at 50% 50%, rgba(200, 177, 149, 0.08) 0%, transparent 80%), #fff;
+  background: #fff;
   border-bottom: 1px solid #f1f5f9;
+  transition: var(--transition-smooth);
 }
 
 .sim-hero-badge {
   display: inline-block;
   font-size: 0.65rem;
   font-weight: 700;
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--color-coral);
   padding: 0.15rem 0.4rem;
   border-radius: 50px;
   text-transform: uppercase;
@@ -715,26 +787,24 @@ input:checked + .slider:before {
   font-size: 1.6rem;
   font-family: var(--font-headings);
   font-weight: 800;
-  color: #0f172a;
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
 .sim-hero p {
   font-size: 0.8rem;
-  color: #64748b;
   margin-bottom: 1.25rem;
 }
 
 .sim-hero-cta {
   display: inline-block;
-  background-color: #0f172a;
   color: #fff;
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  transition: var(--transition-smooth);
 }
 
 /* Simulated Badges / Guarantees Panel */
@@ -743,7 +813,6 @@ input:checked + .slider:before {
   flex-direction: column;
   gap: 0.75rem;
   padding: 1.25rem;
-  background-color: #f8fafc;
 }
 
 .sim-badge-card {
@@ -759,19 +828,20 @@ input:checked + .slider:before {
 }
 
 .sim-badge-icon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sim-badge-content h4 {
   font-size: 0.85rem;
-  color: #0f172a;
   margin-bottom: 0.1rem;
 }
 
 .sim-badge-content p {
   font-size: 0.7rem;
-  color: #64748b;
   margin: 0;
 }
 
@@ -779,13 +849,11 @@ input:checked + .slider:before {
 .sim-form-container {
   padding: 1.5rem 1.25rem;
   border-top: 1px solid #f1f5f9;
-  background-color: #fff;
 }
 
 .sim-form-title {
   font-size: 1rem;
   font-weight: 800;
-  color: #0f172a;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -808,28 +876,24 @@ input:checked + .slider:before {
 }
 
 .sim-btn {
-  background-color: var(--color-coral);
-  color: white;
   border: none;
   font-weight: 700;
   font-size: 0.8rem;
   padding: 0.5rem;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 /* Dynamic Interactive Sandbox Widget inside simulated page */
 .sim-estimator-widget {
-  background-color: #f1f5f9;
   border-radius: 8px;
   padding: 1rem;
   margin-top: 1rem;
-  border: 1px solid #e2e8f0;
   animation: fadeIn 0.4s ease forwards;
 }
 
 .sim-estimator-widget h4 {
   font-size: 0.85rem;
-  color: #0f172a;
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -860,7 +924,1016 @@ input:checked + .slider:before {
 .sim-est-val {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--bg-deep);
+  line-height: 1.2;
+}
+
+
+/* ==========================================
+   NICHE 1: PLUMBING (HIGH-TECH EMERGENCY DASHBOARD)
+   ========================================== */
+.sim-niche-plumbing {
+  background-color: #070b19;
+  color: #8da2fb;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-niche-plumbing .sim-header {
+  background-color: #090f26;
+  border-bottom: 1px solid #1a2554;
+  color: #fff;
+}
+
+.sim-niche-plumbing .sim-logo {
+  color: #38bdf8;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sim-niche-plumbing .sim-phone {
+  background-color: #101c4c;
+  color: #38bdf8;
+  border: 1px solid #22d3ee;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+/* Layout: Split dashboard content */
+.sim-plumbing-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+/* For mobile/tablet frame collapse */
+@media (max-width: 768px) {
+  .sim-plumbing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1rem;
+  }
+}
+
+.sim-plumbing-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sim-plumbing-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Monospace-style tech stats */
+.sim-tech-banner {
+  background-color: #090f26;
+  border: 1px solid #1a2554;
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sim-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #22c55e;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sim-status-beacon {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulseBeacon 1.5s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px #22c55e; }
+  100% { transform: scale(0.9); opacity: 0.5; }
+}
+
+.sim-plumbing-hero {
+  background: radial-gradient(circle at top left, #0e173c 0%, #070b19 100%);
+  border: 1px solid #1a2554;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+}
+
+.sim-plumbing-hero h2 {
+  font-family: var(--font-headings);
+  font-size: 1.75rem;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+}
+
+.sim-plumbing-hero p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+}
+
+.sim-plumbing-hero-cta {
+  background-color: #38bdf8;
+  color: #020617;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.sim-plumbing-hero-cta:hover {
+  background-color: #22d3ee;
+  transform: translateY(-1px);
+}
+
+/* Live response list */
+.sim-ticker-box {
+  background-color: #090f26;
+  border: 1px solid #1a2554;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.sim-ticker-title {
+  font-family: var(--font-headings);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sim-ticker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sim-ticker-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(26, 37, 84, 0.5);
+  padding-bottom: 0.4rem;
+}
+
+.sim-ticker-item span.loc {
+  color: #94a3b8;
+}
+
+.sim-ticker-item span.time {
+  font-family: monospace;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.sim-niche-plumbing .sim-badge-row {
+  background-color: transparent;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.sim-niche-plumbing .sim-badge-card {
+  background-color: #090f26;
+  border: 1px solid #1a2554;
+  color: #94a3b8;
+  box-shadow: none;
+}
+
+.sim-niche-plumbing .sim-badge-card h4 {
+  color: #fff;
+}
+
+.sim-niche-plumbing .sim-form-container {
+  background-color: #090f26;
+  border: 1px solid #1a2554;
+  border-radius: 12px;
+  padding: 1.25rem;
+  height: 100%;
+}
+
+.sim-niche-plumbing .sim-form-title {
+  color: #fff;
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-headings);
+  font-weight: 700;
+}
+
+.sim-niche-plumbing .sim-form-box {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.sim-niche-plumbing .sim-input {
+  background-color: #070b19;
+  border: 1px solid #1a2554;
+  color: #fff;
+}
+
+.sim-niche-plumbing .sim-input:focus {
+  border-color: #38bdf8;
+  outline: none;
+}
+
+.sim-niche-plumbing .sim-btn {
+  background-color: #38bdf8;
+  color: #020617;
+  font-weight: 800;
+}
+
+.sim-niche-plumbing .sim-estimator-widget {
+  background-color: #0b153b;
+  border: 1px solid #1e3a8a;
+  padding: 0.85rem;
+}
+
+.sim-niche-plumbing .sim-estimator-widget h4 {
+  color: #fff;
+}
+
+.sim-niche-plumbing .sim-est-val {
+  color: #22d3ee;
+}
+
+
+/* ==========================================
+   NICHE 2: CAFE (CHAMPAGNE MINIMALIST EDITORIAL)
+   ========================================== */
+.sim-niche-cafe {
+  background-color: #faf6f0;
+  color: #3e2723;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-niche-cafe .sim-header {
+  background-color: transparent;
+  border-bottom: 1px solid #ecdccb;
+  padding: 1.25rem 2rem;
+}
+
+.sim-niche-cafe .sim-logo {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: #5d4037;
+}
+
+.sim-niche-cafe .sim-cart-badge {
+  background-color: #5d4037;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+}
+
+.sim-cafe-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  gap: 2.5rem;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .sim-cafe-layout {
+    padding: 1.5rem 1rem;
+    gap: 1.75rem;
+  }
+}
+
+.sim-cafe-hero {
+  text-align: left;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.sim-cafe-hero-badge {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #8d6e63;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.sim-cafe-hero h2 {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #3e2723;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.sim-cafe-hero p {
+  font-size: 0.9rem;
+  color: #795548;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* Menu list style with leader lines */
+.sim-cafe-menu-title {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #3e2723;
+  text-align: left;
+  border-bottom: 1px solid #5d4037;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sim-cafe-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sim-cafe-menu-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sim-cafe-menu-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-width: 70%;
+}
+
+.sim-cafe-menu-name {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3e2723;
+}
+
+.sim-cafe-menu-desc {
+  font-size: 0.75rem;
+  color: #8d6e63;
+}
+
+.sim-cafe-menu-leader {
+  flex-grow: 1;
+  border-bottom: 1px dotted #8d6e63;
+  margin: 0 0.75rem;
+  opacity: 0.6;
+}
+
+.sim-cafe-menu-action {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sim-cafe-menu-price {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #5d4037;
+}
+
+.sim-cafe-add-btn {
+  background-color: #5d4037;
+  color: #fff;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.sim-cafe-add-btn:hover {
+  background-color: #8d6e63;
+}
+
+/* Floating cart summary sliding drawer */
+.sim-cafe-floating-checkout {
+  position: sticky;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  background-color: #5d4037;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(93, 64, 55, 0.25);
+  animation: slideUpFloat 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpFloat {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.sim-cafe-floating-checkout p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.sim-cafe-checkout-btn {
+  background-color: #faf6f0;
+  color: #5d4037;
+  border: none;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sim-niche-cafe .sim-badge-row {
+  background-color: transparent;
+  padding: 0;
+}
+
+.sim-niche-cafe .sim-badge-card {
+  background-color: #fff;
+  border: 1px solid #ecdccb;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.sim-niche-cafe .sim-badge-card h4 {
+  font-family: Georgia, serif;
+  color: #3e2723;
+}
+
+.sim-niche-cafe .sim-form-container {
+  background-color: #fff;
+  border: 1px solid #ecdccb;
+  border-radius: 2px;
+  padding: 1.5rem;
+}
+
+.sim-niche-cafe .sim-form-title {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #3e2723;
+}
+
+.sim-niche-cafe .sim-form-box {
+  border: none;
+  padding: 0;
+}
+
+.sim-niche-cafe .sim-input {
+  border-color: #ecdccb;
+  border-radius: 2px;
+  background-color: #faf6f0;
+}
+
+.sim-niche-cafe .sim-btn {
+  background-color: #5d4037;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.sim-niche-cafe .sim-estimator-widget {
+  background-color: #faf6f0;
+  border-color: #ecdccb;
+  border-radius: 2px;
+}
+
+.sim-niche-cafe .sim-est-val {
+  color: #5d4037;
+}
+
+
+/* ==========================================
+   NICHE 3: LANDSCAPING (SAGE GREEN ORGANIC PORTFOLIO)
+   ========================================== */
+.sim-niche-landscaping {
+  background-color: #f4f7f4;
+  color: #2d3b2f;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-niche-landscaping .sim-header {
+  background-color: #fff;
+  border-bottom: 1px solid #dbe3db;
+  padding: 1rem 1.5rem;
+}
+
+.sim-niche-landscaping .sim-logo {
+  color: #1e3a24;
+  font-family: var(--font-headings);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.sim-niche-landscaping .sim-phone {
+  background-color: #e2ede2;
+  color: #1e3a24;
+  border-radius: 30px;
+}
+
+/* Staggered green columns */
+.sim-landscaping-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: start;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .sim-landscaping-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+.sim-landscaping-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sim-landscaping-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sim-landscaping-hero {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid #e1e8e1;
+  text-align: left;
+}
+
+.sim-landscaping-hero-badge {
+  background-color: #e2ede2;
+  color: #1e3a24;
+  border-radius: 4px;
+}
+
+.sim-landscaping-hero h2 {
+  color: #1e3a24;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.sim-landscaping-hero p {
+  color: #506152;
+}
+
+.sim-landscaping-hero-cta {
+  background-color: #1e3a24;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 0.6rem 1.25rem;
+}
+
+/* True sliding before/after widget using css absolute layers */
+.sim-before-after-widget {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  border: 1px solid #dbe3db;
+}
+
+.sim-ba-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.sim-ba-before {
+  background: linear-gradient(135deg, #bbb4a8 0%, #8e887c 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.sim-ba-after {
+  background: linear-gradient(135deg, #1b3d24 0%, #50805c 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  overflow: hidden;
+  z-index: 5;
+  width: 50%; /* JS controlled */
+  border-right: 2px solid #fff;
+}
+
+.sim-ba-img-label {
+  display: inline-block;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sim-ba-range-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+  margin: 0;
+}
+
+.sim-ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #fff;
+  left: 50%; /* JS controlled */
+  z-index: 6;
+  pointer-events: none;
+}
+
+.sim-ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 7;
+  color: #1e3a24;
+}
+
+.sim-ba-handle i {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5px;
+}
+
+.sim-niche-landscaping .sim-badge-row {
+  background-color: transparent;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.sim-niche-landscaping .sim-badge-card {
+  background-color: #fff;
+  border-radius: 12px;
+  border-color: #e1e8e1;
+}
+
+.sim-niche-landscaping .sim-badge-card h4 {
+  color: #1e3a24;
+}
+
+.sim-niche-landscaping .sim-badge-card p {
+  color: #506152;
+}
+
+.sim-niche-landscaping .sim-form-container {
+  background-color: #fff;
+  border-radius: 16px;
+  border: 1px solid #e1e8e1;
+  padding: 1.5rem;
+}
+
+.sim-niche-landscaping .sim-form-title {
+  color: #1e3a24;
+}
+
+.sim-niche-landscaping .sim-form-box {
+  border: none;
+  padding: 0;
+}
+
+.sim-niche-landscaping .sim-input {
+  border-radius: 8px;
+  border-color: #cdd8cd;
+  background-color: #fcfdfc;
+}
+
+.sim-niche-landscaping .sim-btn {
+  background-color: #1e3a24;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.sim-niche-landscaping .sim-estimator-widget {
+  background-color: #e8f3e8;
+  border-radius: 12px;
+  border-color: #c7dec7;
+}
+
+.sim-niche-landscaping .sim-est-val {
+  color: #1e3a24;
+}
+
+
+/* ==========================================
+   NICHE 4: PEST CONTROL (DIAGNOSTIC WEB PORTAL)
+   ========================================== */
+.sim-niche-pest {
+  background-color: #f1f3f5;
+  color: #343a40;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-niche-pest .sim-header {
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem 1.5rem;
+}
+
+.sim-niche-pest .sim-logo {
+  color: #212529;
+  font-family: var(--font-headings);
+  font-weight: 800;
+}
+
+.sim-niche-pest .sim-phone {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Sidebar portal layout in desktop */
+.sim-pest-portal {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .sim-pest-portal {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sim-pest-sidebar {
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .sim-pest-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.75rem;
+  }
+}
+
+.sim-pest-side-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #495057;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+}
+
+.sim-pest-side-link.active {
+  background-color: #212529;
+  color: #fff;
+}
+
+.sim-pest-portal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.sim-pest-hero {
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+.sim-pest-hero h2 {
+  font-size: 1.6rem;
+  color: #212529;
+  font-weight: 800;
+}
+
+.sim-pest-hero p {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* Threat diagnostic card grids */
+.sim-threat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.sim-threat-btn {
+  border: 1px solid #ced4da;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 0.5rem;
+}
+
+.sim-threat-btn.active {
+  border-color: #212529;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 0 2px #212529;
+}
+
+.sim-threat-name {
+  color: #212529;
+  margin-top: 0.25rem;
+}
+
+.sim-diagnostic-card {
+  margin: 0;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+/* Interactive Risk Calculator Checklist */
+.sim-pest-risk-calculator {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.sim-pest-risk-calculator h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.sim-risk-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sim-risk-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #495057;
+}
+
+.sim-risk-output {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed #ced4da;
+  padding-top: 0.75rem;
+}
+
+.sim-risk-score-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.sim-risk-score-badge.low { background-color: #22c55e; }
+.sim-risk-score-badge.med { background-color: #eab308; }
+.sim-risk-score-badge.high { background-color: #ef4444; }
+
+.sim-niche-pest .sim-badge-row {
+  background-color: transparent;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.sim-niche-pest .sim-badge-card {
+  border-radius: 8px;
+}
+
+.sim-niche-pest .sim-form-container {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.sim-niche-pest .sim-form-title {
+  font-family: var(--font-headings);
+  font-weight: 800;
+}
+
+.sim-niche-pest .sim-form-box {
+  border: none;
+  padding: 0;
+}
+
+.sim-niche-pest .sim-input {
+  border-radius: 6px;
+  background-color: #f8f9fa;
+}
+
+.sim-niche-pest .sim-btn {
+  background-color: #212529;
+  border-radius: 6px;
+}
+
+.sim-niche-pest .sim-estimator-widget {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-color: #dee2e6;
+}
+
+.sim-niche-pest .sim-est-val {
+  color: #212529;
 }
 
 /* Animations */
@@ -940,10 +2013,18 @@ input:checked + .slider:before {
   right: 1.5rem;
   background: none;
   border: none;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-muted);
   cursor: pointer;
   transition: var(--transition-smooth);
+}
+
+.close-drawer-btn i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5px;
 }
 
 .close-drawer-btn:hover {
@@ -1020,9 +2101,18 @@ input:checked + .slider:before {
   animation: fadeIn 0.4s ease forwards;
 }
 
-.success-emoji {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.success-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.success-icon-container i {
+  width: 54px;
+  height: 54px;
+  stroke-width: 2px;
 }
 
 .drawer-success h3 {
@@ -1086,9 +2176,17 @@ input:checked + .slider:before {
 .close-modal-btn {
   background: none;
   border: none;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-muted);
   cursor: pointer;
+}
+
+.close-modal-btn i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5px;
 }
 
 .close-modal-btn:hover {

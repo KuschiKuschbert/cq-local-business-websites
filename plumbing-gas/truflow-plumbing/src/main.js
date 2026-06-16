@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Truflow Plumbing JS
 document.getElementById('truflow-form').addEventListener('submit', function(e) {

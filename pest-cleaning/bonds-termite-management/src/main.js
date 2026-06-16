@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Bonds Termite Management Main JS
 

@@ -723,6 +723,10 @@ section {
   box-shadow: var(--shadow-medium);
 }
 
+.package-card:hover .card-img-hover {
+  transform: scale(1.06);
+}
+
 .package-card.featured:hover {
   transform: translateY(-5px) scale(1.03);
 }

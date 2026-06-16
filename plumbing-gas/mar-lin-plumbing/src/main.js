@@ -1,3 +1,4 @@
+import './mobile-ux.js';
 import './style.css';
 // Mar-lin Call back Handler
 document.getElementById('callback-form').addEventListener('submit', function(e) {
