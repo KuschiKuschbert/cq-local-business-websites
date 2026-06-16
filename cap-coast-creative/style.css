@@ -1780,7 +1780,7 @@ input:checked + .slider:before {
 .sim-landscaping-hero p { color: #506152; }
 .sim-landscaping-hero-cta { background-color: #1e3a24; color: #fff; font-weight: 700; border-radius: 30px; padding: 0.6rem 1.25rem; }
 .sim-before-after-widget {
-  position: relative; width: 100%; height: 180px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border: 1px solid #dbe3db;
+  position: relative; width: 100%; aspect-ratio: 16/10; height: auto; min-height: 260px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border: 1px solid #dbe3db;
 }
 .sim-ba-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
 .sim-ba-before {
