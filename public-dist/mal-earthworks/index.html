@@ -19,10 +19,10 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-  <script type="module" crossorigin src="./assets/index-ClBOkciy.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BGfqFhCJ.css">
+  <script type="module" crossorigin src="./assets/index-DW1xEWgJ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B2HDjnuW.css">
 </head>
-<body>
+<body data-de-archetype="editorial" data-de-palette="sage-garden">
 <!-- Heavy-Duty Header -->
 <header class="main-header" id="header">
 <div class="header-container">
@@ -51,10 +51,10 @@
 <li><a class="nav-link" href="#services">Our Services</a></li>
 <li><a class="nav-link" href="#quote-estimator">Plan Estimator</a></li>
 <li><a class="nav-link" href="#credentials">Our Standards</a></li>
-<li><a class="btn btn-warning nav-btn" href="#booking">Request Quote</a></li>
+<li><a class="btn btn-warning nav-btn de-btn" href="#booking">Request Quote</a></li>
 </ul>
 </nav>
-<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn" id="mobile-menu-toggle">
+<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn de-btn" id="mobile-menu-toggle">
 <span class="bar"></span>
 <span class="bar"></span>
 <span class="bar"></span>
@@ -68,13 +68,13 @@
 <li><a class="mobile-nav-link" href="#services">Our Services</a></li>
 <li><a class="mobile-nav-link" href="#quote-estimator">Plan Estimator</a></li>
 <li><a class="mobile-nav-link" href="#credentials">Our Standards</a></li>
-<li><a class="btn btn-warning mobile-nav-btn" href="#booking">Request Quote</a></li>
+<li><a class="btn btn-warning mobile-nav-btn de-btn" href="#booking">Request Quote</a></li>
 </ul>
 </nav>
 </div>
 <main>
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" class="de-reveal">
 <div class="hero-bg-overlay"></div>
 <div class="hero-container">
 <div class="hero-content">
@@ -82,8 +82,8 @@
 <h1 class="hero-title">Shifting Earth. <br/><span class="highlight">Building CQ Foundations.</span></h1>
 <p class="hero-subtitle">Specialising in high-precision residential excavation, shed pad leveling, land clearing, and driveway construction. Driven by professional experience, backed by heavy machinery.</p>
 <div class="hero-cta-group">
-<a class="btn btn-warning btn-lg" href="#quote-estimator">Estimate Job Scope</a>
-<a class="btn btn-outline btn-lg" href="#services">View Services</a>
+<a class="btn btn-warning btn-lg de-btn" href="#quote-estimator">Estimate Job Scope</a>
+<a class="btn btn-outline btn-lg de-btn" href="#services">View Services</a>
 </div>
 <div class="hero-stats">
 <div class="stat-item">
@@ -101,7 +101,7 @@
 </div>
 </div>
 <div class="hero-visual">
-<div class="visual-card">
+<div class="visual-card de-reveal">
 <img alt="Yellow excavator grading a flat construction site" decoding="async" fetchpriority="high" src="./hero.png" style="width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 5/4;"/>
 <!-- Badge -->
 <div class="visual-badge">
@@ -113,7 +113,7 @@
 </div>
 </section>
 <!-- Services Section -->
-<section class="services-section" id="services">
+<section class="services-section" id="services" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tag">Construction Services</span>
@@ -121,17 +121,17 @@
 <p class="section-subtitle">We own and operate heavy-duty diggers, bobcats, and tippers to prepare your residential or commercial site for immediate building construction.</p>
 </div>
 <div class="services-grid">
-<div class="service-card">
+<div class="service-card de-reveal">
 <div class="service-icon">🏗️</div>
 <h3>Shed &amp; House Pad Prep</h3>
 <p>Precise cut-and-fill services, importing roadbase, and professional compaction testing to ensure a stable building pad that complies with engineering specs.</p>
 </div>
-<div class="service-card">
+<div class="service-card de-reveal">
 <div class="service-icon">🛣️</div>
 <h3>Gravel Driveways &amp; Tracks</h3>
 <p>Excavation of muddy sub-grade, laying geotextile fabric, spreading crusher dust or gravel, and roller compaction for long-lasting rural access paths.</p>
 </div>
-<div class="service-card">
+<div class="service-card de-reveal">
 <div class="service-icon">🕳️</div>
 <h3>Trenching &amp; Civil Drainage</h3>
 <p>Digging storm water lines, electrical trenches, septic tank cavities, and agricultural drainage channels using precision bucket alignments.</p>
@@ -140,7 +140,7 @@
 </div>
 </section>
 <!-- Interactive Quote Estimator -->
-<section class="calculator-section" id="quote-estimator">
+<section class="calculator-section" id="quote-estimator" class="de-reveal">
 <div class="container">
 <div class="calculator-grid">
 <div class="calc-info">
@@ -161,7 +161,7 @@
 <strong id="scope-soil">Clay / Compact Soil</strong>
 </div>
 </div>
-<div class="output-card">
+<div class="output-card de-reveal">
 <div class="output-row">
 <div class="output-item">
 <span class="out-label">Estimated Duration:</span>
@@ -175,12 +175,12 @@
 <div class="output-note">*Time frame includes clearing, cut/fill leveling, and soil compaction.</div>
 </div>
 </div>
-<div class="calc-card">
+<div class="calc-card de-reveal">
 <h3>Configure Your Site Plan</h3>
 <!-- Task Select -->
 <div class="form-group">
 <label class="form-label">Step 1: Select Job Category</label>
-<label for="calc-task-select" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">select input</label><select aria-label="select input" class="form-select-btn" id="calc-task-select">
+<label for="calc-task-select" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">select input</label><select aria-label="select input" class="form-select-btn de-btn" id="calc-task-select">
 <option selected="" value="shed-pad">Shed &amp; Building Pad Leveling</option>
 <option value="driveway">Gravel Driveway Laying</option>
 <option value="clearing">Heavy Land Clearing &amp; Stumps</option>
@@ -204,20 +204,20 @@
 <div class="form-group">
 <label class="form-label">Step 3: Site Terrain &amp; Soil Type</label>
 <div class="terrain-options">
-<button class="terrain-btn active" data-soil-val="soil" type="button">Flat Soil</button>
-<button class="terrain-btn" data-soil-val="clay" type="button">Heavy Clay</button>
-<button class="terrain-btn" data-soil-val="rock" type="button">Rocky / Slope</button>
+<button class="terrain-btn active de-btn" data-soil-val="soil" type="button">Flat Soil</button>
+<button class="terrain-btn de-btn" data-soil-val="clay" type="button">Heavy Clay</button>
+<button class="terrain-btn de-btn" data-soil-val="rock" type="button">Rocky / Slope</button>
 </div>
 </div>
-<button class="btn btn-warning btn-block btn-lg" id="btn-estimator-proceed" type="button">Proceed to Booking Request</button>
+<button class="btn btn-warning btn-block btn-lg de-btn" id="btn-estimator-proceed" type="button">Proceed to Booking Request</button>
 </div>
 </div>
 </div>
 </section>
 <!-- Credentials Section -->
-<section class="credentials-section" id="credentials">
+<section class="credentials-section" id="credentials" class="de-reveal">
 <div class="container">
-<div class="credentials-card">
+<div class="credentials-card de-reveal">
 <h2 class="cred-title">Why CQ Builders Hire Mal</h2>
 <div class="cred-grid">
 <div class="cred-item">
@@ -262,9 +262,9 @@
 </div>
 </section>
 <!-- Booking / Site Inspection Form -->
-<section class="booking-section" id="booking">
+<section class="booking-section" id="booking" class="de-reveal">
 <div class="container">
-<div class="booking-card">
+<div class="booking-card de-reveal">
 <div class="booking-intro">
 <h2>Schedule Site Inspection</h2>
 <p>No two blocks of land in Central Queensland are identical. Submit your project parameters, and Mal will schedule an onsite inspection to review levels, access gate clearances, and provide a fixed quote.</p>
@@ -319,7 +319,7 @@
                   * I confirm that I will provide clear site access (min. 1.8m width for machinery) and agree to utility checks (BYDA) being performed prior to commencement.
                 </label>
 </div>
-<button class="btn btn-warning btn-block btn-lg" type="submit">Submit Quote Request</button>
+<button class="btn btn-warning btn-block btn-lg de-btn" type="submit">Submit Quote Request</button>
 </form>
 <div aria-hidden="true" class="form-success-overlay" id="form-success">
 <div class="success-content">
@@ -328,7 +328,7 @@
                 </div>
 <h3>Quote Request Logged!</h3>
 <p>Thanks for supporting a local CQ family business. Mal will check the layout schedule and call you within 24 hours to schedule a site levels check.</p>
-<button class="btn btn-warning" id="btn-success-close" type="button">Return to Estimator</button>
+<button class="btn btn-warning de-btn" id="btn-success-close" type="button">Return to Estimator</button>
 </div>
 </div>
 </div>
@@ -391,5 +391,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  
+</body>
 </html>

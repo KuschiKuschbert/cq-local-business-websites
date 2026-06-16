@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <script type="module" crossorigin src="./assets/index-BJgexzNP.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CBaTAc8I.css">
+  <script type="module" crossorigin src="./assets/index-D01PHA6t.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C6GnHasF.css">
 </head>
-<body>
+<body data-de-archetype="editorial" data-de-palette="obsidian-dark">
 <!-- Header -->
 <header class="main-header" id="header">
 <div class="container header-container">
@@ -27,7 +27,7 @@
 <li><a class="nav-link" href="#services">Services</a></li>
 <li><a class="nav-link" href="#menu">Our Menu</a></li>
 <li><a class="nav-link" href="#about">Our Story</a></li>
-<li><a class="nav-link btn-nav" href="#booking">Book Now</a></li>
+<li><a class="nav-link btn-nav de-btn" href="#booking">Book Now</a></li>
 </ul>
 </nav>
 <button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" id="mobile-menu-btn">
@@ -44,12 +44,12 @@
 <li><a class="mobile-nav-link" href="#services">Services</a></li>
 <li><a class="mobile-nav-link" href="#menu">Our Menu</a></li>
 <li><a class="mobile-nav-link" href="#about">Our Story</a></li>
-<li><a class="mobile-nav-link mobile-btn-nav" href="#booking">Book Now</a></li>
+<li><a class="mobile-nav-link mobile-btn-nav de-btn" href="#booking">Book Now</a></li>
 </ul>
 </nav>
 </div>
 <!-- Hero Section -->
-<section class="hero-section" id="hero">
+<section class="hero-section" id="hero" class="de-reveal">
 <div class="geometric-shape shape-1"></div>
 <div class="geometric-shape shape-2"></div>
 <div class="container hero-container">
@@ -58,24 +58,24 @@
 <h1 class="hero-title">Elevated Catering for <span class="text-gradient">Corporate</span> &amp; <span class="text-gradient">Social</span> Milestones</h1>
 <p class="hero-description">We combine precise culinary artistry with modern event design. From high-level boardroom lunches to bespoke wedding canapés, experience the evolution of flavor.</p>
 <div class="hero-ctas">
-<a class="btn btn-primary" href="#menu" id="hero-btn-menu">Explore Menu</a>
-<a class="btn btn-secondary" href="#booking" id="hero-btn-booking">Get a Quote</a>
+<a class="btn btn-primary de-btn" href="#menu" id="hero-btn-menu">Explore Menu</a>
+<a class="btn btn-secondary de-btn" href="#booking" id="hero-btn-booking">Get a Quote</a>
 </div>
 </div>
 <div class="hero-visual">
-<div class="card-display-grid">
-<div class="visual-card card-corporate">
-<div class="card-icon">💼</div>
+<div class="card-display-grid de-reveal">
+<div class="visual-card card-corporate de-reveal">
+<div class="card-icon de-reveal">💼</div>
 <h3>Corporate</h3>
 <p>Precision execution for corporate agendas.</p>
 </div>
-<div class="visual-card card-wedding">
-<div class="card-icon">🥂</div>
+<div class="visual-card card-wedding de-reveal">
+<div class="card-icon de-reveal">🥂</div>
 <h3>Weddings</h3>
 <p>Curated memories and bespoke details.</p>
 </div>
-<div class="visual-card card-conference">
-<div class="card-icon">🍽️</div>
+<div class="visual-card card-conference de-reveal">
+<div class="card-icon de-reveal">🍽️</div>
 <h3>Buffets</h3>
 <p>Grand scale without sacrificing refinement.</p>
 </div>
@@ -85,7 +85,7 @@
 </div>
 </section>
 <!-- Services Grid -->
-<section class="services-section" id="services">
+<section class="services-section" id="services" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-subtitle">What We Do</span>
@@ -94,7 +94,7 @@
 </div>
 <div class="services-grid">
 <!-- Corporate Lunches -->
-<div class="service-card" id="service-corporate">
+<div class="service-card de-reveal" id="service-corporate">
 <div class="service-image-placeholder corporate-pattern">
 <img src="./service_corporate.png" alt="A premium corporate boardroom lunchbox and platter catering setup on a long table" width="400" height="200">
 <span class="pattern-tag">Corporate</span>
@@ -112,7 +112,7 @@
 </div>
 </div>
 <!-- Conference Buffets -->
-<div class="service-card" id="service-buffet">
+<div class="service-card de-reveal" id="service-buffet">
 <div class="service-image-placeholder buffet-pattern">
 <img src="./service_buffet.png" alt="A luxurious conference buffet display with hot and cold gourmet dishes and an interactive cooking station" width="400" height="200">
 <span class="pattern-tag">Conference</span>
@@ -130,7 +130,7 @@
 </div>
 </div>
 <!-- Wedding Canapés -->
-<div class="service-card" id="service-wedding">
+<div class="service-card de-reveal" id="service-wedding">
 <div class="service-image-placeholder wedding-pattern">
 <img src="./service_wedding.png" alt="Waitstaff serving creative, high-end wedding canapés on a wooden tray at a luxury reception" width="400" height="200">
 <span class="pattern-tag">Wedding</span>
@@ -151,7 +151,7 @@
 </div>
 </section>
 <!-- Menu Section (Interactive Filter) -->
-<section class="menu-section" id="menu">
+<section class="menu-section" id="menu" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-subtitle">Exquisite Taste</span>
@@ -161,10 +161,10 @@
 <!-- Filter Controls -->
 <div class="menu-filter-container">
 <div aria-label="Menu categories" class="menu-filters" role="tablist">
-<button aria-selected="true" class="filter-btn active" data-filter="all" id="filter-all" role="tab">All Collections</button>
-<button aria-selected="false" class="filter-btn" data-filter="corporate" id="filter-corporate" role="tab">Corporate Lunch</button>
-<button aria-selected="false" class="filter-btn" data-filter="buffet" id="filter-buffet" role="tab">Conference Buffet</button>
-<button aria-selected="false" class="filter-btn" data-filter="wedding" id="filter-wedding" role="tab">Wedding Canapés</button>
+<button aria-selected="true" class="filter-btn active de-btn" data-filter="all" id="filter-all" role="tab">All Collections</button>
+<button aria-selected="false" class="filter-btn de-btn" data-filter="corporate" id="filter-corporate" role="tab">Corporate Lunch</button>
+<button aria-selected="false" class="filter-btn de-btn" data-filter="buffet" id="filter-buffet" role="tab">Conference Buffet</button>
+<button aria-selected="false" class="filter-btn de-btn" data-filter="wedding" id="filter-wedding" role="tab">Wedding Canapés</button>
 </div>
 </div>
 <!-- Menu Grid -->
@@ -174,7 +174,7 @@
 </div>
 </section>
 <!-- About Section -->
-<section class="about-section" id="about">
+<section class="about-section" id="about" class="de-reveal">
 <div class="container about-container">
 <div class="about-visual">
 <div class="about-geometric-layout">
@@ -208,7 +208,7 @@
 </div>
 </section>
 <!-- Booking Form Section -->
-<section class="booking-section" id="booking">
+<section class="booking-section" id="booking" class="de-reveal">
 <div class="geometric-shape shape-3"></div>
 <div class="container booking-container">
 <div class="booking-header-block">
@@ -306,13 +306,13 @@
 <label for="special-instructions">Special Instructions / Allergies / Theme</label>
 <textarea id="special-instructions" name="notes" placeholder="Describe your target vibe, dietary limits (e.g. gluten-free, vegan), or specific culinary interests..." rows="4"></textarea>
 </div>
-<button class="btn btn-submit" id="btn-submit-booking" type="submit">
+<button class="btn btn-submit de-btn" id="btn-submit-booking" type="submit">
 <span>Submit Request</span>
 <div class="spinner" id="form-spinner"></div>
 </button>
 </form>
 <!-- Success State Display -->
-<div class="booking-success-card" id="booking-success">
+<div class="booking-success-card de-reveal" id="booking-success">
 <div class="success-icon">✓</div>
 <h3>Request Transmitted Successfully</h3>
 <p>Thank you for choosing Evolution Catering. We have registered your event details and assigned a culinary consultant to review your blueprint.</p>
@@ -322,7 +322,7 @@
 <p><strong>Service:</strong> <span id="summary-type">Corporate Lunch</span></p>
 <p><strong>Guests:</strong> <span id="summary-guests">50 guests</span></p>
 </div>
-<button class="btn btn-secondary" id="btn-reset-form">Submit Another Request</button>
+<button class="btn btn-secondary de-btn" id="btn-reset-form">Submit Another Request</button>
 </div>
 </div>
 </div>
@@ -357,10 +357,10 @@
 <div class="footer-social">
 <h4>Connect With Us</h4>
 <div class="social-icons">
-<a aria-label="Instagram" class="social-icon-btn" href="#">IG</a>
-<a aria-label="LinkedIn" class="social-icon-btn" href="#">LN</a>
-<a aria-label="Pinterest" class="social-icon-btn" href="#">PI</a>
-<a aria-label="Vimeo" class="social-icon-btn" href="#">VM</a>
+<a aria-label="Instagram" class="social-icon-btn de-btn" href="#">IG</a>
+<a aria-label="LinkedIn" class="social-icon-btn de-btn" href="#">LN</a>
+<a aria-label="Pinterest" class="social-icon-btn de-btn" href="#">PI</a>
+<a aria-label="Vimeo" class="social-icon-btn de-btn" href="#">VM</a>
 </div>
 <p class="copy-text">© 2026 Evolution Catering. All rights reserved.</p>
 </div>
@@ -389,5 +389,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  
+</body>
 </html>
