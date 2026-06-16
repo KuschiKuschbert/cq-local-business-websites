@@ -5,6 +5,7 @@ import cafeModernUrl from './cafe_modern.png';
 import plumbingModernUrl from './plumbing_modern.png';
 import landscapingModernUrl from './landscaping_modern.png';
 import landscapingBeforeUrl from './landscaping_before.png';
+import landscapingAfterPhotoUrl from './landscaping_after_photo.png';
 import pestModernUrl from './pest_modern.png';
 
 
@@ -410,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="sim-ba-image sim-ba-before" style="background-image: url('${landscapingBeforeUrl}');">
                   <span class="sim-ba-img-label" style="background-color: rgba(0,0,0,0.65);">Dry Clay Ground (Before)</span>
                 </div>
-                <div class="sim-ba-image sim-ba-after" style="background-image: url('${landscapingModernUrl}');">
+                <div class="sim-ba-image sim-ba-after" style="background-image: url('${landscapingAfterPhotoUrl}');">
                   <span class="sim-ba-img-label" style="background-color: #1e3a24;">Premium Couch Turf (After)</span>
                 </div>
                 <input type="range" min="0" max="100" value="50" class="sim-ba-range-slider">
