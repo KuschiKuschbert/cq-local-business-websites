@@ -4,6 +4,7 @@ import gymTrainerUrl from './gym_trainer.png';
 import cafeModernUrl from './cafe_modern.png';
 import plumbingModernUrl from './plumbing_modern.png';
 import landscapingModernUrl from './landscaping_modern.png';
+import landscapingBeforeUrl from './landscaping_before.png';
 import pestModernUrl from './pest_modern.png';
 
 
@@ -406,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               
               <div class="sim-before-after-widget">
-                <div class="sim-ba-image sim-ba-before">
+                <div class="sim-ba-image sim-ba-before" style="background-image: url('${landscapingBeforeUrl}');">
                   <span class="sim-ba-img-label" style="background-color: rgba(0,0,0,0.65);">Dry Clay Ground (Before)</span>
                 </div>
                 <div class="sim-ba-image sim-ba-after" style="background-image: url('${landscapingModernUrl}');">
