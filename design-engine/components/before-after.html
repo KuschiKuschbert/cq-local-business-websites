@@ -1,0 +1,67 @@
+<!-- 
+  Cap Coast Design Engine - Premium Before/After Image Slider
+  Fully responsive drag-to-compare component utilizing vanilla CSS and HTML range controls.
+-->
+<div class="de-slider-wrapper de-reveal de-glass-card" style="padding: 2rem; border-radius: var(--de-border-radius); border: var(--de-border-width) solid var(--color-border); max-width: 700px; margin: 2rem auto;">
+  <div style="margin-bottom: 1.5rem; text-align: center;">
+    <h3 style="margin-bottom: 0.25rem; font-size: 1.5rem;" class="de-kinetic-text">Our Work In Action</h3>
+    <p style="opacity: 0.75; font-size: 0.9rem;">Drag the center handle to see the visual transformation.</p>
+  </div>
+
+  <!-- Slider Visual Window -->
+  <div class="de-before-after-container" style="position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: calc(var(--de-border-radius) / 2); user-select: none;">
+    
+    <!-- Background Image ("After" State) -->
+    <img src="https://images.unsplash.com/photo-1558904541-efa8c1a68fc6?auto=format&fit=crop&w=1200&q=80" alt="After Transformation" 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+    <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(0,0,0,0.6); color: #fff; padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-family: var(--de-font-mono, monospace);">AFTER</div>
+
+    <!-- Foreground Overlay Image ("Before" State) -->
+    <div class="de-before-image-overlay" style="position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; border-right: 2px solid #fff;">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80" alt="Before State" 
+        style="position: absolute; top: 0; left: 0; width: 100vw; max-width: 700px; height: 100%; object-fit: cover; pointer-events: none;">
+      <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.6); color: #fff; padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-family: var(--de-font-mono, monospace);">BEFORE</div>
+    </div>
+
+    <!-- Interactive Drag Input Control (Hidden but active over container) -->
+    <input type="range" class="de-ba-slider-input" min="0" max="100" value="50" 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; z-index: 10;">
+
+    <!-- Decorative Handle Overlay -->
+    <div class="de-ba-handle" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 40px; height: 40px; margin-top: auto; margin-bottom: auto; margin-left: -20px; background: var(--color-primary); border-radius: 50%; border: 3px solid #fff; pointer-events: none; z-index: 5; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
+      <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: #fff; stroke-width: 2.5; fill: none;">
+        <path d="M8 7l-5 5 5 5M16 7l5 5-5 5" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const sliderContainers = document.querySelectorAll('.de-before-after-container');
+    
+    sliderContainers.forEach(container => {
+      const sliderInput = container.querySelector('.de-ba-slider-input');
+      const beforeOverlay = container.querySelector('.de-before-image-overlay');
+      const handle = container.querySelector('.de-ba-handle');
+      const beforeImage = beforeOverlay.querySelector('img');
+
+      // Sync foreground width to input slider values
+      const handleSliderUpdate = () => {
+        const value = sliderInput.value;
+        beforeOverlay.style.width = `${value}%`;
+        handle.style.left = `${value}%`;
+      };
+
+      sliderInput.addEventListener('input', handleSliderUpdate);
+
+      // Dynamically size target image overlay bounds to container size
+      const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          beforeImage.style.width = `${entry.contentRect.width}px`;
+        }
+      });
+      resizeObserver.observe(container);
+    });
+  })();
+</script>

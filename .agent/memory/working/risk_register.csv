@@ -1,0 +1,4 @@
+date,risk,severity,control,status,notes
+2026-06-16,Accidental unsupervised outreach,high,"Outreach safety protocol, empty outreach log unless approved, approval queue separation",controlled,Promotion and outreach are separate gates.
+2026-06-16,Weak or stale prospect evidence,medium,"Verification CSV, research queue, source notes, promotion-review-ready status",controlled,Research-more candidates stay out of prospects.csv.
+2026-06-16,Overpromising delivery scope,medium,Proposal/admin trackers and monthly tier memory,monitor,Keep offers to the approved flat monthly website design model.

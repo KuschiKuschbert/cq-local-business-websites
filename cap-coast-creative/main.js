@@ -1,30 +1,60 @@
+import keppelCruiseUrl from './keppel_cruise.png';
+import brutalistGymUrl from './brutalist_gym.png';
+import gymTrainerUrl from './gym_trainer.png';
+import cafeModernUrl from './cafe_modern.png';
+import plumbingModernUrl from './plumbing_modern.png';
+import landscapingModernUrl from './landscaping_modern.png';
+import pestModernUrl from './pest_modern.png';
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
   // STATE MANAGEMENT
   // ==========================================
+  let currentView = 'home'; // 'home' or 'sandbox'
   let currentNiche = 'plumbing';
   let deviceView = 'desktop';
   let cafeCartCount = 0;
   let activePestTab = 'risk';
+  let gymActivePage = 'home'; // 'home' | 'workouts' | 'enquire'
+  let gymCompletedWorkouts = 0;
   
   const pricingTiers = {
     plumbing: 249,
     cafe: 199,
     landscaping: 299,
-    pest: 249
+    pest: 249,
+    tour: 299,
+    gym: 249
   };
 
   const ticketDefaults = {
     plumbing: { val: 220, max: 1000, step: 10, unit: 'residential service calls' },
     cafe: { val: 35, max: 150, step: 5, unit: 'pre-orders or bookings' },
     landscaping: { val: 450, max: 1500, step: 25, unit: 'excavations or yard cuts' },
-    pest: { val: 180, max: 800, step: 10, unit: 'standard pest sprays' }
+    pest: { val: 180, max: 800, step: 10, unit: 'standard pest sprays' },
+    tour: { val: 120, max: 500, step: 10, unit: 'ticket bookings' },
+    gym: { val: 45, max: 200, step: 5, unit: 'monthly memberships' }
   };
 
   // ==========================================
   // SELECTORS
   // ==========================================
+  const bodyEl = document.body;
+  const viewHome = document.getElementById('view-home');
+  const viewSandbox = document.getElementById('view-sandbox');
+  
+  const linkHome = document.getElementById('link-home');
+  const linkSandbox = document.getElementById('link-sandbox');
+  const linkPricing = document.getElementById('link-pricing');
+  const linkFaqs = document.getElementById('link-faqs');
+  const logoHome = document.getElementById('logo-nav-home');
+  
+  const heroBtnSandbox = document.getElementById('hero-btn-sandbox');
+  const heroVisualBtn = document.getElementById('hero-visual-btn');
+  const btnBackHome = document.getElementById('btn-back-home');
+  
   const nicheCards = document.querySelectorAll('.niche-card');
   const ticketSlider = document.getElementById('ticket-slider');
   const ticketValDisplay = document.getElementById('ticket-val-display');
@@ -49,11 +79,115 @@ document.addEventListener('DOMContentLoaded', () => {
   const deviceMobileBtn = document.getElementById('device-mobile');
 
   // ==========================================
+  // VIEW ROUTING CONTROLLER
+  // ==========================================
+  
+  function switchView(viewName) {
+    if (viewName === 'home') {
+      currentView = 'home';
+      bodyEl.classList.remove('view-state-sandbox');
+      bodyEl.classList.add('view-state-home');
+      
+      viewSandbox.classList.add('hidden');
+      viewHome.classList.remove('hidden');
+      
+      linkSandbox.classList.remove('active');
+      linkHome.classList.add('active');
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (viewName === 'sandbox') {
+      currentView = 'sandbox';
+      bodyEl.classList.remove('view-state-home');
+      bodyEl.classList.add('view-state-sandbox');
+      
+      viewHome.classList.add('hidden');
+      viewSandbox.classList.remove('hidden');
+      
+      linkHome.classList.remove('active');
+      linkSandbox.classList.add('active');
+      
+      window.scrollTo({ top: 0 });
+      
+      // Force immediate simulator layout calculation and render
+      updateInteractiveControls();
+    }
+  }
+
+  // Navigation Links listeners
+  if (linkHome) linkHome.addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
+  if (logoHome) logoHome.addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
+  if (linkSandbox) linkSandbox.addEventListener('click', (e) => { e.preventDefault(); switchView('sandbox'); });
+  
+  // Hash nav smooth scrolling overrides for homepage
+  if (linkPricing) {
+    linkPricing.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView('home');
+      setTimeout(() => {
+        const target = document.getElementById('pricing-section');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
+
+  if (linkFaqs) {
+    linkFaqs.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView('home');
+      setTimeout(() => {
+        const target = document.getElementById('faq-section');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
+
+  // Hero section buttons switcher
+  if (heroBtnSandbox) heroBtnSandbox.addEventListener('click', () => switchView('sandbox'));
+  if (heroVisualBtn) heroVisualBtn.addEventListener('click', () => switchView('sandbox'));
+  if (btnBackHome) btnBackHome.addEventListener('click', () => switchView('home'));
+
+  // Card select hooks from home page pricing
+  document.querySelectorAll('[data-niche-select]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const niche = btn.dataset.nicheSelect;
+      currentNiche = niche;
+      cafeCartCount = 0;
+      gymActivePage = 'home';
+      gymCompletedWorkouts = 0;
+      
+      // Update active niche card in sandbox sidebar console
+      nicheCards.forEach(card => {
+        if (card.dataset.niche === niche) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+
+      switchView('sandbox');
+    });
+  });
+
+  // ==========================================
   // DYNAMIC SIMULATOR WEBSITES GENERATION
   // ==========================================
   
   function renderSimulatedWebsite() {
     if (!simWebContent) return;
+    
+    // Update ambient background matching the niche
+    const ambientBg = document.getElementById('sim-ambient-bg');
+    if (ambientBg) {
+      let ambientImgUrl = '';
+      if (currentNiche === 'plumbing') ambientImgUrl = plumbingModernUrl;
+      else if (currentNiche === 'cafe') ambientImgUrl = cafeModernUrl;
+      else if (currentNiche === 'landscaping') ambientImgUrl = landscapingModernUrl;
+      else if (currentNiche === 'pest') ambientImgUrl = pestModernUrl;
+      else if (currentNiche === 'tour') ambientImgUrl = keppelCruiseUrl;
+      else if (currentNiche === 'gym') ambientImgUrl = brutalistGymUrl;
+      
+      ambientBg.style.backgroundImage = ambientImgUrl ? `url('${ambientImgUrl}')` : 'none';
+    }
     
     const showOnTime = checkOnTime.checked && !toggleRowOnTime.classList.contains('hidden');
     const showCleanup = checkCleanup.checked && !toggleRowCleanup.classList.contains('hidden');
@@ -85,6 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>Central QLD's Emergency Plumber</h2>
                 <p>Direct dispatch to residential hot water failures, burst pipes, and gas fitting emergencies.</p>
                 <a href="tel:0400999999" class="sim-plumbing-hero-cta"><i data-lucide="phone-call" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> Call Dispatch Now</a>
+              </div>
+              
+              <div class="sim-plumbing-image-box" style="margin-top: 1rem; border-radius: 12px; overflow: hidden; height: 110px; border: 1px solid rgba(56, 189, 248, 0.15); margin-bottom: 1rem;">
+                <img src="${plumbingModernUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Emergency Plumbing Equipment">
               </div>
               
               <div class="sim-ticker-box">
@@ -165,6 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="sim-cafe-hero-badge">Est. 2018 — Yeppoon Foreshore</span>
               <h2>Specialty Coffee & Beachside Eats</h2>
               <p>A curated menu of house-roasted single origin beans, seasonal coastal bites, and fresh house-baked gluten-free pastries.</p>
+            </div>
+            
+            <div class="sim-cafe-image-card" style="border-radius: 12px; overflow: hidden; height: 125px; border: 1px solid rgba(93, 64, 55, 0.15); margin-bottom: 1rem;">
+              <img src="${cafeModernUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Specialty Cafe Bar">
             </div>
             
             <div>
@@ -267,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="sim-ba-image sim-ba-before">
                   <span class="sim-ba-img-label" style="background-color: rgba(0,0,0,0.65);">Dry Clay Ground (Before)</span>
                 </div>
-                <div class="sim-ba-image sim-ba-after">
+                <div class="sim-ba-image sim-ba-after" style="background-image: url('${landscapingModernUrl}');">
                   <span class="sim-ba-img-label" style="background-color: #1e3a24;">Premium Couch Turf (After)</span>
                 </div>
                 <input type="range" min="0" max="100" value="50" class="sim-ba-range-slider">
@@ -336,6 +478,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </aside>
             
             <main class="sim-pest-portal-body">
+              <div class="sim-pest-image-banner" style="border-radius: 8px; overflow: hidden; height: 95px; border: 1px solid #dee2e6; margin-bottom: 0.75rem;">
+                <img src="${pestModernUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Accredited Safe Home">
+              </div>
               ${activePestTab === 'risk' ? `
                 <div class="sim-pest-hero">
                   <h2>SaaS Diagnostic Pest & Termite Board</h2>
@@ -454,6 +599,231 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
+    } else if (currentNiche === 'tour') {
+      htmlContent = `
+        <div class="simulated-website sim-niche-tour">
+          <header class="sim-header">
+            <div class="sim-logo"><i data-lucide="ship" style="width: 15px; height: 15px; color: #f97316; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Keppel Cruises</div>
+            <span class="sim-phone"><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Bookings: 07 4930 1111</span>
+          </header>
+          
+          <div class="sim-tour-nav-tip">&larr; Swipe Horizontally to Explore Deck &rarr;</div>
+          
+          <div class="sim-tour-horizontal-scroll">
+            
+            <!-- Panel 1: Story Intro -->
+            <div class="sim-tour-card-panel">
+              <div>
+                <span class="sim-tour-panel-tag">Explore Keppel Islands</span>
+                <h2 style="margin-top: 0.5rem; margin-bottom: 0.75rem;">Great Keppel Island Day Cruise</h2>
+                <p>Sail across pristine turquoise waters of Keppel Bay. Hop off at secluded white-sand beaches, snorkel untouched reef shelves, and enjoy local fresh buffets.</p>
+              </div>
+              <a href="#" class="sim-tour-cta-btn">Book Cruise Seat</a>
+            </div>
+            
+            <!-- Panel Image: Keppel Serenity -->
+            <div class="sim-tour-card-panel" style="background: url('${keppelCruiseUrl}') no-repeat center center; background-size: cover; position: relative;">
+              <div style="background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 60%, rgba(15, 23, 42, 0) 100%); position: absolute; inset: 0; border-radius: 15px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;">
+                <span class="sim-tour-panel-tag" style="color: #fb923c;">Our Vessel</span>
+                <h2 style="margin-top: 0.3rem; margin-bottom: 0.25rem; font-size: 1.4rem;">Keppel Serenity</h2>
+                <p style="color: #cbd5e1; font-size: 0.75rem; margin: 0; line-height: 1.4;">Premium 15m sailing catamaran featuring open decks, dual trampolines, and shaded lounges.</p>
+              </div>
+            </div>
+            
+            <!-- Panel 2: Inclusions & Badges -->
+            <div class="sim-tour-card-panel">
+              <div>
+                <span class="sim-tour-panel-tag">What's On Board</span>
+                <h2 style="margin-top: 0.5rem; margin-bottom: 0.75rem;">Premium Trip Inclusions</h2>
+                <div class="sim-tour-grid" style="margin-top: 1rem;">
+                  <div class="sim-tour-item">
+                    <h4>Meals</h4>
+                    <p>Included</p>
+                  </div>
+                  <div class="sim-tour-item">
+                    <h4>Gear</h4>
+                    <p>Free Snorkel</p>
+                  </div>
+                  <div class="sim-tour-item">
+                    <h4>Guide</h4>
+                    <p>Marine Biol</p>
+                  </div>
+                </div>
+                
+                <div class="sim-badge-row" style="margin-top: 1.25rem;">
+                  ${showOnTime ? `
+                    <div class="sim-badge-card" style="background-color: #111827; border: 1px solid rgba(249, 115, 22, 0.2);">
+                      <span class="sim-badge-icon"><i data-lucide="compass" style="width: 24px; height: 24px; color: #fb923c;"></i></span>
+                      <div class="sim-badge-content">
+                        <h4 style="color:#fff;">Seasick Refund Policy</h4>
+                        <p style="color:#94a3b8;">Full seat credit refund if water swell exceeds 1.8 meters.</p>
+                      </div>
+                    </div>
+                  ` : ''}
+                  ${showCleanup ? `
+                    <div class="sim-badge-card" style="background-color: #111827; border: 1px solid rgba(249, 115, 22, 0.2);">
+                      <span class="sim-badge-icon"><i data-lucide="leaf" style="width: 24px; height: 24px; color: #fb923c;"></i></span>
+                      <div class="sim-badge-content">
+                        <h4 style="color:#fff;">Marine Eco Label</h4>
+                        <p style="color:#94a3b8;">100% carbon-offset, reef-safe emissions cert.</p>
+                      </div>
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Reservation -->
+            <div class="sim-tour-card-panel">
+              <div>
+                <span class="sim-tour-panel-tag">Secure Your Spot</span>
+                <h2 style="margin-top: 0.5rem; margin-bottom: 0.75rem;">Online Pre-Booking</h2>
+                <form class="sim-form-box" onsubmit="return false;" style="background: transparent; border: none; padding:0;">
+                  <input type="text" placeholder="Passes (e.g. 2 Adults)" class="sim-input" style="background-color: #0f172a; border-color: rgba(249, 115, 22, 0.3); color:#fff;" required>
+                  
+                  ${showWaitlist ? `
+                    <div class="sim-estimator-widget" style="background-color: #0f172a; border: 1px solid rgba(249, 115, 22, 0.2); padding: 0.75rem; margin-top: 0.5rem;">
+                      <h4 style="color:#fff; font-size: 0.75rem;"><i data-lucide="users" style="width: 12px; height: 12px; color: #f97316; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Seats Remaining</h4>
+                      <div class="sim-slider-row">
+                        <span>Next Cruise (9:00 AM):</span>
+                        <span class="sim-est-val" style="color: #fb923c; font-size: 0.85rem;">14 Slots Left</span>
+                      </div>
+                    </div>
+                  ` : ''}
+                  
+                  <button class="sim-tour-cta-btn" style="border:none; cursor:pointer; width:100%; margin-top: 0.5rem;">Reserve Seat</button>
+                </form>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      `;
+    } else if (currentNiche === 'gym') {
+      htmlContent = `
+        <div class="simulated-website sim-niche-gym">
+          <header class="sim-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 3.5px solid #000; padding: 0.75rem 1rem;">
+            <div class="sim-logo" style="font-size: 0.9rem; font-weight: 900; text-transform: uppercase;"><i data-lucide="dumbbell" style="width: 15px; height: 15px; color: #000; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Rocky Strength</div>
+            <nav class="sim-gym-navbar" style="display: flex; gap: 0.25rem;">
+              <a href="#" class="sim-gym-nav-link ${gymActivePage === 'home' ? 'active' : ''}" data-gym-page="home" style="font-size: 0.7rem;">Home</a>
+              <a href="#" class="sim-gym-nav-link ${gymActivePage === 'workouts' ? 'active' : ''}" data-gym-page="workouts" style="font-size: 0.7rem;">Schedule</a>
+              <a href="#" class="sim-gym-nav-link ${gymActivePage === 'enquire' ? 'active' : ''}" data-gym-page="enquire" style="font-size: 0.7rem;">Join</a>
+            </nav>
+          </header>
+          
+          <div class="sim-gym-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+            ${gymActivePage === 'home' ? `
+              
+              <!-- Gym Banner Facility Hero -->
+              <div class="sim-brutalist-card" style="padding: 0; overflow: hidden; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; height: 125px; position: relative;">
+                <img src="${brutalistGymUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.45);" alt="Rocky Power Gym Facility">
+                <div style="position: absolute; inset: 0; padding: 1rem; display: flex; flex-direction: column; justify-content: flex-end; color: #fff;">
+                  <span style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: #facc15; text-transform: uppercase;">[ 24/7 Heavy Strength ]</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 900; text-transform: uppercase; margin: 0.25rem 0;">Rocky Strength & Power</h3>
+                </div>
+              </div>
+
+              <div class="sim-brutalist-card" style="background-color: #fff; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <span class="sim-brutalist-title" style="font-size: 0.72rem; font-weight:900; background-color: #facc15; border: 2px solid #000; padding: 0.15rem 0.35rem; align-self: flex-start;">No Contracts. No Gimmicks.</span>
+                <p style="font-size: 0.75rem; font-weight:600; line-height: 1.4; margin: 0.25rem 0;">Capricorn Coast's premier facility for powerlifting, weightlifting, and athletic development. Featuring competition grade racks and calibrated plates.</p>
+                <button class="sim-brutalist-btn" data-gym-page="enquire" style="width: 100%; margin-top: 0.25rem;">Claim Free 3-Day Pass</button>
+              </div>
+              
+              <div class="sim-badge-row" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                ${showOnTime ? `
+                  <div class="sim-badge-card" style="border: 3px solid #000; box-shadow: 4px 4px 0px #000; background-color: #fff; padding: 0.75rem; display: flex; gap: 0.75rem; align-items: center;">
+                    <span class="sim-badge-icon" style="flex-shrink: 0;"><i data-lucide="key" style="width: 20px; height: 20px; color: #000;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4 style="font-weight:900; font-size: 0.75rem; margin: 0;">24/7 Key Access</h4>
+                      <p style="font-size: 0.68rem; color: #333; margin: 0.15rem 0 0 0;">Secure swipe access keys included for all members.</p>
+                    </div>
+                  </div>
+                ` : ''}
+                ${showCleanup ? `
+                  <div class="sim-badge-card" style="border: 3px solid #000; box-shadow: 4px 4px 0px #000; background-color: #fff; padding: 0.75rem; display: flex; gap: 0.75rem; align-items: center;">
+                    <span class="sim-badge-icon" style="flex-shrink: 0;"><i data-lucide="user-check" style="width: 20px; height: 20px; color: #000;"></i></span>
+                    <div class="sim-badge-content">
+                      <h4 style="font-weight:900; font-size: 0.75rem; margin: 0;">Accredited Coaches Only</h4>
+                      <p style="font-size: 0.68rem; color: #333; margin: 0.15rem 0 0 0;">All trainers hold ASCA Strength & Conditioning certifications.</p>
+                    </div>
+                  </div>
+                ` : ''}
+              </div>
+            ` : gymActivePage === 'workouts' ? `
+              
+              <!-- Coaching banner -->
+              <div class="sim-brutalist-card" style="padding: 0; overflow: hidden; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; height: 115px;">
+                <img src="${gymTrainerUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Rocky Strength Coach Team">
+              </div>
+              
+              <div class="sim-brutalist-card" style="background-color: #fff; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; padding: 1rem;">
+                <span class="sim-brutalist-title" style="font-size: 0.72rem; font-weight:900; background-color: #000; color: #fff; border: 2px solid #000; padding: 0.15rem 0.35rem; align-self: flex-start; margin-bottom: 0.5rem;">Daily Group Sessions</span>
+                
+                <div class="sim-gym-timetable" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border: 2px solid #000; padding: 0.5rem; background-color: #fff; font-size: 0.7rem; font-weight: 800;">
+                    <div>
+                      <span style="color:#e65100;">06:00 AM</span> — Powerlifting
+                    </div>
+                    <button class="sim-brutalist-btn" style="padding: 0.2rem 0.5rem; font-size: 0.6rem; box-shadow: none;" onclick="this.textContent='Booked'; this.disabled=true;">Book Spot</button>
+                  </div>
+                  
+                  <div style="display: flex; justify-content: space-between; align-items: center; border: 2px solid #000; padding: 0.5rem; background-color: #fff; font-size: 0.7rem; font-weight: 800;">
+                    <div>
+                      <span style="color:#e65100;">05:30 PM</span> — Olympic Lifting
+                    </div>
+                    <button class="sim-brutalist-btn" style="padding: 0.2rem 0.5rem; font-size: 0.6rem; box-shadow: none;" onclick="this.textContent='Booked'; this.disabled=true;">Book Spot</button>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; border: 2px solid #000; padding: 0.5rem; background-color: #fff; font-size: 0.7rem; font-weight: 800;">
+                    <div>
+                      <span style="color:#e65100;">06:30 PM</span> — Strength & Cond
+                    </div>
+                    <button class="sim-brutalist-btn" style="padding: 0.2rem 0.5rem; font-size: 0.6rem; box-shadow: none;" onclick="this.textContent='Booked'; this.disabled=true;">Book Spot</button>
+                  </div>
+                </div>
+              </div>
+            ` : `
+              
+              <!-- Grayscaled Coaching Image -->
+              <div class="sim-brutalist-card" style="padding: 0; overflow: hidden; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; height: 110px;">
+                <img src="${gymTrainerUrl}" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1);" alt="Intake Consultation Coaching">
+              </div>
+              
+              <div class="sim-brutalist-card" style="background-color: #fff; border: 3.5px solid #000; box-shadow: 4px 4px 0px #000; padding: 1rem;">
+                <span class="sim-brutalist-title" style="font-size: 0.72rem; font-weight:900; background-color: #facc15; border: 2px solid #000; padding: 0.15rem 0.35rem; align-self: flex-start; margin-bottom: 0.5rem;">Choose Membership</span>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem;">
+                  <div style="border: 2px solid #000; padding: 0.5rem; background-color: #fff; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; font-weight: 800;">
+                    <span>Standard Access</span>
+                    <span style="color:#e65100;">$18/wk</span>
+                  </div>
+                  <div style="border: 2px solid #000; padding: 0.5rem; background-color: #fff; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; font-weight: 800;">
+                    <span>Coached Athlete</span>
+                    <span style="color:#e65100;">$45/wk</span>
+                  </div>
+                </div>
+
+                <form class="sim-form-box" onsubmit="alert('Pass Issued! Check your SMS.'); return false;" style="background:transparent; border:none; padding:0; display: flex; flex-direction: column; gap: 0.5rem;">
+                  <input type="text" placeholder="Your Name" class="sim-input" style="border: 2px solid #000; padding: 0.4rem; font-size: 0.72rem; font-weight: 700; background-color:#fff;" required>
+                  <input type="tel" placeholder="Mobile Number" class="sim-input" style="border: 2px solid #000; padding: 0.4rem; font-size: 0.72rem; font-weight: 700; background-color:#fff;" required>
+                  
+                  ${showWaitlist ? `
+                    <div class="sim-estimator-widget" style="background-color: #fff; border: 2.5px solid #000; box-shadow: 2px 2px 0px #000; padding: 0.5rem; margin-top: 0.25rem;">
+                      <h4 style="font-weight:900; font-size: 0.65rem; margin: 0;"><i data-lucide="activity" style="width: 10px; height: 10px; color: #000; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> Facility Volume</h4>
+                      <div class="sim-slider-row" style="display: flex; justify-content: space-between; font-size: 0.65rem; margin-top: 0.25rem;">
+                        <span>Occupancy:</span>
+                        <span style="font-weight: 900;">Moderate (42%)</span>
+                      </div>
+                    </div>
+                  ` : ''}
+                  
+                  <button class="sim-brutalist-btn" style="margin-top:0.25rem; width: 100%;">Get Free Trial Pass</button>
+                </form>
+              </div>
+            `}
+          </div>
+        </div>
+      `;
     }
 
     simWebContent.innerHTML = htmlContent;
@@ -522,6 +892,32 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleRowWaitlist.querySelector('.toggle-title').textContent = '12-Month Spray Warranty';
       toggleRowWaitlist.querySelector('.toggle-desc').textContent = 'Guarantees a free respray if pests return within a year.';
     }
+    else if (currentNiche === 'tour') {
+      toggleRowOnTime.classList.remove('hidden');
+      toggleRowOnTime.querySelector('.toggle-title').textContent = 'Seasick Refund Policy Badge';
+      toggleRowOnTime.querySelector('.toggle-desc').textContent = 'Promotes refund if water swell exceeds limit.';
+      
+      toggleRowCleanup.classList.remove('hidden');
+      toggleRowCleanup.querySelector('.toggle-title').textContent = 'Marine-Safe Eco Label';
+      toggleRowCleanup.querySelector('.toggle-desc').textContent = 'Guarantees eco-sustainable reef-friendly engines.';
+      
+      toggleRowWaitlist.classList.remove('hidden');
+      toggleRowWaitlist.querySelector('.toggle-title').textContent = 'Available Seats Live Counter';
+      toggleRowWaitlist.querySelector('.toggle-desc').textContent = 'Display remaining deck slots on the next cruise.';
+    }
+    else if (currentNiche === 'gym') {
+      toggleRowOnTime.classList.remove('hidden');
+      toggleRowOnTime.querySelector('.toggle-title').textContent = '24/7 Access Badge';
+      toggleRowOnTime.querySelector('.toggle-desc').textContent = 'Highlights secure swipe access keycard system.';
+      
+      toggleRowCleanup.classList.remove('hidden');
+      toggleRowCleanup.querySelector('.toggle-title').textContent = 'Certified Trainers Label';
+      toggleRowCleanup.querySelector('.toggle-desc').textContent = 'Prompts professional diagnostic coaching checks.';
+      
+      toggleRowWaitlist.classList.remove('hidden');
+      toggleRowWaitlist.querySelector('.toggle-title').textContent = 'Peak Capacity Tracker';
+      toggleRowWaitlist.querySelector('.toggle-desc').textContent = 'Displays live active club attendance volume.';
+    }
 
     // Adjust ROI slider rules
     const rules = ticketDefaults[currentNiche];
@@ -564,6 +960,8 @@ document.addEventListener('DOMContentLoaded', () => {
       card.classList.add('active');
       currentNiche = card.dataset.niche;
       cafeCartCount = 0; // Reset cart when niche changes
+      gymActivePage = 'home';
+      gymCompletedWorkouts = 0;
       updateInteractiveControls();
       
       // Update background glow color slightly to reflect choices
@@ -571,7 +969,9 @@ document.addEventListener('DOMContentLoaded', () => {
         plumbing: 'radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, transparent 60%)',
         cafe: 'radial-gradient(circle, rgba(200, 177, 149, 0.12) 0%, transparent 60%)',
         landscaping: 'radial-gradient(circle, rgba(19, 78, 94, 0.12) 0%, transparent 60%)',
-        pest: 'radial-gradient(circle, rgba(117, 127, 154, 0.12) 0%, transparent 60%)'
+        pest: 'radial-gradient(circle, rgba(117, 127, 154, 0.12) 0%, transparent 60%)',
+        tour: 'radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 60%)',
+        gym: 'radial-gradient(circle, rgba(250, 204, 21, 0.12) 0%, transparent 60%)'
       };
       document.querySelector('.simulator-glow').style.background = glows[currentNiche];
     });
@@ -649,10 +1049,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 400);
   }
 
-  btnOpenDrawer.addEventListener('click', openDrawer);
-  btnCloseDrawer.addEventListener('click', closeDrawer);
-  overlayBtn.addEventListener('click', closeDrawer);
-  btnSuccessClose.addEventListener('click', closeDrawer);
+  // Bind drawer events
+  if (btnOpenDrawer) btnOpenDrawer.addEventListener('click', openDrawer);
+  if (btnCloseDrawer) btnCloseDrawer.addEventListener('click', closeDrawer);
+  if (overlayBtn) overlayBtn.addEventListener('click', closeDrawer);
+  if (btnSuccessClose) btnSuccessClose.addEventListener('click', closeDrawer);
+
+  const heroBtnMockup = document.getElementById('hero-btn-mockup');
+  const navBtnMockup = document.getElementById('nav-btn-mockup');
+  const ctaBtnOpenDrawer = document.getElementById('cta-btn-open-drawer');
+
+  if (heroBtnMockup) heroBtnMockup.addEventListener('click', openDrawer);
+  if (navBtnMockup) navBtnMockup.addEventListener('click', openDrawer);
+  if (ctaBtnOpenDrawer) ctaBtnOpenDrawer.addEventListener('click', openDrawer);
 
   // Form submit intercept
   drawerForm.addEventListener('submit', (e) => {
@@ -668,6 +1077,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drawerForm.classList.add('hidden');
     drawerSuccess.classList.remove('hidden');
+  });
+
+  // ==========================================
+  // HOMEPAGE ACCORDION FAQS CONTROLLER
+  // ==========================================
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const body = header.nextElementSibling;
+      const isAlreadyActive = item.classList.contains('active');
+      
+      // Close all other accordion items
+      document.querySelectorAll('.accordion-item').forEach(otherItem => {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.accordion-body').style.maxHeight = '0';
+      });
+
+      if (!isAlreadyActive) {
+        item.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
   });
 
   // ==========================================
@@ -770,36 +1201,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return;
       }
+
+      // Gym Inner Navigation Switcher
+      const gymNavBtn = e.target.closest('[data-gym-page]');
+      if (gymNavBtn) {
+        gymActivePage = gymNavBtn.dataset.gymPage;
+        renderSimulatedWebsite();
+        return;
+      }
+
+      // Gym exercise rep checklist count
+      const gymRowCheck = e.target.closest('.sim-gym-check');
+      if (gymRowCheck) {
+        const checks = simWebContent.querySelectorAll('.sim-gym-check');
+        let count = 0;
+        checks.forEach(c => {
+          if (c.checked) count++;
+        });
+        gymCompletedWorkouts = count;
+        renderSimulatedWebsite();
+        return;
+      }
     });
   }
-
-  // ==========================================
-  // FAQ MODAL CONTROLS
-  // ==========================================
-  const faqModal = document.getElementById('faqs-modal');
-  const btnOpenFaqs = document.getElementById('btn-open-faqs');
-  const btnCloseModal = document.getElementById('btn-close-modal');
-
-  btnOpenFaqs.addEventListener('click', () => {
-    faqModal.classList.remove('hidden');
-  });
-
-  btnCloseModal.addEventListener('click', () => {
-    faqModal.classList.add('hidden');
-  });
-
-  faqModal.addEventListener('click', (e) => {
-    if (e.target === faqModal) {
-      faqModal.classList.add('hidden');
-    }
-  });
 
 
   // ==========================================
   // INITIAL RUN
   // ==========================================
-  // Set default tabs active
-  updateInteractiveControls();
+  switchView('home');
 
   if (window.lucide) {
     window.lucide.createIcons();

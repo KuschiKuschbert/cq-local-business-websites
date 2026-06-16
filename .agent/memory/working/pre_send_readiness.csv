@@ -1,0 +1,2 @@
+date,business,readiness_status,required_gate,evidence,failure_reason,next_action,notes
+2026-06-16,pipeline-level,blocked-no-approved-prospects,Daniel-approved prospect promotion,0 prospects / 0 drafts / 0 compliance rows,No business has been promoted into prospects.csv with a recorded approval.,Review approval packets and record approve/reject/hold decisions before any outreach preparation.,"No outreach can be sent, scheduled, or queued from this state."

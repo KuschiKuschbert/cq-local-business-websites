@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cap Coast Design Engine - Interactive Playground</title>
+  
+  <!-- Core Design Engine CSS -->
+  <link rel="stylesheet" href="./design-engine.css">
+  
+  <style>
+    /* Playground Controls Layout styling */
+    .playground-header {
+      padding: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--bg-secondary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .controls-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .control-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      font-weight: 600;
+    }
+    
+    .playground-select {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      background: var(--bg-primary);
+      color: var(--color-text);
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    
+    .demo-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    
+    .hero-section {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+    
+    .hero-tag {
+      font-family: var(--de-font-mono);
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 6rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-desc {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+    
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.5rem;
+    }
+    
+    .grid-container {
+      margin-bottom: 6rem;
+    }
+    
+    .grid-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .grid-item-tag {
+      font-family: var(--de-font-mono);
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+    
+    .reveal-box {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      border: 1px solid var(--color-border);
+      margin-bottom: 2rem;
+      border-radius: var(--de-border-radius);
+    }
+  </style>
+</head>
+<body data-de-archetype="brutalist" data-de-palette="obsidian-dark">
+
+  <!-- Interactive Controls Bar -->
+  <header class="playground-header">
+    <div class="controls-container">
+      <div style="font-weight: 800; letter-spacing: -0.02em; font-size: 1.1rem; text-transform: uppercase;">
+        Design Engine Playground
+      </div>
+      
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <!-- Archetype Selection -->
+        <div class="control-group">
+          <span class="control-label">Archetype:</span>
+          <select id="archetypeSelect" class="playground-select">
+            <option value="brutalist">Tactile Brutalism</option>
+            <option value="editorial">Editorial Glassmorphism</option>
+            <option value="nordic">Neo-Nordic Minimalism</option>
+          </select>
+        </div>
+        
+        <!-- Palette Selection -->
+        <div class="control-group">
+          <span class="control-label">Palette:</span>
+          <select id="paletteSelect" class="playground-select">
+            <option value="obsidian-dark">Obsidian Dark</option>
+            <option value="terracotta-clay">Terracotta Clay</option>
+            <option value="sage-garden">Sage Garden</option>
+            <option value="desert-gold">Desert Gold</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Playground Contents -->
+  <main class="demo-container">
+    
+    <!-- Hero Showcase -->
+    <section class="hero-section de-reveal">
+      <span class="hero-tag">Core Engine Preview</span>
+      <h1 class="hero-title de-kinetic-text">CAP COAST WEB INNOVATION</h1>
+      <p class="hero-desc">
+        A programmatically generated design system targeting local business conversions. 
+        Select combinations of layout archetypes and premium palettes above to test the layout engine.
+      </p>
+      <div>
+        <button class="de-btn">Launch Project</button>
+        <button class="de-btn" style="background: transparent; box-shadow: none; border-color: var(--color-border); margin-left: 1rem;">
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid Layout Showcase -->
+    <section class="grid-container">
+      <h2 class="section-title">Grid Layouts & Interactive Components</h2>
+      
+      <div class="de-grid">
+        <!-- Item 1 -->
+        <div class="de-grid-item de-reveal">
+          <div class="grid-item-header">
+            <span class="grid-item-tag">// DESIGN PRESET 01</span>
+            <span style="color: var(--color-primary);">●</span>
+          </div>
+          <h3>Obsidian Dark Theme</h3>
+          <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+            A sleek, cyberpunk-infused theme that highlights luxury digital presences with electric neon borders.
+          </p>
+          <button class="de-btn">Activate</button>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="de-grid-item de-reveal">
+          <div class="grid-item-header">
+            <span class="grid-item-tag">// DESIGN PRESET 02</span>
+            <span style="color: var(--color-primary);">●</span>
+          </div>
+          <h3>Terracotta Earth</h3>
+          <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+            Organic, warm, clay tones that evoke craftsmanship and natural textures, perfect for cafes and landscapers.
+          </p>
+          <button class="de-btn">Activate</button>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="de-grid-item de-reveal">
+          <div class="grid-item-header">
+            <span class="grid-item-tag">// DESIGN PRESET 03</span>
+            <span style="color: var(--color-primary);">●</span>
+          </div>
+          <h3>Neo-Nordic Clean</h3>
+          <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+            Quiet minimalism, generous spatial rhythm, high-contrast sans serif headers, and fine-line borders.
+          </p>
+          <button class="de-btn">Activate</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll Reveal Showcase -->
+    <section style="margin-bottom: 10rem;">
+      <h2 class="section-title">Scroll & Reveal Animations</h2>
+      <div class="reveal-box de-reveal">
+        <h4 class="de-kinetic-text">This content faded in smoothly using intersection observers.</h4>
+      </div>
+      <div class="reveal-box de-reveal" style="transition-delay: 0.2s;">
+        <p>Staggered loading elements create premium visual rhythm.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Core Design Engine JS -->
+  <script src="./design-engine.js"></script>
+  
+  <!-- Interactive Controller Script for Playground -->
+  <script>
+    const body = document.body;
+    const archetypeSelect = document.getElementById('archetypeSelect');
+    const paletteSelect = document.getElementById('paletteSelect');
+    
+    // Update theme attributes on change
+    archetypeSelect.addEventListener('change', (e) => {
+      body.setAttribute('data-de-archetype', e.target.value);
+    });
+    
+    paletteSelect.addEventListener('change', (e) => {
+      body.setAttribute('data-de-palette', e.target.value);
+    });
+  </script>
+</body>
+</html>

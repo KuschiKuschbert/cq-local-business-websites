@@ -32,6 +32,15 @@ if not match:
 review = reviews.get(clean(match.get("business"), "").casefold(), {})
 if review.get("recommendation") != "promote-review":
     raise SystemExit("Refusing promotion: candidate is not promote-review.")
+decisions = {
+    (clean(row.get("business")).casefold(), clean(row.get("approval_type")).casefold()): row
+    for row in read_csv(p("approval_decisions.csv"))
+}
+decision = decisions.get((clean(match.get("business")).casefold(), "promotion"))
+if not decision or clean(decision.get("decision")).casefold() != "approve":
+    raise SystemExit("Refusing promotion: record an approve decision in approval_decisions.csv first.")
+if clean(decision.get("decided_by")).casefold() != clean(args.approved_by).casefold():
+    raise SystemExit("Refusing promotion: --approved-by must match the recorded approval decision.")
 prospects = read_csv(p("prospects.csv"))
 if any(clean(row.get("business")).casefold() == clean(match.get("business")).casefold() for row in prospects):
     raise SystemExit("Refusing promotion: already in prospects.csv.")

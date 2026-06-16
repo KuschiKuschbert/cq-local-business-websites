@@ -4,12 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cap Coast Creative — Premium, high-converting managed website subscriptions for Central Queensland businesses. $0 upfront, flat monthly. Try our interactive sandbox.">
-    <title>Cap Coast Creative — Interactive Website Sandbox</title>
+    <title>Cap Coast Creative — Premium Central QLD Web Studio</title>
     
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) - SEO Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Cap Coast Creative",
+      "image": "https://capcoastcreative.com.au/assets/logo.png",
+      "@id": "https://capcoastcreative.com.au/#service",
+      "url": "https://capcoastcreative.com.au",
+      "telephone": "+61400000000",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Anzac Parade",
+        "addressLocality": "Yeppoon",
+        "addressRegion": "QLD",
+        "postalCode": "4703",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.1258,
+        "longitude": 150.7494
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/capcoastcreative",
+        "https://www.instagram.com/capcoastcreative"
+      ],
+      "areaServed": [
+        "Yeppoon QLD 4703",
+        "Rockhampton QLD 4700",
+        "Emu Park QLD 4710",
+        "Capricorn Coast QLD"
+      ],
+      "description": "Premium, high-converting managed website subscriptions for Central Queensland businesses. Zero upfront costs, fully managed with lightning-fast hosting and updates."
+    }
+    </script>
     
     <!-- Lucide Icon Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -17,187 +67,419 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="dashboard-body">
+<body class="dashboard-body view-state-home">
 
-    <!-- Main Dashboard Container -->
-    <main class="dashboard-container">
-        
-        <!-- Left Panel: Interactive Console Controls -->
-        <section class="control-panel">
-            <header class="panel-header">
-                <div class="logo">
-                    <span class="logo-icon"><i data-lucide="waves"></i></span>
-                    <div class="logo-text-group">
-                        <span class="logo-title">Cap Coast <span class="accent-text">Creative</span></span>
-                        <span class="logo-tagline">Central QLD Web Studio</span>
-                    </div>
+    <!-- Global Header -->
+    <header class="global-navbar">
+        <div class="navbar-container">
+            <div class="logo" id="logo-nav-home">
+                <span class="logo-icon"><i data-lucide="waves"></i></span>
+                <div class="logo-text-group">
+                    <span class="logo-title">Cap Coast <span class="accent-text">Creative</span></span>
+                    <span class="logo-tagline">Central QLD Web Studio</span>
                 </div>
-                <div class="badge-tag"><i data-lucide="map-pin" class="pin-icon"></i> Capricorn Coast, QLD</div>
-            </header>
-
-            <div class="panel-scroll-content">
-                
-                <!-- Headline Intro -->
-                <div class="intro-block">
-                    <h1>We build your website's prototype <span class="highlight-coral">first.</span></h1>
-                    <p>Select an industry below and toggle features to customize a site live in our sandbox. No templates. Built for real CQ conversions.</p>
-                </div>
-
-                <!-- Step 1: Choose Industry -->
-                <div class="console-section" id="section-niche">
-                    <h3 class="section-num-title"><span>01</span> Select Industry Mockup</h3>
-                    <div class="niche-grid">
-                        <button class="niche-card active" data-niche="plumbing">
-                            <span class="niche-icon-container"><i data-lucide="droplet"></i></span>
-                            <span class="niche-name">Plumbing & Gas</span>
-                            <span class="niche-desc">$249/mo</span>
-                        </button>
-                        <button class="niche-card" data-niche="cafe">
-                            <span class="niche-icon-container"><i data-lucide="coffee"></i></span>
-                            <span class="niche-name">Cafes & Salons</span>
-                            <span class="niche-desc">$199/mo</span>
-                        </button>
-                        <button class="niche-card" data-niche="landscaping">
-                            <span class="niche-icon-container"><i data-lucide="sprout"></i></span>
-                            <span class="niche-name">Landscaping & Digs</span>
-                            <span class="niche-desc">$299/mo</span>
-                        </button>
-                        <button class="niche-card" data-niche="pest">
-                            <span class="niche-icon-container"><i data-lucide="shield-alert"></i></span>
-                            <span class="niche-name">Pest & Carpet</span>
-                            <span class="niche-desc">$249/mo</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Live Sandbox Toggles -->
-                <div class="console-section" id="section-features">
-                    <h3 class="section-num-title"><span>02</span> Toggle Conversion Hooks</h3>
-                    <p class="section-instruction">See how we build confidence before customers call by toggling trust badges:</p>
-                    
-                    <div class="toggle-list">
-                        
-                        <!-- Toggle 1: On-Time Guarantee -->
-                        <label class="toggle-row" id="toggle-opt-ontime">
-                            <div class="toggle-info">
-                                <span class="toggle-title">On-Time Guarantee Payout</span>
-                                <span class="toggle-desc">Offers client $50 if late. Eliminates tradie lateness anxiety.</span>
-                            </div>
-                            <div class="switch">
-                                <input type="checkbox" id="check-ontime" checked>
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-
-                        <!-- Toggle 2: Cleanup Promise -->
-                        <label class="toggle-row" id="toggle-opt-cleanup">
-                            <div class="toggle-info">
-                                <span class="toggle-title">Pristine Site / Clean Worksite Badge</span>
-                                <span class="toggle-desc">Guarantees zero mess left behind. High conversion booster.</span>
-                            </div>
-                            <div class="switch">
-                                <input type="checkbox" id="check-cleanup" checked>
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-
-                        <!-- Toggle 3: Police Cleared / Liability -->
-                        <label class="toggle-row" id="toggle-opt-police">
-                            <div class="toggle-info">
-                                <span class="toggle-title">Police Cleared & $20M Insurance Badges</span>
-                                <span class="toggle-desc">Injects safety. Critical for residential cleaning and in-home pest services.</span>
-                            </div>
-                            <div class="switch">
-                                <input type="checkbox" id="check-police" checked>
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-
-                        <!-- Toggle 4: Waitlist Calculator -->
-                        <label class="toggle-row" id="toggle-opt-waitlist">
-                            <div class="toggle-info">
-                                <span class="toggle-title">Interactive Estimator / Queue-Skip Booking</span>
-                                <span class="toggle-desc">Lets clients pre-order or check wait times before scheduling.</span>
-                            </div>
-                            <div class="switch">
-                                <input type="checkbox" id="check-waitlist" checked>
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-                        
-                    </div>
-                </div>
-
-                <!-- Step 3: Subscription & ROI -->
-                <div class="console-section" id="section-roi">
-                    <h3 class="section-num-title"><span>03</span> Monthly Pricing & ROI</h3>
-                    <div class="roi-summary-box">
-                        <div class="roi-pricing-detail">
-                            <span class="label">Subscription Fee</span>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount" id="pricing-amount">249</span>
-                                <span class="period">/mo</span>
-                            </div>
-                            <span class="zero-upfront-flag">$0 Upfront. Host & Updates Included.</span>
-                        </div>
-                        
-                        <div class="roi-interactive-slider">
-                            <label for="ticket-slider" class="slider-label">
-                                <span>Average Ticket Price:</span>
-                                <span class="ticket-val" id="ticket-val-display">$250</span>
-                            </label>
-                            <input type="range" id="ticket-slider" min="10" max="1500" value="250" step="10">
-                            
-                            <div class="roi-equation">
-                                <p>You break even with just</p>
-                                <div class="break-even-number" id="roi-jobs-needed">1.0</div>
-                                <p class="break-even-unit" id="roi-unit-name">extra jobs per month</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
-            <!-- Footer Action Buttons -->
-            <footer class="panel-footer">
-                <button class="btn btn-primary btn-lg btn-block" id="btn-open-drawer">Request Your Free Mockup</button>
-                <button class="btn btn-secondary btn-lg" id="btn-open-faqs" aria-label="Open Frequently Asked Questions">FAQ & How it Works</button>
-            </footer>
-        </section>
-
-        
-        <!-- Right Panel: Live Device Sandbox Simulator -->
-        <section class="simulator-panel">
-            <div class="simulator-glow"></div>
             
-            <div class="simulator-header-bar">
-                <span class="simulator-indicator"><i data-lucide="monitor" class="sim-indicator-svg"></i> LIVE SITE PREVIEW SANDBOX</span>
-                <span class="simulator-actions">
-                    <button class="device-toggle active" id="device-desktop" title="Desktop View"><i data-lucide="monitor"></i></button>
-                    <button class="device-toggle" id="device-tablet" title="Tablet View"><i data-lucide="tablet"></i></button>
-                    <button class="device-toggle" id="device-mobile" title="Mobile View"><i data-lucide="smartphone"></i></button>
-                </span>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" id="link-home">Home</a>
+                <a href="#" class="nav-link" id="link-sandbox">Interactive Sandbox</a>
+                <a href="#pricing-section" class="nav-link" id="link-pricing">Pricing</a>
+                <a href="#faq-section" class="nav-link" id="link-faqs">FAQs</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <span class="badge-tag"><i data-lucide="map-pin" class="pin-icon"></i> Yeppoon, QLD</span>
+                <button class="btn btn-primary btn-sm" id="nav-btn-mockup">Get Free Mockup</button>
             </div>
+        </div>
+    </header>
 
-            <!-- Virtual iPad Frame -->
-            <div class="tablet-container" id="tablet-frame-wrapper">
-                <div class="tablet-frame desktop-view" id="sim-frame">
-                    <div class="tablet-camera"></div>
-                    <div class="tablet-screen">
-                        
-                        <!-- Simulated Website Content Container -->
-                        <div class="simulated-website" id="sim-web-content">
-                            <!-- Injected by JavaScript based on active industry -->
-                        </div>
-                        
+    <!-- VIEW 1: AGENCY HOMEPAGE -->
+    <main class="page-view" id="view-home">
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text-block">
+                    <span class="hero-badge-tag"><i data-lucide="sparkles" class="badge-svg"></i> [ PROTO_FIRST WEB STUDIO ]</span>
+                    <h1>We build your website's prototype <span class="highlight-coral">first.</span></h1>
+                    <p class="hero-lead">Get a fully interactive custom landing page built for your local Central Queensland business in 7 days. $0 upfront cost, flat monthly managed plans. See what you get before you pay a single dollar.</p>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg" id="hero-btn-sandbox">Try Sandbox Builder</button>
+                        <button class="btn btn-secondary btn-lg" id="hero-btn-mockup">Request Your Free Mockup</button>
                     </div>
-                    <div class="tablet-home-button"></div>
+                </div>
+                
+                <!-- Hero Visual (Interactive Sandbox teaser card) -->
+                <div class="hero-visual-card">
+                    <div class="visual-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="visual-title">interactive_prototype_sandbox.app</span>
+                    </div>
+                    <div class="visual-body">
+                        <i data-lucide="tablet" class="visual-hero-icon"></i>
+                        <h3>Mockup Sandbox Preview</h3>
+                        <p>Customize niches, toggle conversion badges, and calculate ROI live in our virtual device simulator.</p>
+                        <button class="btn btn-primary btn-sm" id="hero-visual-btn">Launch Builder</button>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Subscription Mechanics (How It Works) -->
+        <section class="features-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">[ 01 / METHODOLOGY ]</span>
+                    <h2>A Better Way To Get Online</h2>
+                    <p>No massive setup invoices. No outdated designs you can't edit. Just flat monthly managed perfection.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="pencil-ruler"></i></div>
+                        <h3>1. Free Custom Prototype</h3>
+                        <p>Tell us your niche. We design a real, customized mockup landing page tailored for Yeppoon/Rocky client conversions. Zero obligation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="refresh-cw"></i></div>
+                        <h3>2. Unlimited Managed Updates</h3>
+                        <p>Need price lists updated? New project gallery images? Email us or send a text. We complete all updates within 24 hours.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="trending-up"></i></div>
+                        <h3>3. High-Performance Hosting & SEO</h3>
+                        <p>SSL protection, fast CDN hosting, and local Google index configuration are standard. We make sure you show up when locals search.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section-container" id="pricing-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">[ 02 / SUBSCRIPTIONS ]</span>
+                    <h2>Simple Managed Subscriptions</h2>
+                    <p>$0 upfront setup cost. Complete hosting, support, and updates included. Cancel anytime.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <!-- Cafe Tier -->
+                    <div class="price-card">
+                        <div class="card-header">
+                            <h3>Cafes & Dining</h3>
+                            <span class="price-badge">$199<span class="mo">/mo</span></span>
+                            <p>Perfect for local cafes, salons, and retail shops requiring order forms or menu catalogs.</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i data-lucide="check"></i> 1x Bespoke Landing Page</li>
+                                <li><i data-lucide="check"></i> Digital Menu or Order ahead forms</li>
+                                <li><i data-lucide="check"></i> 24-Hour Text/Price Updates</li>
+                                <li><i data-lucide="check"></i> High-Speed Local CDN Hosting</li>
+                                <li><i data-lucide="check"></i> SSL Security & Domain Configuration</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary card-btn" data-niche-select="cafe">Try Cafe Sandbox</button>
+                    </div>
+                    
+                    <!-- Tradie Tier (Popular) -->
+                    <div class="price-card popular">
+                        <div class="popular-header">Most Requested</div>
+                        <div class="card-header">
+                            <h3>Trades & Services</h3>
+                            <span class="price-badge">$249<span class="mo">/mo</span></span>
+                            <p>Built for plumbers, sparkies, pest control, and cleaners looking to generate callouts.</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i data-lucide="check"></i> 1x Conversion-Focused Landing Page</li>
+                                <li><i data-lucide="check"></i> Live Dispatch / Estimate Widgets</li>
+                                <li><i data-lucide="check"></i> Trust Badging & On-Time Guarantees</li>
+                                <li><i data-lucide="check"></i> Local CQ Google SEO Indexing</li>
+                                <li><i data-lucide="check"></i> Unlimited Text/Photo Updates</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary card-btn" data-niche-select="plumbing">Try Plumber Sandbox</button>
+                    </div>
+                    
+                    <!-- Specialty Tier -->
+                    <div class="price-card">
+                        <div class="card-header">
+                            <h3>Specialty & Landscapes</h3>
+                            <span class="price-badge">$299<span class="mo">/mo</span></span>
+                            <p>For custom builders, landscapers, and consultants showing off high-end portfolios.</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i data-lucide="check"></i> 1x Premium Staggered Portfolio Page</li>
+                                <li><i data-lucide="check"></i> Before/After Interactive Sliders</li>
+                                <li><i data-lucide="check"></i> Custom Booking Intake Calendars</li>
+                                <li><i data-lucide="check"></i> High-Resolution Project Galleries</li>
+                                <li><i data-lucide="check"></i> Priority 24-Hour Developer Support</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary card-btn" data-niche-select="landscaping">Try Landscape Sandbox</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section-container" id="faq-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">[ 03 / KNOWLEDGE ]</span>
+                    <h2>Common Questions</h2>
+                    <p>Everything you need to know about Central Queensland website subscriptions.</p>
+                </div>
+                
+                <div class="faq-accordion-list">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Why is it $0 upfront? What's the catch?</span>
+                            <i data-lucide="chevron-down" class="accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>No catch. We want to remove all hesitation. We prove our quality by building a live, custom prototype landing page around your business first. If you choose to launch it, we manage the hosting, updates, and domains for a flat monthly fee. If you don't like the design, you don't pay a cent.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Who owns the website and domain name?</span>
+                            <i data-lucide="chevron-down" class="accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>You always own your business domain name. If you have an existing one, we configure it. If you need a new one, we purchase and manage it for you. If you choose to cancel your subscription down the track, we offer a fair asset buyout plan to migrate the website files elsewhere.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What does "unlimited updates" actually include?</span>
+                            <i data-lucide="chevron-down" class="accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>It covers any content edits on your page: changing text, modifying pricing lists, upload of new team photos, updating project galleries, updating phone numbers, or creating new promotion callouts. Simply text or email us the details, and we do it within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Are there lock-in contracts?</span>
+                            <i data-lucide="chevron-down" class="accordion-arrow"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>No. We operate purely month-to-month. If your business direction changes, you cancel the subscription and we take down the site. We align our success with yours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-container">
+                <h2>Ready to see your business prototype?</h2>
+                <p>We research your CQ competitors and construct a fully interactive live design mockup. No credit card required.</p>
+                <button class="btn btn-primary btn-lg" id="cta-btn-open-drawer">Get My Free Prototype Mockup</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="global-footer">
+            <div class="footer-container">
+                <p>📍 Cap Coast Creative. CQ Local Web Design. Built local in Central QLD.</p>
+                <p class="unsubscribe-note">To unsubscribe from any outreach lists, email hello@capcoastcreative.com.au or reply "unsubscribe". All unsubscribe actions are completed within 5 business days.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- VIEW 2: INTERACTIVE PREVIEW SANDBOX (DASHBOARD) -->
+    <main class="page-view hidden" id="view-sandbox">
+        <div class="dashboard-container">
+            
+            <!-- Left Panel: Interactive Console Controls -->
+            <section class="control-panel">
+                <div class="panel-scroll-content">
+                    
+                    <!-- Headline Intro -->
+                    <div class="intro-block">
+                        <h2 class="console-title">Live Prototype Sandbox</h2>
+                        <p>Select an industry and toggle trust conversion badges to customize the simulated mockup in the preview device live.</p>
+                    </div>
+    
+                    <!-- Step 1: Choose Industry -->
+                    <div class="console-section" id="section-niche">
+                        <h3 class="section-num-title"><span>01</span> Select Industry Mockup</h3>
+                        <div class="niche-grid">
+                            <button class="niche-card active" data-niche="plumbing">
+                                <span class="niche-icon-container"><i data-lucide="droplet"></i></span>
+                                <span class="niche-name">Plumbing & Gas</span>
+                                <span class="niche-desc">$249/mo</span>
+                            </button>
+                            <button class="niche-card" data-niche="cafe">
+                                <span class="niche-icon-container"><i data-lucide="coffee"></i></span>
+                                <span class="niche-name">Cafes & Salons</span>
+                                <span class="niche-desc">$199/mo</span>
+                            </button>
+                            <button class="niche-card" data-niche="landscaping">
+                                <span class="niche-icon-container"><i data-lucide="sprout"></i></span>
+                                <span class="niche-name">Landscaping & Digs</span>
+                                <span class="niche-desc">$299/mo</span>
+                            </button>
+                            <button class="niche-card" data-niche="pest">
+                                <span class="niche-icon-container"><i data-lucide="shield-alert"></i></span>
+                                <span class="niche-name">Pest & Carpet</span>
+                                <span class="niche-desc">$249/mo</span>
+                            </button>
+                            <button class="niche-card" data-niche="tour">
+                                <span class="niche-icon-container"><i data-lucide="ship"></i></span>
+                                <span class="niche-name">Scenic Cruises</span>
+                                <span class="niche-desc">$299/mo</span>
+                            </button>
+                            <button class="niche-card" data-niche="gym">
+                                <span class="niche-icon-container"><i data-lucide="dumbbell"></i></span>
+                                <span class="niche-name">Rocky Power Gym</span>
+                                <span class="niche-desc">$249/mo</span>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <!-- Step 2: Live Sandbox Toggles -->
+                    <div class="console-section" id="section-features">
+                        <h3 class="section-num-title"><span>02</span> Toggle Conversion Hooks</h3>
+                        <p class="section-instruction">See how we build confidence before customers call by toggling trust badges:</p>
+                        
+                        <div class="toggle-list">
+                            
+                            <!-- Toggle 1: On-Time Guarantee -->
+                            <label class="toggle-row" id="toggle-opt-ontime">
+                                <div class="toggle-info">
+                                    <span class="toggle-title">On-Time Guarantee Payout</span>
+                                    <span class="toggle-desc">Offers client $50 if late. Eliminates tradie lateness anxiety.</span>
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" id="check-ontime" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+    
+                            <!-- Toggle 2: Cleanup Promise -->
+                            <label class="toggle-row" id="toggle-opt-cleanup">
+                                <div class="toggle-info">
+                                    <span class="toggle-title">Pristine Site / Clean Worksite Badge</span>
+                                    <span class="toggle-desc">Guarantees zero mess left behind. High conversion booster.</span>
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" id="check-cleanup" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+    
+                            <!-- Toggle 3: Police Cleared / Liability -->
+                            <label class="toggle-row" id="toggle-opt-police">
+                                <div class="toggle-info">
+                                    <span class="toggle-title">Police Cleared & $20M Insurance Badges</span>
+                                    <span class="toggle-desc">Injects safety. Critical for residential cleaning and in-home pest services.</span>
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" id="check-police" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+    
+                            <!-- Toggle 4: Waitlist Calculator -->
+                            <label class="toggle-row" id="toggle-opt-waitlist">
+                                <div class="toggle-info">
+                                    <span class="toggle-title">Interactive Estimator / Queue-Skip Booking</span>
+                                    <span class="toggle-desc">Lets clients pre-order or check wait times before scheduling.</span>
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" id="check-waitlist" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                            
+                        </div>
+                    </div>
+    
+                    <!-- Step 3: Subscription & ROI -->
+                    <div class="console-section" id="section-roi">
+                        <h3 class="section-num-title"><span>03</span> Monthly Pricing & ROI</h3>
+                        <div class="roi-summary-box">
+                            <div class="roi-pricing-detail">
+                                <span class="label">Subscription Fee</span>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount" id="pricing-amount">249</span>
+                                    <span class="period">/mo</span>
+                                </div>
+                                <span class="zero-upfront-flag">$0 Upfront. Host & Updates Included.</span>
+                            </div>
+                            
+                            <div class="roi-interactive-slider">
+                                <label for="ticket-slider" class="slider-label">
+                                    <span>Average Ticket Price:</span>
+                                    <span class="ticket-val" id="ticket-val-display">$250</span>
+                                </label>
+                                <input type="range" id="ticket-slider" min="10" max="1500" value="250" step="10">
+                                
+                                <div class="roi-equation">
+                                    <p>You break even with just</p>
+                                    <div class="break-even-number" id="roi-jobs-needed">1.0</div>
+                                    <p class="break-even-unit" id="roi-unit-name">extra jobs per month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Footer Action Buttons -->
+                <footer class="panel-footer">
+                    <button class="btn btn-primary btn-lg btn-block" id="btn-open-drawer">Request Your Free Mockup</button>
+                    <button class="btn btn-secondary btn-lg" id="btn-back-home">Return to Agency Home</button>
+                </footer>
+            </section>
+    
+            <!-- Right Panel: Live Device Sandbox Simulator -->
+            <section class="simulator-panel">
+                <div class="simulator-glow"></div>
+                <div class="simulator-bg-ambient" id="sim-ambient-bg"></div>
+                
+                <div class="simulator-header-bar">
+                    <span class="simulator-indicator"><i data-lucide="monitor" class="sim-indicator-svg"></i> LIVE SITE PREVIEW SANDBOX</span>
+                    <span class="simulator-actions">
+                        <button class="device-toggle active" id="device-desktop" title="Desktop View"><i data-lucide="monitor"></i></button>
+                        <button class="device-toggle" id="device-tablet" title="Tablet View"><i data-lucide="tablet"></i></button>
+                        <button class="device-toggle" id="device-mobile" title="Mobile View"><i data-lucide="smartphone"></i></button>
+                    </span>
+                </div>
+    
+                <!-- Virtual Screen Frame -->
+                <div class="tablet-container" id="tablet-frame-wrapper">
+                    <div class="tablet-frame desktop-view" id="sim-frame">
+                        <div class="tablet-camera"></div>
+                        <div class="tablet-screen">
+                            
+                            <!-- Simulated Website Content Container -->
+                            <div class="simulated-website" id="sim-web-content">
+                                <!-- Injected by JavaScript based on active industry -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        </div>
     </main>
 
     <!-- Slide-Out Lead capture Drawer -->
@@ -258,48 +540,6 @@
             </div>
         </div>
     </aside>
-
-    <!-- FAQ & How It Works Modal -->
-    <div class="faq-modal-overlay hidden" id="faqs-modal">
-        <div class="faq-modal-content">
-            <header class="modal-header">
-                <h2>FAQs & Subscription Architecture</h2>
-                <button class="close-modal-btn" id="btn-close-modal"><i data-lucide="x"></i></button>
-            </header>
-            
-            <div class="modal-body-scroll">
-                <div class="faq-item">
-                    <h4>Why is it $0 upfront? What's the catch?</h4>
-                    <p>No catch. We want to remove all hesitation. We show you what your site could look like by building a mockup first. If you choose to launch it, we manage the hosting, updates, and domains for a flat monthly fee. This aligning ensures we keep your site modern month-to-month.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Who owns the domain name?</h4>
-                    <p>You do. If you have one, we point it to our hosting servers. If you don't, we register it under your business name and configure it fully.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>What is included in the monthly fee?</h4>
-                    <p>Unlimited updates (text, price changes, service details, team profiles), security certificate monitoring, domain renewals, premium local SEO indexing, and enterprise-grade hosting.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Are there lock-in contracts?</h4>
-                    <p>No. We operate month-to-month. If your business changes or you no longer require the site, you can cancel at any time. If you decide to migrate elsewhere, we offer a fair asset buyout plan.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>How long does a mockup take?</h4>
-                    <p>Once requested, we research your business and deliver a fully interactive demo site link in about 7 business days.</p>
-                </div>
-                
-                <div class="modal-bottom-compliance">
-                    <p>📍 Cap Coast Creative. CQ Local Web Design. ABN Placeholder. Built local in Central QLD.</p>
-                    <p class="unsubscribe-note">To unsubscribe from any outreach lists, email hello@capcoastcreative.com.au or reply "unsubscribe". All unsubscribe actions are completed within 5 business days.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Main JavaScript -->
     <script type="module" src="./main.js"></script>

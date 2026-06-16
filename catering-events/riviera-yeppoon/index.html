@@ -16,8 +16,9 @@
   
   <!-- Preload Hero Image -->
   <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body>
+<body data-de-archetype="editorial" data-de-palette="obsidian-dark">
 
   <!-- Glassmorphic Header -->
   <header class="main-header" id="main-header">
@@ -37,7 +38,7 @@
           <li><a href="packages.html" class="nav-link">Packages</a></li>
           <li><a href="planner.html" class="nav-link">Event Builder</a></li>
           <li><a href="about.html" class="nav-link">Our Story</a></li>
-          <li><a href="contact.html" class="nav-link btn-olive">Inquire Now</a></li>
+          <li><a href="contact.html" class="nav-link btn-olive de-btn">Inquire Now</a></li>
         </ul>
       </nav>
     </div>
@@ -45,7 +46,7 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section" id="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; min-height: 90vh; color: var(--white); text-align: center; position: relative;">
+    <section class="hero-section" id="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; min-height: 90vh; color: var(--white); text-align: center; position: relative;" class="de-reveal">
       <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 1;"></div>
       <div class="hero-content" style="position: relative; z-index: 2; max-width: 800px; padding: 2rem;">
         <span class="hero-badge" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; display: inline-block; margin-bottom: 2rem;">Cooee Bay Beachfront, Yeppoon</span>
@@ -54,14 +55,14 @@
           Unveil the ultimate coastal experience. Riviera Yeppoon offers Mediterranean-styled wedding receptions, oceanfront private functions, and premium offsite catering boxes.
         </p>
         <div class="hero-actions" style="display: flex; gap: 1.5rem; justify-content: center;">
-          <a href="planner.html" class="btn btn-primary" style="padding: 1rem 2rem; text-decoration: none;">Build Your Event</a>
-          <a href="tapas.html" class="btn btn-secondary-outline" style="padding: 1rem 2rem; text-decoration: none; border-color: var(--white); color: var(--white);">Sunday Tapas Bookings</a>
+          <a href="planner.html" class="btn btn-primary de-btn" style="padding: 1rem 2rem; text-decoration: none;">Build Your Event</a>
+          <a href="tapas.html" class="btn btn-secondary-outline de-btn" style="padding: 1rem 2rem; text-decoration: none; border-color: var(--white); color: var(--white);">Sunday Tapas Bookings</a>
         </div>
       </div>
     </section>
 
     <!-- Welcome Portal Section -->
-    <section class="portal-section" style="padding: 8rem 0; background-color: var(--bg-cream);">
+    <section class="portal-section" style="padding: 8rem 0; background-color: var(--bg-cream);" class="de-reveal">
       <div class="container">
         <div class="section-intro text-center" style="margin-bottom: 5rem;">
           <span class="section-tag">Beachfront Haven</span>
@@ -73,10 +74,10 @@
 
         <div class="packages-grid mobile-swipe-carousel" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
           <!-- Card 1: Sunday Tapas -->
-          <div class="package-card" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+          <div class="package-card de-reveal" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
             <div>
               <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
-                <img src="/tapas-hero.jpg" alt="Sunday Tapas by the sea" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+                <img src="/tapas-hero.jpg" alt="Sunday Tapas by the sea" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover de-reveal">
               </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M4 7c0 4 3.5 5.5 8 5.5s8-1.5 8-5.5H4z" />
@@ -87,15 +88,15 @@
                 Indulge in curated small plates, zesty local cocktails, and panoramic ocean views of Keppel Bay. Open every Sunday from 12pm.
               </p>
             </div>
-            <a href="tapas.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Book Your Table →</a>
+            <a href="tapas.html" class="btn btn-primary btn-block de-btn" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Book Your Table →</a>
           </div>
 
           <!-- Card 2: Weddings & Functions -->
-          <div class="package-card featured" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid var(--primary-olive); box-shadow: var(--shadow-medium); display: flex; flex-direction: column; justify-content: space-between; text-align: center; position: relative;">
+          <div class="package-card featured de-reveal" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid var(--primary-olive); box-shadow: var(--shadow-medium); display: flex; flex-direction: column; justify-content: space-between; text-align: center; position: relative;">
             <span class="package-badge" style="position: absolute; top: 1.5rem; right: 1.5rem; background-color: var(--primary-olive); color: var(--white); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.4rem 0.8rem; border-radius: 20px; z-index: 10;">Boutique Venue</span>
             <div>
               <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
-                <img src="/gallery2.jpg" alt="Wedding ceremony setup overlooking Cooee Bay beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+                <img src="/gallery2.jpg" alt="Wedding ceremony setup overlooking Cooee Bay beach" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover de-reveal">
               </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M12 3L9 6h6l-3-3z" />
@@ -107,14 +108,14 @@
                 The Capricorn Coast's premier boutique venue. All-inclusive luxury beachfront weddings and celebrations with $0 room hire options.
               </p>
             </div>
-            <a href="packages.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">View Packages →</a>
+            <a href="packages.html" class="btn btn-primary btn-block de-btn" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">View Packages →</a>
           </div>
 
           <!-- Card 3: Interactive Event Builder -->
-          <div class="package-card" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+          <div class="package-card de-reveal" style="background-color: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius); border: 1px solid rgba(93, 101, 86, 0.08); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
             <div>
               <div style="overflow: hidden; border-radius: calc(var(--border-radius) - 4px); aspect-ratio: 1.5; margin-bottom: 1.5rem;">
-                <img src="/about.jpg" alt="Event setup on the oceanfront deck" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover">
+                <img src="/about.jpg" alt="Event setup on the oceanfront deck" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth);" class="card-img-hover de-reveal">
               </div>
               <svg viewBox="0 0 24 24" class="deluxe-icon" aria-hidden="true">
                 <path d="M10 3c0 3.5 1.5 5 5 5-3.5 0-5 1.5-5 5 0-3.5-1.5-5-5-5 3.5 0 5-1.5 5-5z" />
@@ -125,14 +126,14 @@
                 Calculate your estimated beachfront event budget in real time. Choose occasions, menus, drinks, and guest counts instantly.
               </p>
             </div>
-            <a href="planner.html" class="btn btn-primary btn-block" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Build Your Event →</a>
+            <a href="planner.html" class="btn btn-primary btn-block de-btn" style="margin-top: 2.5rem; display: block; text-decoration: none; padding: 0.9rem;">Build Your Event →</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Social Proof / Testimonials -->
-    <section class="testimonials-section" id="testimonials" style="padding: 8rem 0; background-color: var(--white);">
+    <section class="testimonials-section" id="testimonials" style="padding: 8rem 0; background-color: var(--white);" class="de-reveal">
       <div class="container">
         <div class="section-intro text-center" style="margin-bottom: 5rem;">
           <span class="section-tag">Kind Words</span>
@@ -141,7 +142,7 @@
 
         <div class="testimonials-grid mobile-swipe-carousel">
           <!-- Review 1 -->
-          <div class="testimonial-card">
+          <div class="testimonial-card de-reveal">
             <div class="stars">★★★★★</div>
             <p class="review-text">
               "We booked Riviera for our wedding last month and it was beyond magical! Sally took care of every detail, the Vows & Vino package was perfect. The champagne tower was a huge hit, and the tapas were delicious!"
@@ -153,7 +154,7 @@
           </div>
 
           <!-- Review 2 -->
-          <div class="testimonial-card">
+          <div class="testimonial-card de-reveal">
             <div class="stars">★★★★★</div>
             <p class="review-text">
               "Sally and the team catered our corporate luncheon. The platter delivery was perfectly timed, and the food was incredibly fresh. Guests couldn't stop praising the seafood selection. Highly recommend!"
@@ -165,7 +166,7 @@
           </div>
 
           <!-- Review 3 -->
-          <div class="testimonial-card">
+          <div class="testimonial-card de-reveal">
             <div class="stars">★★★★★</div>
             <p class="review-text">
               "Sunday Tapas is our weekly ritual. The ocean breeze, the Limoncello spritz, and the calamari are to die for. Riviera has brought true Mediterranean elegance to the Capricorn Coast."
@@ -235,5 +236,6 @@
 
   <!-- Link Main JS with Vite support -->
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./src/design-engine.js"></script>
 </body>
 </html>

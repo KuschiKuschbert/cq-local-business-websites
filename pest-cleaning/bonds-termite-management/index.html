@@ -11,8 +11,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Space+Mono&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body class="theme-dark-charcoal">
+<body class="theme-dark-charcoal" data-de-archetype="nordic" data-de-palette="terracotta-clay">
 <header class="navbar" id="navbar">
 <div class="container navbar-container">
 <a class="logo-link" href="#">
@@ -27,7 +28,7 @@
 <a class="nav-link" href="#risk-assessment">Risk Assessment</a>
 <a class="nav-link" href="#barriers">Barrier Systems</a>
 <a class="nav-link" href="#testimonials">Case Files</a>
-<a class="btn btn-primary nav-btn" href="#contact">Request Survey</a>
+<a class="btn btn-primary nav-btn de-btn" href="#contact">Request Survey</a>
 </nav>
 <button aria-label="Toggle Menu" class="mobile-toggle" id="mobile-toggle">
 <span></span>
@@ -38,7 +39,7 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" class="de-reveal">
 <div class="hero-dots-pattern"></div>
 <div class="container hero-container">
 <div class="hero-content">
@@ -46,15 +47,15 @@
 <span class="badge-icon">⚠️</span>
 <span>Capricorn Coast structural threat advisory</span>
 </div>
-<h1 class="hero-title">Protect Your Greatest Asset From Termites</h1>
+<h1 class="hero-title" class="de-kinetic-text">Protect Your Greatest Asset From Termites</h1>
 <p class="hero-subtitle">Termite damage is not covered by standard home insurance. We build certified chemical soil barriers and thermal monitoring networks to lock out subterranean chewers.</p>
 <div class="hero-actions">
-<a class="btn btn-primary btn-large" href="#risk-assessment">Assess Property Risk</a>
-<a class="btn btn-outline btn-large" href="#contact">Book $20M Certified Barrier Quote</a>
+<a class="btn btn-primary btn-large de-btn" href="#risk-assessment">Assess Property Risk</a>
+<a class="btn btn-outline btn-large de-btn" href="#contact">Book $20M Certified Barrier Quote</a>
 </div>
 </div>
 <div class="hero-graphic">
-<div class="structural-shield-card">
+<div class="structural-shield-card de-reveal">
 <img alt="Termite specialist installing soil chemical barrier" decoding="async" fetchpriority="high" src="/hero.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; border-radius: inherit;"/>
 <div class="floating-badge top-right">
 <span class="fb-title">AS 3660.1</span>
@@ -69,7 +70,7 @@
 </div>
 </section>
 <!-- Trust Grid -->
-<section class="trust-strip">
+<section class="trust-strip" class="de-reveal">
 <div class="container strip-grid">
 <div class="strip-item">
 <strong>AS 3660 Compliant</strong>
@@ -86,7 +87,7 @@
 </div>
 </section>
 <!-- Structural Inspections Info -->
-<section class="section section-alt" id="about">
+<section class="section section-alt" id="about" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Scientific Containment</span>
@@ -94,15 +95,15 @@
 <p class="section-subtitle">We deploy radar wave technology and moisture mapping tools. We find termites hidden inside walls before they destroy structural timbers.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card spec-card">
+<div class="card spec-card de-reveal">
 <h3>🔍 Termatrac T3i Radar</h3>
 <p>The world's leading radar detection device, scanning structural beams for movement, moisture, and heat logs without drilling holes.</p>
 </div>
-<div class="card spec-card">
+<div class="card spec-card de-reveal">
 <h3>🧱 Termidor Chemical Barriers</h3>
 <p>A continuous treated zone in the soil around the footings of your home. Termites crawl through, carry it to the nest, and eradicate the colony.</p>
 </div>
-<div class="card spec-card">
+<div class="card spec-card de-reveal">
 <h3>🪤 Sentricon Baiting Stations</h3>
 <p>High-security monitoring stations positioned around the house perimeter. Uses non-repellent food baits to lock down yard activity.</p>
 </div>
@@ -110,7 +111,7 @@
 </div>
 </section>
 <!-- Interactive Termite Risk Calculator -->
-<section class="section" id="risk-assessment">
+<section class="section" id="risk-assessment" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Property Diagnostic</span>
@@ -123,15 +124,15 @@
 <div class="risk-input-group">
 <label class="risk-label">1. Property Age &amp; Material</label>
 <div class="risk-options-grid">
-<button class="risk-opt-btn active" data-group="age" data-points="1" data-value="new" type="button">
+<button class="risk-opt-btn active de-btn" data-group="age" data-points="1" data-value="new" type="button">
 <strong>Under 5 Years</strong>
 <span>Modern slab build</span>
 </button>
-<button class="risk-opt-btn" data-group="age" data-points="3" data-value="middle" type="button">
+<button class="risk-opt-btn de-btn" data-group="age" data-points="3" data-value="middle" type="button">
 <strong>5 - 20 Years</strong>
 <span>Settled foundations</span>
 </button>
-<button class="risk-opt-btn" data-group="age" data-points="5" data-value="old" type="button">
+<button class="risk-opt-btn de-btn" data-group="age" data-points="5" data-value="old" type="button">
 <strong>20+ Years / Timber</strong>
 <span>High risk structure</span>
 </button>
@@ -141,15 +142,15 @@
 <div class="risk-input-group">
 <label class="risk-label">2. Capricorn Coast Location Soil Type</label>
 <div class="risk-options-grid">
-<button class="risk-opt-btn active" data-group="soil" data-points="2" data-value="sand" type="button">
+<button class="risk-opt-btn active de-btn" data-group="soil" data-points="2" data-value="sand" type="button">
 <strong>Coastal Sand</strong>
 <span>Lammermoor / Mulambin</span>
 </button>
-<button class="risk-opt-btn" data-group="soil" data-points="3" data-value="clay" type="button">
+<button class="risk-opt-btn de-btn" data-group="soil" data-points="3" data-value="clay" type="button">
 <strong>Clay / Loam</strong>
 <span>Taroomball / central</span>
 </button>
-<button class="risk-opt-btn" data-group="soil" data-points="5" data-value="bush" type="button">
+<button class="risk-opt-btn de-btn" data-group="soil" data-points="5" data-value="bush" type="button">
 <strong>Heavy Bush / Trees</strong>
 <span>Barlows Hill / Forest</span>
 </button>
@@ -159,15 +160,15 @@
 <div class="risk-input-group">
 <label class="risk-label">3. Local Termite History</label>
 <div class="risk-options-grid">
-<button class="risk-opt-btn active" data-group="history" data-points="1" data-value="none" type="button">
+<button class="risk-opt-btn active de-btn" data-group="history" data-points="1" data-value="none" type="button">
 <strong>No known activity</strong>
 <span>Standard precaution</span>
 </button>
-<button class="risk-opt-btn" data-group="history" data-points="4" data-value="nearby" type="button">
+<button class="risk-opt-btn de-btn" data-group="history" data-points="4" data-value="nearby" type="button">
 <strong>Active in neighborhood</strong>
 <span>Within 100 meters</span>
 </button>
-<button class="risk-opt-btn" data-group="history" data-points="6" data-value="threat" type="button">
+<button class="risk-opt-btn de-btn" data-group="history" data-points="6" data-value="threat" type="button">
 <strong>Spotted on property</strong>
 <span>Active chewing risk</span>
 </button>
@@ -176,7 +177,7 @@
 </div>
 <!-- Risk Status Panel -->
 <div class="risk-status-panel">
-<div class="status-card" id="risk-result-card">
+<div class="status-card de-reveal" id="risk-result-card">
 <div class="risk-badge" id="risk-rating-badge">LOW RISK</div>
 <h3 class="status-title">Vulnerability Rating</h3>
 <div class="risk-meter">
@@ -193,7 +194,7 @@
 <span>Recommended System:</span>
 <strong id="recommended-system">Annual Thermal Radar Inspection</strong>
 </div>
-<a class="btn btn-primary btn-full-width" href="#contact" id="claim-assessment-btn">Book Assessment &amp; Quote</a>
+<a class="btn btn-primary btn-full-width de-btn" href="#contact" id="claim-assessment-btn">Book Assessment &amp; Quote</a>
 <span class="security-guarantee">🔒 AS 3660 Structural Certification Provided</span>
 </div>
 </div>
@@ -201,7 +202,7 @@
 </div>
 </section>
 <!-- Barrier systems -->
-<section class="section section-alt" id="barriers">
+<section class="section section-alt" id="barriers" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Chemical &amp; Physical Shields</span>
@@ -209,30 +210,30 @@
 <p class="section-subtitle">High-quality barrier defense networks installed by certified specialists.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card barrier-card">
+<div class="card barrier-card de-reveal">
 <h4>Sentricon AlwaysActive</h4>
 <p class="bc-desc">Continuous baiting technology using rodent-safe toxic active matrix. Placed in plastic ground housings.</p>
 <div class="bc-price">From $1,200</div>
-<a class="btn btn-secondary btn-full-width barrier-select-btn" data-system="Sentricon AlwaysActive" href="#contact">Select System</a>
+<a class="btn btn-secondary btn-full-width barrier-select-btn de-btn" data-system="Sentricon AlwaysActive" href="#contact">Select System</a>
 </div>
-<div class="card barrier-card featured">
+<div class="card barrier-card featured de-reveal">
 <div class="featured-tag">Most Recommended</div>
 <h4>Termidor Soil Barrier</h4>
 <p class="bc-desc">Full perimeter soil trenching and chemical treatment. Creates an invisible, non-repellent structural shield.</p>
 <div class="bc-price">From $2,400</div>
-<a class="btn btn-primary btn-full-width barrier-select-btn" data-system="Termidor Soil Barrier" href="#contact">Select System</a>
+<a class="btn btn-primary btn-full-width barrier-select-btn de-btn" data-system="Termidor Soil Barrier" href="#contact">Select System</a>
 </div>
-<div class="card barrier-card">
+<div class="card barrier-card de-reveal">
 <h4>Reticulation System</h4>
 <p class="bc-desc">Perforated pipe network placed underneath slabs. Allows easy chemical recharging every 3-5 years.</p>
 <div class="bc-price">From $1,800</div>
-<a class="btn btn-secondary btn-full-width barrier-select-btn" data-system="Reticulation System" href="#contact">Select System</a>
+<a class="btn btn-secondary btn-full-width barrier-select-btn de-btn" data-system="Reticulation System" href="#contact">Select System</a>
 </div>
 </div>
 </div>
 </section>
 <!-- Case Files / Testimonials -->
-<section class="section" id="testimonials">
+<section class="section" id="testimonials" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Success Audits</span>
@@ -240,15 +241,15 @@
 <p class="section-subtitle">Read reviews from Yeppoon property owners who secured their building foundations.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <p>"Bonds Termite Management installed a Termidor soil barrier around our house in Barlows Hill. Highly professional excavation work, neat finishes, and full certification paper files provided for our records."</p>
 <h5>Richard S. - Barlows Hill</h5>
 </div>
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <p>"We bought an older timber house in Mulambin. Bonds did a complete thermal scan and detected an active nest in our backyard stumps. Deployed Sentricon baiting systems. Colony dead in 6 weeks."</p>
 <h5>Patricia J. - Mulambin</h5>
 </div>
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <p>"Prompt service, detailed assessment reporting, and clear explanations. Highly recommended for peace of mind structural control."</p>
 <h5>Anthony L. - Yeppoon Central</h5>
 </div>
@@ -256,7 +257,7 @@
 </div>
 </section>
 <!-- Contact/Quote Booking Section -->
-<section class="section section-alt" id="contact">
+<section class="section section-alt" id="contact" class="de-reveal">
 <div class="container">
 <div class="booking-grid">
 <div class="booking-info">
@@ -265,28 +266,28 @@
 <p>Secure your property today. Get in touch with our accredited inspectors. We will arrange a convenient thermal assessment time and coordinate quotes.</p>
 <!-- Trust Badges -->
 <div class="trust-badges-proposal" style="margin-top: 2rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">👮</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">Police Checked</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Technicians certified &amp; cleared.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🛡️</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">$20M Warranty</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Underwritten structural cover.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💰</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">Fixed Price</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Upfront estimates honored on-site.</p>
 </div>
 </div>
-<div class="direct-contact-card">
+<div class="direct-contact-card de-reveal">
 <p>📍 <strong>HQ:</strong> Yeppoon, QLD 4703</p>
 <p>📞 <strong>Phone:</strong> 0400 999 TERM (0400 999 837)</p>
 </div>
 </div>
-<div class="card form-card">
+<div class="card form-card de-reveal">
 <form id="termite-form">
 <div class="form-group">
 <label for="t-name">Full Name *</label>
@@ -326,7 +327,7 @@
 <input id="ack-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: var(--primary);" type="checkbox"/>
 <label for="ack-pricing" style="font-size: 0.85rem; color: #94a3b8; cursor: pointer; text-align: left;">I verify the property details and acknowledge the upfront quote promise and licensed AS 3660 protocols.</label>
 </div>
-<button class="btn btn-primary btn-full-width" id="btn-submit-termite" type="submit">Deploy Structural Inspectors</button>
+<button class="btn btn-primary btn-full-width de-btn" id="btn-submit-termite" type="submit">Deploy Structural Inspectors</button>
 <div class="alert-success hidden" id="termite-success">
                   ⚠️ Request logged! A licensed Termite Shield technician will call you in under 1 hour to schedule the site survey.
                 </div>
@@ -401,5 +402,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  <script type="module" src="./src/design-engine.js"></script>
+</body>
 </html>

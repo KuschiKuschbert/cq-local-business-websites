@@ -1,0 +1,3 @@
+date,automation_id,name,kind,status,schedule,workspace,safety_gate,notes
+2026-06-16,cap-coast-prospect-scan,cap-coast-prospect-scan,cron,ACTIVE,"FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=8;BYMINUTE=0;BYSECOND=0",/Users/danielkuschmierz/Documents/website ideas,Research-only with capture/log gates.,"Reads actual Codex automation config; does not create, update, or run automations."
+2026-06-16,monitor-cq-outreach-replies,Monitor CQ outreach replies,heartbeat,ACTIVE,FREQ=HOURLY;INTERVAL=1,019ec2c3-3bbf-78e0-b5c0-69c39debf1d0,Report-only; no send/contact actions.,"Reads actual Codex automation config; does not create, update, or run automations."

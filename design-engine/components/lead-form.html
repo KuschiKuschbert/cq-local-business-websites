@@ -1,0 +1,72 @@
+<!-- 
+  Cap Coast Design Engine - Niche Lead Forms
+  Responsive, modern, accessibility-compliant lead forms that adapt to any active archetype.
+-->
+<div class="de-lead-form-container de-glass-card" style="padding: 3rem; border-radius: var(--de-border-radius); border: var(--de-border-width) solid var(--color-border); max-width: 600px; margin: 2rem auto;">
+  <div style="margin-bottom: 2rem;">
+    <h3 style="margin-bottom: 0.5rem; font-size: 1.75rem;" class="de-kinetic-text">Request a Free Quote</h3>
+    <p style="opacity: 0.75; font-size: 0.95rem;">Fill out the form below, and our local team will be in touch within 24 hours.</p>
+  </div>
+
+  <form id="deLeadForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- Name Field -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label for="clientName" style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Full Name</label>
+      <input type="text" id="clientName" required placeholder="John Doe" 
+        style="width: 100%; padding: 1rem; background: var(--bg-secondary); border: var(--de-border-width) solid var(--color-border); color: var(--color-text); font-family: inherit; outline: none; border-radius: calc(var(--de-border-radius) / 2); transition: var(--de-transition-smooth);">
+    </div>
+
+    <!-- Contact details (Split row) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+      <!-- Email Field -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label for="clientEmail" style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Email Address</label>
+        <input type="email" id="clientEmail" required placeholder="john@company.com" 
+          style="width: 100%; padding: 1rem; background: var(--bg-secondary); border: var(--de-border-width) solid var(--color-border); color: var(--color-text); font-family: inherit; outline: none; border-radius: calc(var(--de-border-radius) / 2); transition: var(--de-transition-smooth);">
+      </div>
+
+      <!-- Phone Field -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label for="clientPhone" style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Phone Number</label>
+        <input type="tel" id="clientPhone" required placeholder="0400 000 000" 
+          style="width: 100%; padding: 1rem; background: var(--bg-secondary); border: var(--de-border-width) solid var(--color-border); color: var(--color-text); font-family: inherit; outline: none; border-radius: calc(var(--de-border-radius) / 2); transition: var(--de-transition-smooth);">
+      </div>
+    </div>
+
+    <!-- Niche Service Selection -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label for="serviceType" style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Service Required</label>
+      <select id="serviceType" 
+        style="width: 100%; padding: 1rem; background: var(--bg-secondary); border: var(--de-border-width) solid var(--color-border); color: var(--color-text); font-family: inherit; outline: none; border-radius: calc(var(--de-border-radius) / 2); transition: var(--de-transition-smooth); cursor: pointer;">
+        <option value="general">General Inquiry</option>
+        <option value="maintenance">Preventative Maintenance</option>
+        <option value="emergency">Emergency / Urgent Service</option>
+        <option value="consultation">Design Consultation</option>
+      </select>
+    </div>
+
+    <!-- Message Details -->
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label for="clientMessage" style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Project Description / Notes</label>
+      <textarea id="clientMessage" rows="4" placeholder="Tell us about your project or service needs..." 
+        style="width: 100%; padding: 1rem; background: var(--bg-secondary); border: var(--de-border-width) solid var(--color-border); color: var(--color-text); font-family: inherit; outline: none; border-radius: calc(var(--de-border-radius) / 2); transition: var(--de-transition-smooth); resize: vertical;"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="de-btn" style="margin-top: 1rem; align-self: flex-start;">Submit Quote Request</button>
+  </form>
+</div>
+
+<script>
+  // Add input focus glow states dynamically
+  document.querySelectorAll('#deLeadForm input, #deLeadForm select, #deLeadForm textarea').forEach(element => {
+    element.addEventListener('focus', () => {
+      element.style.borderColor = 'var(--color-primary)';
+      element.style.boxShadow = '0 0 10px var(--glow-color)';
+    });
+    element.addEventListener('blur', () => {
+      element.style.borderColor = 'var(--color-border)';
+      element.style.boxShadow = 'none';
+    });
+  });
+</script>

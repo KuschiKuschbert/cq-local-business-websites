@@ -23,7 +23,8 @@ for row in read_csv(p("prospect_intake.csv")):
     social = "verified" if contains(row.get("socials"), SOCIAL) else "link-found-review-needed" if contains(row.get("source_urls"), SOCIAL) and not weak(row.get("observed_social_signal")) else "needs-verification"
     website = "owned-website-found" if row.get("website") else "owned-website-missing" if "no dedicated" in (row.get("observed_website_gap") or "").lower() or "directory-only" in (row.get("observed_website_gap") or "").lower() else "unknown"
     source = "directory-and-social" if contains(row.get("source_urls"), SOCIAL) and contains(row.get("source_urls"), DIRS) else "social-source" if contains(row.get("source_urls"), SOCIAL) else "directory-source" if contains(row.get("source_urls"), DIRS) else "other-public-source"
-    readiness = "promotion-review-ready" if social == "verified" and website in {"owned-website-missing", "directory-only", "unknown"} else "research-more"
+    has_gap = bool(clean(row.get("observed_website_gap"), ""))
+    readiness = "promotion-review-ready" if social == "verified" and (has_gap or website in {"owned-website-missing", "directory-only", "unknown"}) else "research-more"
     rows.append({
         "date": today(),
         "business": clean(row.get("business")),

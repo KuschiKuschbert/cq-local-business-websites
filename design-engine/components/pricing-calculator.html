@@ -1,0 +1,86 @@
+<!-- 
+  Cap Coast Design Engine - Interactive Service Estimator
+  Adaptable calculator component that shifts styling with the current design archetype.
+-->
+<div class="de-calculator-container de-glass-card" style="padding: 3rem; border-radius: var(--de-border-radius); border: var(--de-border-width) solid var(--color-border); max-width: 600px; margin: 2rem auto;">
+  <div style="margin-bottom: 2.5rem;">
+    <h3 style="margin-bottom: 0.5rem; font-size: 1.75rem;" class="de-kinetic-text">Estimate Your Project</h3>
+    <p style="opacity: 0.75; font-size: 0.95rem;">Drag the sliders below to estimate the baseline cost of our services.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 2rem;">
+    <!-- Factor 1: Scale / Size -->
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <div style="display: flex; justify-content: space-between; font-family: var(--de-font-mono, monospace); font-size: 0.8rem; text-transform: uppercase;">
+        <span>Project Scope (e.g. Area / Guests)</span>
+        <span id="scopeValue" style="color: var(--color-primary); font-weight: 700;">150 Units</span>
+      </div>
+      <input type="range" id="scopeRange" min="10" max="500" value="150" 
+        style="width: 100%; accent-color: var(--color-primary); cursor: pointer; height: 6px; border-radius: 3px; outline: none; background: var(--bg-secondary);">
+    </div>
+
+    <!-- Factor 2: Complexity / Tier -->
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <span style="font-family: var(--de-font-mono, monospace); font-size: 0.8rem; text-transform: uppercase; opacity: 0.8;">Service Complexity</span>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+        <button type="button" class="de-calc-tier de-btn" data-multiplier="1.0" style="padding: 0.75rem; font-size: 0.85rem;">Standard</button>
+        <button type="button" class="de-calc-tier de-btn" data-multiplier="1.4" style="padding: 0.75rem; font-size: 0.85rem;">Premium</button>
+        <button type="button" class="de-calc-tier de-btn" data-multiplier="1.8" style="padding: 0.75rem; font-size: 0.85rem;">Elite</button>
+      </div>
+    </div>
+
+    <!-- Live Output Area -->
+    <div style="padding: 2rem; background: var(--bg-secondary); border-radius: calc(var(--de-border-radius) / 2); text-align: center; border: 1px solid var(--color-border); margin-top: 1rem;">
+      <span style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; text-transform: uppercase; opacity: 0.6; display: block; margin-bottom: 0.5rem;">Estimated Price Range</span>
+      <h2 id="totalEstimation" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin: 0;" class="text-glow">$1,500 - $2,100</h2>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin: 0.75rem 0 0;">*Subject to final site inspection & custom design brief requirements.</p>
+    </div>
+
+    <button class="de-btn" style="width: 100%;">Book On-Site Consult</button>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const scopeRange = document.getElementById('scopeRange');
+    const scopeValue = document.getElementById('scopeValue');
+    const totalEstimation = document.getElementById('totalEstimation');
+    const tierButtons = document.querySelectorAll('.de-calc-tier');
+
+    let activeMultiplier = 1.0;
+    const baseRatePerUnit = 10; // $10 per square meter / guest / unit
+
+    // Active state tracker for complexity selection
+    tierButtons.forEach((btn, idx) => {
+      // Set initial active status on the first (Standard) button
+      if(idx === 0) btn.style.background = 'var(--color-primary)';
+      
+      btn.addEventListener('click', () => {
+        tierButtons.forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--color-text)';
+        });
+        btn.style.background = 'var(--color-primary)';
+        btn.style.color = 'var(--bg-primary)';
+        
+        activeMultiplier = parseFloat(btn.getAttribute('data-multiplier'));
+        updatePrice();
+      });
+    });
+
+    // Handle range updates
+    scopeRange.addEventListener('input', (e) => {
+      scopeValue.textContent = `${e.target.value} Units`;
+      updatePrice();
+    });
+
+    function updatePrice() {
+      const units = parseInt(scopeRange.value);
+      const median = Math.round(units * baseRatePerUnit * activeMultiplier);
+      const low = Math.round(median * 0.9);
+      const high = Math.round(median * 1.1);
+
+      totalEstimation.textContent = `$${low.toLocaleString()} - $${high.toLocaleString()}`;
+    }
+  })();
+</script>

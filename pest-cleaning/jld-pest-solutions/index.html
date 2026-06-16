@@ -11,8 +11,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body>
+<body data-de-archetype="nordic" data-de-palette="terracotta-clay">
 <header class="navbar" id="navbar">
 <div class="container navbar-container">
 <a class="logo-link" href="#" id="home-logo">
@@ -28,7 +29,7 @@
 <a class="nav-link" href="#plan-configurator">Find Your Plan</a>
 <a class="nav-link" href="#plans">Our Plans</a>
 <a class="nav-link" href="#testimonials">Reviews</a>
-<a class="btn btn-primary nav-btn" href="#contact" id="nav-cta-btn">Book Eco-Guard</a>
+<a class="btn btn-primary nav-btn de-btn" href="#contact" id="nav-cta-btn">Book Eco-Guard</a>
 </nav>
 <button aria-label="Toggle Menu" class="mobile-toggle" id="mobile-toggle">
 <span></span>
@@ -39,7 +40,7 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="hero-section" id="hero">
+<section class="hero-section" id="hero" class="de-reveal">
 <div class="hero-bg-shapes">
 <div class="shape shape-1"></div>
 <div class="shape shape-2"></div>
@@ -50,11 +51,11 @@
 <span class="badge-icon">🌿</span>
 <span>100% Eco-Friendly &amp; Family Safe</span>
 </div>
-<h1 class="hero-title">Safe, Smart Pest Barriers for Yeppoon Homes</h1>
+<h1 class="hero-title" class="de-kinetic-text">Safe, Smart Pest Barriers for Yeppoon Homes</h1>
 <p class="hero-subtitle">Protect your home and family from pests without harsh chemical residues. Our Capricorn Coast botanical treatments target pests, not your environment.</p>
 <div class="hero-actions">
-<a class="btn btn-primary btn-large" href="#plan-configurator">Customize Your Plan</a>
-<a class="btn btn-secondary btn-large" href="#about">Our Botanical Solution</a>
+<a class="btn btn-primary btn-large de-btn" href="#plan-configurator">Customize Your Plan</a>
+<a class="btn btn-secondary btn-large de-btn" href="#about">Our Botanical Solution</a>
 </div>
 <div class="hero-stats">
 <div class="stat-item">
@@ -72,7 +73,7 @@
 </div>
 </div>
 <div class="hero-illustration">
-<div class="illustration-card">
+<div class="illustration-card de-reveal">
 <img alt="Eco-friendly pest barrier treatment on a lush green lawn" class="illustration-img" decoding="async" fetchpriority="high" src="/hero.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius-lg);"/>
 <div class="illustration-floating-badge top-right">
 <span class="fb-icon">🔒</span>
@@ -93,7 +94,7 @@
 </div>
 </section>
 <!-- Eco features Section -->
-<section class="section section-alt" id="about">
+<section class="section section-alt" id="about" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Why Botanical Barriers?</span>
@@ -101,7 +102,7 @@
 <p class="section-subtitle">We protect your residence using naturally derived botanical extracts like pyrethrin, rosemary, and cedarwood oil. Maximum impact on bugs, zero impact on your loved ones.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card feature-card">
+<div class="card feature-card de-reveal">
 <div class="feature-icon-wrapper">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -111,7 +112,7 @@
 <h3>Safe Barrier Tech</h3>
 <p>Creates a micro-encapsulated organic barrier around external entry points, deterring pests before they enter.</p>
 </div>
-<div class="card feature-card">
+<div class="card feature-card de-reveal">
 <div class="feature-icon-wrapper">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -120,7 +121,7 @@
 <h3>Localized Targeting</h3>
 <p>Custom treatments formulated specifically for Capricorn Coast species, humidity patterns, and breeding seasons.</p>
 </div>
-<div class="card feature-card">
+<div class="card feature-card de-reveal">
 <div class="feature-icon-wrapper">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -133,7 +134,7 @@
 </div>
 </section>
 <!-- Interactive Plan Configurator -->
-<section class="section" id="plan-configurator">
+<section class="section" id="plan-configurator" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Interactive Helper</span>
@@ -146,17 +147,17 @@
 <div class="config-group">
 <label class="config-label">1. Select House Size</label>
 <div class="house-options">
-<button class="option-btn active" data-size="small" type="button">
+<button class="option-btn active de-btn" data-size="small" type="button">
 <span class="option-icon">🏡</span>
 <span class="option-title">1 - 2 Bedrooms</span>
 <span class="option-desc">Small home or unit</span>
 </button>
-<button class="option-btn" data-size="medium" type="button">
+<button class="option-btn de-btn" data-size="medium" type="button">
 <span class="option-icon">🏠</span>
 <span class="option-title">3 - 4 Bedrooms</span>
 <span class="option-desc">Standard family home</span>
 </button>
-<button class="option-btn" data-size="large" type="button">
+<button class="option-btn de-btn" data-size="large" type="button">
 <span class="option-icon">🏰</span>
 <span class="option-title">5+ Bedrooms</span>
 <span class="option-desc">Large multi-story home</span>
@@ -167,7 +168,7 @@
 <div class="config-group">
 <label class="config-label">2. Select Target Pests (Tick all that apply)</label>
 <div class="pest-checkboxes">
-<div class="pest-checkbox-card checked" data-pest="insects" id="chk-insects">
+<div class="pest-checkbox-card checked de-reveal" data-pest="insects" id="chk-insects">
 <div class="chk-header">
 <input checked="" class="hidden-chk" id="pest-insects" type="checkbox"/>
 <label class="custom-chk" for="pest-insects"></label>
@@ -175,7 +176,7 @@
 </div>
 <p class="pest-chk-desc">Standard residential insects. Covers kitchen, crawlspaces, skirting.</p>
 </div>
-<div class="pest-checkbox-card checked" data-pest="rodents" id="chk-rodents">
+<div class="pest-checkbox-card checked de-reveal" data-pest="rodents" id="chk-rodents">
 <div class="chk-header">
 <input checked="" class="hidden-chk" id="pest-rodents" type="checkbox"/>
 <label class="custom-chk" for="pest-rodents"></label>
@@ -183,7 +184,7 @@
 </div>
 <p class="pest-chk-desc">Secure eco-friendly baiting stations in roof cavity &amp; subfloors.</p>
 </div>
-<div class="pest-checkbox-card" data-pest="termites" id="chk-termites">
+<div class="pest-checkbox-card de-reveal" data-pest="termites" id="chk-termites">
 <div class="chk-header">
 <input class="hidden-chk" id="pest-termites" type="checkbox"/>
 <label class="custom-chk" for="pest-termites"></label>
@@ -191,7 +192,7 @@
 </div>
 <p class="pest-chk-desc">Full thermal imaging inspection + radar checking structural joists.</p>
 </div>
-<div class="pest-checkbox-card" data-pest="fleas" id="chk-fleas">
+<div class="pest-checkbox-card de-reveal" data-pest="fleas" id="chk-fleas">
 <div class="chk-header">
 <input class="hidden-chk" id="pest-fleas" type="checkbox"/>
 <label class="custom-chk" for="pest-fleas"></label>
@@ -204,7 +205,7 @@
 </div>
 <!-- Recommendation Display Card -->
 <div class="configurator-preview">
-<div class="preview-card">
+<div class="preview-card de-reveal">
 <div class="preview-badge" id="recommended-plan-badge">Eco-Essential Plan</div>
 <h3 class="preview-title">Your Custom Eco Shield</h3>
 <div class="preview-price-container">
@@ -216,7 +217,7 @@
 <div class="preview-features-list" id="calc-features">
 <!-- JS will fill this -->
 </div>
-<a class="btn btn-primary btn-full-width" href="#contact" id="select-custom-plan">Book This Plan Now</a>
+<a class="btn btn-primary btn-full-width de-btn" href="#contact" id="select-custom-plan">Book This Plan Now</a>
 <p class="preview-guarantee">🛡️ Includes 12-Month Free Service Guarantee</p>
 </div>
 </div>
@@ -224,7 +225,7 @@
 </div>
 </section>
 <!-- All plans comparison -->
-<section class="section section-alt" id="plans">
+<section class="section section-alt" id="plans" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Standard Offerings</span>
@@ -233,7 +234,7 @@
 </div>
 <div class="grid grid-3-col">
 <!-- Plan 1 -->
-<div class="card pricing-card">
+<div class="card pricing-card de-reveal">
 <div class="pricing-header">
 <h3>Eco-Essential</h3>
 <p>Perfect for flats and standard apartments.</p>
@@ -252,11 +253,11 @@
 <li class="disabled">❌ Termite radar scanning</li>
 </ul>
 <div class="pricing-action">
-<a class="btn btn-secondary btn-full-width plan-select-btn" data-plan-name="Eco-Essential" href="#contact">Choose Eco-Essential</a>
+<a class="btn btn-secondary btn-full-width plan-select-btn de-btn" data-plan-name="Eco-Essential" href="#contact">Choose Eco-Essential</a>
 </div>
 </div>
 <!-- Plan 2 -->
-<div class="card pricing-card featured">
+<div class="card pricing-card featured de-reveal">
 <div class="featured-banner">Most Popular</div>
 <div class="pricing-header">
 <h3>Eco-Guard Premium</h3>
@@ -276,11 +277,11 @@
 <li class="disabled">❌ Termite radar scanning</li>
 </ul>
 <div class="pricing-action">
-<a class="btn btn-primary btn-full-width plan-select-btn" data-plan-name="Eco-Guard Premium" href="#contact">Choose Eco-Guard Premium</a>
+<a class="btn btn-primary btn-full-width plan-select-btn de-btn" data-plan-name="Eco-Guard Premium" href="#contact">Choose Eco-Guard Premium</a>
 </div>
 </div>
 <!-- Plan 3 -->
-<div class="card pricing-card">
+<div class="card pricing-card de-reveal">
 <div class="pricing-header">
 <h3>Eco-Complete &amp; Termite</h3>
 <p>Complete peace of mind + structural timber defense.</p>
@@ -299,14 +300,14 @@
 <li>✨ 12-Month priority support &amp; guarantee</li>
 </ul>
 <div class="pricing-action">
-<a class="btn btn-secondary btn-full-width plan-select-btn" data-plan-name="Eco-Complete &amp; Termite" href="#contact">Choose Eco-Complete</a>
+<a class="btn btn-secondary btn-full-width plan-select-btn de-btn" data-plan-name="Eco-Complete &amp; Termite" href="#contact">Choose Eco-Complete</a>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Testimonials -->
-<section class="section" id="testimonials">
+<section class="section" id="testimonials" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Testimonials</span>
@@ -314,7 +315,7 @@
 <p class="section-subtitle">Read feedback from your neighbors on the Capricorn Coast who switched to our botanical eco-treatments.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card testimonial-card">
+<div class="card testimonial-card de-reveal">
 <div class="rating">⭐⭐⭐⭐⭐</div>
 <p class="testimonial-text">"With two toddlers and a golden retriever, we were super nervous about toxic chemicals. JLD explained everything and treated the house with citrusy and pine-based barriers. Not a single spider or cockroach since, and no toxic smells!"</p>
 <div class="user-meta">
@@ -325,7 +326,7 @@
 </div>
 </div>
 </div>
-<div class="card testimonial-card">
+<div class="card testimonial-card de-reveal">
 <div class="rating">⭐⭐⭐⭐⭐</div>
 <p class="testimonial-text">"Excellent service. They showed up exactly on time, inspected our high-risk timber decks, and laid non-toxic bait stations. Very knowledgeable about local Yeppoon ants. Highly recommended."</p>
 <div class="user-meta">
@@ -336,7 +337,7 @@
 </div>
 </div>
 </div>
-<div class="card testimonial-card">
+<div class="card testimonial-card de-reveal">
 <div class="rating">⭐⭐⭐⭐⭐</div>
 <p class="testimonial-text">"The interactive builder matched us to the Eco-Guard Premium. Booking was seamless. The technician was respectful, wore shoe covers, and used botanical sprays that smelled pleasant. Absolutely stellar job!"</p>
 <div class="user-meta">
@@ -351,7 +352,7 @@
 </div>
 </section>
 <!-- Booking / Contact Form -->
-<section class="section section-alt" id="contact">
+<section class="section section-alt" id="contact" class="de-reveal">
 <div class="container">
 <div class="booking-grid">
 <div class="booking-info">
@@ -376,24 +377,24 @@
 </div>
 <!-- Trust Badges -->
 <div class="trust-badges-proposal" style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">👮</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">Police Cleared</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Full background checks completed.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🛡️</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">$20M Insured</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Comprehensive liability cover.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💰</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #fff;">No Surprise Fees</h4>
 <p style="font-size: 0.7rem; color: #94a3b8;">Fixed upfront billing guarantees.</p>
 </div>
 </div>
 </div>
-<div class="card booking-form-card">
+<div class="card booking-form-card de-reveal">
 <form id="booking-form">
 <div class="form-group">
 <label for="book-name">Full Name *</label>
@@ -442,7 +443,7 @@
 <input id="ack-eco-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: #2E7D32;" type="checkbox"/>
 <label for="ack-eco-pricing" style="font-size: 0.85rem; color: #94a3b8; cursor: pointer; text-align: left;">I verify the property size and acknowledge the pet-safe treatment protocols and transparent quote guarantee.</label>
 </div>
-<button class="btn btn-primary btn-full-width" id="btn-submit-booking" type="submit">Request Booking Details</button>
+<button class="btn btn-primary btn-full-width de-btn" id="btn-submit-booking" type="submit">Request Booking Details</button>
 <div class="alert-success hidden" id="booking-success-message">
                   🎉 Thank you! Your booking inquiry has been sent. We'll contact you in the next 2 hours.
                 </div>
@@ -523,5 +524,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  <script type="module" src="./src/design-engine.js"></script>
+</body>
 </html>

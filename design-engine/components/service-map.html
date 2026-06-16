@@ -1,0 +1,128 @@
+<!-- 
+  Cap Coast Design Engine - CQ Service Area Locator
+  High-impact geographic coverage list component customized for Central Queensland businesses.
+-->
+<div class="de-service-map-wrapper de-reveal de-glass-card" style="padding: 3rem; border-radius: var(--de-border-radius); border: var(--de-border-width) solid var(--color-border); max-width: 900px; margin: 3rem auto;">
+  
+  <!-- Section Title -->
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <span style="font-family: var(--de-font-mono, monospace); font-size: 0.8rem; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 0.5rem;">Service Footprint</span>
+    <h3 style="font-size: 2rem; margin: 0;" class="de-kinetic-text">Our Central Queensland Service Areas</h3>
+    <p style="opacity: 0.75; font-size: 0.95rem; margin-top: 0.5rem;">Hover over your suburb below to check service details and average emergency response dispatch times.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+    
+    <!-- Coverage Suburb Checklist -->
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      
+      <!-- Suburb Item 1 -->
+      <div class="de-location-item" data-dispatch="15-30 mins" data-frequency="Daily Crews On-Site" data-availability="High"
+        style="padding: 1rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: calc(var(--de-border-radius) / 2); cursor: pointer; transition: var(--de-transition-smooth); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700;">Yeppoon & Coast</span>
+        <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--de-font-mono, monospace); font-weight: 600;">ACTIVE NOW</span>
+      </div>
+
+      <!-- Suburb Item 2 -->
+      <div class="de-location-item" data-dispatch="30-45 mins" data-frequency="Daily Service Runs" data-availability="High"
+        style="padding: 1rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: calc(var(--de-border-radius) / 2); cursor: pointer; transition: var(--de-transition-smooth); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700;">Rockhampton</span>
+        <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--de-font-mono, monospace); font-weight: 600;">DAILY ACTIVE</span>
+      </div>
+
+      <!-- Suburb Item 3 -->
+      <div class="de-location-item" data-dispatch="20-35 mins" data-frequency="Daily Service Runs" data-availability="Medium"
+        style="padding: 1rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: calc(var(--de-border-radius) / 2); cursor: pointer; transition: var(--de-transition-smooth); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700;">Emu Park & Zilzie</span>
+        <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--de-font-mono, monospace); font-weight: 600;">DAILY ACTIVE</span>
+      </div>
+
+      <!-- Suburb Item 4 -->
+      <div class="de-location-item" data-dispatch="45-60 mins" data-frequency="Mon / Wed / Fri Schedule" data-availability="Scheduled"
+        style="padding: 1rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: calc(var(--de-border-radius) / 2); cursor: pointer; transition: var(--de-transition-smooth); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700;">Gracemere</span>
+        <span style="font-size: 0.75rem; opacity: 0.6; font-family: var(--de-font-mono, monospace);">SCHEDULED</span>
+      </div>
+
+      <!-- Suburb Item 5 -->
+      <div class="de-location-item" data-dispatch="60+ mins" data-frequency="Tuesday / Thursday Schedule" data-availability="Scheduled"
+        style="padding: 1rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: calc(var(--de-border-radius) / 2); cursor: pointer; transition: var(--de-transition-smooth); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700;">Cawarral & Valleys</span>
+        <span style="font-size: 0.75rem; opacity: 0.6; font-family: var(--de-font-mono, monospace);">SCHEDULED</span>
+      </div>
+    </div>
+
+    <!-- Live Regional Status display card -->
+    <div id="deMapStatusCard" style="padding: 2.5rem; background: var(--bg-secondary); border: 1px solid var(--color-border); border-radius: var(--de-border-radius); min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <span style="font-family: var(--de-font-mono, monospace); font-size: 0.75rem; opacity: 0.6; text-transform: uppercase;">Selected Sector</span>
+        <h4 id="deStatusTitle" style="font-size: 1.5rem; margin: 0.5rem 0 1.5rem; font-weight: 700;">Yeppoon & Coast</h4>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; opacity: 0.6; display: block;">Average Dispatch Response:</span>
+            <strong id="deStatusDispatch" style="color: var(--color-primary); font-size: 1.1rem;">15-30 mins</strong>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; opacity: 0.6; display: block;">Service Frequency:</span>
+            <strong id="deStatusFrequency">Daily Crews On-Site</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--color-border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span id="deStatusPulse" style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-primary); display: inline-block;"></span>
+        <span style="font-size: 0.8rem; opacity: 0.8;">Same-Day Service Guaranteed</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (() => {
+    const locations = document.querySelectorAll('.de-location-item');
+    const statusTitle = document.getElementById('deStatusTitle');
+    const statusDispatch = document.getElementById('deStatusDispatch');
+    const statusFrequency = document.getElementById('deStatusFrequency');
+    const statusPulse = document.getElementById('deStatusPulse');
+    const statusCard = document.getElementById('deMapStatusCard');
+
+    // Handle hovering suburb records
+    locations.forEach((item, index) => {
+      // Setup default active state on initial item
+      if(index === 0) setActiveLocation(item);
+
+      item.addEventListener('mouseenter', () => {
+        setActiveLocation(item);
+      });
+    });
+
+    function setActiveLocation(element) {
+      locations.forEach(el => {
+        el.style.borderColor = 'var(--color-border)';
+        el.style.background = 'var(--bg-secondary)';
+      });
+
+      element.style.borderColor = 'var(--color-primary)';
+      element.style.background = 'rgba(255, 255, 255, 0.02)';
+
+      const name = element.querySelector('span').textContent;
+      const dispatch = element.getAttribute('data-dispatch');
+      const frequency = element.getAttribute('data-frequency');
+      const availability = element.getAttribute('data-availability');
+
+      // Update display text fields
+      statusTitle.textContent = name;
+      statusDispatch.textContent = dispatch;
+      statusFrequency.textContent = frequency;
+
+      // Adjust visual status indicator color lights
+      if (availability === 'High' || availability === 'Medium') {
+        statusPulse.style.backgroundColor = 'var(--color-primary)';
+      } else {
+        statusPulse.style.backgroundColor = '#fa5d29'; // Orange alert
+      }
+    }
+  })();
+</script>

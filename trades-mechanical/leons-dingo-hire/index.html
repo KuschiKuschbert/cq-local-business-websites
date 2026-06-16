@@ -19,8 +19,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body>
+<body data-de-archetype="brutalist" data-de-palette="desert-gold">
 <!-- Floating Industrial Header -->
 <header class="main-header" id="header">
 <div class="header-container">
@@ -53,10 +54,10 @@
 <li><a class="nav-link" href="#fleet">Our Fleet</a></li>
 <li><a class="nav-link" href="#attachments">Attachments</a></li>
 <li><a class="nav-link" href="#hire-calculator">Rates &amp; Selector</a></li>
-<li><a class="btn btn-orange nav-btn" href="#booking">Rent Dingo</a></li>
+<li><a class="btn btn-orange nav-btn de-btn" href="#booking">Rent Dingo</a></li>
 </ul>
 </nav>
-<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn" id="mobile-menu-toggle">
+<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="mobile-menu-btn de-btn" id="mobile-menu-toggle">
 <span class="bar"></span>
 <span class="bar"></span>
 <span class="bar"></span>
@@ -70,13 +71,13 @@
 <li><a class="mobile-nav-link" href="#fleet">Our Fleet</a></li>
 <li><a class="mobile-nav-link" href="#attachments">Attachments</a></li>
 <li><a class="mobile-nav-link" href="#hire-calculator">Rates &amp; Selector</a></li>
-<li><a class="btn btn-orange mobile-nav-btn" href="#booking">Rent Dingo</a></li>
+<li><a class="btn btn-orange mobile-nav-btn de-btn" href="#booking">Rent Dingo</a></li>
 </ul>
 </nav>
 </div>
 <main>
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" class="de-reveal">
 <div class="hero-bg-overlay"></div>
 <div class="hero-container">
 <div class="hero-content">
@@ -84,8 +85,8 @@
 <h1 class="hero-title">Big Power. <br/>Small Footprint. <br/><span class="highlight">Dingo Mini Loaders</span></h1>
 <p class="hero-subtitle">High-performance mini track &amp; wheeled loaders for dry or wet hire. Perfect for backyard leveling, trenching, soil shifting, and post-hole drilling.</p>
 <div class="hero-cta-group">
-<a class="btn btn-orange btn-lg" href="#hire-calculator">Explore Fleet &amp; Rates</a>
-<a class="btn btn-outline btn-lg" href="#booking">Check Availability</a>
+<a class="btn btn-orange btn-lg de-btn" href="#hire-calculator">Explore Fleet &amp; Rates</a>
+<a class="btn btn-outline btn-lg de-btn" href="#booking">Check Availability</a>
 </div>
 <div class="hero-specs-badge">
 <div class="spec-badge-item">
@@ -102,13 +103,13 @@
 </div>
 </div>
 </div>
-<div class="visual-card" style="padding:0;overflow:hidden;border:none;">
+<div class="visual-card de-reveal" style="padding:0;overflow:hidden;border:none;">
 <img alt="Leon's Dingo Loader" decoding="async" fetchpriority="high" src="/hero.png" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"/>
 </div>
 </div>
 </section>
 <!-- Fleet Catalog Section -->
-<section class="fleet-section" id="fleet">
+<section class="fleet-section" id="fleet" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tag">Machine Fleet</span>
@@ -117,7 +118,7 @@
 </div>
 <div class="fleet-grid">
 <!-- Loader 1 -->
-<div class="fleet-card" data-width="narrow">
+<div class="fleet-card de-reveal" data-width="narrow">
 <div class="fleet-img-wrapper">
 <!-- SVG diagram tracked narrow -->
 <svg height="100%" viewbox="0 0 350 200" width="100%">
@@ -152,12 +153,12 @@
 </div>
 <div class="fleet-action">
 <span class="fleet-price">$195 <span class="period">/ Day dry hire</span></span>
-<button class="btn btn-orange btn-sm hire-select-btn" data-machine="K9-4 Narrow-Track">Select Machine</button>
+<button class="btn btn-orange btn-sm hire-select-btn de-btn" data-machine="K9-4 Narrow-Track">Select Machine</button>
 </div>
 </div>
 </div>
 <!-- Loader 2 -->
-<div class="fleet-card" data-width="standard">
+<div class="fleet-card de-reveal" data-width="standard">
 <div class="fleet-img-wrapper">
 <!-- SVG diagram wheeled standard -->
 <svg height="100%" viewbox="0 0 350 200" width="100%">
@@ -195,7 +196,7 @@
 </div>
 <div class="fleet-action">
 <span class="fleet-price">$180 <span class="period">/ Day dry hire</span></span>
-<button class="btn btn-orange btn-sm hire-select-btn" data-machine="K9-3 Wheeled">Select Machine</button>
+<button class="btn btn-orange btn-sm hire-select-btn de-btn" data-machine="K9-3 Wheeled">Select Machine</button>
 </div>
 </div>
 </div>
@@ -203,7 +204,7 @@
 </div>
 </section>
 <!-- Attachments Catalog -->
-<section class="attachments-section" id="attachments">
+<section class="attachments-section" id="attachments" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tag">Versatile Rigging</span>
@@ -212,7 +213,7 @@
 </div>
 <div class="attachments-grid">
 <!-- Attachment 1 -->
-<div class="attachment-card">
+<div class="attachment-card de-reveal">
 <div class="attach-icon-wrapper">
 <svg fill="none" height="40" stroke="#E67E22" stroke-width="2" viewbox="0 0 60 60" width="40">
 <path d="M10,45 L50,45 M10,40 L45,15 L50,30 L15,45 Z" stroke-linejoin="round"></path>
@@ -225,7 +226,7 @@
 <p>Scoop, blade, grab and dump soil, gravel, mulch, or green waste. Ideal for yard prep.</p>
 </div>
 <!-- Attachment 2 -->
-<div class="attachment-card">
+<div class="attachment-card de-reveal">
 <div class="attach-icon-wrapper">
 <svg fill="none" height="40" stroke="#E67E22" stroke-width="2" viewbox="0 0 60 60" width="40">
 <!-- Trencher bar and chain teeth -->
@@ -242,7 +243,7 @@
 <span class="attach-rate">+$60 / Day</span>
 </div>
 <!-- Attachment 3 -->
-<div class="attachment-card">
+<div class="attachment-card de-reveal">
 <div class="attach-icon-wrapper">
 <svg fill="none" height="40" stroke="#E67E22" stroke-width="2" viewbox="0 0 60 60" width="40">
 <!-- Post Hole auger spiral -->
@@ -256,7 +257,7 @@
 <span class="attach-rate">+$55 / Day</span>
 </div>
 <!-- Attachment 4 -->
-<div class="attachment-card">
+<div class="attachment-card de-reveal">
 <div class="attach-icon-wrapper">
 <svg fill="none" height="40" stroke="#E67E22" stroke-width="2" viewbox="0 0 60 60" width="40">
 <!-- Leveller Bar -->
@@ -272,7 +273,7 @@
 </div>
 </section>
 <!-- Rate Calculator & Selector -->
-<section class="calculator-section" id="hire-calculator">
+<section class="calculator-section" id="hire-calculator" class="de-reveal">
 <div class="container">
 <div class="calculator-grid">
 <div class="calc-info">
@@ -297,7 +298,7 @@
 <strong id="config-attachments">4-in-1 Bucket only</strong>
 </div>
 </div>
-<div class="rate-result-card">
+<div class="rate-result-card de-reveal">
 <div class="rate-header">Estimated Total (GST Excl)</div>
 <div class="rate-display">
 <span class="dollar">$</span>
@@ -306,22 +307,22 @@
 <p class="rate-terms">*Delivery charge is extra depending on suburb (frenchville, norman gardens, gracemere, etc).</p>
 </div>
 </div>
-<div class="calc-card">
+<div class="calc-card de-reveal">
 <h3>Customize Your Hire</h3>
 <!-- Machine Selection -->
 <div class="form-group">
 <label class="form-label">Step 1: Choose Loader Model</label>
 <div class="toggle-group-3">
-<button aria-label="Toggle Main Navigation Menu" class="toggle-btn active" data-machine-val="k9-4" type="button">K9-4 Track</button>
-<button aria-label="Toggle Main Navigation Menu" class="toggle-btn" data-machine-val="k9-3" type="button">K9-3 Wheeled</button>
+<button aria-label="Toggle Main Navigation Menu" class="toggle-btn active de-btn" data-machine-val="k9-4" type="button">K9-4 Track</button>
+<button aria-label="Toggle Main Navigation Menu" class="toggle-btn de-btn" data-machine-val="k9-3" type="button">K9-3 Wheeled</button>
 </div>
 </div>
 <!-- Wet/Dry Select -->
 <div class="form-group">
 <label class="form-label">Step 2: Hire Operator Mode</label>
 <div class="toggle-group-3">
-<button aria-label="Toggle Main Navigation Menu" class="toggle-btn active" data-mode-val="dry" type="button">Dry Hire</button>
-<button aria-label="Toggle Main Navigation Menu" class="toggle-btn" data-mode-val="wet" type="button">Wet Hire (Inc Operator)</button>
+<button aria-label="Toggle Main Navigation Menu" class="toggle-btn active de-btn" data-mode-val="dry" type="button">Dry Hire</button>
+<button aria-label="Toggle Main Navigation Menu" class="toggle-btn de-btn" data-mode-val="wet" type="button">Wet Hire (Inc Operator)</button>
 </div>
 <span class="mode-info-helper" id="mode-helper">Dry hire: Pick up or delivered. You drive.</span>
 </div>
@@ -355,16 +356,16 @@
 </label>
 </div>
 </div>
-<button class="btn btn-orange btn-block btn-lg" id="btn-calc-proceed">Reserve Machine</button>
+<button class="btn btn-orange btn-block btn-lg de-btn" id="btn-calc-proceed">Reserve Machine</button>
 </div>
 </div>
 </div>
 </section>
 <!-- Trust & Transparency Section -->
-<section class="trust-transparency-section">
+<section class="trust-transparency-section" class="de-reveal">
 <div class="container">
 <div class="trust-grid">
-<div class="trust-card">
+<div class="trust-card de-reveal">
 <div class="trust-icon">
 <svg fill="none" height="28" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="28">
 <circle cx="12" cy="12" r="10"></circle>
@@ -374,7 +375,7 @@
 <h3>Operator Transparency</h3>
 <p>Choose <strong>Dry Hire</strong> to operate yourself (no special license required; full hand-over instructions provided), or <strong>Wet Hire</strong> to have one of our highly skilled operators do the heavy lifting for you.</p>
 </div>
-<div class="trust-card">
+<div class="trust-card de-reveal">
 <div class="trust-icon">
 <svg fill="none" height="28" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="28">
 <rect height="13" rx="2" ry="2" width="15" x="1" y="3"></rect>
@@ -386,7 +387,7 @@
 <h3>Clear Delivery &amp; Surcharges</h3>
 <p>We deliver direct to your site in Rockhampton metro starting from $60 each way. Out-of-town delivery calculated transparently based on distance—no hidden travel surcharges.</p>
 </div>
-<div class="trust-card">
+<div class="trust-card de-reveal">
 <div class="trust-icon">
 <svg fill="none" height="28" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="28">
 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -399,9 +400,9 @@
 </div>
 </section>
 <!-- Booking / Rental Form -->
-<section class="booking-section" id="booking">
+<section class="booking-section" id="booking" class="de-reveal">
 <div class="container">
-<div class="booking-card">
+<div class="booking-card de-reveal">
 <div class="booking-intro">
 <h2>Reserve Your Machine</h2>
 <p>Ready to get shifting? Submit this booking inquiry, and Leon's team will contact you to confirm machinery availability, coordinate delivery/pickup, and request security bond.</p>
@@ -466,7 +467,7 @@
 <span style="font-size: 0.85rem; color: var(--color-text-muted);">I acknowledge the dry hire cleanup &amp; refueling conditions, and standard delivery terms.</span>
 </label>
 </div>
-<button class="btn btn-orange btn-block btn-lg" type="submit">Submit Reservation Request</button>
+<button class="btn btn-orange btn-block btn-lg de-btn" type="submit">Submit Reservation Request</button>
 </form>
 <div aria-hidden="true" class="form-success-overlay" id="form-success">
 <div class="success-content">
@@ -475,7 +476,7 @@
                 </div>
 <h3>Reservation Inquiry Sent!</h3>
 <p>Leon's Dingo Hire has received your details. We'll check the machinery scheduling and call you shortly to lock in your booking.</p>
-<button class="btn btn-orange" id="btn-success-close" type="button">Confirm &amp; Return</button>
+<button class="btn btn-orange de-btn" id="btn-success-close" type="button">Confirm &amp; Return</button>
 </div>
 </div>
 </div>
@@ -540,5 +541,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  <script type="module" src="./src/design-engine.js"></script>
+</body>
 </html>

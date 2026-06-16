@@ -14,21 +14,40 @@ This folder contains the portable brain layers, protocols, and commands configur
   - `working/intake_reviews/`: Generated staged-candidate review reports.
   - `working/intake_verification.csv`: Evidence-readiness table for staged candidates.
   - `working/intake_verifications/`: Generated staged-candidate evidence reports.
+  - `working/research_queue.csv`: Research tasks for staged candidates missing verified evidence.
+  - `working/research_attempts.csv`: Logged verification attempts and outcomes so failed searches stay visible.
+  - `working/regional_coverage_heatmap.csv`: Region/niche coverage scoring for the requested business sourcing footprint.
+  - `working/source_pivot_plan.csv`: Alternate source-family research plan for candidates whose social searches failed repeatedly.
+  - `working/research_suppression_list.csv`: Advisory memory of repeated failed search patterns to avoid repeating weak public research loops.
+  - `working/research_reports/`: Generated research queue reports.
+  - `working/council_registry.csv`: Council routing map for prospect research, web design, offer/pricing, outreach, delivery, GitHub, and CEO decisions.
+  - `working/council_debates.csv`: Structured council disagreements with best case, hard pushback, verdict, next test, evidence path, and safety gate.
+  - `working/council_quality_audit.csv`: Quality audit for council debates before they influence action gates.
+  - `working/council_ceo_brief.csv`: Ranked boardroom brief summarizing council arguments, objections, allowed moves, blocked actions, and Daniel decisions needed.
+  - `working/council_decision_gates.csv`: Action-to-council gate table that prevents council verdicts from bypassing permissions or Daniel approval.
   - `working/intake_opportunity_briefs.csv`: Register of private opportunity briefs for evidence-ready staged candidates.
   - `working/intake_opportunity_briefs/`: Generated private opportunity briefs for staged candidates.
   - `working/approval_queue.csv`: Current explicit approval gates for promotion, outreach, mockup use, proposals, and other blocked actions.
+  - `working/approval_decision_inbox.csv`: Approve/reject/hold command choices for pending promotion decisions.
+  - `working/decision_cockpit.csv`: Consolidated decision surface for promotion packets, evidence, concepts, GitHub local drafts, and blocked follow-ons.
+  - `working/post_approval_workflow.csv`: Safe local workflow map for what happens after a promotion approval is recorded.
   - `working/approval_reports/`: Generated approval queue reports.
+  - `working/private_concepts.csv`: Register of private concept-site files generated from evidence-ready staged candidates.
+  - `working/private_concepts/`: Internal concept-site folders; not public, approved, or client-facing.
   - `working/promotion_log.csv`: Audit log for Daniel-approved moves from staged intake into the main prospect tracker.
   - `working/prospects.csv`: Structured prospect register used by the growth-engine scoring script.
   - `working/mockup_briefs.csv`: Structured register of generated website mockup briefs.
   - `working/mockup_briefs/`: Generated website mockup brief documents.
   - `working/outreach_log.csv`: Structured event log for approved outreach, replies, opt-outs, and follow-up outcomes.
+  - `working/outreach_playbook_library.csv`: Generic outreach playbook templates with placeholders, compliance requirements, and send-blocking gates.
+  - `working/outreach_playbook_library/`: Generated generic playbook reports; strategy only, not approved copy.
   - `working/outreach_drafts/`: Generated approval packs for prospect-specific walk-in and follow-up messages.
   - `working/proposals.csv`: Structured proposal register.
   - `working/proposals/`: Generated draft proposal documents.
   - `working/clients.csv`: Structured client register for active and past clients.
   - `working/revenue.csv`: Monthly revenue and MRR tracking.
   - `working/kpi_history.csv`: Weekly KPI snapshots produced by the growth retrospective.
+  - `working/operator_action_queue.csv`: Ranked safe action queue combining research moves, Daniel decisions, planned work, and blocked external actions.
   - `working/RETROSPECTIVE_SYSTEM.md`: Self-improvement and evidence rules for weekly reviews.
   - `working/CLIENT_DELIVERY.md`: Delivery, onboarding, go-live, and maintenance operating system for converted clients.
   - `working/AUTOMATIONS.md`: Active recurring jobs and their safety boundaries.
@@ -46,11 +65,26 @@ This folder contains the portable brain layers, protocols, and commands configur
   - `prospect-scan.md`: `/prospect-scan` instruction schema for finding and scoring local prospects without contacting them.
   - `intake-review.md`: `/intake-review` instruction schema for reviewing staged candidates before promotion.
   - `verify-intake-evidence.md`: `/verify-intake-evidence` instruction schema for checking staged social, website, and source evidence.
+  - `research-queue.md`: `/research-queue` instruction schema for local evidence verification tasks.
+  - `regional-coverage-heatmap.md`: `/regional-coverage-heatmap` instruction schema for balancing research across requested regions and niches.
+  - `source-pivot-plan.md`: `/source-pivot-plan` instruction schema for alternate source-family research after repeated no-social results.
+  - `research-suppression-list.md`: `/research-suppression-list` instruction schema for suppressing repeated weak public search patterns.
+  - `operator-action-queue.md`: `/operator-action-queue` instruction schema for the unified safe next-action queue.
+  - `council-registry.md`: `/council-registry` instruction schema for generating council routing.
+  - `council-debates.md`: `/council-debates` instruction schema for generating structured council arguments.
+  - `council-quality-audit.md`: `/council-quality-audit` instruction schema for auditing council argument quality.
+  - `council-ceo-brief.md`: `/council-ceo-brief` instruction schema for producing a ranked boardroom decision brief.
+  - `council-decision-gates.md`: `/council-decision-gates` instruction schema for binding council verdicts to action permissions.
   - `intake-opportunity-briefs.md`: `/intake-opportunity-briefs` instruction schema for private website opportunity briefs before promotion.
   - `approval-queue.md`: `/approval-queue` instruction schema for explicit Daniel decision gates.
+  - `approval-decision-inbox.md`: `/approval-decision-inbox` instruction schema for approve/reject/hold decision choices.
+  - `decision-cockpit.md`: `/decision-cockpit` instruction schema for consolidated approval review before promotion.
+  - `post-approval-workflow.md`: `/post-approval-workflow` instruction schema for safe local orchestration after promotion approval.
+  - `private-concepts.md`: `/private-concepts` instruction schema for internal concept-site generation.
   - `promote-intake.md`: `/promote-intake` instruction schema for approval-gated promotion into the main prospect tracker.
   - `mockup-briefs.md`: `/mockup-briefs` instruction schema for generating website build briefs.
   - `outreach-week.md`: `/outreach-week` instruction schema for weekly planning, mockups, approval-gated outreach, and review.
+  - `outreach-playbook-library.md`: `/outreach-playbook-library` instruction schema for generic outreach playbooks that remain blocked until prospect and message approval.
   - `outreach-drafts.md`: `/outreach-drafts` instruction schema for generating approval-gated prospect message packs.
   - `client-delivery.md`: `/client-delivery` instruction schema for onboarding, go-live, and maintenance planning.
   - `proposal-admin.md`: `/proposal-admin` instruction schema for draft proposals and local proposal tracking.

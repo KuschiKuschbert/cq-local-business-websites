@@ -11,8 +11,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body>
+<body data-de-archetype="nordic" data-de-palette="terracotta-clay">
 <header class="navbar" id="navbar">
 <div class="container navbar-container">
 <a class="logo-link" href="#">
@@ -26,7 +27,7 @@
 <a class="nav-link" href="#quote-calculator">Quote Calculator</a>
 <a class="nav-link" href="#packages">Pest Combos</a>
 <a class="nav-link" href="#reviews">Client Reviews</a>
-<a class="btn btn-primary nav-btn" href="#contact">Claim Quote</a>
+<a class="btn btn-primary nav-btn de-btn" href="#contact">Claim Quote</a>
 </nav>
 <button aria-label="Toggle Menu" class="mobile-toggle" id="mobile-toggle">
 <span></span>
@@ -37,7 +38,7 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" class="de-reveal">
 <div class="bubbles-bg">
 <div class="bubble b-1"></div>
 <div class="bubble b-2"></div>
@@ -49,15 +50,15 @@
 <span class="tag-icon">✨</span>
 <span>Lammermoor's Local Steam Specialists</span>
 </div>
-<h1 class="hero-title">Hygenic Steam Cleans &amp; Barriers in Lammermoor</h1>
+<h1 class="hero-title" class="de-kinetic-text">Hygenic Steam Cleans &amp; Barriers in Lammermoor</h1>
 <p class="hero-subtitle">Breathe fresh air again. We extract dirt, allergens, and local pests from deep within your carpet fibers. High-grade hot water extraction + local pest barriers.</p>
 <div class="hero-actions">
-<a class="btn btn-primary btn-large" href="#quote-calculator">Try Quote Calculator</a>
-<a class="btn btn-secondary btn-large" href="#packages">View Pest-Carpet Combos</a>
+<a class="btn btn-primary btn-large de-btn" href="#quote-calculator">Try Quote Calculator</a>
+<a class="btn btn-secondary btn-large de-btn" href="#packages">View Pest-Carpet Combos</a>
 </div>
 </div>
 <div class="hero-illustration">
-<div class="steam-machine-card">
+<div class="steam-machine-card de-reveal">
 <img alt="Professional steam carpet cleaning in a modern living room" decoding="async" fetchpriority="high" src="/hero.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;"/>
 <div class="steam-floating-stat">
 <span class="sfs-val">99.9%</span>
@@ -68,7 +69,7 @@
 </div>
 </section>
 <!-- Services List Section -->
-<section class="section section-alt" id="about">
+<section class="section section-alt" id="about" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Why Lammermoor Trusts Us</span>
@@ -76,17 +77,17 @@
 <p class="section-subtitle">We don't just run a surface vacuum. Our rotary truck-mounted systems inject super-heated steam to sanitize carpet backing and kill pest nesting eggs.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card service-feature-card">
+<div class="card service-feature-card de-reveal">
 <div class="sf-icon">🎚️</div>
 <h3>Hot Water Extraction</h3>
 <p>Industrial steam injection at 220°F breaks down high-traffic grime, sand, and coastal dirt deep inside carpet piles.</p>
 </div>
-<div class="card service-feature-card">
+<div class="card service-feature-card de-reveal">
 <div class="sf-icon">🛡️</div>
 <h3>Pest Shield Infusion</h3>
 <p>Optional non-toxic insect repellents sprayed post-steam, locking out fleas, ticks, and carpet beetles for 12 months.</p>
 </div>
-<div class="card service-feature-card">
+<div class="card service-feature-card de-reveal">
 <div class="sf-icon">🐾</div>
 <h3>Stain &amp; Pet Deodorisation</h3>
 <p>Specialized eco-enzymes digest pet urine crystal deposits, removing odor compounds completely instead of masking them.</p>
@@ -95,7 +96,7 @@
 </div>
 </section>
 <!-- Interactive Quote Calculator Section -->
-<section class="section" id="quote-calculator">
+<section class="section" id="quote-calculator" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Estimate Pricing Instantly</span>
@@ -123,28 +124,28 @@
 <div class="calc-input-group">
 <label class="group-inner-label">Additional Areas &amp; Treatments</label>
 <div class="calc-checkbox-stack">
-<div class="calc-check-card" data-addon="hallway" id="add-hallway">
+<div class="calc-check-card de-reveal" data-addon="hallway" id="add-hallway">
 <span class="calc-check-indicator"></span>
 <div>
 <strong>Hallways ($20)</strong>
 <p>Full length hall steam cleaning</p>
 </div>
 </div>
-<div class="calc-check-card" data-addon="stairs" id="add-stairs">
+<div class="calc-check-card de-reveal" data-addon="stairs" id="add-stairs">
 <span class="calc-check-indicator"></span>
 <div>
 <strong>Flight of Stairs ($45)</strong>
 <p>Up to 15 step treads steam extraction</p>
 </div>
 </div>
-<div class="calc-check-card" data-addon="sanitiser" id="add-sanitiser">
+<div class="calc-check-card de-reveal" data-addon="sanitiser" id="add-sanitiser">
 <span class="calc-check-indicator"></span>
 <div>
 <strong>Deluxe Sanitisation &amp; Deodoriser ($30)</strong>
 <p>Anti-bacterial steam flush, extracts mold spores</p>
 </div>
 </div>
-<div class="calc-check-card" data-addon="flea-pest" id="add-flea-pest">
+<div class="calc-check-card de-reveal" data-addon="flea-pest" id="add-flea-pest">
 <span class="calc-check-indicator"></span>
 <div>
 <strong>End-of-Lease Wasp &amp; Flea Spray ($90)</strong>
@@ -156,7 +157,7 @@
 </div>
 <!-- Price Output Card -->
 <div class="calc-output-panel">
-<div class="quote-preview-card">
+<div class="quote-preview-card de-reveal">
 <div class="qp-badge">Lammermoor Best Quote</div>
 <h3 class="qp-title">Your Carpet &amp; Pest Quote</h3>
 <div class="qp-price-box">
@@ -167,7 +168,7 @@
 <div class="qp-breakdown" id="quote-breakdown-list">
 <!-- JS generated -->
 </div>
-<a class="btn btn-primary btn-full-width" href="#contact" id="claim-quote-btn">Secure Quote &amp; Book Slot</a>
+<a class="btn btn-primary btn-full-width de-btn" href="#contact" id="claim-quote-btn">Secure Quote &amp; Book Slot</a>
 <span class="qp-guarantee">💧 100% Streak-Free and Dry within 4 Hours Guarantee</span>
 </div>
 </div>
@@ -175,7 +176,7 @@
 </div>
 </section>
 <!-- Combo Packages -->
-<section class="section section-alt" id="packages">
+<section class="section section-alt" id="packages" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Integrated Pest &amp; Steam Clean Packages</span>
@@ -184,7 +185,7 @@
 </div>
 <div class="grid grid-3-col">
 <!-- Package 1 -->
-<div class="card package-card">
+<div class="card package-card de-reveal">
 <h4>Move-Out Clean &amp; Spray</h4>
 <p class="pkg-subtitle">Best for departing tenants</p>
 <div class="pkg-price">$260</div>
@@ -194,10 +195,10 @@
 <li>✨ Flea &amp; Wasp perimeter spray</li>
 <li>✨ Real Estate receipt signed</li>
 </ul>
-<a class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="Move-Out Package ($260)" href="#contact">Book Package</a>
+<a class="btn btn-secondary btn-full-width pkg-select de-btn" data-pkg-name="Move-Out Package ($260)" href="#contact">Book Package</a>
 </div>
 <!-- Package 2 -->
-<div class="card package-card highlighted">
+<div class="card package-card highlighted de-reveal">
 <div class="pkg-banner">Most Popular</div>
 <h4>Deluxe Home Clean &amp; Shield</h4>
 <p class="pkg-subtitle">Complete yearly reset</p>
@@ -208,10 +209,10 @@
 <li>✨ Deluxe Sanitizer infusion</li>
 <li>✨ General External Pest Barrier</li>
 </ul>
-<a class="btn btn-primary btn-full-width pkg-select" data-pkg-name="Deluxe Home Package ($380)" href="#contact">Book Package</a>
+<a class="btn btn-primary btn-full-width pkg-select de-btn" data-pkg-name="Deluxe Home Package ($380)" href="#contact">Book Package</a>
 </div>
 <!-- Package 3 -->
-<div class="card package-card">
+<div class="card package-card de-reveal">
 <h4>All-In Protection Barrier</h4>
 <p class="pkg-subtitle">The ultimate defense plan</p>
 <div class="pkg-price">$490</div>
@@ -221,13 +222,13 @@
 <li>✨ Full Interior + Exterior Pest barrier</li>
 <li>✨ Subfloor rodent baiting stations</li>
 </ul>
-<a class="btn btn-secondary btn-full-width pkg-select" data-pkg-name="All-In Protection Package ($490)" href="#contact">Book Package</a>
+<a class="btn btn-secondary btn-full-width pkg-select de-btn" data-pkg-name="All-In Protection Package ($490)" href="#contact">Book Package</a>
 </div>
 </div>
 </div>
 </section>
 <!-- Client Reviews -->
-<section class="section" id="reviews">
+<section class="section" id="reviews" class="de-reveal">
 <div class="container">
 <div class="section-header">
 <span class="section-tagline">Satisfied Homeowners</span>
@@ -235,17 +236,17 @@
 <p class="section-subtitle">What your Capricorn Coast neighbors say about our steam cleaners.</p>
 </div>
 <div class="grid grid-3-col">
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"Our carpet had heavy beach sand and toddler paint stains. Total Pest &amp; Carpet made them look brand new in under an hour. Dry time was super quick!"</p>
 <h5>Jane W. - Lammermoor</h5>
 </div>
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"Excellent service. Used them for our tenancy end-of-lease. They completed the carpet steam and did the flea spray. Real estate agent signed off instantly. Simple and affordable."</p>
 <h5>Thomas K. - Lammermoor</h5>
 </div>
-<div class="card review-card">
+<div class="card review-card de-reveal">
 <div class="stars">⭐⭐⭐⭐⭐</div>
 <p>"The quote calculator was spot-on. No additional charges. They were prompt, friendly, and even gave us free advice on maintaining the carpet piles."</p>
 <h5>Clara P. - Lammermoor</h5>
@@ -254,7 +255,7 @@
 </div>
 </section>
 <!-- Booking / Contact Form -->
-<section class="section section-alt" id="contact">
+<section class="section section-alt" id="contact" class="de-reveal">
 <div class="container">
 <div class="booking-grid">
 <div class="booking-left">
@@ -263,28 +264,28 @@
 <p>Ready to refresh your home carpets? Fill out your details. We will lock in your date preference and dispatch our local team.</p>
 <!-- Trust Badges -->
 <div class="trust-badges-proposal" style="margin-top: 2rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">👮</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Police Checked</h4>
 <p style="font-size: 0.7rem; color: #718096;">All staff certified &amp; cleared.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🛡️</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">$20M Insured</h4>
 <p style="font-size: 0.7rem; color: #718096;">Comprehensive public liability.</p>
 </div>
-<div class="badge-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
+<div class="badge-card de-reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; text-align: center;">
 <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💰</div>
 <h4 style="font-size: 0.8rem; margin-bottom: 0.25rem; color: #111;">Fixed Price</h4>
 <p style="font-size: 0.7rem; color: #718096;">Online quotes honored on-site.</p>
 </div>
 </div>
-<div class="contact-card">
+<div class="contact-card de-reveal">
 <p>📍 <strong>Local Office:</strong> Lammermoor Beach, QLD 4703</p>
 <p>📞 <strong>Phone:</strong> 0400 STEAM ME (0400 783 266)</p>
 </div>
 </div>
-<div class="card form-card">
+<div class="card form-card de-reveal">
 <form id="quote-form">
 <div class="form-group">
 <label for="q-name">Full Name *</label>
@@ -324,7 +325,7 @@
 <input id="ack-eco-pricing" required="" style="margin-top: 4px; cursor: pointer; accent-color: #0288D1;" type="checkbox"/>
 <label for="ack-eco-pricing" style="font-size: 0.85rem; color: #718096; cursor: pointer; text-align: left;">I verify the room layout details and acknowledge the upfront quote promise and non-toxic cleanup guarantee.</label>
 </div>
-<button class="btn btn-primary btn-full-width" id="btn-submit-quote" type="submit">Request Booking With This Quote</button>
+<button class="btn btn-primary btn-full-width de-btn" id="btn-submit-quote" type="submit">Request Booking With This Quote</button>
 <div class="alert-success hidden" id="quote-success-message">
                   💧 Thank you! Your booking estimate is confirmed. We will call you within 1 hour to verify the schedule.
                 </div>
@@ -399,5 +400,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  <script type="module" src="./src/design-engine.js"></script>
+</body>
 </html>

@@ -10,8 +10,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="./style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./src/design-engine.css">
 </head>
-<body>
+<body data-de-archetype="brutalist" data-de-palette="desert-gold">
 <header>
 <div class="container">
 <nav>
@@ -27,31 +28,31 @@
 </nav>
 </div>
 </header>
-<section class="hero">
+<section class="hero" class="de-reveal">
 <img alt="Modern Garage" class="hero-bg" decoding="async" fetchpriority="high" src="/hero.png"/>
 <div class="container">
 <div class="hero-content">
 <h1>Precision <span>Power</span> Performance</h1>
 <p>Expert automotive repairs and servicing. Industrial-grade solutions for your vehicle.</p>
-<a class="btn" href="#booking">Book a Service</a>
+<a class="btn de-btn" href="#booking">Book a Service</a>
 </div>
 </div>
 </section>
-<section class="services" id="services">
+<section class="services" id="services" class="de-reveal">
 <div class="container">
 <h2 class="section-title">Our Services</h2>
 <div class="services-grid">
-<div class="service-card">
+<div class="service-card de-reveal">
 <svg class="service-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
 <h3>Logbook Servicing</h3>
 <p>Comprehensive checks and maintenance to keep your manufacturer warranty intact and vehicle running smoothly.</p>
 </div>
-<div class="service-card">
+<div class="service-card de-reveal">
 <svg class="service-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
 <h3>Brakes &amp; Rotors</h3>
 <p>Precision brake pad replacement, rotor machining, and fluid flushes for ultimate stopping power.</p>
 </div>
-<div class="service-card">
+<div class="service-card de-reveal">
 <svg class="service-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 4v16M6 4v16M12 2v20M2 12h20"></path></svg>
 <h3>Suspension &amp; Steering</h3>
 <p>Advanced diagnostics and repair for shocks, struts, and steering components to ensure a smooth ride.</p>
@@ -59,29 +60,29 @@
 </div>
 </div>
 </section>
-<section class="trust-guarantees">
+<section class="trust-guarantees" class="de-reveal">
 <div class="container">
 <h2 class="section-title">Industrial Trust Guarantees</h2>
 <div class="trust-grid">
-<div class="trust-card">
-<div class="card-icon">⚡</div>
+<div class="trust-card de-reveal">
+<div class="card-icon de-reveal">⚡</div>
 <h3>No Surprises Billing</h3>
 <p>We guarantee the invoice matches our quote. If additional repairs are discovered, we pause and call you for approval first. Zero hidden fees.</p>
 </div>
-<div class="trust-card">
-<div class="card-icon">🛡️</div>
+<div class="trust-card de-reveal">
+<div class="card-icon de-reveal">🛡️</div>
 <h3>Warranty Compliant</h3>
 <p>Our logbook servicing uses premium OEM-equivalent parts and fluids, keeping your new car manufacturer warranty 100% intact.</p>
 </div>
-<div class="trust-card">
-<div class="card-icon">🧼</div>
+<div class="trust-card de-reveal">
+<div class="card-icon de-reveal">🧼</div>
 <h3>Clean Seat Promise</h3>
 <p>Industrial performance with absolute respect for your property. We use heavy-duty seat and steering wheel covers on every single vehicle.</p>
 </div>
 </div>
 </div>
 </section>
-<section class="booking" id="booking">
+<section class="booking" id="booking" class="de-reveal">
 <div class="container">
 <div class="booking-container">
 <div class="booking-form-wrapper">
@@ -120,7 +121,7 @@
                   Yes, I require a phone call for approval before any extra work is started.
                 </label>
 </div>
-<button class="btn" style="width: 100%;" type="submit">Submit Booking Request</button>
+<button class="btn de-btn" style="width: 100%;" type="submit">Submit Booking Request</button>
 </form>
 </div>
 <div class="booking-image">
@@ -163,5 +164,6 @@
       <span>Inquire</span>
     </a>
   </nav>
-\n</body>
+\n  <script type="module" src="./src/design-engine.js"></script>
+</body>
 </html>
