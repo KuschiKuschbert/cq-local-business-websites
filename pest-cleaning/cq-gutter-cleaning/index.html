@@ -530,8 +530,21 @@
       .form-col-2 {
         grid-column: span 1;
       }
+      .cq-nav {
+        padding: 1rem 1.5rem;
+      }
+      .cq-nav-links a:not(.de-btn) {
+        display: none; /* Hide generic links on mobile to prevent squishing */
+      }
+      .cq-nav-links {
+        gap: 0;
+      }
+      .showcase-card img {
+        height: 200px !important;
+      }
     }
   </style>
+
 </head>
 <body data-de-archetype="nordic" data-de-palette="sage-garden" data-de-cursor="off">
 
