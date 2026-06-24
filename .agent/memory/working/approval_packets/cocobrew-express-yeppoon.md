@@ -1,6 +1,6 @@
 # Approval Packet: CocoBrew Express Yeppoon
 
-- Date: 2026-06-16
+- Date: 2026-06-17
 - Approval type: promotion
 - Priority rank: 1
 - Priority score: 161
@@ -8,6 +8,12 @@
 - Offer tier: local-growth / $199/mo
 - Trust hook: Fast mobile menu, booking/order path, catering or function enquiry
 - Primary CTA: Make an enquiry
+
+## Evidence Snapshot
+
+- Public social signal: CocoBrew public group site and Yeppoon footer link to Facebook profile.
+- Website gap: Owned static/Bootstrap-style site exists with menu/contact; opportunity is a cleaner mobile menu, catering enquiry, and drive-thru ordering path.
+- Proposed opportunity: Drive-thru coffee and catering page with menu CTA, catering CTA, location proof, and breakfast/lunch commuter hook.
 
 ## Decision
 
@@ -23,6 +29,6 @@
 
 ## Current Permission Context
 
-- Promote candidate to prospect: blocked / Daniel records an approve decision in approval_decisions.csv.
+- Promote candidate to prospect: approval-recorded / Daniel records an approve decision in approval_decisions.csv.
 - Create remote GitHub issues: blocked / Daniel approves remote GitHub issue creation.
 - Send or schedule outreach: blocked / Promoted prospect, compliant draft, sender ID, opt-out, contact basis, and explicit send approval.

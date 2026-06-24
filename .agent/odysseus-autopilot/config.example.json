@@ -1,0 +1,11 @@
+{
+  "telegram_config_path": "/Users/danielkuschmierz/Library/Application Support/OdysseusTelegramBridge/config.json",
+  "odysseus_dir": "/Users/danielkuschmierz/Documents/website ideas/odysseus",
+  "odysseus_screen_name": "odysseus-autopilot",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "ollama_bin": "/opt/homebrew/bin/ollama",
+  "google_bridge_url": "http://127.0.0.1:8765",
+  "restart_cooldown_minutes": 10,
+  "daily_report_hour": 7,
+  "max_log_bytes": 2000000
+}

@@ -12,12 +12,20 @@ for row in read_csv(p("prospect_intake.csv")):
     if gate.get("readiness") != "promotion-review-ready":
         continue
     path = p("intake_opportunity_briefs", f"{slug(business)}.md")
-    opportunity = "Turn Facebook/directory attention into a simple owned information and enquiry page."
+    opportunity = clean(row.get("proposed_hook"))
+    social_signal = clean(row.get("observed_social_signal"))
+    website_gap = clean(row.get("observed_website_gap"))
+    website = clean(row.get("website"), "No owned website verified in this scan.")
     with open(path, "w", encoding="utf-8") as handle:
         handle.write(f"# Private Opportunity Brief: {business}\n\n")
         handle.write("- Status: internal planning only\n")
         handle.write(f"- Region: {clean(row.get('region'))}\n- Niche: {clean(row.get('niche'))}\n")
-        handle.write(f"- Socials: {clean(row.get('socials'))}\n- Sources: {clean(row.get('source_urls'))}\n\n")
+        handle.write(f"- Socials: {clean(row.get('socials'))}\n")
+        handle.write(f"- Website: {website}\n")
+        handle.write(f"- Sources: {clean(row.get('source_urls'))}\n\n")
+        handle.write("## Public Evidence\n\n")
+        handle.write(f"- Social signal: {social_signal}\n")
+        handle.write(f"- Website gap: {website_gap}\n\n")
         handle.write(f"## Primary Opportunity\n\n{opportunity}\n\n")
         handle.write("Promotion is not outreach approval. Do not imply endorsement.\n")
     rows.append({"date": today(), "business": business, "region": clean(row.get("region")), "niche": clean(row.get("niche")), "readiness": gate.get("readiness"), "brief_path": rel(path), "primary_opportunity": opportunity, "safe_next_step": "Daniel promotion review; no outreach approval implied", "notes": "Private concept planning only; not client-approved."})

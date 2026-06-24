@@ -30,6 +30,17 @@ def business_from_notes(notes):
 
 research_queue = {clean(row.get("business")).casefold(): row for row in read_csv(p("research_queue.csv"))}
 experiments = read_csv(p("research_experiments.csv"))
+attempts = read_csv(p("research_attempts.csv"))
+
+
+def failed_attempt_count(business):
+    key = clean(business).casefold()
+    return sum(
+        1
+        for attempt in attempts
+        if clean(attempt.get("business")).casefold() == key
+        and clean(attempt.get("result")).startswith("no_")
+    )
 
 rows = []
 for experiment in experiments:
@@ -47,6 +58,13 @@ for experiment in experiments:
     if "art" in niche.casefold() or "gallery" in niche.casefold():
         secondary_family = "local arts or tourism source"
         secondary_query = f'"{business}" "{region}" gallery workshop official'
+    failed_count = failed_attempt_count(business)
+    status = "needs-new-source-family" if failed_count >= 4 else "ready-for-pivot-research"
+    safe_next_action = (
+        "Research only; do not repeat this pivot until a genuinely new public source family or stronger source appears."
+        if status == "needs-new-source-family"
+        else "Research only; update intake only with public evidence or log the pivot attempt as failed."
+    )
     rows.append({
         "date": today(),
         "business": business,
@@ -58,8 +76,8 @@ for experiment in experiments:
         "secondary_source_family": secondary_family,
         "secondary_query": secondary_query,
         "evidence_required": "Public source URL, business identity, region fit, owned website status, and any business-owned social/profile link.",
-        "safe_next_action": "Research only; update intake only with public evidence or log the pivot attempt as failed.",
-        "status": "ready-for-pivot-research",
+        "safe_next_action": safe_next_action,
+        "status": status,
         "notes": "No contact, account login, form submission, DM, call, social interaction, promotion, or outreach.",
     })
 

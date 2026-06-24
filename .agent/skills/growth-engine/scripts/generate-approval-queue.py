@@ -3,10 +3,22 @@ import os
 from common import clean, p, read_csv, rel, today, write_csv
 
 FIELDS = ["date", "approval_type", "business", "priority", "source_path", "requested_decision", "safe_command", "blocked_until_approved", "notes"]
+approved = {
+    clean(row.get("business")).casefold()
+    for row in read_csv(p("approval_decisions.csv"))
+    if clean(row.get("approval_type")).casefold() == "promotion"
+    and clean(row.get("decision")).casefold() == "approve"
+}
+promoted = {
+    clean(row.get("business")).casefold()
+    for row in read_csv(p("prospects.csv"))
+}
 rows = []
 for row in read_csv(p("intake_opportunity_briefs.csv")):
     business = clean(row.get("business"), "")
     if not business:
+        continue
+    if business.casefold() in approved or business.casefold() in promoted:
         continue
     rows.append({
         "date": today(),

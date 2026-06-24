@@ -1,0 +1,18 @@
+{
+  "host": "0.0.0.0",
+  "port": 8770,
+  "auth_token": "CHANGE_ME_GENERATED_ON_INSTALL",
+  "setup_token": "CHANGE_ME_GENERATED_ON_INSTALL",
+  "state_path": "/Users/danielkuschmierz/Library/Application Support/OdysseusPhoneBridge/phone_state.json",
+  "telegram_config_path": "/Users/danielkuschmierz/Library/Application Support/OdysseusTelegramBridge/config.json",
+  "max_events": 500,
+  "notify_event_types": [
+    "appointment_reminder",
+    "alarm_snapshot",
+    "calendar_snapshot"
+  ],
+  "llm_enabled": true,
+  "llm_event_types": [
+    "appointment_reminder"
+  ]
+}

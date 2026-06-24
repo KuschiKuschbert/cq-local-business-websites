@@ -26,6 +26,11 @@ for action in read_csv(p("action_permissions.csv")):
         gate_status = "blocked-missing-council-debate"
     if clean(debate.get("status")).startswith("blocked"):
         gate_status = "blocked-by-council-verdict"
+    if gate_status == "allowed-with-council-constraints" and action_name not in {
+        "Run safe prospect research",
+        "Capture sourced intake candidate",
+    }:
+        gate_status = "blocked-requires-explicit-daniel-approval"
     if action_name == "Capture sourced intake candidate" and action_status == "allowed":
         gate_status = "allowed-only-with-strong-public-evidence"
     rows.append({

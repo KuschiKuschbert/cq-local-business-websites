@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+import os
+from common import clean, p, rel, read_csv, slug, today, write_csv
+
+FIELDS = [
+    "date",
+    "rank",
+    "business",
+    "decision_type",
+    "recommended_decision",
+    "evidence_path",
+    "approval_packet",
+    "private_concept",
+    "github_issue_draft",
+    "github_status",
+    "approve_command",
+    "reject_command",
+    "hold_command",
+    "after_approve",
+    "still_blocked",
+    "safety_gate",
+    "notes",
+]
+
+inbox = read_csv(p("approval_decision_inbox.csv"))
+packets = {clean(row.get("business")).casefold(): row for row in read_csv(p("approval_packets.csv"))}
+concepts = {clean(row.get("business")).casefold(): row for row in read_csv(p("private_concepts.csv"))}
+github = {clean(row.get("business")).casefold(): row for row in read_csv(p("github_readiness_audit.csv"))}
+
+rows = []
+for item in inbox:
+    business = clean(item.get("business"))
+    key = business.casefold()
+    packet = packets.get(key, {})
+    concept = concepts.get(key, {})
+    github_row = github.get(key, {})
+    rows.append({
+        "date": today(),
+        "rank": clean(item.get("rank"), "999"),
+        "business": business,
+        "decision_type": clean(item.get("approval_type")),
+        "recommended_decision": clean(item.get("recommended_decision")),
+        "evidence_path": clean(item.get("evidence_path")),
+        "approval_packet": clean(item.get("packet_path"), clean(packet.get("packet_path"))),
+        "private_concept": clean(concept.get("concept_path"), f".agent/memory/working/private_concepts/{slug(business)}/index.html"),
+        "github_issue_draft": clean(github_row.get("issue_draft"), "-"),
+        "github_status": clean(github_row.get("readiness_status"), "not-generated"),
+        "approve_command": clean(item.get("approve_command")),
+        "reject_command": clean(item.get("reject_command")),
+        "hold_command": clean(item.get("hold_command")),
+        "after_approve": clean(item.get("approve_effect"), clean(packet.get("after_approve"))),
+        "still_blocked": clean(packet.get("still_blocked"), "Outreach send, remote GitHub writes, publishing, hosting, billing, and client-facing promises."),
+        "safety_gate": "Decision cockpit is advisory; it does not approve promotion, outreach, publishing, remote GitHub writes, billing, or client-facing action.",
+        "notes": "Use this cockpit to review evidence and record a local approve/reject/hold decision only.",
+    })
+
+rows.sort(key=lambda row: int(row["rank"]) if row["rank"].isdigit() else 999)
+write_csv(p("decision_cockpit.csv"), rows, FIELDS)
+
+os.makedirs(p("decision_cockpit"), exist_ok=True)
+path = p("decision_cockpit", f"{today()}.md")
+with open(path, "w", encoding="utf-8") as handle:
+    handle.write("# Decision Cockpit\n\n")
+    handle.write(f"- Date: {today()}\n")
+    handle.write("- Purpose: one review surface for pending promotion decisions, evidence, concepts, GitHub local drafts, and follow-on gates.\n")
+    handle.write("- Safety: advisory only. Recording a decision is not promotion, outreach, publishing, remote GitHub write, billing, or client-facing approval.\n\n")
+    if not rows:
+        handle.write("No pending decision rows.\n")
+    for row in rows:
+        handle.write(f"## #{row['rank']} {row['business']}\n\n")
+        handle.write(f"- Recommended decision: {row['recommended_decision']}\n")
+        handle.write(f"- Evidence: {row['evidence_path']}\n")
+        handle.write(f"- Approval packet: {row['approval_packet']}\n")
+        handle.write(f"- Private concept: {row['private_concept']}\n")
+        handle.write(f"- GitHub draft: {row['github_issue_draft']} ({row['github_status']})\n")
+        handle.write(f"- Approve decision record: `{row['approve_command']}`\n")
+        handle.write(f"- Reject decision record: `{row['reject_command']}`\n")
+        handle.write(f"- Hold decision record: `{row['hold_command']}`\n")
+        handle.write(f"- After approve: {row['after_approve']}\n")
+        handle.write(f"- Still blocked: {row['still_blocked']}\n")
+        handle.write(f"- Gate: {row['safety_gate']}\n\n")
+
+print(rel(path))

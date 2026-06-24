@@ -1,0 +1,3 @@
+{"id": "lesson_plumber_guarantee", "intent": "plumber emergency", "pattern": "On-Time or We Pay You $50 guarantee + $99 call-out", "status": "graduated", "rationale": "High conversion on plumber local reviews"}
+{"id": "lesson_pest_liability", "intent": "pest spray carpet clean", "pattern": "Police-cleared badge + $20M liability + Price-Lock check", "status": "graduated", "rationale": "Reassures residential homeowners on safety"}
+{"id": "lesson_landscaping_waste", "intent": "lawn landscaping garden", "pattern": "Pristine site guarantee (zero mulch mess left)", "status": "graduated", "rationale": "Addresses driveway cleanup complaints"}

@@ -36,6 +36,23 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
+# Local agent secrets/runtime
+.agent/odysseus.cookies
+.agent/telegram-odysseus-bridge/config.json
+.agent/telegram-odysseus-bridge/sessions.json
+.agent/telegram-odysseus-bridge/state.json
+.agent/telegram-odysseus-bridge/*.log
+.agent/telegram-odysseus-bridge/outbox/*
+!.agent/telegram-odysseus-bridge/outbox/.gitkeep
+.agent/odysseus-autopilot/config.json
+.agent/odysseus-autopilot/state.json
+.agent/odysseus-autopilot/*.log
+.agent/odysseus-autopilot/reports/
+.agent/google-read-bridge/config.json
+.agent/google-read-bridge/token.json
+.agent/google-read-bridge/client_secret.json
+.agent/google-read-bridge/*.log
+
 # IDEs
 .vscode/
 .idea/

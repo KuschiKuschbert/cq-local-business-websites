@@ -3,18 +3,14 @@ set -euo pipefail
 
 # Generated local plan only. Do not run without explicit Daniel approval.
 
-# Yeppoon Community Market
+# Ella Anderson beauty
 # Requires explicit approval before execution.
-gh issue create --title '[Prospect Review] Yeppoon Community Market' --body-file .agent/memory/working/github_issue_drafts/yeppoon-community-market.md --label 'prospect, approval-needed, safety-gated'
+gh issue create --title '[Prospect Review] Ella Anderson beauty' --body-file .agent/memory/working/github_issue_drafts/ella-anderson-beauty.md --label 'prospect, approval-needed, safety-gated'
 
-# CocoBrew Riverfront
+# Her. Hair
 # Requires explicit approval before execution.
-gh issue create --title '[Prospect Review] CocoBrew Riverfront' --body-file .agent/memory/working/github_issue_drafts/cocobrew-riverfront.md --label 'prospect, approval-needed, safety-gated'
+gh issue create --title '[Prospect Review] Her. Hair' --body-file .agent/memory/working/github_issue_drafts/her-hair.md --label 'prospect, approval-needed, safety-gated'
 
-# CocoBrew Rockhampton
+# CQ Gutter Cleaning
 # Requires explicit approval before execution.
-gh issue create --title '[Prospect Review] CocoBrew Rockhampton' --body-file .agent/memory/working/github_issue_drafts/cocobrew-rockhampton.md --label 'prospect, approval-needed, safety-gated'
-
-# CocoBrew Express Yeppoon
-# Requires explicit approval before execution.
-gh issue create --title '[Prospect Review] CocoBrew Express Yeppoon' --body-file .agent/memory/working/github_issue_drafts/cocobrew-express-yeppoon.md --label 'prospect, approval-needed, safety-gated'
+gh issue create --title '[Prospect Review] CQ Gutter Cleaning' --body-file .agent/memory/working/github_issue_drafts/cq-gutter-cleaning.md --label 'prospect, approval-needed, safety-gated'

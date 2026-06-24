@@ -1,0 +1,22 @@
+{
+  "telegram_bot_token": "PASTE_BOTFATHER_TOKEN_HERE",
+  "allowed_chat_ids": [],
+  "odysseus_base_url": "http://127.0.0.1:7860",
+  "odysseus_api_token": "PASTE_ODYSSEUS_API_TOKEN_HERE",
+  "endpoint_id": "da743bb4",
+  "endpoint_url": "http://localhost:11434/v1/chat/completions",
+  "default_model": "qwen3:14b",
+  "fast_model": "qwen3:8b",
+  "google_bridge_url": "http://127.0.0.1:8765",
+  "google_keep_account": "riviera_kitchen",
+  "microsoft_bridge_url": "http://127.0.0.1:8767",
+  "outbox_dir": "/Users/danielkuschmierz/Documents/website ideas/.agent/telegram-odysseus-bridge/outbox",
+  "max_reply_chars": 3500,
+  "max_google_context_chars": 30000,
+  "max_microsoft_context_chars": 30000,
+  "phone_location_enabled": true,
+  "phone_location_history_limit": 200,
+  "phone_default_geofence_radius_m": 200,
+  "phone_geofence_repeat_cooldown_seconds": 43200,
+  "poll_timeout_seconds": 25
+}

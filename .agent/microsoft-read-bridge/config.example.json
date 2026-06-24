@@ -1,0 +1,60 @@
+{
+  "host": "127.0.0.1",
+  "port": 8767,
+  "tenant": "organizations",
+  "client_id": "PASTE_MICROSOFT_ENTRA_APPLICATION_CLIENT_ID_HERE",
+  "token_path": "/Users/danielkuschmierz/Library/Application Support/MicrosoftReadBridge/token.json",
+  "accounts": [
+    {
+      "name": "lan_kitchen",
+      "email": "kitchen.riviera@lanegroupcq.com.au",
+      "tenant": "organizations",
+      "token_path": "/Users/danielkuschmierz/Library/Application Support/MicrosoftReadBridge/token-lan-kitchen.json",
+      "tags": [
+        "riviera",
+        "kitchen",
+        "lanegroup"
+      ],
+      "aliases": [
+        "kitchen.riviera@lanegroupcq",
+        "lanegroup",
+        "lanegroupcq",
+        "lane group",
+        "riviera"
+      ]
+    }
+  ],
+  "timezone": "Australia/Brisbane",
+  "scopes": [
+    "offline_access",
+    "User.Read",
+    "Calendars.Read"
+  ],
+  "calendar_max_results": 20,
+  "calendar_description_chars": 8000,
+  "calendar_aliases": {
+    "riviera": [
+      "riviera",
+      "lanegroup",
+      "lanegroupcq",
+      "lane group",
+      "kitchen.riviera@lanegroupcq",
+      "kitchen",
+      "wedding",
+      "venue",
+      "function"
+    ],
+    "lanegroup": [
+      "lanegroup",
+      "lanegroupcq",
+      "lane group",
+      "kitchen.riviera@lanegroupcq"
+    ],
+    "lanegroupcq": [
+      "lanegroup",
+      "lanegroupcq",
+      "lane group",
+      "kitchen.riviera@lanegroupcq"
+    ]
+  }
+}

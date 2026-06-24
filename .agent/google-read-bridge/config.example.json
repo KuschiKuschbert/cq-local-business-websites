@@ -1,0 +1,67 @@
+{
+  "host": "127.0.0.1",
+  "port": 8765,
+  "redirect_uri": "http://127.0.0.1:8766/oauth2callback",
+  "client_secrets_path": "/Users/danielkuschmierz/Library/Application Support/GoogleReadBridge/client_secret.json",
+  "token_path": "/Users/danielkuschmierz/Library/Application Support/GoogleReadBridge/token.json",
+  "accounts": [
+    {
+      "name": "personal",
+      "email": "derkusch@gmail.com",
+      "token_path": "/Users/danielkuschmierz/Library/Application Support/GoogleReadBridge/token.json"
+    },
+    {
+      "name": "riviera_kitchen",
+      "email": "kitchen@rivierayeppoon.com",
+      "token_path": "/Users/danielkuschmierz/Library/Application Support/GoogleReadBridge/token-riviera-kitchen.json",
+      "tags": [
+        "riviera",
+        "kitchen"
+      ]
+    },
+    {
+      "name": "lan_kitchen",
+      "email": "kitchen.riviera@lanegroupcq.com.au",
+      "token_path": "/Users/danielkuschmierz/Library/Application Support/GoogleReadBridge/token-lan-kitchen.json",
+      "tags": [
+        "riviera",
+        "kitchen",
+        "lanegroup"
+      ]
+    }
+  ],
+  "timezone": "Australia/Brisbane",
+  "scopes": [
+    "https://www.googleapis.com/auth/calendar.readonly",
+    "https://www.googleapis.com/auth/calendar.events.readonly",
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/contacts.readonly",
+    "https://www.googleapis.com/auth/tasks.readonly",
+    "https://www.googleapis.com/auth/keep.readonly"
+  ],
+  "calendar_max_results": 20,
+  "calendar_description_chars": 8000,
+  "calendar_aliases": {
+    "riviera": [
+      "riviera",
+      "rivierayeppoon",
+      "kitchen@rivierayeppoon",
+      "admin@adarazecatering",
+      "lanegroup",
+      "lanegroupcq",
+      "lane group",
+      "adaraze",
+      "catering",
+      "kitchen",
+      "wedding",
+      "venue",
+      "function",
+      "roster",
+      "kitchen.riviera@lanegroupcq"
+    ]
+  },
+  "drive_max_results": 10,
+  "gmail_max_results": 8,
+  "gmail_body_preview_chars": 1200
+}

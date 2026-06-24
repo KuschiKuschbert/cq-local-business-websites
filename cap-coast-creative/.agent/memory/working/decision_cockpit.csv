@@ -1,0 +1,1 @@
+date,rank,business,decision_type,recommended_decision,evidence_path,approval_packet,private_concept,github_issue_draft,github_status,approve_command,reject_command,hold_command,after_approve,still_blocked,safety_gate,notes

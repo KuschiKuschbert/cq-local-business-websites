@@ -147,3 +147,25 @@ cat <<EOT >> "$OUT_DIR/index.html"
 EOT
 
 echo "All sites built recursively and output generated in $OUT_DIR!"
+
+# Optional auto-push to Git if --push argument is provided
+if [ "$1" == "--push" ]; then
+  echo "------------------------------------------------"
+  echo "Staging, committing, and pushing to Git..."
+  echo "------------------------------------------------"
+  
+  # Stage changes
+  git add .
+  
+  # Commit changes, print status
+  commit_msg="feat: Auto-update mockups and workspace index on build"
+  if git commit -m "$commit_msg"; then
+    # Push to current branch
+    current_branch=$(git branch --show-current)
+    echo "Pushing changes to origin $current_branch..."
+    git push origin "$current_branch"
+    echo "Successfully pushed and triggered Vercel build!"
+  else
+    echo "No changes to commit. Git status is clean."
+  fi
+fi

@@ -52,7 +52,14 @@ rows = []
 
 research_permission = permissions.get("run safe prospect research", {})
 if clean(research_permission.get("status")) == "allowed":
-    experiment = research_experiments[0] if research_experiments else {}
+    experiment = next(
+        (
+            row
+            for row in research_experiments
+            if clean(row.get("status")) == "ready-to-test"
+        ),
+        research_experiments[0] if research_experiments else {},
+    )
     add(
         rows,
         "research-next-experiment",
@@ -69,19 +76,21 @@ if clean(research_permission.get("status")) == "allowed":
     )
 
 for index, pivot in enumerate(source_pivots[:3], start=1):
+    pivot_status = clean(pivot.get("status"))
+    is_ready = pivot_status == "ready-for-pivot-research"
     add(
         rows,
         f"source-pivot-{index}",
         "research",
         f"Run source-family pivot research for {clean(pivot.get('business'))}.",
         "Codex",
-        "allowed-now",
+        "allowed-now" if is_ready else "planned",
         clean(pivot.get("pivot_reason")),
         clean(pivot.get("primary_query")),
-        "-",
+        "-" if is_ready else "A new public source family or stronger source appears.",
         clean(pivot.get("safe_next_action")),
         ".agent/memory/working/source_pivot_plan.csv",
-        "Pivot research is not capture, promotion, outreach, publishing, or approval.",
+        f"Pivot status: {pivot_status}. Pivot research is not capture, promotion, outreach, publishing, or approval.",
     )
 
 for index, suppression in enumerate(research_suppression[:3], start=1):

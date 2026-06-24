@@ -24,9 +24,9 @@ Approve or reject moving this staged candidate into `prospects.csv`.
 
 ## Opportunity
 
-Owned WordPress site exists with booking/order paths; opportunity is a sharper launch/Legends Bar landing page and faster private concept for the new 2026 venue.
+Current Riverfront site clearly supports dining, booking, and ordering, but the visible navigation does not surface a dedicated functions or events path, a stronger Legends Bar conversion page, or a broader venue-story funnel for groups and occasions.
 
-Suggested hook: Riverfront launch page with book-a-table CTA, Legends Bar proof, functions/events pathway, and local sports hospitality hook.
+Suggested hook: Riverfront hospitality page set with dining, Legends Bar, group booking/functions, and event-night CTA flow for locals, visitors, and corporate catchups.
 
 ## Safety Gate
 

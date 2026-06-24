@@ -13,6 +13,11 @@ FIELDS = [
     "private_concept",
     "github_issue_draft",
     "github_status",
+    "social_signal",
+    "website_gap",
+    "proposed_opportunity",
+    "evidence_grade",
+    "review_focus",
     "approve_command",
     "reject_command",
     "hold_command",
@@ -26,6 +31,7 @@ inbox = read_csv(p("approval_decision_inbox.csv"))
 packets = {clean(row.get("business")).casefold(): row for row in read_csv(p("approval_packets.csv"))}
 concepts = {clean(row.get("business")).casefold(): row for row in read_csv(p("private_concepts.csv"))}
 github = {clean(row.get("business")).casefold(): row for row in read_csv(p("github_readiness_audit.csv"))}
+intake = {clean(row.get("business")).casefold(): row for row in read_csv(p("prospect_intake.csv"))}
 
 rows = []
 for item in inbox:
@@ -34,6 +40,7 @@ for item in inbox:
     packet = packets.get(key, {})
     concept = concepts.get(key, {})
     github_row = github.get(key, {})
+    intake_row = intake.get(key, {})
     rows.append({
         "date": today(),
         "rank": clean(item.get("rank"), "999"),
@@ -45,6 +52,11 @@ for item in inbox:
         "private_concept": clean(concept.get("concept_path"), f".agent/memory/working/private_concepts/{slug(business)}/index.html"),
         "github_issue_draft": clean(github_row.get("issue_draft"), "-"),
         "github_status": clean(github_row.get("readiness_status"), "not-generated"),
+        "social_signal": clean(item.get("social_signal"), clean(intake_row.get("observed_social_signal"))),
+        "website_gap": clean(item.get("website_gap"), clean(intake_row.get("observed_website_gap"))),
+        "proposed_opportunity": clean(item.get("proposed_opportunity"), clean(intake_row.get("proposed_hook"))),
+        "evidence_grade": clean(item.get("evidence_grade")),
+        "review_focus": clean(item.get("review_focus")),
         "approve_command": clean(item.get("approve_command")),
         "reject_command": clean(item.get("reject_command")),
         "hold_command": clean(item.get("hold_command")),
@@ -69,6 +81,11 @@ with open(path, "w", encoding="utf-8") as handle:
     for row in rows:
         handle.write(f"## #{row['rank']} {row['business']}\n\n")
         handle.write(f"- Recommended decision: {row['recommended_decision']}\n")
+        handle.write(f"- Social signal: {row['social_signal']}\n")
+        handle.write(f"- Website gap: {row['website_gap']}\n")
+        handle.write(f"- Proposed opportunity: {row['proposed_opportunity']}\n")
+        handle.write(f"- Evidence grade: {row['evidence_grade']}\n")
+        handle.write(f"- Review focus: {row['review_focus']}\n")
         handle.write(f"- Evidence: {row['evidence_path']}\n")
         handle.write(f"- Approval packet: {row['approval_packet']}\n")
         handle.write(f"- Private concept: {row['private_concept']}\n")

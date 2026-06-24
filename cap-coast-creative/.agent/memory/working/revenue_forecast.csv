@@ -1,0 +1,5 @@
+date,stage,count,weighted_probability,gross_monthly_fee,weighted_mrr,next_action,safety_gate,notes
+2026-06-17,staged-intake,7,0.05,$1693/mo,$85/mo,Strengthen evidence; do not promote without approval.,"Forecast only; no invoices, charges, outreach, or client promises.","Weighted forecast is planning math, not booked revenue."
+2026-06-17,promotion-review,5,0.15,$1195/mo,$179/mo,Use approval packets for approve/reject/hold decisions.,"Forecast only; no invoices, charges, outreach, or client promises.","Weighted forecast is planning math, not booked revenue."
+2026-06-17,approved-prospect,5,0.3,$1195/mo,$358/mo,"Generate compliance, delivery, and draft assets only after approvals.","Forecast only; no invoices, charges, outreach, or client promises.","Weighted forecast is planning math, not booked revenue."
+2026-06-17,active-client,0,1.0,$0/mo,$0/mo,Track retained MRR and review delivery promises.,"Forecast only; no invoices, charges, outreach, or client promises.","Weighted forecast is planning math, not booked revenue."

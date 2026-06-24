@@ -19,6 +19,7 @@ FIELDS = [
 priority = {clean(row.get("business")).casefold(): row for row in read_csv(p("priority_board.csv"))}
 strategy = {clean(row.get("business")).casefold(): row for row in read_csv(p("offer_strategy.csv"))}
 permissions = {clean(row.get("action")).casefold(): row for row in read_csv(p("action_permissions.csv"))}
+intake = {clean(row.get("business")).casefold(): row for row in read_csv(p("prospect_intake.csv"))}
 rows = []
 os.makedirs(p("approval_packets"), exist_ok=True)
 
@@ -27,6 +28,7 @@ for item in read_csv(p("approval_queue.csv")):
     key = business.casefold()
     priority_row = priority.get(key, {})
     strategy_row = strategy.get(key, {})
+    intake_row = intake.get(key, {})
     decision_command = (
         f'python3 .agent/skills/growth-engine/scripts/record-approval-decision.py '
         f'--business "{business}" --decision approve --decided-by "Daniel" --notes "Approved for prospect promotion only."'
@@ -44,6 +46,10 @@ for item in read_csv(p("approval_queue.csv")):
         handle.write(f"- Offer tier: {clean(strategy_row.get('tier'))} / {clean(strategy_row.get('monthly_fee'))}\n")
         handle.write(f"- Trust hook: {clean(strategy_row.get('trust_hook'))}\n")
         handle.write(f"- Primary CTA: {clean(strategy_row.get('primary_cta'))}\n\n")
+        handle.write("## Evidence Snapshot\n\n")
+        handle.write(f"- Public social signal: {clean(intake_row.get('observed_social_signal'))}\n")
+        handle.write(f"- Website gap: {clean(intake_row.get('observed_website_gap'))}\n")
+        handle.write(f"- Proposed opportunity: {clean(intake_row.get('proposed_hook'))}\n\n")
         handle.write("## Decision\n\n")
         handle.write("- Recommended decision: approve for prospect promotion only if Daniel accepts the evidence packet.\n")
         handle.write(f"- Record approval: `{decision_command}`\n")
