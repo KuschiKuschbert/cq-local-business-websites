@@ -533,11 +533,14 @@
     }
   </style>
 </head>
-<body data-de-archetype="nordic" data-de-palette="sage-garden">
+<body data-de-archetype="nordic" data-de-palette="sage-garden" data-de-cursor="off">
 
   <!-- Navigation -->
   <nav class="cq-nav">
-    <div class="cq-brand">CQ Gutter Cleaning</div>
+    <div class="cq-brand" style="display: flex; align-items: center; gap: 0.75rem;">
+      <img src="./logo.jpg" alt="CQ Gutter Cleaning Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--color-border);">
+      <span>CQ Gutter Cleaning</span>
+    </div>
     <div class="cq-nav-links">
       <a href="#services">Services</a>
       <a href="#results">Process</a>
@@ -546,6 +549,7 @@
       <a href="#estimator" class="de-btn">Book Quote</a>
     </div>
   </nav>
+
 
   <!-- Hero -->
   <header class="cq-hero-section de-reveal">
@@ -880,9 +884,18 @@
   </section>
 
   <!-- Footer -->
-  <footer style="padding: 4rem 2rem; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-muted); font-size: 0.9rem;">
-    <p>&copy; 2026 CQ Gutter Cleaning. All rights reserved. Servicing Central Queensland. Built by Cap Coast Creative.</p>
+  <footer style="padding: 4rem 2rem; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-muted); font-size: 0.9rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-text);">
+      <img src="./logo.jpg" alt="CQ Gutter Cleaning Logo" style="height: 30px; width: 30px; border-radius: 50%; object-fit: cover;">
+      <span>CQ Gutter Cleaning</span>
+    </div>
+    <p style="margin: 0;">&copy; 2026 CQ Gutter Cleaning. All rights reserved. Servicing Emu Park, Yeppoon, and Rockhampton.</p>
+    <a href="https://www.facebook.com/profile.php?id=61591087210532" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-weight: 500; transition: var(--de-transition-smooth);">
+      <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Find us on Facebook
+    </a>
   </footer>
+
 
   <!-- Dynamic Wizard Engine Controller -->
   <script>
