@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CQ Gutter Cleaning | Premium Coastal Roof Maintenance</title>
-  <meta name="description" content="Commercial & residential gutter cleaning, leaf mesh installation, and solar washing. Servicing Yeppoon, Emu Park, and Rockhampton with mess-free vacuum systems.">
+  <title>CQ Gutter Cleaning | Premium Coastal Roof Protection</title>
+  <meta name="description" content="Commercial & residential gutter clearing, CSIRO ember guards, and solar panel cleaning. Servicing Yeppoon, Emu Park, and Rockhampton. Upfront wizard estimates.">
+  
+  <!-- Core Design Engine assets -->
   <link rel="stylesheet" href="./src/design-engine.css">
   <link rel="stylesheet" href="./src/components.css">
+  
   <style>
-    /* Premium custom layout styles */
+    /* Custom premium styling overlays for Editorial-Nordic design mix */
     .cq-hero-section {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 5rem;
       align-items: center;
       padding: 7rem 2rem 5rem;
@@ -39,16 +42,16 @@
     }
     .cq-hero-kicker {
       font-family: var(--de-font-mono);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--color-primary);
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       margin-bottom: 1.5rem;
       display: inline-block;
     }
     .cq-hero-desc {
       font-size: 1.25rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--color-muted);
       margin-bottom: 2.5rem;
     }
@@ -70,7 +73,7 @@
       align-items: center;
       padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--color-border);
-      background: rgba(244, 247, 244, 0.8);
+      background: rgba(244, 247, 244, 0.85);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       position: sticky;
@@ -119,40 +122,6 @@
       font-size: 1.15rem;
       line-height: 1.6;
     }
-    /* Estimator Custom Layout styling */
-    .estimator-layout {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .estimator-info h3 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .estimator-info p {
-      color: var(--color-muted);
-      line-height: 1.65;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-    .estimator-info ul {
-      list-style-type: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
-    .estimator-info li {
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 1.05rem;
-    }
-    .estimator-info li::before {
-      content: "✓";
-      color: var(--color-primary);
-      font-weight: bold;
-    }
     /* Card Image styling */
     .card-image {
       width: 100%;
@@ -161,12 +130,8 @@
       border-radius: calc(var(--de-border-radius) / 2);
       margin-bottom: 1.5rem;
       border: 1px solid var(--color-border);
-      transition: var(--de-transition-smooth);
     }
-    .de-grid-item:hover .card-image {
-      filter: brightness(1.05);
-    }
-    /* Regional highlight cards */
+    /* Highlight banner grid */
     .highlight-banner {
       background: var(--bg-secondary);
       border: 1px solid var(--color-border);
@@ -187,67 +152,384 @@
       color: var(--color-muted);
       line-height: 1.5;
     }
+    
+    /* Before / After Showcase Section */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .showcase-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--de-border-radius);
+      overflow: hidden;
+      background: var(--bg-secondary);
+      position: relative;
+    }
+    .showcase-label {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(27, 38, 29, 0.85);
+      color: var(--bg-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .showcase-text-wrap {
+      padding: 2rem;
+    }
+    .showcase-text-wrap h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .showcase-text-wrap p {
+      color: var(--color-muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* PREMIUM INTERACTIVE BOOKING WIZARD */
+    .wizard-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--de-border-radius);
+      padding: 4rem;
+      max-width: 950px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-premium);
+    }
+    .wizard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      border-bottom: 1.5px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .wizard-steps-indicator {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-border);
+      transition: var(--de-transition-smooth);
+    }
+    .step-dot.active {
+      background: var(--color-primary);
+      transform: scale(1.3);
+    }
+    .step-dot.completed {
+      background: var(--color-muted);
+    }
+    .wizard-title-indicator {
+      font-family: var(--de-font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-muted);
+    }
+    
+    /* Wizard Step Layouts */
+    .wizard-step {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+    .wizard-step.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Card selector grid for Step 1 */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+    }
+    .option-card {
+      background: var(--bg-primary);
+      border: 1.5px solid var(--color-border);
+      border-radius: calc(var(--de-border-radius) / 2);
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--de-transition-smooth);
+      position: relative;
+    }
+    .option-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    .option-card.active {
+      border-color: var(--color-primary);
+      background: rgba(61, 106, 75, 0.05);
+      box-shadow: 0 0 15px rgba(61, 106, 75, 0.1);
+    }
+    .option-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .option-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .option-card p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    /* Suburb Select styling */
+    .select-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 450px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .select-wrap label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--color-muted);
+    }
+    .wizard-select {
+      padding: 1.1rem;
+      border: 1px solid var(--color-border);
+      background: var(--bg-primary);
+      color: var(--color-text);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* Step 2 inputs */
+    .slider-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--de-border-radius) / 2);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    .slider-val-wrap {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+    }
+    .wizard-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: var(--color-border);
+      outline: none;
+      border-radius: 3px;
+    }
+    .wizard-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      transition: var(--de-transition-smooth);
+    }
+    .wizard-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+    }
+
+    /* Option Toggles */
+    .toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .toggle-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--de-border-radius) / 2);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--de-transition-smooth);
+    }
+    .toggle-card:hover {
+      border-color: var(--color-primary);
+    }
+    .toggle-card.active {
+      border-color: var(--color-primary);
+      background: rgba(61, 106, 75, 0.03);
+    }
+    .toggle-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .toggle-info p {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+    
+    /* Toggle switch widget */
+    .switch-ui {
+      width: 44px;
+      height: 24px;
+      background: var(--color-border);
+      border-radius: 99px;
+      position: relative;
+      transition: var(--de-transition-smooth);
+    }
+    .switch-ui::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      top: 3px;
+      left: 3px;
+      transition: var(--de-transition-smooth);
+    }
+    .toggle-card.active .switch-ui {
+      background: var(--color-primary);
+    }
+    .toggle-card.active .switch-ui::before {
+      transform: translateX(20px);
+    }
+
+    /* Step 3 breakdown table */
+    .breakdown-list {
+      margin: 2rem 0;
+      border-top: 1.5px solid var(--color-border);
+      border-bottom: 1.5px solid var(--color-border);
+      padding: 1.5rem 0;
+    }
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      font-size: 1.05rem;
+    }
+    .breakdown-row.muted {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+    .breakdown-row.total {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text);
+      border-top: 1px dashed var(--color-border);
+      padding-top: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    /* Step 4 contact form fields */
+    .wizard-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .form-col-2 {
+      grid-column: span 2;
+    }
+    .wizard-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .wizard-input {
+      width: 100%;
+      padding: 1.1rem;
+      border: 1px solid var(--color-border);
+      background: var(--bg-primary);
+      color: var(--color-text);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--de-transition-smooth);
+    }
+    .wizard-input:focus {
+      border-color: var(--color-primary);
+    }
+
+    /* Step 5 success wrapper */
+    .success-wrap {
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .success-icon {
+      font-size: 4rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+    .success-wrap h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .success-wrap p {
+      color: var(--color-muted);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    /* Wizard Control Actions footer */
+    .wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3.5rem;
+    }
+
     @media (max-width: 900px) {
       .cq-hero-section {
         grid-template-columns: 1fr;
         gap: 3rem;
         padding: 4rem 1.5rem;
       }
-      .highlight-banner {
+      .highlight-banner, .showcase-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+      }
+      .wizard-card {
         padding: 2rem;
       }
-      .estimator-layout {
+      .option-grid, .toggle-group, .wizard-form {
         grid-template-columns: 1fr;
-        gap: 3rem;
       }
-      .cq-nav {
-        flex-direction: column;
-        gap: 1.25rem;
-        padding: 1.25rem;
+      .form-col-2 {
+        grid-column: span 1;
       }
-      .cq-nav-links {
-        gap: 1.25rem;
-      }
-    }
-    /* Contact form premium styling */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--bg-secondary);
-      border: 1px solid var(--color-border);
-      padding: 3.5rem;
-      border-radius: var(--de-border-radius);
-    }
-    .form-group {
-      margin-bottom: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: left;
-    }
-    .form-group label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      opacity: 0.85;
-    }
-    .form-input {
-      padding: 1.1rem;
-      border: 1px solid var(--color-border);
-      background: var(--bg-primary);
-      color: var(--color-text);
-      font-family: inherit;
-      border-radius: calc(var(--de-border-radius) / 2);
-      outline: none;
-      transition: var(--de-transition-smooth);
-      font-size: 1rem;
-    }
-    .form-input:focus {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 12px var(--glow-color);
     }
   </style>
 </head>
@@ -258,23 +540,24 @@
     <div class="cq-brand">CQ Gutter Cleaning</div>
     <div class="cq-nav-links">
       <a href="#services">Services</a>
-      <a href="#estimator">Estimator</a>
+      <a href="#results">Process</a>
+      <a href="#estimator">Booking Wizard</a>
       <a href="#reviews">Reviews</a>
-      <a href="#booking" class="de-btn">Book Quote</a>
+      <a href="#estimator" class="de-btn">Book Quote</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <header class="cq-hero-section de-reveal">
     <div class="cq-hero-text">
-      <span class="cq-hero-kicker">Emu Park • Yeppoon • Rockhampton</span>
-      <h1 class="de-kinetic-text">Mess-Free Gutter Clearing & Protection.</h1>
+      <span class="cq-hero-kicker">Coastal Roof Integrity</span>
+      <h1 class="de-kinetic-text">Gutter Vacuuming & Mesh Protection.</h1>
       <p class="cq-hero-desc">
-        We clear roof debris, flush blockages, and install long-life mesh using commercial-grade suction vacuums. Fully height safety certified, locally owned, and completely mess-free.
+        We safeguard Capricorn Coast properties against heavy tropical rains. High-suction gutter clearing, downpipe purging, and leaf guard mesh installations. Mess-free, fully insured, and height safety certified.
       </p>
       <div class="cq-hero-actions">
-        <a href="#estimator" class="de-btn">Calculate Your Estimate</a>
-        <a href="#booking" class="de-btn" style="background: transparent; border-color: var(--color-border); box-shadow: none; color: var(--color-text);">Free Quote Callout</a>
+        <a href="#estimator" class="de-btn">Launch Estimate Wizard</a>
+        <a href="#services" class="de-btn" style="background: transparent; border-color: var(--color-border); box-shadow: none; color: var(--color-text);">Our Services</a>
       </div>
     </div>
     <div class="cq-hero-image-wrap">
@@ -285,8 +568,8 @@
   <!-- Services Grid -->
   <section class="cq-section" id="services">
     <div class="cq-section-header de-reveal">
-      <h2 class="cq-section-title">Coastal Protection Services</h2>
-      <p class="cq-section-desc">Reliable, fully insured exterior maintenance built to protect Capricorn Coast homes against heavy storm overflows and leaf blockages.</p>
+      <h2 class="cq-section-title">Specialist Gutter & Solar Care</h2>
+      <p class="cq-section-desc">We are not generic pressure washers. We specialize strictly in heights-certified roof drainage clearing, leaf filtration guards, and solar restorations.</p>
     </div>
     
     <div class="de-grid">
@@ -294,87 +577,253 @@
         <img src="./hero_clean_gutters.png" alt="High Suction Gutter Vacuuming Service" class="card-image">
         <h3>Mess-Free Vacuuming</h3>
         <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
-          Using high-suction gutter vacuum systems, we lift leaves, mud, and roof silt straight into our trucks. Downpipes flushed clean, zero mess on gardens or walls.
+          Using vehicle-mounted vacuum chambers, we capture mud, weeds, and roof grit without spills. Includes downpipe flushing to guarantee clear stormwater flow.
         </p>
         <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">From $150</span>
       </div>
       
       <div class="de-grid-item de-reveal" style="transition-delay: 0.1s;">
         <img src="./gutter_mesh.png" alt="Premium Leaf Guard Mesh Installation" class="card-image">
-        <h3>Leaf Guards & Mesh</h3>
+        <h3>Steel Ember Guards</h3>
         <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
-          Premium CSIRO fire-rated steel ember guards and leaf protection mesh installations. Custom fitted to stop leaf buildup and prevent roof fire hazards.
+          CSIRO fire-rated steel leaf mesh custom-fitted to your roofline. Restricts leaf accumulation in gutters, prevents fire sparks, and shields tank filtration.
         </p>
         <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">Custom Quote</span>
       </div>
       
       <div class="de-grid-item de-reveal" style="transition-delay: 0.2s;">
         <img src="./solar_panels_clean.png" alt="Pure Water Solar Panel Restoration" class="card-image">
-        <h3>Solar Soft Washing</h3>
+        <h3>Solar Panel Restoration</h3>
         <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
-          Restore your panel performance. We clear coastal salt crust, red dust, and bird droppings using pure-water telescopic brush systems.
+          Winds carry salty coastal spray and fine red dust, lowering solar output by up to 25%. We restore efficiency with chemical-free pure water washing systems.
         </p>
         <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">From $10 / Panel</span>
       </div>
     </div>
+  </section>
 
-    <!-- Sub-features highlights banner -->
+  <!-- Before / After Showcase -->
+  <section class="cq-section" id="results" style="border-top: 1px solid var(--color-border); background: rgba(244, 247, 244, 0.4);">
+    <div class="cq-section-header de-reveal">
+      <h2 class="cq-section-title">The Restoration Standard</h2>
+      <p class="cq-section-desc">How we differ from competitors. Clear evidence of drainage performance returned to your home, backed by before/after photos on every visit.</p>
+    </div>
+    
+    <div class="showcase-grid">
+      <div class="showcase-card de-reveal">
+        <span class="showcase-label">Prior State</span>
+        <img src="./landscaping_before.png" alt="Blocked Gutter Prior State" style="width: 100%; height: 260px; object-fit: cover;">
+        <div class="showcase-text-wrap">
+          <h4>Debris Clutter & Corrosion</h4>
+          <p>Decaying foliage traps humidity, triggering premature rust along gutter valleys, clogging outlets, and attracting insects and nesting pests.</p>
+        </div>
+      </div>
+      
+      <div class="showcase-card de-reveal" style="transition-delay: 0.15s;">
+        <span class="showcase-label" style="background: var(--color-primary);">Cleared State</span>
+        <img src="./landscaping_after_photo.png" alt="Cleared Gutter State" style="width: 100%; height: 260px; object-fit: cover;">
+        <div class="showcase-text-wrap">
+          <h4>High-Flow Performance</h4>
+          <p>Gutter valleys are cleared down to the steel foundation and downpipes are flushed. Clear pathways ensure smooth flow during summer downpours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust banner highlight -->
     <div class="highlight-banner de-reveal">
       <div class="highlight-card">
-        <h4>$20M Liability Insurance</h4>
-        <p>Complete peace of mind. Every technician is fully covered, height-certified, and strictly follows QLD safety regulations.</p>
-      </div>
-      <div class="highlight-card">
-        <h4>Storm Season Prep</h4>
-        <p>Heavy rains can overflow blocked gutters into ceiling cavities. Get full gutter flushes before QLD summer downpours hit.</p>
+        <h4>$20M Liability Shield</h4>
+        <p>Your property is fully protected. Our crew is height-certified and complies with QLD WorkSafe height rules.</p>
       </div>
       <div class="highlight-card">
         <h4>Rainwater Tank Safety</h4>
-        <p>Leaves and birds rot in uncleaned gutters, polluting drinking supply tanks. We clean and flush to safeguard your rainwater quality.</p>
+        <p>Decaying leaves create bacteria that pollute drinking supply water. Regular vacuum clearing protects your water supply purity.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>QLD Ember Guard Rules</h4>
+        <p>CSIRO-certified steel mesh forms a barrier against embers, fulfilling QLD fire preparedness directives for bushfire seasons.</p>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Estimator -->
-  <section class="cq-section" id="estimator" style="background: var(--bg-secondary); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-    <div class="estimator-layout">
-      <div class="estimator-info de-reveal">
-        <h3>Upfront Estimator</h3>
-        <p>
-          No hidden fees or surprise additions. Set your approximate single-story home gutter run length below to calculate an instant cost estimate.
-        </p>
-        <ul>
-          <li>Includes full clearing and disposal of all roof debris</li>
-          <li>All downpipes thoroughly flushed and checked for flow</li>
-          <li>Comprehensive roof valleys blow-down included</li>
-          <li>Detailed before & after photo report emailed with your invoice</li>
-        </ul>
+  <!-- Interactive Booking Wizard -->
+  <section class="cq-section" id="estimator">
+    <div class="cq-section-header de-reveal">
+      <h2 class="cq-section-title">Interactive Quote Wizard</h2>
+      <p class="cq-section-desc">Specify your property size, linear meters, and any optional solar panel cleaning or leaf guards to get an upfront estimate instantly.</p>
+    </div>
+
+    <div class="wizard-card de-reveal">
+      <!-- Steps Header -->
+      <div class="wizard-header">
+        <div class="wizard-title-indicator" id="wizardStepTitle">Step 1 of 4: Property Profile</div>
+        <div class="wizard-steps-indicator">
+          <div class="step-dot active" id="dot1"></div>
+          <div class="step-dot" id="dot2"></div>
+          <div class="step-dot" id="dot3"></div>
+          <div class="step-dot" id="dot4"></div>
+        </div>
       </div>
 
-      <!-- Cost Estimator Component -->
-      <div class="de-pricing-slider-card de-reveal" style="background: var(--bg-primary); width: 100%;">
-        <h3>Gutter Length Estimator</h3>
-        <p class="subtitle">Set your approximate linear gutter meters</p>
-        <div class="de-slider-group">
-          <div class="de-slider-label">
+      <!-- Step 1: Property Profile -->
+      <div class="wizard-step active" id="step1">
+        <h3>Describe your building height</h3>
+        <p style="color: var(--color-muted); margin-bottom: 2rem;">Different building heights require specific safety gear and rigging.</p>
+        
+        <div class="option-grid">
+          <label class="option-card active" onclick="setHeight('single', this)">
+            <input type="radio" name="height_factor" value="single" checked>
+            <h4>Single Story</h4>
+            <p>Standard roofline, easy ground access.</p>
+          </label>
+          <label class="option-card" onclick="setHeight('double', this)">
+            <input type="radio" name="height_factor" value="double">
+            <h4>Double Story</h4>
+            <p>Requires extension ladders & harnesses.</p>
+          </label>
+          <label class="option-card" onclick="setHeight('commercial', this)">
+            <input type="radio" name="height_factor" value="commercial">
+            <h4>Commercial / Strata</h4>
+            <p>Multi-story heights & complex roof angles.</p>
+          </label>
+        </div>
+
+        <div class="select-wrap">
+          <label for="suburbSelect">Suburbs covered</label>
+          <select id="suburbSelect" class="wizard-select">
+            <option value="Yeppoon">Yeppoon</option>
+            <option value="Emu Park" selected>Emu Park</option>
+            <option value="Rockhampton">Rockhampton</option>
+            <option value="Zilzie">Zilzie</option>
+            <option value="Kinka Beach">Kinka Beach</option>
+            <option value="Lammermoor">Lammermoor</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Step 2: Scope & Addons -->
+      <div class="wizard-step" id="step2">
+        <h3>Linear Gutter Length</h3>
+        <p style="color: var(--color-muted); margin-bottom: 2rem;">Adjust the slider to match your home's total linear gutter size.</p>
+        
+        <div class="slider-card">
+          <div class="slider-header">
             <span>Approximate Gutter length</span>
-            <span class="de-slider-val-output">60</span>
+            <span class="slider-val-wrap"><span id="lengthVal">60</span> meters</span>
           </div>
-          <input type="range" class="de-slider-input" min="15" max="180" value="60" data-multiplier="6.50" data-base-fee="150" data-unit=" meters">
+          <input type="range" class="wizard-slider" id="lengthSlider" min="15" max="200" value="60" oninput="updateCalculations()">
         </div>
-        <div class="de-pricing-result">
-          Estimated Cost: <span class="de-pricing-val">$0</span>
+
+        <h3>Add-On Services</h3>
+        <p style="color: var(--color-muted); margin-bottom: 1.5rem;">Bundling add-ons saves on mobilization fees.</p>
+        
+        <div class="toggle-group">
+          <div class="toggle-card" id="toggleMesh" onclick="toggleOption('mesh')">
+            <div class="toggle-info">
+              <h4>Leaf mesh guards</h4>
+              <p>Add CSIRO-grade steel mesh ($12.00/m)</p>
+            </div>
+            <div class="switch-ui"></div>
+          </div>
+          
+          <div class="toggle-card" id="toggleSolar" onclick="toggleOption('solar')">
+            <div class="toggle-info">
+              <h4>Solar panel washing</h4>
+              <p>Add pure-water restoration ($10.00/panel)</p>
+            </div>
+            <div class="switch-ui"></div>
+          </div>
         </div>
-        <a href="#booking" class="de-btn" style="display: block; text-align: center; margin-top: 1.5rem;">Lock In Estimate</a>
+
+        <!-- Solar panel range slider, displays if solar toggle is active -->
+        <div class="slider-card" id="solarCountContainer" style="display: none; margin-top: 1.5rem; transition: var(--de-transition-smooth);">
+          <div class="slider-header">
+            <span>Number of Solar Panels</span>
+            <span class="slider-val-wrap"><span id="solarVal">12</span> panels</span>
+          </div>
+          <input type="range" class="wizard-slider" id="solarSlider" min="4" max="40" value="12" oninput="updateCalculations()">
+        </div>
+      </div>
+
+      <!-- Step 3: Calculation Summary -->
+      <div class="wizard-step" id="step3">
+        <h3>Estimated Quote Summary</h3>
+        <p style="color: var(--color-muted); margin-bottom: 2rem;">Below is a full breakdown of the estimated services based on your profile.</p>
+        
+        <div class="breakdown-list">
+          <div class="breakdown-row muted">
+            <span>Base Mobilization Fee</span>
+            <span>$150.00</span>
+          </div>
+          <div class="breakdown-row">
+            <span>Gutter Clearing (<span id="summaryLength">60</span>m @ $<span id="summaryRate">6.50</span>/m)</span>
+            <span>$<span id="summaryGutterCost">390.00</span></span>
+          </div>
+          <div class="breakdown-row" id="rowMesh" style="display: none;">
+            <span>Ember Guard Mesh (<span id="summaryMeshLength">60</span>m @ $12.00/m)</span>
+            <span>$<span id="summaryMeshCost">720.00</span></span>
+          </div>
+          <div class="breakdown-row" id="rowSolar" style="display: none;">
+            <span>Solar Soft Washing (<span id="summarySolarCount">12</span> Panels @ $10.00/panel)</span>
+            <span>$<span id="summarySolarCost">120.00</span></span>
+          </div>
+          <div class="breakdown-row total">
+            <span>Estimated Total Investment</span>
+            <span>$<span id="summaryTotal">540.00</span></span>
+          </div>
+        </div>
+        
+        <p style="font-size: 0.85rem; color: var(--color-muted); text-align: left;">
+          * Note: This is an estimated price based on standard roof angles and access. Pricing includes height safety rigging and debris bag disposal.
+        </p>
+      </div>
+
+      <!-- Step 4: Contact & Claim -->
+      <div class="wizard-step" id="step4">
+        <h3>Secure Estimate & Request Inspection</h3>
+        <p style="color: var(--color-muted); margin-bottom: 2.5rem;">Enter your contact info to register this estimate and book a clean schedule.</p>
+        
+        <div class="wizard-form">
+          <div>
+            <label class="wizard-label" for="wName">Your Name</label>
+            <input type="text" id="wName" class="wizard-input" placeholder="e.g. John Smith" required>
+          </div>
+          <div>
+            <label class="wizard-label" for="wPhone">Phone Number</label>
+            <input type="tel" id="wPhone" class="wizard-input" placeholder="e.g. 0400 000 000" required>
+          </div>
+          <div class="form-col-2">
+            <label class="wizard-label" for="wEmail">Email Address</label>
+            <input type="email" id="wEmail" class="wizard-input" placeholder="e.g. john@example.com" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Success screen -->
+      <div class="wizard-step" id="step5">
+        <div class="success-wrap">
+          <div class="success-icon">✓</div>
+          <h3>Inspection Queued</h3>
+          <p>
+            Thanks! We have logged your estimated quote of <strong id="successTotal">$540.00</strong> for your <span id="successSuburb">Emu Park</span> property. We will contact you shortly to confirm dates.
+          </p>
+          <button class="de-btn" onclick="resetWizard()">Return to Wizard</button>
+        </div>
+      </div>
+
+      <!-- Wizard Control Buttons -->
+      <div class="wizard-actions" id="wizardActions">
+        <button class="de-btn" id="prevBtn" onclick="navigateStep(-1)" style="background: transparent; border-color: var(--color-border); box-shadow: none; color: var(--color-text); visibility: hidden;">Back</button>
+        <button class="de-btn" id="nextBtn" onclick="navigateStep(1)">Next Step</button>
       </div>
     </div>
   </section>
 
   <!-- Reviews -->
-  <section class="cq-section" id="reviews">
+  <section class="cq-section" id="reviews" style="border-top: 1px solid var(--color-border);">
     <div class="cq-section-header de-reveal">
       <h2 class="cq-section-title">Word on the Coast</h2>
-      <p class="cq-section-desc">We clean gutters for homes, duplexes, and commercial buildings across Emu Park and Yeppoon. Here is what they say:</p>
+      <p class="cq-section-desc">Read testimonials from our commercial and residential customers in Yeppoon and Emu Park.</p>
     </div>
 
     <div class="de-reviews-container">
@@ -387,12 +836,12 @@
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
-          <p class="de-review-text">"Prompt, professional, and did a great job clearing out all the leaves after the storm season. Left no mess behind. Highly recommend!"</p>
-          <div class="de-review-author">Aaron G.</div>
-          <div class="de-review-source">Emu Park QLD</div>
+          <p class="de-review-text">"Outstanding service. They cleared my gutters, flushed the downpipes, and left my property cleaner than when they arrived. Absolute gentlemen."</p>
+          <div class="de-review-author">Olivia M.</div>
+          <div class="de-review-source">Yeppoon Resident</div>
         </div>
 
-        <div class="de-review-card de-reveal" style="transition-delay: 0.1s;">
+        <div class="de-review-card de-reveal" style="transition-delay: 0.15s;">
           <div class="de-stars">
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -400,49 +849,11 @@
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
-          <p class="de-review-text">"Super clean work on our double-story home. They installed leaf mesh and also washed our solar panels. Excellent package price and communication."</p>
-          <div class="de-review-author">Kylie S.</div>
-          <div class="de-review-source">Yeppoon QLD</div>
+          <p class="de-review-text">"Installed metal guards on my double-story place and cleaned my solar panel arrays. Prompt response and upfront calculations. Exceeded expectations."</p>
+          <div class="de-review-author">Anna K.</div>
+          <div class="de-review-source">Rockhampton Customer</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="cq-section" id="booking" style="border-top: 1px solid var(--color-border); text-align: center;">
-    <div class="cq-section-header de-reveal">
-      <h2 class="cq-section-title">Schedule a Free Inspection</h2>
-      <p class="cq-section-desc">Submit your details below. We will arrange a free roof inspection and detailed gutter clearance quote.</p>
-    </div>
-
-    <div class="contact-form de-reveal">
-      <form onsubmit="event.preventDefault(); alert('This is an internal concept mockup. Form submissions are for demonstration only.');">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" class="form-input" placeholder="e.g. John Smith" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" class="form-input" placeholder="e.g. 0400 000 000" required>
-        </div>
-        <div class="form-group">
-          <label for="suburb">Suburb</label>
-          <select id="suburb" class="form-input" required>
-            <option value="" disabled selected>Select Suburb</option>
-            <option value="Emu Park">Emu Park</option>
-            <option value="Yeppoon">Yeppoon</option>
-            <option value="Rockhampton">Rockhampton</option>
-            <option value="Zilzie">Zilzie</option>
-            <option value="Kinka Beach">Kinka Beach</option>
-            <option value="Lammermoor">Lammermoor</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Service Required</label>
-          <textarea id="message" class="form-input" style="min-height: 120px;" placeholder="e.g. Gutter clearing, solar panel washing, or leaf guard mesh quote..."></textarea>
-        </div>
-        <button type="submit" class="de-btn" style="width: 100%; margin-top: 1rem;">Send Quote Request</button>
-      </form>
     </div>
   </section>
 
@@ -451,6 +862,165 @@
     <p>&copy; 2026 CQ Gutter Cleaning. All rights reserved. Servicing Central Queensland. Built by Cap Coast Creative.</p>
   </footer>
 
+  <!-- Dynamic Wizard Engine Controller -->
+  <script>
+    let currentStep = 1;
+    let heightFactor = 'single';
+    let optionsSelected = {
+      mesh: false,
+      solar: false
+    };
+
+    function setHeight(type, element) {
+      heightFactor = type;
+      // Remove active class from sibling option cards
+      const cards = element.parentNode.querySelectorAll('.option-card');
+      cards.forEach(card => card.classList.remove('active'));
+      element.classList.add('active');
+      
+      // Update radio button selection
+      const radio = element.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+      
+      updateCalculations();
+    }
+
+    function toggleOption(type) {
+      optionsSelected[type] = !optionsSelected[type];
+      const card = document.getElementById(type === 'mesh' ? 'toggleMesh' : 'toggleSolar');
+      if (optionsSelected[type]) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+
+      // Display solar panel slider count if solar toggle is active
+      if (type === 'solar') {
+        const sliderContainer = document.getElementById('solarCountContainer');
+        sliderContainer.style.display = optionsSelected.solar ? 'block' : 'none';
+      }
+
+      updateCalculations();
+    }
+
+    function updateCalculations() {
+      const lengthSlider = document.getElementById('lengthSlider');
+      const length = parseInt(lengthSlider.value);
+      document.getElementById('lengthVal').textContent = length;
+
+      // Pricing structure configuration
+      const baseFee = 150;
+      let multiplier = 6.50;
+      if (heightFactor === 'double') {
+        multiplier = 9.50;
+      } else if (heightFactor === 'commercial') {
+        multiplier = 13.50;
+      }
+
+      // Calculations
+      const gutterCost = length * multiplier;
+      let meshCost = 0;
+      if (optionsSelected.mesh) {
+        meshCost = length * 12.00;
+      }
+
+      let solarCost = 0;
+      const solarSlider = document.getElementById('solarSlider');
+      const solarCount = parseInt(solarSlider.value);
+      document.getElementById('solarVal').textContent = solarCount;
+      if (optionsSelected.solar) {
+        solarCost = solarCount * 10.00;
+      }
+
+      const totalCost = baseFee + gutterCost + meshCost + solarCost;
+
+      // Update summaries
+      document.getElementById('summaryLength').textContent = length;
+      document.getElementById('summaryRate').textContent = multiplier.toFixed(2);
+      document.getElementById('summaryGutterCost').textContent = gutterCost.toFixed(2);
+      
+      document.getElementById('rowMesh').style.display = optionsSelected.mesh ? 'flex' : 'none';
+      document.getElementById('summaryMeshLength').textContent = length;
+      document.getElementById('summaryMeshCost').textContent = meshCost.toFixed(2);
+
+      document.getElementById('rowSolar').style.display = optionsSelected.solar ? 'flex' : 'none';
+      document.getElementById('summarySolarCount').textContent = solarCount;
+      document.getElementById('summarySolarCost').textContent = solarCost.toFixed(2);
+
+      document.getElementById('summaryTotal').textContent = totalCost.toFixed(2);
+      document.getElementById('successTotal').textContent = `$${totalCost.toFixed(2)}`;
+    }
+
+    function navigateStep(direction) {
+      // Step Validation check for required fields before submitting
+      if (currentStep === 4 && direction === 1) {
+        const name = document.getElementById('wName').value;
+        const phone = document.getElementById('wPhone').value;
+        const email = document.getElementById('wEmail').value;
+        if (!name || !phone || !email) {
+          alert('Please fill out all contact fields to complete your estimate.');
+          return;
+        }
+      }
+
+      // Transition calculations
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      document.getElementById(`dot${currentStep}`).classList.remove('active');
+      if (currentStep < 5) document.getElementById(`dot${currentStep}`).classList.add('completed');
+      
+      currentStep += direction;
+      
+      document.getElementById(`step${currentStep}`).classList.add('active');
+      if (currentStep <= 4) {
+        document.getElementById(`dot${currentStep}`).classList.add('active');
+        document.getElementById('prevBtn').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+        document.getElementById('nextBtn').textContent = currentStep === 4 ? 'Confirm & Book' : 'Next Step';
+        document.getElementById('wizardStepTitle').textContent = `Step ${currentStep} of 4: ` + getStepTitle(currentStep);
+        document.getElementById('wizardActions').style.display = 'flex';
+      } else {
+        // Success Screen
+        document.getElementById('wizardActions').style.display = 'none';
+        document.getElementById('wizardStepTitle').textContent = 'Estimate Secured';
+        document.getElementById('successSuburb').textContent = document.getElementById('suburbSelect').value;
+      }
+    }
+
+    function getStepTitle(step) {
+      if (step === 1) return 'Property Profile';
+      if (step === 2) return 'Scope & Addons';
+      if (step === 3) return 'Quote Summary';
+      if (step === 4) return 'Contact & Claim';
+      return '';
+    }
+
+    function resetWizard() {
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      currentStep = 1;
+      document.getElementById(`step${currentStep}`).classList.add('active');
+      
+      // Reset dots
+      for(let i=1; i<=4; i++) {
+        const dot = document.getElementById(`dot${i}`);
+        dot.classList.remove('active', 'completed');
+      }
+      document.getElementById('dot1').classList.add('active');
+      
+      // Reset fields
+      document.getElementById('wName').value = '';
+      document.getElementById('wPhone').value = '';
+      document.getElementById('wEmail').value = '';
+      
+      document.getElementById('prevBtn').style.visibility = 'hidden';
+      document.getElementById('nextBtn').textContent = 'Next Step';
+      document.getElementById('wizardActions').style.display = 'flex';
+      document.getElementById('wizardStepTitle').textContent = 'Step 1 of 4: Property Profile';
+    }
+
+    // Initialize values
+    updateCalculations();
+  </script>
+
+  <!-- Core Design Engine JS assets -->
   <script type="module" src="./src/design-engine.js"></script>
   <script type="module" src="./src/components.js"></script>
 </body>
