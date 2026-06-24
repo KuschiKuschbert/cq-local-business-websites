@@ -17,6 +17,15 @@ find . -name "package.json" | while read -r pkg_file; do
   proj_path=$(dirname "$pkg_file")
   # Strip leading ./
   proj_path=${proj_path#./}
+
+  # Only build if project is in one of our business category folders
+  if [[ "$proj_path" != "catering-events/"* ]] && \
+     [[ "$proj_path" != "lifestyle-outdoors/"* ]] && \
+     [[ "$proj_path" != "trades-mechanical/"* ]] && \
+     [[ "$proj_path" != "plumbing-gas/"* ]] && \
+     [[ "$proj_path" != "pest-cleaning/"* ]]; then
+    continue
+  fi
   
   # Get just the project folder name (e.g. bkk-plumbing)
   proj_name=$(basename "$proj_path")

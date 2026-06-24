@@ -1,0 +1,374 @@
+/* ==========================================================================
+   Cap Coast Design Engine v1.0.0
+   Inspired by award-winning Awwwards typography, layouts, and textures.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800&family=Inter+Tight:ital,wght@0,300..700;1,300..700&family=Outfit:wght@300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@700..800&display=swap');
+
+/* --- Layer Configuration --- */
+@layer base, themes, archetypes, components, utilities;
+
+@layer base {
+  :root {
+    --de-transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --de-transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --de-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+}
+
+/* --- Color Palettes --- */
+@layer themes {
+  /* Obsidian Dark (Default dark theme) */
+  [data-de-palette="obsidian-dark"] {
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #121216;
+    --color-primary: #00f0ff;
+    --color-text: #f0f0f5;
+    --color-muted: #8e8e9f;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(0, 240, 255, 0.4);
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.5);
+    --glow-color: rgba(0, 240, 255, 0.15);
+  }
+
+  /* Terracotta Clay */
+  [data-de-palette="terracotta-clay"] {
+    --bg-primary: #faf6f0;
+    --bg-secondary: #f3eae0;
+    --color-primary: #d46a43;
+    --color-text: #2c1e18;
+    --color-muted: #726056;
+    --color-border: rgba(44, 30, 24, 0.1);
+    --color-border-hover: rgba(212, 106, 67, 0.5);
+    --shadow-premium: 0 20px 40px rgba(44, 30, 24, 0.05);
+    --glow-color: rgba(212, 106, 67, 0.08);
+  }
+
+  /* Sage Garden */
+  [data-de-palette="sage-garden"] {
+    --bg-primary: #f4f7f4;
+    --bg-secondary: #e6ede6;
+    --color-primary: #3d6a4b;
+    --color-text: #1b261d;
+    --color-muted: #5b6e5e;
+    --color-border: rgba(27, 38, 29, 0.08);
+    --color-border-hover: rgba(61, 106, 75, 0.5);
+    --shadow-premium: 0 20px 40px rgba(27, 38, 29, 0.04);
+    --glow-color: rgba(61, 106, 75, 0.08);
+  }
+
+  /* Desert Gold */
+  [data-de-palette="desert-gold"] {
+    --bg-primary: #121212;
+    --bg-secondary: #1c1c1a;
+    --color-primary: #d4af37;
+    --color-text: #f5f5f0;
+    --color-muted: #9c9a90;
+    --color-border: rgba(212, 175, 55, 0.15);
+    --color-border-hover: rgba(212, 175, 55, 0.6);
+    --shadow-premium: 0 25px 50px rgba(0, 0, 0, 0.6);
+    --glow-color: rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* --- Design Archetypes --- */
+@layer archetypes {
+  
+  /* 1. TACTILE BRUTALISM */
+  [data-de-archetype="brutalist"] {
+    --de-font-display: 'Syne', sans-serif;
+    --de-font-body: 'Inter Tight', sans-serif;
+    --de-border-radius: 0px;
+    --de-border-width: 2px;
+    
+    font-family: var(--de-font-body);
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+  }
+
+  [data-de-archetype="brutalist"] h1,
+  [data-de-archetype="brutalist"] h2,
+  [data-de-archetype="brutalist"] h3 {
+    font-family: var(--de-font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  [data-de-archetype="brutalist"] .de-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+    border-top: var(--de-border-width) solid var(--color-text);
+    border-left: var(--de-border-width) solid var(--color-text);
+  }
+
+  [data-de-archetype="brutalist"] .de-grid-item {
+    border-right: var(--de-border-width) solid var(--color-text);
+    border-bottom: var(--de-border-width) solid var(--color-text);
+    padding: 3rem;
+    transition: var(--de-transition-smooth);
+    position: relative;
+    background: var(--bg-primary);
+  }
+
+  [data-de-archetype="brutalist"] .de-grid-item:hover {
+    background: var(--bg-secondary);
+  }
+
+  [data-de-archetype="brutalist"] .de-btn {
+    font-family: var(--de-font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: var(--de-border-width) solid var(--color-text);
+    border-radius: 0;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: var(--de-transition-bounce);
+    box-shadow: 4px 4px 0px var(--color-text);
+  }
+
+  [data-de-archetype="brutalist"] .de-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--color-text);
+    background: var(--color-primary);
+    color: var(--bg-primary);
+  }
+
+  /* 2. EDITORIAL GLASSMORPHISM */
+  [data-de-archetype="editorial"] {
+    --de-font-display: 'Playfair Display', serif;
+    --de-font-body: 'Outfit', sans-serif;
+    --de-border-radius: 24px;
+    --de-border-width: 1px;
+    
+    font-family: var(--de-font-body);
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+  }
+
+  [data-de-archetype="editorial"] h1,
+  [data-de-archetype="editorial"] h2,
+  [data-de-archetype="editorial"] h3 {
+    font-family: var(--de-font-display);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  [data-de-archetype="editorial"] .de-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  [data-de-archetype="editorial"] .de-grid-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--de-border-width) solid var(--color-border);
+    border-radius: var(--de-border-radius);
+    padding: 2.5rem;
+    transition: var(--de-transition-smooth);
+    box-shadow: var(--shadow-premium);
+  }
+
+  [data-de-archetype="editorial"] .de-grid-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-border-hover);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  [data-de-archetype="editorial"] .de-btn {
+    font-family: var(--de-font-body);
+    font-weight: 500;
+    border-radius: 40px;
+    border: var(--de-border-width) solid var(--color-border);
+    padding: 0.9rem 2.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: var(--de-transition-smooth);
+  }
+
+  [data-de-archetype="editorial"] .de-btn:hover {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 20px var(--glow-color);
+  }
+
+  /* 3. NEO-NORDIC MINIMALISM */
+  [data-de-archetype="nordic"] {
+    --de-font-display: 'Cabinet Grotesk', sans-serif;
+    --de-font-body: 'Outfit', sans-serif;
+    --de-border-radius: 12px;
+    --de-border-width: 1px;
+    
+    font-family: var(--de-font-body);
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+  }
+
+  [data-de-archetype="nordic"] h1,
+  [data-de-archetype="nordic"] h2,
+  [data-de-archetype="nordic"] h3 {
+    font-family: var(--de-font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  [data-de-archetype="nordic"] .de-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  [data-de-archetype="nordic"] .de-grid-item {
+    background: var(--bg-secondary);
+    border: var(--de-border-width) solid var(--color-border);
+    border-radius: var(--de-border-radius);
+    padding: 2rem;
+    transition: var(--de-transition-smooth);
+  }
+
+  [data-de-archetype="nordic"] .de-grid-item:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-premium);
+  }
+
+  [data-de-archetype="nordic"] .de-btn {
+    font-family: var(--de-font-body);
+    font-weight: 600;
+    border-radius: var(--de-border-radius);
+    border: none;
+    padding: 1rem 2rem;
+    background: var(--color-text);
+    color: var(--bg-primary);
+    cursor: pointer;
+    transition: var(--de-transition-smooth);
+  }
+
+  [data-de-archetype="nordic"] .de-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    transform: scale(1.02);
+  }
+}
+
+/* --- Components & FX --- */
+@layer components {
+  /* Film Grain / Overlay Shader texture */
+  .de-noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    opacity: 0.04;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cfilter id='noiseFilter'%3e%3cfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3e%3c/svg%3e");
+  }
+
+  /* Premium Glass Cards */
+  .de-glass-card {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Interactive Cursor Trail */
+  .de-cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-radius 0.2s, opacity 0.2s, border 0.2s;
+    display: none;
+  }
+  
+  /* Niche Specific Overrides */
+  .de-cursor-follower.de-cursor-trade {
+    border-radius: 0;
+    width: 14px;
+    height: 14px;
+    mix-blend-mode: normal;
+    background-color: var(--color-primary);
+  }
+  
+  .de-cursor-follower.de-cursor-editorial {
+    width: 24px;
+    height: 24px;
+    mix-blend-mode: difference;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+  }
+  
+  .de-cursor-follower.de-cursor-nordic {
+    width: 18px;
+    height: 18px;
+    mix-blend-mode: difference;
+  }
+  
+  @media (pointer: fine) {
+    .de-cursor-follower {
+      display: block;
+    }
+  }
+
+  /* Kinetic Hover Text */
+  .de-kinetic-letter {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .de-kinetic-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .de-kinetic-word:hover .de-kinetic-letter {
+    transform: translateY(-5px);
+    color: var(--color-primary);
+  }
+
+  /* Reveal on Scroll Elements */
+  .de-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .de-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Utilities --- */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--glow-color);
+  }
+  
+  .border-glow:hover {
+    box-shadow: 0 0 20px var(--glow-color);
+  }
+}

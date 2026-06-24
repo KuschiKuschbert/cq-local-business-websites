@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CQ Gutter Cleaning | Yeppoon, Emu Park & Rockhampton</title>
+  <meta name="description" content="Premium gutter cleaning, leaf guard installation, and solar panel washing. Serving Yeppoon, Emu Park, and Rockhampton with professional, reliable local trades.">
+  <link rel="stylesheet" href="./src/design-engine.css">
+  <link rel="stylesheet" href="./src/components.css">
+  <style>
+    /* Premium custom layout styles */
+    .cq-hero-section {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cq-hero-text {
+      text-align: left;
+    }
+    .cq-hero-image-wrap {
+      position: relative;
+      border-radius: var(--de-border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--color-border);
+    }
+    .cq-hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--de-transition-smooth);
+    }
+    .cq-hero-image-wrap:hover .cq-hero-image {
+      transform: scale(1.03);
+    }
+    .cq-hero-kicker {
+      font-family: var(--de-font-mono);
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    .cq-hero-desc {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--color-muted);
+      margin-bottom: 2.5rem;
+    }
+    .cq-hero-actions {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cq-brand {
+      font-family: var(--de-font-display);
+      font-weight: 800;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .cq-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--color-border);
+      background: rgba(244, 247, 244, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .cq-nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .cq-nav-links a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      transition: var(--de-transition-smooth);
+    }
+    .cq-nav-links a:hover {
+      color: var(--color-primary);
+    }
+    .cq-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cq-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cq-section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .cq-section-desc {
+      color: var(--color-muted);
+      font-size: 1.1rem;
+    }
+    /* Estimator Custom Layout styling */
+    .estimator-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .estimator-info h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .estimator-info p {
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .estimator-info ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+    .estimator-info li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .estimator-info li::before {
+      content: "✓";
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+    /* Card Image styling */
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: calc(var(--de-border-radius) / 2);
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--color-border);
+    }
+    @media (max-width: 768px) {
+      .cq-hero-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 1.5rem;
+      }
+      .estimator-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .cq-nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .cq-nav-links {
+        gap: 1rem;
+      }
+    }
+    /* Contact form premium styling */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-secondary);
+      border: 1px solid var(--color-border);
+      padding: 3rem;
+      border-radius: var(--de-border-radius);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: left;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    .form-input {
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      background: var(--bg-primary);
+      color: var(--color-text);
+      font-family: inherit;
+      border-radius: calc(var(--de-border-radius) / 2);
+      outline: none;
+      transition: var(--de-transition-smooth);
+    }
+    .form-input:focus {
+      border-color: var(--color-primary);
+    }
+  </style>
+</head>
+<body data-de-archetype="nordic" data-de-palette="sage-garden" data-de-cursor-type="nordic">
+
+  <!-- Navigation -->
+  <nav class="cq-nav">
+    <div class="cq-brand">CQ Gutter Cleaning</div>
+    <div class="cq-nav-links">
+      <a href="#services">Services</a>
+      <a href="#estimator">Estimator</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#booking" class="de-btn">Book Quote</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="cq-hero-section de-reveal">
+    <div class="cq-hero-text">
+      <span class="cq-hero-kicker">Capricorn Coast Specialist</span>
+      <h1 class="de-kinetic-text">Clear, Protected Gutters for Your Home.</h1>
+      <p class="cq-hero-desc">
+        Servicing Yeppoon, Emu Park, and Rockhampton with high-precision gutter clearing, leaf guard installations, and solar panel restoration. Competitive local pricing with mess-free guarantees.
+      </p>
+      <div class="cq-hero-actions">
+        <a href="#estimator" class="de-btn">Calculate Your Estimate</a>
+        <a href="#booking" class="de-btn" style="background: transparent; border-color: var(--color-border); box-shadow: none; color: var(--color-text);">Contact Local Team</a>
+      </div>
+    </div>
+    <div class="cq-hero-image-wrap">
+      <img src="./hero_clean_gutters.png" alt="CQ Gutter Cleaning Premium Clean Gutters and Leaf Guards" class="cq-hero-image">
+    </div>
+  </header>
+
+  <!-- Services Grid -->
+  <section class="cq-section" id="services">
+    <div class="cq-section-header de-reveal">
+      <h2 class="cq-section-title">Our Services</h2>
+      <p class="cq-section-desc">Professional maintenance designed to withstand Central Queensland's heavy storm seasons.</p>
+    </div>
+    
+    <div class="de-grid">
+      <div class="de-grid-item de-reveal">
+        <img src="./hero_clean_gutters.png" alt="Gutter Clearing Service" class="card-image">
+        <h3>Gutter Clearing</h3>
+        <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+          Complete removal of leaves, dirt, sludge, and pest nests. We flush all downpipes to ensure 100% block-free drainage before storm season hits.
+        </p>
+        <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">From $150</span>
+      </div>
+      
+      <div class="de-grid-item de-reveal" style="transition-delay: 0.1s;">
+        <img src="./gutter_mesh.png" alt="Leaf Mesh Gutter Guard Installation" class="card-image">
+        <h3>Leaf Guards & Mesh</h3>
+        <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+          Premium fire-rated ember guards and leaf protection mesh installations. Prevent future blockages and keep debris out of your rainwater tanks.
+        </p>
+        <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">Free Custom Quote</span>
+      </div>
+      
+      <div class="de-grid-item de-reveal" style="transition-delay: 0.2s;">
+        <img src="./solar_panels_clean.png" alt="Solar Panel Cleaning Service" class="card-image">
+        <h3>Solar Panel Cleaning</h3>
+        <p style="opacity: 0.8; margin: 1rem 0 1.5rem; line-height: 1.6;">
+          Restore your solar efficiency. We remove dust, salt crust, and bird droppings using pure-water brush systems without harsh chemicals.
+        </p>
+        <span style="font-family: var(--de-font-mono); font-size: 0.85rem; color: var(--color-primary);">From $10 per panel</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Interactive Estimator -->
+  <section class="cq-section" id="estimator" style="background: var(--bg-secondary); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="estimator-layout">
+      <div class="estimator-info de-reveal">
+        <h3>Estimate Your Investment</h3>
+        <p>
+          We believe in transparent, upfront rates. Drag the slider to set your approximate home roof gutter length and get an instant cost calculation.
+        </p>
+        <ul>
+          <li>Includes complete downpipe inspection and flush</li>
+          <li>Full roof debris blow-down and mess-free cleanup</li>
+          <li>Detailed before & after photos emailed with your invoice</li>
+          <li>Fully insured and height safety certified local technicians</li>
+        </ul>
+      </div>
+
+      <!-- Cost Estimator Component -->
+      <div class="de-pricing-slider-card de-reveal" style="background: var(--bg-primary); width: 100%;">
+        <h3>Gutter Length Estimator</h3>
+        <p class="subtitle">Set your approximate linear gutter meters</p>
+        <div class="de-slider-group">
+          <div class="de-slider-label">
+            <span>Approximate Gutter length</span>
+            <span class="de-slider-val-output">60</span>
+          </div>
+          <input type="range" class="de-slider-input" min="15" max="180" value="60" data-multiplier="6.50" data-base-fee="150" data-unit=" meters">
+        </div>
+        <div class="de-pricing-result">
+          Estimated Cost: <span class="de-pricing-val">$0</span>
+        </div>
+        <a href="#booking" class="de-btn" style="display: block; text-align: center; margin-top: 1.5rem;">Lock In Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="cq-section" id="reviews">
+    <div class="cq-section-header de-reveal">
+      <h2 class="cq-section-title">Word on the Coast</h2>
+      <p class="cq-section-desc">Read feedback from residential and commercial clients across Yeppoon and Emu Park.</p>
+    </div>
+
+    <div class="de-reviews-container">
+      <div class="de-reviews-track">
+        <div class="de-review-card de-reveal">
+          <div class="de-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="de-review-text">"Prompt, professional, and did a great job clearing out all the leaves after the storm season. Left no mess behind. Highly recommend!"</p>
+          <div class="de-review-author">Aaron G.</div>
+          <div class="de-review-source">Emu Park Resident</div>
+        </div>
+
+        <div class="de-review-card de-reveal" style="transition-delay: 0.1s;">
+          <div class="de-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="de-review-text">"Super clean work on our double-story home. They installed leaf mesh and also washed our solar panels. Excellent package price and communication."</p>
+          <div class="de-review-author">Kylie S.</div>
+          <div class="de-review-source">Yeppoon Homeowner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="cq-section" id="booking" style="border-top: 1px solid var(--color-border); text-align: center;">
+    <div class="cq-section-header de-reveal">
+      <h2 class="cq-section-title">Schedule a Free Inspection</h2>
+      <p class="cq-section-desc">Submit your details and we will contact you to arrange a local quote.</p>
+    </div>
+
+    <div class="contact-form de-reveal">
+      <form onsubmit="event.preventDefault(); alert('This is an internal concept mockup. Form submissions are for demonstration only.');">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" class="form-input" placeholder="e.g. John Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-input" placeholder="e.g. 0400 000 000" required>
+        </div>
+        <div class="form-group">
+          <label for="suburb">Suburb</label>
+          <input type="text" id="suburb" class="form-input" placeholder="e.g. Yeppoon" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Details</label>
+          <textarea id="message" class="form-input" style="min-height: 120px;" placeholder="e.g. Double story roof gutter cleaning and leaf guard enquiry"></textarea>
+        </div>
+        <button type="submit" class="de-btn" style="width: 100%; margin-top: 1rem;">Send Quote Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: 4rem 2rem; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-muted); font-size: 0.9rem;">
+    <p>&copy; 2026 CQ Gutter Cleaning. Servicing Central Queensland. Built by Cap Coast Creative.</p>
+  </footer>
+
+  <script type="module" src="./src/design-engine.js"></script>
+  <script type="module" src="./src/components.js"></script>
+</body>
+</html>
