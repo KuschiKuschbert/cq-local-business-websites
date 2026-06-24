@@ -30,12 +30,25 @@ function initNoiseOverlay() {
  */
 function initCursorFollower() {
   const cursorType = document.body.dataset.deCursorType || 'default';
+  
+  // Create exact center tracking dot
+  const dot = document.createElement('div');
+  dot.className = 'de-cursor-dot';
+  document.body.appendChild(dot);
+
+  // Create outer spring-lag follower ring
   const follower = document.createElement('div');
   follower.className = `de-cursor-follower de-cursor-${cursorType}`;
   document.body.appendChild(follower);
 
-  let mouseX = 0, mouseY = 0;
-  let followerX = 0, followerY = 0;
+  // Span for dynamic hover labels inside follower
+  const labelSpan = document.createElement('span');
+  labelSpan.style.display = 'none';
+  follower.appendChild(labelSpan);
+
+  let mouseX = -100, mouseY = -100;
+  let dotX = -100, dotY = -100;
+  let followerX = -100, followerY = -100;
   let velX = 0, velY = 0;
 
   window.addEventListener('mousemove', (e) => {
@@ -44,15 +57,24 @@ function initCursorFollower() {
   });
 
   // Easing/latency customized per niche
-  let easing = 0.15;
+  let easing = 0.12;
   if (cursorType === 'editorial') {
-    easing = 0.08; // elegant lag
+    easing = 0.07; // elegant lag
   } else if (cursorType === 'trade') {
-    easing = 0.25; // crisp snap
+    easing = 0.22; // crisp snap
   }
 
   // Smooth animation loop
   function animate() {
+    // Immediate track for inner dot
+    const dotDx = mouseX - dotX;
+    const dotDy = mouseY - dotY;
+    dotX += dotDx * 0.45;
+    dotY += dotDy * 0.45;
+    dot.style.left = `${dotX}px`;
+    dot.style.top = `${dotY}px`;
+
+    // Spring-physics lag track for outer follower ring
     const dx = mouseX - followerX;
     const dy = mouseY - followerY;
     
@@ -65,52 +87,50 @@ function initCursorFollower() {
     follower.style.left = `${followerX}px`;
     follower.style.top = `${followerY}px`;
     
-    // Playful squash/stretch only for nordic archetype
-    if (cursorType === 'nordic') {
+    // Playful squash/stretch only for nordic archetype when not hovering
+    if (cursorType === 'nordic' && !follower.classList.contains('de-hover-active')) {
       const speed = Math.sqrt(velX * velX + velY * velY);
-      const scaleX = 1 + Math.min(speed * 0.04, 0.5);
-      const scaleY = 1 - Math.min(speed * 0.03, 0.3);
+      const scaleX = 1 + Math.min(speed * 0.04, 0.4);
+      const scaleY = 1 - Math.min(speed * 0.03, 0.25);
       const angle = Math.atan2(velY, velX) * (180 / Math.PI);
       follower.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
+    } else if (!follower.classList.contains('de-hover-active')) {
+      follower.style.transform = `translate(-50%, -50%) scale(1)`;
     }
     
     requestAnimationFrame(animate);
   }
   animate();
 
-  // Hover feedback tailored for each niche type
-  const clickables = document.querySelectorAll('a, button, .de-btn, .de-grid-item, input, textarea');
+  // Hover feedback tailored for premium conversion context
+  const clickables = document.querySelectorAll('a, button, .de-btn, .de-grid-item, input, textarea, select');
   clickables.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      if (cursorType === 'trade') {
-        follower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        follower.style.border = '2px solid var(--color-primary)';
-        follower.style.backgroundColor = 'transparent';
-        follower.style.borderRadius = '0px';
-      } else if (cursorType === 'editorial') {
-        follower.style.transform = 'translate(-50%, -50%) scale(2.5)';
-        follower.style.opacity = '0.35';
-        follower.style.backgroundColor = 'var(--color-primary)';
-      } else {
-        follower.style.transform = 'translate(-50%, -50%) scale(2)';
-        follower.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-        follower.style.mixBlendMode = 'difference';
+      follower.classList.add('de-hover-active');
+      dot.classList.add('de-hover-active');
+      
+      // Select appropriate hover label text based on element context
+      let labelText = 'Go';
+      if (item.tagName === 'INPUT' || item.tagName === 'TEXTAREA' || item.tagName === 'SELECT') {
+        labelText = 'Type';
+      } else if (item.getAttribute('href') === '#booking' || item.classList.contains('de-btn') && item.textContent.toLowerCase().includes('book')) {
+        labelText = 'Book';
+      } else if (item.classList.contains('de-grid-item')) {
+        labelText = 'View';
+      } else if (item.textContent.toLowerCase().includes('estimate') || item.getAttribute('href') === '#estimator') {
+        labelText = 'Calc';
       }
+      
+      labelSpan.textContent = labelText;
+      labelSpan.style.display = 'block';
     });
+
     item.addEventListener('mouseleave', () => {
-      if (cursorType === 'trade') {
-        follower.style.transform = 'translate(-50%, -50%) scale(1)';
-        follower.style.border = 'none';
-        follower.style.backgroundColor = 'var(--color-primary)';
-        follower.style.borderRadius = '0px';
-      } else if (cursorType === 'editorial') {
-        follower.style.transform = 'translate(-50%, -50%) scale(1)';
-        follower.style.opacity = '1';
-        follower.style.backgroundColor = 'transparent';
-      } else {
-        follower.style.transform = 'translate(-50%, -50%) scale(1)';
-        follower.style.backgroundColor = 'var(--color-primary)';
-        follower.style.mixBlendMode = 'difference';
+      follower.classList.remove('de-hover-active');
+      dot.classList.remove('de-hover-active');
+      labelSpan.style.display = 'none';
+      if (cursorType !== 'nordic') {
+        follower.style.transform = `translate(-50%, -50%) scale(1)`;
       }
     });
   });
