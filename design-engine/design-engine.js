@@ -87,14 +87,7 @@ function initCursorFollower() {
     follower.style.left = `${followerX}px`;
     follower.style.top = `${followerY}px`;
     
-    // Playful squash/stretch only for nordic archetype when not hovering
-    if (cursorType === 'nordic' && !follower.classList.contains('de-hover-active')) {
-      const speed = Math.sqrt(velX * velX + velY * velY);
-      const scaleX = 1 + Math.min(speed * 0.04, 0.4);
-      const scaleY = 1 - Math.min(speed * 0.03, 0.25);
-      const angle = Math.atan2(velY, velX) * (180 / Math.PI);
-      follower.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
-    } else if (!follower.classList.contains('de-hover-active')) {
+    if (!follower.classList.contains('de-hover-active')) {
       follower.style.transform = `translate(-50%, -50%) scale(1)`;
     }
     
